@@ -102,4 +102,4 @@ Eine Übersicht über alle HTML-Elemente mit Erläuterungen findet sich hier.
 
 ## Weitere Informationen über HTML
 
-- [Folien HTML](../files/01_WT_HTML.pdf)
+- [Folien HTML](./files/01_WT_HTML.pdf)
