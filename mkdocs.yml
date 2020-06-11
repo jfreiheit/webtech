@@ -1,4 +1,66 @@
+# Project information
 site_name: WebTech
+site_description: Lehrmaterial, Übungen, Aufgaben und Hilfen für WebTech
+site_author: Jörn Freiheit
+site_url: http://freiheit.f4.htw-berlin.de/webtech
+
+# Repository
+repo_name: webtech
+repo_url: https://github.com/jfreiheit/webtech
+
+# Copyright
+copyright: Copyright &copy; 2020 Jörn Freiheit
+
+# Configuration
+theme:
+  name: material
+  language: de
+  palette:
+    primary: grey
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - instant
+    - tabs
+  favicon: img/favicon.png
+  logo: img/fiw.jpg
+
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.tilde
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+
+#Navigation
 nav:
     - Home: index.md
-    - About: about.md
+    - Werkzeuge: tools.md
+    - Angular: angular.md
+    - HTML: html.md
+    - CSS: css.md
+    - JavaScript: javascript.md
+    - Node.js: node.md
+    - Bücher-App: books.md
