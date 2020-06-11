@@ -67,6 +67,9 @@ Das `<body>`-Element, also der im Browser dargestellte Bereich, enthält eine Ü
     Erstellen Sie eine Datei ```index.html``` und fügen Sie obigen HTML-Code ein. Rufen Sie die Datei im Browser auf.
 
 
+## Metadaten im Head
+
+
 ## Block- und Inline-Elemente
 
 Generell wird zwischen zwei Arten von HTML-Elementen unterschieden:
@@ -103,3 +106,10 @@ Eine Übersicht über alle HTML-Elemente mit Erläuterungen findet sich hier.
 ## Weitere Informationen über HTML
 
 - [Folien HTML](./files/01_WT_HTML.pdf)
+
+## HTTP
+
+https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+
+### URLs
+

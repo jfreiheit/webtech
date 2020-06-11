@@ -705,5 +705,530 @@ Noch vor `ngOnInit` wird jedoch `ngOnChange()` aufgerufen. Nämlich genau dann, 
 
 ![Lifecycle](./files/15_lifecycle.png)
 
+Für weiterführende Informationen sei [https://angular.io/guide/lifecycle-hooks](https://angular.io/guide/lifecycle-hooks) empfohlen.
+
+## Services
+
+Ein *Service* ist eine Klasse für einen konkreten Zweck. Services unterscheiden sich von Komponenten dahingehend, dass
+
+- eine Komponente für die Nutzerinteraktion zuständig ist, 
+- eine Komponente Eigenschaften (Daten) präsentiert, 
+- eine Komponente Methoden zur Datenbindung (*data binding*) zur Verfügung stellt, um
+- zwischen *View* und Anwendungslogik zu vermitteln.
+
+Ein Service
+
+- erfüllt eine konkrete Aufgabe, typischerweise mit Daten, 
+- ohne sich um die Darstellung der Daten zu kümmern.
+- Typische Aufgaben eines Services sind: Daten vom Server holen oder auf den Server laden, Nutzereingaben zu validieren. 
+- Ein Service steht typischerweise allen Komponenten zur Verfügung (aber nicht jede Komponente muss einen Service nutzen).
+
+Ein Service ist eine Klasse mit dem Decorator `@Injectable()`. Services enthalten Anwendungslogik, die aus Komponenten ausgelagert werden kann. Ein Service `my` kann mittels CLI so erzeugt werden:
+
+```
+ng generate service shared/my
+```
+
+Es entsteht im `src/app/shared`-Ordner eine Datei `my.service.ts`. Services sollten am besten in dem `shared`-Ordner erstellt werden, da ein Service von allen Komponenten genutzt werden kann (eine andere Möglichkeit wäre, einen eigenen Ordner `services` zu erstellen).
+
+In dem Decorator `@Injectable()` wird mittels `providedIn: root` angegeben, dass der Service von allen Komponenten innerhalb des Root-Moduls genutzt werden kann. Ist der Service von anderen Services oder Komponenten abhängig, können diese Services oder Komponenten mittels *dependency injection* als Parameter des Service-Konstruktor eingebunden werden. Hier ein allgemeines Beispiel eines Services `MyService`:
+
+=== "my.service.ts"
+    ```javascript linenums="1"
+    import { Injectable } from '@angular/core';
+
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class MyService {
+
+      constructor(private myDependency: MyDependency) {
+      }
+    }
+    ```
+
+Der Service kann dann mittels *dependency injection* von einer Komponente verwendet werden. Beispiel:
+
+=== "example.component.ts"
+    ```javascript
+    import {Component, OnInit} from '@angular/core';
+
+    import {MyService} from '../shared/my.service';
+
+    @Component({
+      selector: 'app-example',
+      templateUrl: './example.component.html',
+      styleUrls: ['./example.component.css']
+    })
+    export class ExampleComponent implements OnInit {
+
+      constructor(private myService: MyService) { }
+
+      ngOnInit(): void {
+        this.example.methodOfMyService();
+      }
+
+    }
+    ```
+
+Für ein Beispiel einer Service-Definition und der Verwendung eines Services siehe [`BookStoreService`](../books/##service-bookstoreservice). Für weiterführende Informationen siehe [https://angular.io/guide/architecture-services](https://angular.io/guide/architecture-services).
+
+
+## Routing
+
+*Routing* ist ein wesentliches Konzept für die Entwicklung von *Single-Page-Applikationen* (SPA). Bei Single-Page-Applikationen wird genau eine Seite vom Webserver geladen (typischerweise die `index.html` und alle weiteren, sich ändernden, Inhalte und Sichten werden in diese Seite nachgeladen). Das führt zunächst auch dazu, dass es für die Seite genau eine URL gibt, um auf sie zuzugreifen (z.B. `http://www.mydomain.de` bzw. `http://www.mydomain.de/index.html`). Möchte man aber Komponenten direkt in der URL ansprechen, z.B. `http://www.mydomain.de/login` für die Login-Komponente, so benötigen wir das *Routing* von Angular.
+
+Wir betrachten hier ein Beispiel, das [https://angular.io/guide/router](https://angular.io/guide/router) entnommen ist und nur leicht abgewandelt wurde. Wir erstellen dazu zunächst ein neues Projekt `routing-lesson`. 
+
+```
+ng new routing-lesson
+```
+
+In der obigen Anweisung hätte man auch bereits den Parameter `--routing` verwenden können, also: 
+
+```
+ng new routing-lesson --routing
+```
+
+Macht man das nicht, werden Sie gefragt, ob Sie *Routing* verwenden wollen:
+
+
+```
+? Would you like to add Angular routing? [y|N]
+```
+
+Antworten Sie mit `y`.
+
+Zur Demonstration des Routings werden wir zunächst 2 weitere Komponenten erstellen: `first` und `second`. 
+
+```
+cd routing-lesson
+ng g c first
+ng g c second
+```
+
+Wird ein Angular-Projekt **mit** Routing erstellt, so existiert die Datei `app-routing.module.ts` im `src/app/`-Ordner. Diese Datei sieht ursprünglich so aus:
+
+=== "app-routing.module.ts"
+    ``` javascript linenums="1"
+    import { NgModule } from '@angular/core';
+    import { Routes, RouterModule } from '@angular/router';
+
+    const routes: Routes = [];
+
+    @NgModule({
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
+    ```
+
+Bei dieser Klasse handelt es sich um ein eigenes Angular-Modul (als `@NgModule` dekoriert). Es wird deshalb auch in die `app.module.ts` integriert (dies geschieht automatisch, wenn wir *Routing* ausgewählt haben) - siehe Zeilen 4 und 17 im folgenden Listing:
+
+=== "app.module.ts"
+    ``` javascript linenums="1"
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule } from '@angular/core';
+
+    import { AppRoutingModule } from './app-routing.module';
+    import { AppComponent } from './app.component';
+    import { FirstComponent } from './first/first.component';
+    import { SecondComponent } from './second/second.component';
+
+    @NgModule({
+      declarations: [
+        AppComponent,
+        FirstComponent,
+        SecondComponent
+      ],
+      imports: [
+        BrowserModule,
+        AppRoutingModule
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+    ```
+
+
+Das Array `routes` aus der Datei `app-routing.module.ts` enthält später die Pfadangaben zu den Komponenten - sogenannte **Routen**. Routen sind Objekte und wie folgt notiert:
+
+```javascript
+{ path: 'mypath', component: MyComponent }
+```
+
+Diese Angabe bewirkt, dass unter der URL `http://www.mydomain.de/mypath` die Komponente `MyComponent` aufgerufen wird. Angenommen, wir wollen, dass unsere Komponente `FirstComponent` unter dem Pfad `/first` aufgerufen wird und `SecondComponent` unter dem Pfad `/second`, dann sieht unsere Datei `app-routing.module.ts` wie folgt aus:
+
+=== "app-routing.module.ts"
+    ``` javascript linenums="1"
+    import { NgModule } from '@angular/core';
+    import { Routes, RouterModule } from '@angular/router';
+
+    import {FirstComponent} from './first/first.component';
+    import {SecondComponent} from './second/second.component';
+
+    const routes: Routes = [
+      { path: 'first', component: FirstComponent},
+      { path: 'second', component: SecondComponent }
+    ];
+
+    @NgModule({
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
+    ```
+
+In den Zeilen 8 und 9 sind die beiden Routen definiert. Beachten Sie, dass die Pfadangaben ohne vorangestelltes Slash `/` erfolgen! Unter Verwendung der Selektoren `<app-first>` bzw. `<app-second>` könnten wir unsere Komponenten nun (statisch) in unsere Anwendung einbinden. Wollen wir das jedoch dem *Routing* überlassen, die Komponenten also dynamisch - abhängig von dem jeweils gewählten Pfad - einbinden lassen, verwenden wir stattdessen den Selektor `<router-outlet>`. Auch dieser ist bei gewähltem *Routing* bereits Teil des `AppComponent`-Templates:
+
+=== "app.component.html"
+    ``` html
+    <!-- hier wurde viel vom ursprünglichen -->
+    <!-- Template gelöscht                  -->
+  
+    <h1>Hier ist AppComponent</h1>
+    <router-outlet></router-outlet>
+    ```
+
+Obiges Listing zeigt, dass das Template von `AppComponent` zunächst eine `<h1>`-Überschrift vorsieht und dann folgt das `<router-outlet>`, welches als Platzhalter für die durch das Routing ausgewählten Komponenten agiert. Angenommen, wir definieren die Templates f+r `FirstComponent` und `SecondComponent` wie folgt:
+
+=== "first.component.html"
+    ``` html
+    <h3>Hier ist FirstComponent</h3>
+    ```
+=== "second.component.html"
+    ``` html
+    <h3>Hier ist SecondComponent</h3>
+    ```
+
+Starten wir nun unsere Anwendung, dann sehen wir zunächst (URL: `http://localhost:4200/`) nur die View der `AppComponent`, nämlich die `<h1>`-Überschrift. Der Platzhalter `<router-outlet>` bleibt leer, da keine der angegebenen Pfade aus der `app-routing.module.ts` angegeben wurde. Geben wir jedoch als URL `http://localhost:4200/first` ein, so wird das Template der `FirstComponent` in diesen Platzhalter geladen, nämlich die `<h3`-Überschrift `Hier ist FirstComponent`. Geben wir als URL stattdessen `http://localhost:4200/second` ein, so wird das Template der `SecondComponent` in den Platzhalter `<router-outlet>` geladen, nämlich die `<h3`-Überschrift `Hier ist SecondComponent`. Die folgende Abbildung zeigt die Views der drei Fälle:
+
+![Routing](./files/17_routing.png)
+
+Wir haben nun Pfade erzeugt, mit denen man Komponenten direkt ansprechen kann. Im folgenden Abschnitt wird gezeigt, wie man diese Pfade in Hyperlinks nutzt.
+
+### Routen verlinken
+
+Wir kennen nun die möglichen Pfade unserer Anwendung `http://localhost:4200/`, `http://localhost:4200/first` und `http://localhost:4200/second` und würden diese Adressen z.B. gerne in Hyperlinks verwenden, um direkt zu den Views der jeweiligen Komponente zu springen, z.B. so:
+
+=== "app.component.html"
+    ``` html
+    <h1>Hier ist AppComponent</h1>
+    <ul>
+      <li>
+        <a href="/">home</a>
+      </li>
+      <li>
+        <a href="/first">first</a>
+      </li>
+      <li>
+        <a href="/second">second</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+    ```
+
+Das funktioniert auch, hat aber einen von uns nicht gewollten Effekt: Die Seite wird durch jeden Klick auf einen Hyperlink neu geladen. Das ist ja auch das gewünschte Verhalten eines Hyperlinks. Die Idee einer *Single-Page-Applikation* ist aber jedoch die, dass die Seite nur genau einmal geladen wird und dann dynamisch alle weiteren Inhalte. 
+
+Das Nachladen wird vermieden, wenn wir als Attribut für unsere Pfade nicht `href` verwenden, sondern die Angular-Direktive `routerLink`. Dies gilt nur für interne Links! Aber es verhindert bei internen Links ein Neuladen der Seite.
+
+=== "app.component.html"
+    ``` html
+    <h1>Hier ist AppComponent</h1>
+    <ul>
+      <li>
+        <a routerLink="/">home</a>
+      </li>
+      <li>
+        <a routerLink="/first">first</a>
+      </li>
+      <li>
+        <a routerLink="/second">second</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+    ```
+
+Die obige Attributschreibweise kann auch durch *property binding* ersetzt werden. Dann übergeben Sie als Wert aber keinen String sondern ein 1-elementiges Array:
+
+=== "app.component.html"
+    ``` html
+    <h1>Hier ist AppComponent</h1>
+    <ul>
+      <li>
+        <a [routerLink]="['/']">home</a>
+      </li>
+      <li>
+        <a [routerLink]="['/first']">first</a>
+      </li>
+      <li>
+        <a [routerLink]="['/second']">second</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+    ```
+
+Die zweite Variante wird meistens dann verwendet, wenn an den Pfad noch dynamisch Werte übergeben werden, sogenannte *Parameter* an den Routen.
+
+### Parameter an Routen
+
+Häufig sind die Pfadangaben nicht nur so statisch wie bisher, also `/first` bzw. `/second`, sondern es werden auch noch Werte, z.B. Session-IDs, Nutzer-IDs, Bücher-ISBN usw. übergeben. Dazu werden die Routen durch *Parameter* erweitert. Diese Parameter werden dann mit einem konkreten Wert bei Aufruf ersetzt. 
+
+Die allgemeine Syntax für einen parametrisierten Pfad ist:
+
+```javascript
+{ path: 'mypath/:id', component: MyComponent }
+```
+
+Der Doppelpunkt `:` ist zwingend, der Name des Parameters `id` ist frei wählbar. 
+
+Die Werte für den Routenparameter können als `routerLink` wieder entweder als String übergeben werden (Zeile 1 im folgenden Listing) oder per *property binding* als weiteres Array-Element (Zeile 2 im folgenden Listing).
+
+```html linenums="1"
+<a routerLink="/mypath/4711">statischer Wert für id</a>
+<a [routerLink]="['/mypath', myData.id]">dynamischer Wert für id (aus JSON myData)</a>
+```
+
+Wir haben jetzt eine parametrisierten Pfad konfiguriert und wir haben auch betrachtet, wie der Aufruf einer solch parametrisierten Route erfolgen kann. Nun betrachten wir, wie der Wert eines Parameters in einer Komponentenklasse ausgelesen und verarbeitet werden kann. 
+
+Wir führen dazu zunächst kleinere Änderungen an unserem obigen Beispiel der `routing-lesson`-App durch: 
+
+=== "app-routing.module.ts"
+    ``` javascript linenums="1"
+    import { NgModule } from '@angular/core';
+    import { Routes, RouterModule } from '@angular/router';
+    import {FirstComponent} from './first/first.component';
+    import {SecondComponent} from './second/second.component';
+
+    const routes: Routes = [
+      { path: 'first', component: FirstComponent},
+      { path: 'first/:id', component: FirstComponent},
+      { path: 'second', component: SecondComponent }
+    ];
+
+    @NgModule({
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
+    ```
+=== "first.component.html"
+    ``` html linenums="1"
+    <h3>Hier ist FirstComponent</h3>
+    <p *ngIf="id">{{ id }}</p>
+    ```
+
+In `app-routing.module.ts` haben wir einen weiteren Pfad hinzugefügt (Zeilennummer 8). Beachten Sie, dass ohne die Pfadkonfiguration in Zeilennummer 7 die Route `http://localhost:4200/first` (also ohne Parameterwert) nicht mehr existieren würde. Wenn ein Parameter erforderlich ist, dann muss er auch angegeben werden. Nur in Kombination der beiden Pfadkonfigurationen aus Zeilennummern 7 und 8 ist der Pfad sowohl mit als auch ohne Parameterwert möglich. 
+
+Im Template der `FirstComponent` haben wir einen Absatz eingefügt, der als Inhalt den Wert der Eigenschaft `id` mittels Interpolation anzeigt. Der Absatz erscheint nur, wenn `id` auch einen Wert hat. Die Eigenschaft `id` muss allerdings noch in der `first.component.ts` angelegt werden:
+
+=== "first.component.ts"
+    ``` javascript linenums="1"
+    import { Component, OnInit } from '@angular/core';
+    import { ActivatedRoute } from '@angular/router';
+
+    @Component({
+      selector: 'app-first',
+      templateUrl: './first.component.html',
+      styleUrls: ['./first.component.css']
+    })
+    export class FirstComponent implements OnInit {
+      id: string;
+
+      constructor(private route: ActivatedRoute) { }
+
+      ngOnInit(): void {
+        this.id = this.route.snapshot.paramMap.get('id');
+      }
+    }
+    ```
+In der `first.component.ts` kommen verschiedene Sachen hinzu:
+
+1. es wird die Eigenschaft `id` deklariert (als `string`)
+2. es wird der Service `ActivatedRoute` per *dependency injection* der Klasse `FirstComponent` injiziert --> die Eigenschaft `route` ist vom Typ `ActivatedRoute`
+3. `ActivatedRoute` stellt uns Informationen über den aktuellen Router (die aktuelle URL) zur Verfügung --> die Eigenschaft `this.route.snapshot.paramMap` enthält alle Parameter der aktuellen Route --> mithilfe der Methode `get()` kann nach einem konkreten Parameter gefragt werden --> wir fragen nach dem Parameter `id`, da wir so unseren Pfad konfiguriert haben (siehe oben `app-routing.module.ts`)
+
+Wenn wir nun z.B. die URL `http://localhost:4200/first/42` eingeben, dann erscheint im Brower der Wert des Parameters (als Inhalt des `<p>`-Elementes; siehe oben `first.component.html`).
+
+Die aktuelle Implementierung von `first.component.ts` liest also während der Initialisierung der Komponente die Routenparameter aus. Finden jedoch am Parameterwert Änderungen statt, ohne dass die Komponente neu initialisiert wird, bekommt die Komponente von den Änderungen nichts mit. Die oben gezeigte Form der Implementierung ist deshalb nicht für alle Fälle geeignet. Vielmehr ist es besser auszunutzen, dass es sich bei `this.route.paramMap` (ohne `snapshot`) um ein [*Observable*](https://angular.io/guide/observables-in-angular) handelt.  
+
+Ein *Observable* kann so verstanden werden, dass er permanent eine bestimmte Sache beobachtet (z.B. ist der `EventEmitter` ein *Observable* und beobachtet permanent, ob das Ereignis ausgelöst wird; wenn ja, dann ruft `EventEmitter` die Funktion `emit()` auf --> siehe [Eigene Ereignisse](./#eigene-ereignisse)). Wenn sich etwas an dem beobachteten Objekt geändert hat, dann reagiert *Observable* sofort und ruft eine bestimmte Funktion auf. Das *Observable* `paramMap` beobachtet permanent die aktuelle Route und sobald sich etwas an dieser Route ändert, wird eine Funktion aufgerufen.
+
+Damit das *Observable* aber überhaupt den aktuellen Router permanent beobachtet, muss er an den Router angemeldet werden --> das *Observable* "abboniert" den Router. Dies geschieht mithilfe der Funktion `subscribe()`. Dieser Funktion kann als Parameter eine Funktion übergeben werden. Diese Funktion wird aufgerufen, sobald sich am aktuellen Router etwas ändert. Wir ändern die Implementierung von `ngOnInit()` in der Klasse `first.component.ts` deshalb wie folgt:
+
+=== "first.component.ts"
+    ``` javascript linenums="1"
+    import { Component, OnInit } from '@angular/core';
+    import { ActivatedRoute } from '@angular/router';
+
+    @Component({
+      selector: 'app-first',
+      templateUrl: './first.component.html',
+      styleUrls: ['./first.component.css']
+    })
+    export class FirstComponent implements OnInit {
+      id: string;
+
+      constructor(private route: ActivatedRoute) { }
+
+      ngOnInit(): void {
+        this.route.paramMap.subscribe(
+          paramMap => this.id = paramMap.get('id')
+        );
+      }
+    }
+    ```
+
+Nun erhält die Eigenschaft `id` immer den aktuellsten Wert (und dieser wird aufgrund der Interpolation auch stets aktuell in der View dargestellt).
+
+### Verschachtelte Routen
+
+Angenommen, wir haben zwei weitere Komponenten `OneComponent` und `TwoComponent` und beide Komponenten sind Kindkomponenten von der Elternkomponente `FirstComponent`. Das Verhältnis Eltern- Kindkomponente entsteht ja eigentlich dadurch, dass das Template der Elternkomponente den Selektor der Kindkomponente enthält. Das heißt in `first.component.html` gibt es sowohl ein `<app-one></app-one>` als auch ein `<app-two></app-two>` --> dann sind `One` und `Two` Kindkomponenten von `First`. 
+
+Wir wollen nun aber folgendes:
+
+- die Route `/first` verweist auf die `FirstComponent`
+- die Route `/first/one` verweist auf die `FirstComponent` und deren Kindkomponente `OneComponent`
+- die Route `/first/two` verweist auf die `FirstComponent` und deren Kindkomponente `TwoComponent`
+
+Wir wollen also, dass auch die beiden Kindkomponenten mittels Routing in die Elternkomponente eingefügt werden. Das erreichen wir mit 2 Anpassungen:
+
+- in `app-routing.module.ts` kann im `routes`-Array auch noch die Eigenschaft `children` hinzugefügt werden, welche Pfadkonfigurationen zu den Kindkomponenten enthält
+- in der `*.component.html` der Elternkomponente wird ein weiteres `<router-outlet></router-outlet>` hinzugefügt
+
+=== "app-routing.module.ts"
+    ``` javascript linenums="1"
+    import { Routes, RouterModule } from '@angular/router';
+    import {FirstComponent} from './first/first.component';
+    import {SecondComponent} from './second/second.component';
+    import {OneComponent} from './first/one/one.component';
+    import {TwoComponent} from './first/two/two.component';
+
+    const routes: Routes = [
+      { path: 'first', component: FirstComponent, children: [
+          { path: 'one', component: OneComponent },
+          { path: 'two', component: TwoComponent },
+        ]},
+      { path: 'first/:id', component: FirstComponent},
+      { path: 'second', component: SecondComponent }
+    ];
+
+    @NgModule({
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
+    ```
+=== "first.component.html"
+    ``` html linenums="1"
+    <h3>Hier ist FirstComponent</h3>
+    <ul>
+      <li><a [routerLink]="['/first/one']">first/one</a></li>
+      <li><a [routerLink]="['/first/two']">first/two</a></li>
+    </ul>
+    <p *ngIf="id">{{ id }}</p>
+    <router-outlet></router-outlet>
+    ```
+=== "app.component.html"
+    ``` html linenums="1"
+    <h1>Hier ist AppComponent</h1>
+    <ul>
+      <li>
+        <a [routerLink]="['/']">home</a>
+      </li>
+      <li>
+        <a [routerLink]="['/first']">first</a>
+      </li>
+      <li>
+        <ul>
+          <li><a [routerLink]="['/first/one']">first/one</a></li>
+          <li><a [routerLink]="['/first/two']">first/two</a></li>
+        </ul>
+      </li>
+      <li>
+        <a [routerLink]="['/second']">second</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+    ```
+
+Das bedeutet, dass wir nun zwei `<router-outlet></router-outlet>`-Elemente haben. Eines in der `app.component.html` für die Routen `first`, `first/:id` und `second` und eines in der `first.component.html` für die Routen `first/one` und `first/two`. 
+
+![Routing children](./files/18_routing.png)
+
+### Styles für aktive Routen
+
+Sie können angeben, welche CSS-Klassen wirken sollen, falls eine Route *aktiv* ist. Eine Route ist aktiv, wenn Sie ausgewählt/angewendet werden kann. Dazu wurde in Angular das Attribut `routerLinkActive`eingeführt. Angenommen, die CSS-Klasse `myactiveclass`soll Anwendung für eine aktuelle (aktive) Route `/first` Anwendung finden, dann definieren Sie:
+
+```html
+<a routerLink="/first" routerLinkActive="myactiveclass">first</a>
+```
+
+Sie können auch mehrere CSS-Klassen definieren. Dafür gibt es zwei verschiedene Möglichkeiten:
+
+```html
+<a routerLink="/first" routerLinkActive="myactiveclass1 myactiveclass1">first</a>
+<a routerLink="/first" [routerLinkActive]="['myactiveclass1', 'myactiveclass1']">first</a>
+```
+
+Das Styling aktiver Routen ist insbesondere für Navigationsleisten (Menüs) hilfreich.
+
+### Routen im Programm wechseln
+
+Der Service `Router` stellt zwei Methoden zur Verfügung, mit denen eine Route im Programm gewechselt werden kann, z.B. nach einer Nutzereingabe oder einer Nutzerinteraktion:
+
+- `navigate()`
+- `navigateByUrl()`
+
+Angenommen, wir erweitern unsere Komponente `SecondComponent` um einen Button. Durch den Klick auf den Button soll von der `SecondComponent` auf die `OneComponent` über die Route `/first/one` gewechselt werden:
+
+=== "second.component.html"
+    ``` html linenums="1"
+    <h3>Hier ist SecondComponent</h3>
+    <button (click)="changeRoute()">/first/one</button>
+    ```
+=== "second.component.ts"
+    ``` javascript linenums="1"
+    import { Component, OnInit } from '@angular/core';
+    import {Router} from '@angular/router';
+
+    @Component({
+      selector: 'app-second',
+      templateUrl: './second.component.html',
+      styleUrls: ['./second.component.css']
+    })
+    export class SecondComponent implements OnInit {
+
+      constructor(private router: Router) { }
+
+      ngOnInit(): void {
+      }
+
+      changeRoute() {
+        this.router.navigate(['/first', 'one']);
+        // oder
+        // this.router.navigateByUrl('/first/one');
+      }
+    }
+    ```
+
+In der `second.component.ts` sehen wir in Zeile 11, dass der Service `Router` per dependency injection eingebunden wird. Der Eigenschaft `router` stehen die Methoden `navigate()` bzw. `navigateByUrl()` zur Verfügung. Wir sehen in den Zeilen 16-20 die Behandlung des `Click`-Ereignisses des Buttons. In Zeile 17 wird darin programmatisch die Route `/first/one` aufgerufen. 
+
+![Routing programmatisch wechseln](./files/19_routing.png)
+
+## `HTTPClient`
+
+Wir wissen bereits, dass Angular eine TypeScript-Framework ist, mit dem sich Single-Page-Anwendungen implementieren lassen. Es wird einmalig eine Seite (häufig `index.html`) vom Server geladen und alle weiteren Inhalte werden sukzessive bzw. durch Nutzerinteraktionen gesteuert in diese eine Seite nachgeladen. Die Steuering wird dabei durch den Browser vorgenommen, der das aus TypeScript übersetzte JavaScript interpretiert und entsprechend die Templates der Komponenten in die Anwendung einbindet. Das bedeutet, dass im Prinzip die gesamte Logik im *Client*, d.h. im Browser ausgeführt wird. 
+
+Dem gegenüber steht jedoch die in der Anwendung verarbeitete Menge von Daten, die typischerweise in einer Datenbank auf einem Server bereitgestellt werden. Während der Client sich darum kümmert, dass Daten angezeigt oder eingegeben werden, muss sich der Server darum kümmern, dass Daten in die Datenquelle (die Datenbank) neu eingefügt, ausgelesen, aktualisiert und gelöscht werden können. Diese vier Operationen werden mit **CRUD** abgekürzt für:
+
+- **C**reate - neue Daten einfügen 
+- **R**ead - Daten auslesen
+- **U**pdate - Daten aktualisieren
+- **D**elete - Daten löschen
+
+Der Client und der Server müssen dazu nun irgendwie verbunden werden. Diese Verbindung erfolgt mithilfe des *Hypertext Transfer Protocols (HTTP)*. 
+
 
 

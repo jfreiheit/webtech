@@ -480,7 +480,556 @@ Im Template der `AppComponent` wird mittels der `*ngIf`-Direktive zwischen den A
     <router-outlet></router-outlet>
     ```
 
+Die beiden Events `showDetailsEvent` und `showListEvent` der beiden Komponenten `BookListComponent` bzw. `BookDetailsComponent` sind noch nicht in den jeweiligen Komponenten angelegt, ebenso noch nicht die Eigenschaft `book` in der `BookDetailsComponent`. Das machen wir jetzt in beginnen mit der `BookListComponent`.
+
+In der `BookListComponent` soll ein eigenes Event (`showDetailsEvent`) definiert werden. Wir gehen dazu vor, wie in [**Angular-->Eigene Ereignisse**](../angular/#eigene-ereignisse) beschrieben. Wichtig ist, dass wir einen *payload* des Events übergeben, nämlich das jeweilige Buch auf das geklickt wurde. Dieser *payload* wird in der Methode `showDetails($event)` der `AppComponent` verarbeitet. Wir öffnen die `book-list.component.ts` und *fügen hinzu*:
+
+!!! caution
+    Achten Sie darauf, dass Sie nur den Teil hinzufügen, der noch nicht in Ihrer `book-list.component.ts` enthalten ist. Diese Datei ist durch das JSON schon recht lang. Es kommen nur die Zeilen 8 und 14-16 hinzu und in der ersten Zeile werden `EventEmitter` und `Output` aus `@angular/core` importiert!
+
+=== "book-list.component.ts"
+    ``` javascript linenums="1"
+    import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+    import {Book} from '../shared/book';
+
+    @Component({ /* bleibt wie es ist */ })
+
+    export class BookListComponent implements OnInit {
+      books: Book[];
+      @Output() showDetailsEvent = new EventEmitter<Book>();
+
+      constructor() { }
+
+      ngOnInit(): void { /* bleibt wie es ist */ }
+
+      showDetails(book: Book) {
+        this.showDetailsEvent.emit(book);
+      }
+
+    }
+    ```
+
+Im Template der `BookListComponent` kommt nur ein *event binding* hinzu. Wir binden das native DOM-Ereignis `click` an die Ereignisbehandlung `showDetails()` und übergeben dabei als *payload* das entsprechende Buch `b`. Das bedeutet, dass jetzt jedes einzelne `BookItem` (es gibt für jedes Buch eine eigens `BookItem` - siehe `*ngFor`) ein Click-Ereignis existiert. Klicken wir also auf einen Eintrag in unserer `BookList`, dann wird das `showDetails()`-Ereignis ausgelöst, das entsprechende Buch als *payload* übergeben und an die `AppComponent` weitergereicht, die dann auf die `BookDetails`-Ansicht umschaltet. Die um diese eine Zeile (Zeile 5) erweiterte `book-list.component.html` sieht nun so:
+
+=== "book-list.component.html"
+    ``` html linenums="1"
+    <div class="ui middle aligned selection divided list">
+    <app-book-list-item class="item"
+        *ngFor="let b of books"
+        [book]="b"
+        (click)="showDetails(b)">
+    </app-book-list-item>
+    </div>
+    ```
+
+!!! note "Reflexion"
+    Wir sehen in dem obigen kleinen Beispiel `book-list.component.html` sehr schön vier Konzepte: 1. die Komponente `BookListComponent` ruft die Komponente `BookListItemComponent` auf. Damit ist `BookListComponent` eine Elternkomponente der Kindkomponente `BookListItemComponent` (Zeile 2). 2. der Einsatz der Direktive `*ngFor`. Für jeden einzelnen Eintrag aus dem Array `books` wird ein neues HTML-Element `<app-book-list-item>` erzeugt. 3. Ein *property binding*, bei der der Ausdruck `"b"` and die Eigenschaft `book` gebunden wird und 4. ein *event binding*, bei der wir die Ereignisbehandlung `showDetails(b)` an das native DOM-Element `click` binden.
+
+Jetzt kümmern wir uns noch um unsere neue Komponente `BookDetailsComponent`. Zwei Konzepte kennen wir bereits:
+
+1. definieren wir uns eine Eigenschaft `book`, deren Wert wir als `@Input()` von der Elternkomponente `AppComponent` erhalten (siehe dazu [Datenfluss von Eltern- auf Kindkomponenten](./#datenfluss-von-eltern-auf-kindkomponenten)).
+2. definieren wir uns ein eigenes Ereignis, welches an die Elternkomponente `AppComponent` weitergereicht wird (siehe dazu `book-list.component.ts` oben)
+
+Es wird noch eine dritte Kleinigkeit eingefügt: eine Methode `getRating(number)`, die für eine gegebene Zahl ein Array der übergebenen Länge zurückgibt. Wir werden im Template sehen, was es damit auf sich hat. Die `book-details.component.ts` sieht dann wie folgt aus:
+
+=== "book-details.component.ts"
+    ``` javascript linenums="1"
+    import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+    import {Book} from '../shared/book';
+
+    @Component({
+      selector: 'app-book-details',
+      templateUrl: './book-details.component.html',
+      styleUrls: ['./book-details.component.css']
+    })
+    export class BookDetailsComponent implements OnInit {
+      @Input() book: Book;
+      @Output() showListEvent = new EventEmitter<any>();
+
+      ngOnInit() {
+      }
+
+      getRating(num: number) {
+        return new Array(num);
+      }
+
+      showBookList() {
+        this.showListEvent.emit();
+      }
+    }
+    ```
+
+Das zugehörige Template ist recht umfangreich. Wir gehen auf einzelne Details ein, zeigen es aber zunächst:
+
+=== "book-details.component.html"
+    ``` html linenums="1"
+    <div *ngIf="book">
+      <h1>{{ book.title }}</h1>
+      <h3 *ngIf="book.subtitle">{{ book.subtitle }}</h3>
+      <div class="ui divider"></div>
+      <div class="ui grid">
+        <div class="four wide column">
+          <h4>Autoren</h4>
+          <ng-container *ngFor="let author of book.authors">
+            {{ author }}<br>
+          </ng-container>
+        </div>
+        <div class="four wide column">
+          <h4>ISBN</h4>
+          {{ book.isbn }}
+        </div>
+        <div class="four wide column">
+          <h4>Erschienen</h4>
+          {{ book.published }}
+        </div>
+        <div class="four wide column">
+          <h4>Rating</h4>
+          <i class="yellow star icon"
+            *ngFor="let r of getRating(book.rating)"></i>
+        </div>
+      </div>
+      <h4>Beschreibung</h4>
+      <p>{{ book.description }}</p>
+      <div class="ui small images">
+        <img *ngFor="let thumbnail of book.thumbnails"
+             [src]="thumbnail.url">
+      </div>
+      <button class="ui red button"
+              (click)="showBookList()">
+        Zurück zur Buchliste
+      </button>
+    </div>
+    ```
+
+Die Detailansicht sollte dann etwa so aussehen:
+
+![details](./files/16_detailansicht.png)
+
+!!! success
+    Der vierte Teil unserer Bücher-App ist erstellt! Wir wissen jetzt, wie wir Ereignisse behandeln und sogar eigene Ereignisse erstellen können und wie wir mit diesen eigenen Ereignissen und *event bining* Daten an die Elternklasse übergeben können. Damit können wir jetzt sowohl von Eltern- nach Kindklassen als auch zurück Daten transferieren und durch Ereignisse zwischen verschiedenen Komponenten hin- und herwechseln. Für viele Komponenten und eine tiefe Verschachtelung ist die Komplexität jedoch mit diesen Konzepten zu hoch. Wir lernen zwei weitere Konzepte kennen, die uns helfen, diese Komplexität zu meistern: *Services* und *Routing*. 
+
+## Service `BookStoreService` 
+
+Derzeit ist die Liste (genauer: das Array) unserer Bücher statisch als JSON innerhalb der Komponente `BookListComponent` gespeichert (siehe in `ngOnInit()` `this.books = [ ... ]`). Die `BookListComponent` verwaltet somit die Bücher und stellt diese auch noch als Liste dar. Wir wollen die Darstellung unabhängig von der "Datenspeicherung" gestalten und die Datenverwaltung (Speicherung und Bereitstellung) in einen *Service* auslagern (siehe [**Angular-->Services**](../angular/#services)). 
+
+Um einen Service mithilfe der CLI anzulegen (zu generieren), verwenden wir das Attribut `service` anstelle von `component`. Außerdem ist es guter Stil, Services in den `shared`-Ordner abzulegen, da ja alle Komponenten einen Service nutzen können. Wir erzeugen einen Service `BookStoreService`:
+
+```
+ng g service shared/book-store
+```
+
+Nach der Erzeugung sieht der Service zunächst so aus:
+
+=== "book-store.service.ts"
+    ```javascript
+    import { Injectable } from '@angular/core';
+
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class BookStoreService {
+
+      constructor() { }
+    }
+    ```
+
+Für Services gibt es keine Lifecycle-Hooks. Wir finden hier deshalb auch keine `ngOnInit()`-Methode. Während Komponenten den Decorator `@Component()` aufweisen, wird für Services der Decorator `@Injectable()` verwendet. Mit diesem Decorator geben wir an, dass der Service weitere Abhängigkeiten einbinden kann. Dies geschieht typischerweise über einen Parameter im Konstruktor - eine soganannte *dependency injection* (wenn über den Konstruktor, dann *constructor injection*). Auch wenn wir eine solche Abhängigkeit nicht einbinden, sollte der Decorator `@Injectable()` stets für einen Service angegeben werden. Dies liegt daran, dass wir diesen Decorator um die `providedIn`-Eigenschaft erweitern. Mit `providedIn: 'root'` geben wir an, dass der Service allen Komponenten (im gesamten Root-Modul) zur Verfügung steht, er also von allen Komponenten genutzt werden kann. 
+
+In unseren Service integrieren wir nun folgende Eigenschaften:
+
+- das `Book`-Array `books` aus der `BookListComponent` und
+- die Methode `getAll()`, die dieses Array zurückgibt, also alle Bücher aus dem Array `books`.
+
+=== "book-store.service.ts"
+    ```javascript
+    import { Injectable } from '@angular/core';
+    import {Book} from './book';
+
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class BookStoreService {
+      books: Book[];
+
+      constructor() { 
+        this.books = [
+        {
+          isbn: '9783864906466',
+          /*  das gesamte Array aus book-list.component.ts 
+              hier her bewegen 
+          */
+        },
+      }
+
+      getAll(): Book[] {
+        return this.books;
+      }
+    }
+    ```
+=== "book-list.component.ts"
+    ```javascript
+    import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+    import {Book} from '../shared/book';
+
+    @Component({
+      selector: 'app-book-list',
+      templateUrl: './book-list.component.html',
+      styleUrls: ['./book-list.component.css']
+    })
+    export class BookListComponent implements OnInit {
+      books: Book[];
+      @Output() showDetailsEvent = new EventEmitter<Book>();
+
+      constructor() { }
+
+      ngOnInit(): void { }
+
+      showDetails(book: Book) {
+        this.showDetailsEvent.emit(book);
+      }
+    }
+    ```
+
+Es wurde also die gesamte Wertebelegung für `this.books` mit dem JSON von der Datei `book-list.component.ts` (dort aus `ngOnInit()`) nach `book-store.service.ts` (hier in den Konstruktor `constructor()` - Liefecycle-hooks gibt es für Services ja nicht) verschoben.
+Dazu wurde dem Service die Eigenschaft `books` hinzugefügt (Typ `Book[]` - das Interface `Book` muss dazu importiert werden). Außerdem wurde in dem Service die Methode `getAll()`implementiert.
+
+Nun kann der Service in der `BookListComponent` verwendet werden. Dazu werden
+
+- der `BookService` importiert, 
+- der `BookService` mittels *dependency injection* (*constructor injection*) in die Komponente eingebunden und
+- die Methode `getAll()` des Services aufgerufen, um die Eigenschaft `this.books` mit dem `Book`-Array zu initialisieren.
+
+=== "book-list.component.ts"
+    ```javascript
+    import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+    import {Book} from '../shared/book';
+    import {BookStoreService} from '../shared/book-store.service';
+
+    @Component({
+      selector: 'app-book-list',
+      templateUrl: './book-list.component.html',
+      styleUrls: ['./book-list.component.css']
+    })
+    export class BookListComponent implements OnInit {
+      books: Book[];
+      @Output() showDetailsEvent = new EventEmitter<Book>();
+
+      constructor(private bs: BookStoreService) { }
+
+      ngOnInit(): void {
+        this.books = this.bs.getAll();
+      }
+
+      showDetails(book: Book) {
+        this.showDetailsEvent.emit(book);
+      }
+    }
+    ```
+
+Beachten Sie, dass die *dependency injection* des Services dazu führt, dass `bs` eine Eigenschaft der `BookListComponent` ist, ohne dass diese Eigenschaft explizit deklariert wird. In `ngOnInit()` wird über `this.bs` auf den Service zugegriffen.
+
+Die Anwendung sieht zwar genauso aus wie vorher, aber wir haben die `BookListComponent` davon entlastet, das Bücher-Array speichern zu müssen. Diesen Dienst haben wir in einen Service augelagert, der außerdem noch die Methode `getAll()` zur Verfügung stellt, mit dem das gesamte Bücher-Array zurückgegeben wird. 
+
+!!! success
+    Der fünfte Teil unserer Bücher-App ist erstellt! Die Anwendung sieht zwar genauso aus wie vorher, aber wir haben die `BookListComponent` davon entlastet, das Bücher-Array speichern zu müssen. Diesen Dienst haben wir in einen Service augelagert, der außerdem noch die Methode `getAll()` zur Verfügung stellt, mit dem das gesamte Bücher-Array zurückgegeben wird. Nun wollen wir mithilfe von *Routing* besser durch unsere Anwendung navigieren. 
+
+## Routing
+
+Derzeit hat unsere App zwei Sichten: einerseits die Listenansicht aller Bücher (Template der `BookListComponent`, wobei jede Zeile der Liste/jedes Buch durch das Template der `BookListItemComponent` dargestellt wird) und die Detailansicht eines Buches (Template der `BookDetailsComponent`). Zwischen diesen Sichten (*views*) wechseln wir durch Nutzereignisse hin- und her. Von der Listenansicht auf die Detailansicht kommen wir durch Anklicken einer Buchzeile und zurück kommen wir durch Klicken des Buttons "Zurück zur Buchliste". Unsere URL bleibt jedoch immer gleich, nämlich `localhost:4200`. Ein direkter Zugriff auf die Detailansicht eines Buches ist nicht möglich, sondern erfolgt immer über die Listenansicht. Dies soll im folgenden geändert werden. Zum Beispiel könnte die Detailansicht des Buches mit der ISBN 9783864906466 mithilfe der URL `localhost:4200/books/9783864906466` erfolgen. Eine solche URL hätte auch den Vorteil, dass man diese URL an andere versenden könnte, um auf ein konkretes Buch aufmerksam zu machen. Zur Erstellung solcher Pfade wird das Konzept des *Routings* in Angular verwendet (siehe [**Angular --> Routing**](../angular/#routing)).
+
+Wir erweitern unsere Bücher-App zunächst um eine weitere Komponente `home`.
+
+```
+ng g c home
+```
+
+### Routen konfigurieren
+
+In der `app-routing.module.ts` werden wir 4 Routen konfigurieren:
+
+- `/home` zeigt die `HomeComponent`
+- `/` wird auf die `/home`-Route umgeleitet, zeigt also ebenfalls auf die `HomeComponent`
+- `/books` zeigt auf die `BookListComponent`
+- `/books/:isbn` zeigt auf die `BooksDetailsComponent` für das entsprechende Buch mit der `isbn` des Parameterwertes
+
+=== "app-routing.module.ts"
+    ```javascript
+    import { NgModule } from '@angular/core';
+    import { Routes, RouterModule } from '@angular/router';
+    import {HomeComponent} from './home/home.component';
+    import {BookDetailsComponent} from './book-details/book-details.component';
+    import {BookListComponent} from './book-list/book-list.component';
+
+    const routes: Routes = [
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'books',
+        component: BookListComponent
+      },
+      {
+        path: 'books/:isbn',
+        component: BookDetailsComponent
+      },
+    ];
+
+    @NgModule({
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
+    ```
+=== "app.component.html"
+    ```html
+    <router-outlet></router-outlet>
+    ```
+
+Die `app.component.html` enthält nun nur noch das `<router-outlet></router-outlet>`-Element. Wenn wir nun `http://localhost:4200` aufrufen, werden wir zu `http://localhost:4200/home` umgeleitet und es erscheint die View der `HomeComponent` (`home works!`).
+
+Wir können aber auch `http://localhost:4200/books` eingeben und es erscheint die View der `BookListComponent`, also die gesamte Liste unserer Bücher. 
+
+### Parametrisierte Route auslesen
+
+Wenn wir z.B. `http://localhost:4200/books/9783864906466` aufrufen, also eine ISBN übergeben, bleibt die angezeigte Seite der `BookDetailsComponent` leer. Das liegt daran, dass die in der URL übergebene ISBN noch nicht verwaltet wird, um das entsprechende Buch herauszusuchen und anzuzeigen. Dazu erweitern wir zunächst den `BookStoreService`: 
+
+!!! caution
+    Achten Sie darauf, dass Sie nur den Teil hinzufügen, der noch nicht in Ihrer `book-store.service.ts` enthalten ist. Diese Datei ist durch das JSON schon recht lang. Es kommen nur die Zeilen 18-20 hinzu!
+
+=== "shared/book-store.service.ts"
+    ```javascript linenums="1"
+    import { Injectable } from '@angular/core';
+    import {Book} from './book';
+
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class BookStoreService {
+      books: Book[];
+
+      constructor() {
+        this.books = [ /*  alle Einträge           */ ];
+      }
+
+      getAll(): Book[] {
+        return this.books;
+      }
+
+      getSingle(isbn: string): Book {
+        return this.books.find(book => (book.isbn === isbn));
+      }
+    }
+    ```
+
+Wir müssen nun noch die ISBN auslesen, die in der URL übergeben wird. Das Auslesen von Parameterwerten aus URLs ist in [**Angular --> Parameter an Routen**](../angular/#parameter-an-routen) beschrieben. Dazu wird `book-details.component.ts` wie folgt **erweitert**:
+
+- `ActivatedRoute` wird importiert und dem Konstruktor injiziert, um mithilfe von `route.snapshot.paramMap` die aktuellen Werte der in der URL übergebenen Parameter abzufragen.
+- Der `BookStoreService` wird importiert und dem Konstruktor injiziert, um auf das Array aller Bücher, insbesondere aber auf die `getSingle(isbn: string)`-Funktion zuzugreifen, die das Buch mit der übergebenen `isbn` zurückgibt.
+
+Dafür **entfallen** einige Sachen aus der `book-details.component.ts`:
+
+- Wir wechseln die Ansichten nicht mehr durch ein Ereignis, sondern überlassen dies dem Router. Deshalb entfernen wir die `@Output()`-Eigenschaft `showListEvent` und die Methode `showBookList()`.
+- Das ausgewählte Buch gelangt nun nicht mehr über *property binding* in das Template, sondern über die Eigenschaft `this.book` (die ihren Wert von der Methode `getSingle()` des `BookStoreService` erhält). Wir können deshalb auch den `@Input()`-Decorator von `book: Book` entfernen.
+
+=== "book-details.component.ts (neu)"
+    ``` javascript
+    import {Component, OnInit} from '@angular/core';
+    import {Book} from '../shared/book';
+
+    @Component({
+      selector: 'app-book-details',
+      templateUrl: './book-details.component.html',
+      styleUrls: ['./book-details.component.css']
+    })
+    export class BookDetailsComponent implements OnInit {
+      @Input() book: Book;
+      @Output() showListEvent = new EventEmitter<any>();
+
+      ngOnInit() {
+      }
+
+      getRating(num: number) {
+        return new Array(num);
+      }
+
+      showBookList() {
+        this.showListEvent.emit();
+      }
+    }
+    ```
+=== "book-details.component.ts (alt)"
+    ``` javascript
+    import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+    import {Book} from '../shared/book';
+
+    @Component({
+      selector: 'app-book-details',
+      templateUrl: './book-details.component.html',
+      styleUrls: ['./book-details.component.css']
+    })
+    export class BookDetailsComponent implements OnInit {
+      @Input() book: Book;
+      @Output() showListEvent = new EventEmitter<any>();
+
+      ngOnInit() {
+      }
+
+      getRating(num: number) {
+        return new Array(num);
+      }
+
+      showBookList() {
+        this.showListEvent.emit();
+      }
+    }
+    ```
+
+In der `book-details.component.html` wird der Button entfernt, also der folgende Teil gelöscht:
+
+``` html
+  <button class="ui red button"
+          (click)="showBookList()">
+    Zurück zur Buchliste
+  </button>
+```
+
+!!! success
+    Jetzt wird die Detail-Ansicht eines jeden Buches angezeigt, wenn Sie eine existierende `isbn` übergeben. Also z.B. `http://localhost:4200/books/9783864906466` (oder `http://localhost:4200/books/9783864903274` oder `http://localhost:4200/books/978-3-86490-578-0`). Bei einer nicht existierenden `isbn` (z.B. `http://localhost:4200/books/123`) bleibt die Seite leer.
 
 
+### Routen verlinken
+
+Derzeit müssen wir die Routen noch jeweils als URL in den Browser eingeben. Wir wollen uns nun ein Navigationsmenü erzeugen, in dem wir die jeweiligen Routen als Links hinterlegen und somit über Klicks die jeweiligen Komponenten aufrufen. Das prinzipielle Vorgehen ist in [**Angular --> Routen verlinken**](../angular/#routen-verlinken) beschrieben.
+
+Unsere Navigationsleiste fügen wir am besten in die `AppComponent` ein, damit sie immer sichtbar bleibt. 
+
+=== "app.component.html"
+    ``` html
+    <div class="ui menu">
+      <a routerLink="home" class="item">Home</a>
+      <a routerLink="books" class="item">Bücher</a>
+    </div>
+
+    <router-outlet></router-outlet>
+    ```
+
+Jetzt binden wir in unserer Listen-Ansicht aller Bücher noch die `isbn`-Eigenschaft an die `routerLink`-Property, um ein konkretes Buch mit der entsprechenden `isbn` auszuwählen. Wir passen dazu die `book-list.component.html` wie folgt an:
+
+=== "book-list.component.html"
+    ``` html linenums="1"
+    <div class="ui middle aligned selection divided list">
+    <app-book-list-item class="item"
+        *ngFor="let b of books"
+        [book]="b"
+        [routerLink]="b.isbn">
+    </app-book-list-item>
+    </div>
+    ```
+
+Das `click`-Ereignis wird nun also nicht mehr benötigt und behandelt. Stattdessen binden wir mit *property binding* die `isbn`als Pfad an die Eigenschaft `routerLink`. Der Pfad ergibt sich somit aus der aktuellen Komponente (`/books`) und der `isbn` des Buches, auf das wir klicken. Daraus ergibt sich der Pfad `/books/isbn` (`isbn` wird durch den konkreten String ersetzt).
+
+Wir erweitern noch das Template der `HomeComponent` um einen Button, mit dem wir zur Bücherliste kommen:
+
+=== "home.component.html"
+    ``` html linenums="1"
+    <h1>Home</h1>
+    <p>Herzlich willkommen zur Bücher-App!</p>
+    <a routerLink="../books" class="ui red button">
+      Bücherliste anzeigen
+      <i class="right arrow icon"></i>
+    </a>
+    ```
+
+Der Pfad `../books` ist releativ zur `HomeComponent`, also erst "raus" aus `/home` und dann nach `/books`.
 
 
+### Aktive Links stylen und aufräumen
+
+Den jeweils aktiven Menüpunkt werden wir nun noch farbig gestalten, damit wir am Menü erkennen, wo wir uns in unserer Anwendung gerade befinden. Wir gehen vor wie in [**Angular --> Styles für aktive Routen**](../angular/#styles-fur-aktive-routen) beschrieben und nutzen die CSS-Klasse [`active`](https://semantic-ui.com/collections/menu.html) des [Semantic-UI-CSS-Frameworks](https://semantic-ui.com/). Wir fügen also zwei Mal `routerLinkActive="active" ` in unsere `app.component.html` ein:
+
+=== "app.component.html"
+    ``` html linenums="1"
+    <div class="ui menu">
+      <a routerLink="home" routerLinkActive="active" class="item">Home</a>
+      <a routerLink="books" routerLinkActive="active" class="item">Bücher</a>
+    </div>
+    <router-outlet></router-outlet>
+    ```
+
+In unserer Navigationsleiste ist nun das jeweilige Element grau hinterlegt, je nachdem, wo wir uns befinden.
+
+Wir räumen in unseren Komponenten noch ein wenig auf:
+
+- in `BookDetailsComponent` haben wir bereits `showListEvent`, `showBookList()`, `@Input()`-Decorator und die entsprechenden Importe (`Input`, `Output` und `EventEmitter`) gelöscht
+- in `BookListComponent` löschen wir `showDetailsEvent`, `showDetails()` und die entsprechenden Importe (`Output` und `EventEmitter`)
+- in `AppComponent` löschen wir `book`, `viewState`, `showList()`, `showDetails()` und den Typ `ViewState` sowie den Import für `Book`
+
+=== "book-details.component.ts"
+    ``` javascript
+    import {Component, OnInit} from '@angular/core';
+    import {Book} from '../shared/book';
+
+    @Component({
+      selector: 'app-book-details',
+      templateUrl: './book-details.component.html',
+      styleUrls: ['./book-details.component.css']
+    })
+    export class BookDetailsComponent implements OnInit {
+      @Input() book: Book;
+      @Output() showListEvent = new EventEmitter<any>();
+
+      ngOnInit() {
+      }
+
+      getRating(num: number) {
+        return new Array(num);
+      }
+
+      showBookList() {
+        this.showListEvent.emit();
+      }
+    }
+    ```
+=== "book-list.component.ts"
+    ``` javascript
+    import {Component, OnInit} from '@angular/core';
+    import {Book} from '../shared/book';
+    import {BookStoreService} from '../shared/book-store.service';
+
+    @Component({
+      selector: 'app-book-list',
+      templateUrl: './book-list.component.html',
+      styleUrls: ['./book-list.component.css']
+    })
+    export class BookListComponent implements OnInit {
+      books: Book[];
+
+      constructor(private bs: BookStoreService) { }
+
+      ngOnInit(): void {
+        this.books = this.bs.getAll();
+      }
+    }
+    ```
+=== "app.component.ts"
+    ``` javascript
+    import { Component } from '@angular/core';
+
+    @Component({
+      selector: 'app-root',
+      templateUrl: './app.component.html',
+      styleUrls: ['./app.component.css']
+    })
+    export class AppComponent {
+
+    }
+    ```
+
+!!! success
+    Der sechste Teil unserer Bücher-App ist erstellt! Wir haben unsere Anwendung um ein *Routing* ergänzt. Wir können Routen konfigurieren, parametrisierte Routen auslesen, Routen verlinken und aktive Links stylen. Die Zustände unserer Anwendung werden nun über lesbare URL-Pfade abgebildet. `RouterOutlets` sind Platzhalter für die zu ladenden Komponenten. Kindkomponenten werden in das `RouterOutlet` der Elternkomponente geladen. Routen lassen sich so verschachteln.  
