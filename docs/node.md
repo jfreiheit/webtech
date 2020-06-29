@@ -210,3 +210,155 @@ Wir werden jetzt diese Parameter auswerten. Dazu laden wir einerseits ein weiter
 Nach dem restart des Webservers (1. `Ctrl+C` und 2. `node server.js`) und der Eingabe folgender URL: `http://localhost:8080/?name=FIW&ort=Berlin` wird im Browser Folgendes angezeigt:
 
 ![Node.js](./files/29_node.png)
+
+### Chrome Developer Tools
+
+Die [Chrome Developer Tools](../tools/#chrome) können auch zum Debuggen von Node.js-Anwendungen verwendet werden. Rufen Sie dafür Ihre Node.js-Anwendung im Terminal mit dem `--inspect`-Flag auf:
+
+``` bash
+node --inspect server.js
+```
+
+Im Terminal erscheint eine Ausgabe in der Form:
+
+```bash
+Debugger listening on ws://127.0.0.1:9229/dc995a6a-61eb-4143-af7e-ac8e4599dcd7
+For help, see: https://nodejs.org/en/docs/inspector
+Server is listening to http://localhost:8080
+```
+
+Im Chrome-Browser können Sie nun einerseits wie gewohnt die URL `http://localhost:8080/?name=FIW&ort=Berlin` eingeben, aber das Debuggen kann unter Eingabe der URL `chrome://inspect/` erfolgen. Es erscheint folgende Seite im Browser: 
+
+![Debug](./files/30_debug.png)
+
+Für weitere Informationen zum Debuggen siehe z.B. [https://nodejs.org/en/docs/guides/debugging-getting-started/](https://nodejs.org/en/docs/guides/debugging-getting-started/).
+
+## Anbindung von Datenbanken
+
+Wir wollen Node.js hauptsächlich dafür verwenden, im Backend mit einer Datenbank zu kommunizieren. Wir wollen dies hier exemplarisch mit MySQL (siehe [**Werkzeuge --> MySQL**](../tools/#mysql)) erläutern. Die Verwendung von z.B. PostgreSQL ist äquivelent - Sie benötigen nur einen anderen Datenbanktreiber. 
+
+Wir wollen zunächst das Node.js-Paket, das den `mysql`-Treiber enthält, installieren. Dies geschieht mithilfe von [`npm`](https://www.npmjs.com/). `npm` ist der *Node package manager*. Bisher enthält unser Ordner `backend` nur die Datei `server.js`. Das ist jedoch insofern noch kein wirkliches Node.js-Projekt, da es noch nicht vom Paketmanager, also `npm` verwaltet wird. Um dies zu tun wechseln wir in den Ordner `backend` und initialisieren dann unser Node.js-Projekt:
+
+
+=== "im Ordner backend"
+```bash 
+npm init
+```
+
+Sie werden nun einige Sachen gefragt und können eigentlich immer jeweils mit `Enter` bestätigen. Es erfolgt also ungefähr ein solcher Dialog im Terminal:
+
+```bash
+% npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (backend) backend
+version: (1.0.0) 
+description: Node.js-Backend for MySQL
+entry point: (server.js) 
+test command: 
+git repository: 
+keywords: 
+author: 
+license: (ISC) 
+About to write to /Users/jornfreiheit/workspace/backend/package.json:
+
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Node.js-Backend for MySQL",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) 
+```
+
+Das wesentliche Ergebnis der Initialisierung ist die Erstellung der `package.json`-Datei. Darin können wir Paketabhängigkeiten definieren. So können wir nun z.B. unser Node.js-Paket, das den `mysql`-Treiber enthält, installieren:
+
+``` bash
+npm install mysql
+```
+
+Danach ist in der `package.json` die Abhängigkeit vom `mysql`-Paket hinterlegt (siehe `"dependencies"`):
+
+``` javascript
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Node.js-Backend for MySQL",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
+```
+
+Außerdem ist in dem Ordner `backend` ein Unterordner `node_modules` entstanden, der neben dem `mysql`-Paket (*Modul*) weitere Module enthält, die für die Kommunikation mit einer `MySQL`-Datenbank benötigt werden. 
+
+### Eine Movie-Datenbank
+
+Wir werden die Anbindung von Datenbanken exemplarisch an einer `Movie`-Datenbank zeigen. Dazu erstellen wir uns eine Datenbank namens `movie-db` und befüllen diese mit einigen Filmen (Tabelle `Movie`). Sie können diese Datenbak auf verschiedenen Wegen erstellen. Am einfachsten ist es, wenn Sie [`phpMyadmin`](https://www.phpmyadmin.net/) verwenden. Dort können Sie folgende SQL-Anfrage im Reiter `SQL` eingeben (Sie können auch im Terminal `SQL`-Anfragen eingeben nachdem Sie sich dort per `mysql -u root -p` mit dem MySQL-Server verbunden haben):
+
+```SQL
+CREATE DATABASE `movie-db`;
+
+USE `movie-db`;
+
+CREATE TABLE `Movies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `year` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `Movies` (`title`, `year`) VALUES 
+('Die Verurteilten', '1994'),
+('Der Pate', '1972'),
+('Der Pate 2', '1974'),
+('The Dark Knight', '2008'),
+('Die zwölf Geschworenen', '1957'),
+('Schindlers Liste', '1993'),
+('Der Herr der Ringe: Die Rückkehr des Königs', '2003'),
+('Pulp Fiction', '1994'),
+('Zwei glorreiche Halunken', '1966'),
+('Fight Club', '1999'),
+('Der Herr der Ringe: Die Gefährten', '2001'),
+('Forrest Gump', '1994'),
+('Inception', '2010'),
+('Das Imperium schlägt zurück', '1980'),
+('Der Herr der Ringe: Die zwei Türme', '2002'),
+('Matrix', '1999'),
+('GoodFellas – Drei Jahrzehnte in der Mafia', '1990'),
+('Einer flog über das Kuckucksnest', '1975'),
+('Joker', '2019'),
+('Die sieben Samurai', '1954');
+```
+
+Wir werden einen `movie`-Ordner innerhalb unseres `backend`-Projektes erstellen und dort in `model.js` unsere Datenbankzugriffe implementieren.
+
+=== "backend/movie/model.js"
+    ```bash
+
+    ```
+
+  
