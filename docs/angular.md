@@ -179,7 +179,7 @@ definiert. Dann wird dieser Code als Inhalt in das HTML-Element `<app-root> </ap
 </app-root>
 ```
 
-Wir schauen uns ein ausführlicheres Beispiel im folgenden an, in dem wir eine neue Komponente erzeugen.
+Wir schauen uns ein ausführlicheres Beispiel im Folgenden an, in dem wir eine neue Komponente erzeugen.
 
 
 ### Eine neue Komponente erzeugen 
@@ -1223,10 +1223,10 @@ Wir wissen bereits, dass Angular eine TypeScript-Framework ist, mit dem sich Sin
 
 Dem gegenüber steht jedoch die in der Anwendung verarbeitete Menge von Daten, die typischerweise in einer Datenbank auf einem Server bereitgestellt werden. Während der Client sich darum kümmert, dass Daten angezeigt oder eingegeben werden, muss sich der Server darum kümmern, dass Daten in die Datenquelle (die Datenbank) neu eingefügt, ausgelesen, aktualisiert und gelöscht werden können. Diese vier Operationen werden mit **CRUD** abgekürzt für:
 
-- **C**reate - neue Daten einfügen 
-- **R**ead - Daten auslesen
-- **U**pdate - Daten aktualisieren
-- **D**elete - Daten löschen
+- <b>C</b>reate - neue Daten einfügen 
+- <b>R</b>ead - Daten auslesen
+- <b>U</b>pdate - Daten aktualisieren
+- <b>D</b>elete - Daten löschen
 
 Der Client und der Server müssen dazu nun irgendwie verbunden werden. Diese Verbindung erfolgt mithilfe des *Hypertext Transfer Protocols (HTTP)*. 
 

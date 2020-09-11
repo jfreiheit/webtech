@@ -31,6 +31,7 @@ theme:
 # Extensions
 markdown_extensions:
   - admonition
+  - footnotes
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -64,3 +65,4 @@ nav:
     - JavaScript: javascript.md
     - Node.js: node.md
     - Bücher-App: books.md
+    - Bücher-Backend: books-backend.md
