@@ -1,6 +1,23 @@
 # Web-Technologien
 
-Herzlich willkommen zur WebTech-Veranstaltung! Zur erfolgreichen Durchführung der Veranstaltung müssen die Übungen lösen und am Ende des Semesters eine Aufgabe abgeben. Hier sind die Übungen beschrieben, die Sie in jeder Woche ausführen sollen. Damit Sie dies erfolgreich erledigen können, ist jeweils angegeben, welche Themen Sie dafür durcharbeiten müssen. Das Durcharbeiten der jeweiligen Themen entspricht jeweils einer Vorlesung. Diese wird also selbständig durchgeführt. 
+Herzlich willkommen zur WebTech-Veranstaltung! 
+
+### Grober Inhalt
+
+In dieser Veranstaltung lernen Sie, was das World Wide Web ist und wie man eigene Webseiten und -anwendungen realisiert. Sie lernen die Protokolle und Sprachen ``http``, ``HTML``, ``CSS``und ``JavaScript`` kennen und machen sich mit ``Angular``, ``node.js`` und ``REST`` vertraut.  
+
+### Organisatorisches 
+
+Zur erfolgreichen Durchführung der Veranstaltung müssen die Übungen lösen und zu den jeweiligen Fristen per Git auf einen Server (GitHub oder GitLab) laden. Am Ende des Semesters ist eine Aufgabe abzugeben. Diese Aufgabe wird bewertet. Die Bewertung entspricht dann der Modulnote. 
+
+Hier sind die Übungen beschrieben, die Sie in jeder Woche ausführen sollen. Damit Sie dies erfolgreich erledigen können, ist jeweils angegeben, welche Themen Sie dafür durcharbeiten müssen. Das Durcharbeiten der jeweiligen Themen entspricht jeweils einer Vorlesung. Diese wird also selbständig durchgeführt. 
+
+Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com/intl/de-de/). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn ich möglichst wenig Fragen - zumindest die inhaltlichen - beantworten müsste, sondern eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, diese von Ihnen dort beantwortet zu sehen. Da es sich schlecht in einer Note objektivieren lässt, wie viele Fragen Sie beantworten, will ich gar nicht offiziell sagen, dass die Beantwortung von Fragen die Note verbessert, aber ich werde aktive Teilnahme sicherlich honorieren.  
+
+### Wochenplan
+
+??? question "Woche 1"
+	Hierbei handelt es sich um reines Selbstudium. Erledigen Sie **Übungsaufgabe 1**!
 
 ## Übungen
 
