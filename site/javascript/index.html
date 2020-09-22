@@ -572,7 +572,7 @@
 </tr>
 </tbody>
 </table>
-<p>Um das Prinzip einer Promise zu erläutern, schauen wir uns ein Beispiel aus <a href="../node/#eine-movie-datenbank"><strong>Node.js &rarr; Eine Movie-Datenbank</strong></a> an:</p>
+<p>Um das Prinzip einer Promise zu erläutern, schauen wir uns ein Beispiel aus <a href="./node/#eine-movie-datenbank"><strong>Node.js &rarr; Eine Movie-Datenbank</strong></a> an:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">getAll</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="kr">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="s1">&#39;SELECT * FROM Movies&#39;</span><span class="p">;</span>
@@ -590,7 +590,7 @@
 <p class="admonition-title">return new Promise()</p>
 <p>Wir merken uns also: die <code>getAll()</code>-Funktion gibt ein <code>Promise</code>-Objekt zurück.</p>
 </div>
-<p>Wie kann eine solche Promise nun verwendet werden? Dazu schauen wir uns erneut das Beispiel aus <a href="../node/#eine-movie-datenbank"><strong>Node.js &rarr; Eine Movie-Datenbank</strong></a> an:</p>
+<p>Wie kann eine solche Promise nun verwendet werden? Dazu schauen wir uns erneut das Beispiel aus <a href="./node/#eine-movie-datenbank"><strong>Node.js &rarr; Eine Movie-Datenbank</strong></a> an:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">listAction</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">model</span><span class="p">.</span><span class="nx">getAll</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span>
         <span class="nx">movies</span> <span class="p">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">view</span><span class="p">(</span><span class="nx">movies</span><span class="p">)),</span>

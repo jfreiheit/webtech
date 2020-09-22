@@ -138,7 +138,7 @@ Postman ist eine Anwendung, um Schnittstellen (*Application Programming Interfac
 
 ![Postman](./files/27_postman.png)
 
-Neben der `GET`-Anfrage sind folgende weitere Anfragen (siehe auch [**HTML --> HTTP**](../html/#http)) möglich:
+Neben der `GET`-Anfrage sind folgende weitere Anfragen (siehe auch [**HTML --> HTTP**](./html/#http)) möglich:
 
 - `POST` - sendet Daten zur Verarbeitung an den Webserver
 - `PUT` - lädt existierende Daten (eine Datei) auf den Server
@@ -147,7 +147,7 @@ Neben der `GET`-Anfrage sind folgende weitere Anfragen (siehe auch [**HTML --> H
 
 ## Node.js
 
-[Node.js](https://nodejs.org/en/) ist eine JavaScript-Laufzeitumgebung. Node.js reagiert auf Ereignisse und antwortet asynchron. Das bedeutet, dass die Ausführung einer Ereignisbearbeitung nicht zum Blockieren der Laufzeitumgebung führt, sondern nebenläufig weitere Ereignisse eintreffen können, die ebenfalls asynchron behandelt werden. Dies geschieht mithilfe des *Callback-Patterns*. Callbacks sind Funktionen, die anderen Funktionen als Parameter übergeben werden (siehe [**JavaScript --> Callback-Funktionen**](../javascript/#callback-funktionen)). 
+[Node.js](https://nodejs.org/en/) ist eine JavaScript-Laufzeitumgebung. Node.js reagiert auf Ereignisse und antwortet asynchron. Das bedeutet, dass die Ausführung einer Ereignisbearbeitung nicht zum Blockieren der Laufzeitumgebung führt, sondern nebenläufig weitere Ereignisse eintreffen können, die ebenfalls asynchron behandelt werden. Dies geschieht mithilfe des *Callback-Patterns*. Callbacks sind Funktionen, die anderen Funktionen als Parameter übergeben werden (siehe [**JavaScript --> Callback-Funktionen**](./javascript/#callback-funktionen)). 
 
 ## MySQL
 

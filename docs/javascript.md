@@ -58,7 +58,7 @@ Eine *Promise* ist das Ergebnis einer asynchronen Operation. Es gibt vier Status
 | `resolved` | die asynchrone Operation wurde **erfolgreich beendet** |
 | `rejected` | die asynchrone Operation **ist fehlgeschlagen** |
 
-Um das Prinzip einer Promise zu erläutern, schauen wir uns ein Beispiel aus [**Node.js --> Eine Movie-Datenbank**](../node/#eine-movie-datenbank) an:
+Um das Prinzip einer Promise zu erläutern, schauen wir uns ein Beispiel aus [**Node.js --> Eine Movie-Datenbank**](./node/#eine-movie-datenbank) an:
 
 ```javascript
 function getAll() {
@@ -79,7 +79,7 @@ Die asynchrone Funktion enthält ebenfalls eine Callback-Funktion. Hier wurden a
 !!! note "return new Promise()"
 	Wir merken uns also: die `getAll()`-Funktion gibt ein `Promise`-Objekt zurück.
 
-Wie kann eine solche Promise nun verwendet werden? Dazu schauen wir uns erneut das Beispiel aus [**Node.js --> Eine Movie-Datenbank**](../node/#eine-movie-datenbank) an:
+Wie kann eine solche Promise nun verwendet werden? Dazu schauen wir uns erneut das Beispiel aus [**Node.js --> Eine Movie-Datenbank**](./node/#eine-movie-datenbank) an:
 
 ```javascript
 function listAction(request, response) {

@@ -1370,7 +1370,7 @@ Das Auslösen des Events geschieht dann durch die <code>emit()</code>-Methode vo
 </div>
 <p>In der <code>AppComponent</code> (das kann natürlich eine beliebige Komponente sein), wird die <code>EventsComponent</code> eingebunden (siehe <code>&lt;app-events&gt;</code> im Template der <code>AppComponent</code>). Dadurch entsteht die Hierarchie Elternkomponente <code>AppComponent</code> &rarr; Kindkomponente <code>EventsComponent</code> im DOM. </p>
 <p>Mithilfe von <em>event binding</em> wird die Behandlung des Ereignisses <code>myEvent</code> an die Methode <code>handleEventFromEventsComponent()</code> gebunden. In dieser Methode erfolgt hier einfach nur eine Ausgabe auf die Konsole. </p>
-<p>Interessant ist, dass wir dadurch die Möglichkeit haben, Daten von der Kindkomponente zur Elternkomponente fließen zu lassen. Dazu übergeben wir diese Daten als <code>payload</code> des Ereignisses. Dafür typisieren wir <code>EventEmitter</code> mit dem Typ, von dem wir Daten übergeben wollen (z.B. <code>Book</code> - siehe <a href="../books/#event-binding">Bücher-App</a>). Die beiden obigen Beispiele sehen dann wie folgt aus (zuerst wieder <code>EventsComponent</code>): </p>
+<p>Interessant ist, dass wir dadurch die Möglichkeit haben, Daten von der Kindkomponente zur Elternkomponente fließen zu lassen. Dazu übergeben wir diese Daten als <code>payload</code> des Ereignisses. Dafür typisieren wir <code>EventEmitter</code> mit dem Typ, von dem wir Daten übergeben wollen (z.B. <code>Book</code> - siehe <a href="./books/#event-binding">Bücher-App</a>). Die beiden obigen Beispiele sehen dann wie folgt aus (zuerst wieder <code>EventsComponent</code>): </p>
 <div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">.html</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">emitMyEvent</span><span class="err">(</span><span class="na">book</span><span class="err">)&quot;</span><span class="p">&gt;</span>Click here!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
@@ -1455,7 +1455,7 @@ Das Auslösen des Events geschieht dann durch die <code>emit()</code>-Methode vo
 <div class="admonition success">
 <p class="admonition-title">Zusammenfassung</p>
 <p>In den letzten drei Abschnitten Interpolation, Property Binding und Event Binding haben wir uns mit Datenfluss beschäftigt. Interpolation wird verwendet, um innerhalb einer Komponente die in der TypeScript-Klasse definierten Daten im Template darzustellen. Mithilfe von Property Binding kann die aufrufende Komponente (Elternkomponente) der aufgerufenen Kopmponente (Kindkomponente) Daten übergeben. Mithilfe von Event Binding kann die Kindkomponente der Elternkomponente mithilfe eines eigenen Ereignisses Daten übergeben.
-Für die Anwendung dieser Konzepte schauen Sie sich <a href="../books/#datenfluss-zwischen-komponenten"><strong>Bücher-App&rarr;Datenfluss zwischen Komponenten</strong></a> an. </p>
+Für die Anwendung dieser Konzepte schauen Sie sich <a href="./books/#datenfluss-zwischen-komponenten"><strong>Bücher-App&rarr;Datenfluss zwischen Komponenten</strong></a> an. </p>
 </div>
 <h3 id="two-way-bindings">[(Two-Way-Bindings)]<a class="headerlink" href="#two-way-bindings" title="Permanent link">&para;</a></h3>
 <h2 id="lifecycle-hooks">Lifecycle-Hooks<a class="headerlink" href="#lifecycle-hooks" title="Permanent link">&para;</a></h2>
@@ -1514,7 +1514,7 @@ Für die Anwendung dieser Konzepte schauen Sie sich <a href="../books/#datenflus
 <div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">example.component.ts</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
 
-<span class="kr">import</span> <span class="p">{</span><span class="nx">MyService</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/my.service&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">MyService</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./shared/my.service&#39;</span><span class="p">;</span>
 
 <span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
   <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-example&#39;</span><span class="p">,</span>
@@ -1534,7 +1534,7 @@ Für die Anwendung dieser Konzepte schauen Sie sich <a href="../books/#datenflus
 
 </div>
 </div>
-<p>Für ein Beispiel einer Service-Definition und der Verwendung eines Services siehe <a href="../books/##service-bookstoreservice"><code>BookStoreService</code></a>. Für weiterführende Informationen siehe <a href="https://angular.io/guide/architecture-services">https://angular.io/guide/architecture-services</a>.</p>
+<p>Für ein Beispiel einer Service-Definition und der Verwendung eines Services siehe <a href="./books/##service-bookstoreservice"><code>BookStoreService</code></a>. Für weiterführende Informationen siehe <a href="https://angular.io/guide/architecture-services">https://angular.io/guide/architecture-services</a>.</p>
 <h2 id="routing">Routing<a class="headerlink" href="#routing" title="Permanent link">&para;</a></h2>
 <p><em>Routing</em> ist ein wesentliches Konzept für die Entwicklung von <em>Single-Page-Applikationen</em> (SPA). Bei Single-Page-Applikationen wird genau eine Seite vom Webserver geladen (typischerweise die <code>index.html</code> und alle weiteren, sich ändernden, Inhalte und Sichten werden in diese Seite nachgeladen). Das führt zunächst auch dazu, dass es für die Seite genau eine URL gibt, um auf sie zuzugreifen (z.B. <code>http://www.mydomain.de</code> bzw. <code>http://www.mydomain.de/index.html</code>). Möchte man aber Komponenten direkt in der URL ansprechen, z.B. <code>http://www.mydomain.de/login</code> für die Login-Komponente, so benötigen wir das <em>Routing</em> von Angular.</p>
 <p>Wir betrachten hier ein Beispiel, das <a href="https://angular.io/guide/router">https://angular.io/guide/router</a> entnommen ist und nur leicht abgewandelt wurde. Wir erstellen dazu zunächst ein neues Projekt <code>routing-lesson</code>. </p>

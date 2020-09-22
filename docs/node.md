@@ -91,10 +91,10 @@ Sie erhalten die Ausgabe `Server is listening to http://localhost:8080`.
 Dies können wir auf verschiedene Arten testen:
 
 1. Geben Sie `http://localhost:8080` in Ihren Browser ein. Es erscheint `Hello FIW!` im Browser. 
-2. Nutzen Sie [`curl`](../tools/#curl) und geben Sie im Terminal `curl http://localhost:8080` ein. Es erscheint `Hello FIW!` im Terminal. 
-3. Nutzen Sie ['Postman'](../tools/#postman) und geben Sie in das Eingabefeld neben `GET` die URL `http://localhost:8080` ein und klicken auf `Send`. Es erscheint `Hello FIW!` im unteren Teil des Fensters (Reiter `Body`).
+2. Nutzen Sie [`curl`](./tools/#curl) und geben Sie im Terminal `curl http://localhost:8080` ein. Es erscheint `Hello FIW!` im Terminal. 
+3. Nutzen Sie ['Postman'](./tools/#postman) und geben Sie in das Eingabefeld neben `GET` die URL `http://localhost:8080` ein und klicken auf `Send`. Es erscheint `Hello FIW!` im unteren Teil des Fensters (Reiter `Body`).
 
-Der Webserver läuft nun so lange, bis wir ihn beenden. Wir betrachten das obige Listing im Detail. In Zeilennummer 1 wird das [`http`-Modul von Node.js](https://nodejs.org/api/http.html) geladen und der Variablen `http` zugewiesen. Das Laden von Modulen erfolgt in Node.js mithilfe der Funktion `require()`. In Zeilennummer 3 wird ein Webserver mithilfe des `http`-Moduls erzeugt (`createServer()`). Das `http`-Modul bietet auch die Möglichkeit, einen Client zu erzeugen - aber das machen wir nicht mit Node.js sondern mit Angular. In Zeile 9 geben wir an, dass der Webserver nun permanent am Port `8080` auf Anfragen *lauschen* soll. Als 2. Parameter der `listen()`-Funktion hätte auch ein `HOST` angegeben werden können, also die IP-Adresse des Webservers. Wird keine IP-Adresse angegeben, so wie hier, ist es in unserem Fall `localhost`. Dann folgt eine [*Callback*-Funktion](../javascript/#callback-funktionen), die einen String auf die Konsole ausgibt, sobald die Verbindung steht. In den Zeilen 4 bis 6 ist die Antwort (*response*) des Webservers auf eine Anfrage (*request*) des Clients definiert. Die Funktion, die diese Antwort erstellt, ist eine Callback-Funktion der `createServer`-Funktion (in Zeile 3). Diese Callback-Funktion besitzt die beiden Parameter `request` und `response`. In diesem ersten Beispiel wird nur eine Response definiert. Diese besteht aus einem *HTTP-Header* (`writeHead()`) und einem *HTTP-Body* (`write()` + `end()`). Die Funktion `writeHead()`, die den HTTP-Header erzeugt, besitzt 2 Parameter. Der erste Parameter ist der [HTTP-Status-Code](https://developer.mozilla.org/de/docs/Web/HTTP/Status). Der Status-Code `200` besagt, dass die Anfrage (*request*) vom Server empfangen wurde und die Antwort (*response*) in dieser Nachricht enthalten ist. Der eigentliche HTTP-Header wird mit dem zweiten Parameter übertragen. In diesem Fall übermittelt der Server dem Client die Informationen, dass es sich bei der Antwort um reinen Text handelt (`content-type:text-plain`) und dass der HTTP-Body unter Verwendung des Zeichensatzes [UTF-8](https://www.ionos.de/digitalguide/websites/webseiten-erstellen/utf-8-codierung-globaler-digitaler-kommunikation/) (`charset=utf-8`) kodiert ist. Der HTTP-Body wird mit der `write()`-Funktion übertragen und mit der `end()`-Funktion abgeschlossen. In diesem Fall besteht der Body aus der Zeichenkette `Hello FIW!`. 
+Der Webserver läuft nun so lange, bis wir ihn beenden. Wir betrachten das obige Listing im Detail. In Zeilennummer 1 wird das [`http`-Modul von Node.js](https://nodejs.org/api/http.html) geladen und der Variablen `http` zugewiesen. Das Laden von Modulen erfolgt in Node.js mithilfe der Funktion `require()`. In Zeilennummer 3 wird ein Webserver mithilfe des `http`-Moduls erzeugt (`createServer()`). Das `http`-Modul bietet auch die Möglichkeit, einen Client zu erzeugen - aber das machen wir nicht mit Node.js sondern mit Angular. In Zeile 9 geben wir an, dass der Webserver nun permanent am Port `8080` auf Anfragen *lauschen* soll. Als 2. Parameter der `listen()`-Funktion hätte auch ein `HOST` angegeben werden können, also die IP-Adresse des Webservers. Wird keine IP-Adresse angegeben, so wie hier, ist es in unserem Fall `localhost`. Dann folgt eine [*Callback*-Funktion](./javascript/#callback-funktionen), die einen String auf die Konsole ausgibt, sobald die Verbindung steht. In den Zeilen 4 bis 6 ist die Antwort (*response*) des Webservers auf eine Anfrage (*request*) des Clients definiert. Die Funktion, die diese Antwort erstellt, ist eine Callback-Funktion der `createServer`-Funktion (in Zeile 3). Diese Callback-Funktion besitzt die beiden Parameter `request` und `response`. In diesem ersten Beispiel wird nur eine Response definiert. Diese besteht aus einem *HTTP-Header* (`writeHead()`) und einem *HTTP-Body* (`write()` + `end()`). Die Funktion `writeHead()`, die den HTTP-Header erzeugt, besitzt 2 Parameter. Der erste Parameter ist der [HTTP-Status-Code](https://developer.mozilla.org/de/docs/Web/HTTP/Status). Der Status-Code `200` besagt, dass die Anfrage (*request*) vom Server empfangen wurde und die Antwort (*response*) in dieser Nachricht enthalten ist. Der eigentliche HTTP-Header wird mit dem zweiten Parameter übertragen. In diesem Fall übermittelt der Server dem Client die Informationen, dass es sich bei der Antwort um reinen Text handelt (`content-type:text-plain`) und dass der HTTP-Body unter Verwendung des Zeichensatzes [UTF-8](https://www.ionos.de/digitalguide/websites/webseiten-erstellen/utf-8-codierung-globaler-digitaler-kommunikation/) (`charset=utf-8`) kodiert ist. Der HTTP-Body wird mit der `write()`-Funktion übertragen und mit der `end()`-Funktion abgeschlossen. In diesem Fall besteht der Body aus der Zeichenkette `Hello FIW!`. 
 
 ## Eine Erweiterung der Antwort
 
@@ -173,7 +173,7 @@ In Zeile 6 wird eine Variable `name` definiert, der der String `FIW!` zugewiesen
 
 ### URLs auswerten
 
-Eine URL kann um Schlüssel-Werte-Paare (*Parameter*) erweitert werden, um Daten mit der URL an den Webserver zu senden (siehe [**HTML --> URLs**](../html/#urls)). Ein Schlüssel-Werte-Paar wird immer durch ein `=` verbunden:
+Eine URL kann um Schlüssel-Werte-Paare (*Parameter*) erweitert werden, um Daten mit der URL an den Webserver zu senden (siehe [**HTML --> URLs**](./html/#urls)). Ein Schlüssel-Werte-Paar wird immer durch ein `=` verbunden:
 
 ```bash
 key=value
@@ -223,7 +223,7 @@ Nach dem restart des Webservers (1. `Ctrl+C` und 2. `node server.js`) und der Ei
 
 ### Chrome Developer Tools
 
-Die [Chrome Developer Tools](../tools/#chrome) können auch zum Debuggen von Node.js-Anwendungen verwendet werden. Rufen Sie dafür Ihre Node.js-Anwendung im Terminal mit dem `--inspect`-Flag auf:
+Die [Chrome Developer Tools](./tools/#chrome) können auch zum Debuggen von Node.js-Anwendungen verwendet werden. Rufen Sie dafür Ihre Node.js-Anwendung im Terminal mit dem `--inspect`-Flag auf:
 
 ``` bash
 node --inspect server.js
@@ -662,7 +662,7 @@ Nach einem Neustart der Anwendung (`node index.js` im Ordner `backend`) erschein
 
 ## Anbindung von Datenbanken
 
-Wir wollen Node.js hauptsächlich dafür verwenden, im Backend mit einer Datenbank zu kommunizieren. Wir wollen dies hier exemplarisch mit MySQL (siehe [**Werkzeuge --> MySQL**](../tools/#mysql)) erläutern. Die Verwendung von z.B. PostgreSQL ist äquivelent - Sie benötigen nur einen anderen Datenbanktreiber. 
+Wir wollen Node.js hauptsächlich dafür verwenden, im Backend mit einer Datenbank zu kommunizieren. Wir wollen dies hier exemplarisch mit MySQL (siehe [**Werkzeuge --> MySQL**](./tools/#mysql)) erläutern. Die Verwendung von z.B. PostgreSQL ist äquivelent - Sie benötigen nur einen anderen Datenbanktreiber. 
 
 Wir werden zunächst das Node.js-Paket, das den `mysql`-Treiber enthält, installieren:
 
@@ -798,7 +798,7 @@ Zunächst ändern wir die `movie/model.js`. Darin werden nun nicht mehr die Date
 
 Im Model (`/movie/model.js`) wird zunächst die Verbindung zur Datenbank aufgebaut (Zeilen `2-7` und `connection.connect()`). Die `getAll()`-Funktion stellt mithilfe von `connection.query()` eine Anfrage an die Datenbank (erster Parameter der `connection.query()`-Funktion). In unserem Beispiel ist die Anfrage die SQL-Query `SELECT * FROM Movies`.
 
-Die `getAll()`-Funktion gibt ein `Promise`-Objekt zurück. Promises werden in [**JavaScript-->Promises**](../javascript/#promises) erläutert. 
+Die `getAll()`-Funktion gibt ein `Promise`-Objekt zurück. Promises werden in [**JavaScript-->Promises**](./javascript/#promises) erläutert. 
 
 Im Controller (`/movie/controller.js`) wird das `Promise`-Objekt in der `then`-Funktion ausgewertet. Wird in der Promise die `resolve`-Methode aufgerufen, werden die `results` übergeben, also das Ergebnis der Datenbankanfrage. Diese Werte werden in der ersten Callback-Funktion der `then`-Methode dem Parameter `movies` übergeben. Soll nur das JSON gesendet werden, wird die `view` nicht benötigt (statt `response.send(view(movies));` genügt dann `response.send(movies);`). Hier kapselt die `View` die Daten noch in einen HTML-Template-String. 
 

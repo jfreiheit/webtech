@@ -22,7 +22,7 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 ## Übungen
 
 ??? question "Übungsaufgabe 1"
-    Arbeiten Sie im Abschnitt [**Angular**](./angular/#angular) die Abschnitte [**Erstes Projekt erstellen**](../angular/#erstes-projekt-erstellen) und [**Angular-Projektstruktur**](../angular/#angular-projektstruktur) durch. Sie müssen dazu [**Angular**](../tools/#angular) installieren, eine [**Integrierte Entwicklungsumgebung**](../tools/#integrated-development-environment-ide) und die passenden [**Developer Tools**](../tools/#developer-tools). 
+    Arbeiten Sie im Abschnitt [**Angular**](./angular/#angular) die Abschnitte [**Erstes Projekt erstellen**](./angular/#erstes-projekt-erstellen) und [**Angular-Projektstruktur**](./angular/#angular-projektstruktur) durch. Sie müssen dazu [**Angular**](./tools/#angular) installieren, eine [**Integrierte Entwicklungsumgebung**](./tools/#integrated-development-environment-ide) und die passenden [**Developer Tools**](./tools/#developer-tools). 
 
 
 ## Aufgabe

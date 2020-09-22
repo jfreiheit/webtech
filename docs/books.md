@@ -183,9 +183,9 @@ Wir ersetzen den Inhalt vollständig durch den folgenden HTML-Code:
 </div>
 ```
 
-Obiger Code enthält einige Strukturdirektiven (siehe [**Angular --> \*Strukturdirektiven**](../angular/#strukturdirektiven))). So läuft bspw. die `*ngFor`-Direktive in der zweiten Zeile durch die Liste `books` und erzeugt für jedes Buch aus der Liste `books` einen Hyperlink `<a>`. Diese existiert jedoch noch gar nicht, so dass unsere App sich derzeit nicht ausführen lässt. Die erste `*ngIf`-Direktive in der vierten Zeile prüft zunächst, ob das Array `book.thumbnails` überhaupt existiert und wenn ja, ob dieses Array einen ersten Eintrag hat `book.thumbnails[0]` und wenn das der Fall ist, ob dieser erste Eintrag auch eine `url` enthält (siehe Interfaces `Book` und `Thumbnail`). Wenn diese `url` existiert, wird durch ein **Property-Binding** (siehe [**Angular --> [Property Binding]**](../angular/#property-bindings)) dem `src`-Attribut von `<a>` der Wert zugeordnet, der unter `book.thumbnails[0].url` im JSON gespeichert ist.
+Obiger Code enthält einige Strukturdirektiven (siehe [**Angular --> \*Strukturdirektiven**](./angular/#strukturdirektiven))). So läuft bspw. die `*ngFor`-Direktive in der zweiten Zeile durch die Liste `books` und erzeugt für jedes Buch aus der Liste `books` einen Hyperlink `<a>`. Diese existiert jedoch noch gar nicht, so dass unsere App sich derzeit nicht ausführen lässt. Die erste `*ngIf`-Direktive in der vierten Zeile prüft zunächst, ob das Array `book.thumbnails` überhaupt existiert und wenn ja, ob dieses Array einen ersten Eintrag hat `book.thumbnails[0]` und wenn das der Fall ist, ob dieser erste Eintrag auch eine `url` enthält (siehe Interfaces `Book` und `Thumbnail`). Wenn diese `url` existiert, wird durch ein **Property-Binding** (siehe [**Angular --> [Property Binding]**](./angular/#property-bindings)) dem `src`-Attribut von `<a>` der Wert zugeordnet, der unter `book.thumbnails[0].url` im JSON gespeichert ist.
 
-Die Liste der Autoren eines Buches wird ebenfalls mithilfe der Strukturdirektive `*ngFor` durchlaufen. Außerdem findet die Hilfsvariable `last` dieser Strukturdirektive Anwendung (siehe [**Angular --> \*Strukturdirektiven**](../angular/#strukturdirektiven))). Alle Autoren werden durch Komma getrennt. Nur nach dem letzten Autor wird kein Komma hinzugefügt. Dies gelingt mithilfe der Strukturdirektive `*ngIf` und der Abfrage, ob es sich **nicht** um das letzte Element handelt - dann Komma.
+Die Liste der Autoren eines Buches wird ebenfalls mithilfe der Strukturdirektive `*ngFor` durchlaufen. Außerdem findet die Hilfsvariable `last` dieser Strukturdirektive Anwendung (siehe [**Angular --> \*Strukturdirektiven**](./angular/#strukturdirektiven))). Alle Autoren werden durch Komma getrennt. Nur nach dem letzten Autor wird kein Komma hinzugefügt. Dies gelingt mithilfe der Strukturdirektive `*ngIf` und der Abfrage, ob es sich **nicht** um das letzte Element handelt - dann Komma.
 
 Wir benötigen jetzt für unsere Komponente noch die Liste der Bücher - ein `Book`-Array. Dieses legen wir in der Datei `book-list.component.ts` an. Wir öffnen diese Datei - sie sieht wie folgt aus:
 
@@ -212,7 +212,7 @@ Die (TypeScript-)Klasse `BookListComponent` enthält zwei Methoden:
 - den Konstruktor `constructor() { }`
 - `ngOnInit(): void { }`
 
-`ngOnInit()` ist eine Methode aus dem Interface `OnInit`. Dabei handelt es sich um einen sogenannten *Lifecycle-Hook* (siehe [**Angular --> Lifecycle-Hooks**](../angular/#lifecycle-hooks)). Die Methode `ngOnInit()` wird immer dann (automatisch) ausgeführt, wenn die Komponente geladen wird.
+`ngOnInit()` ist eine Methode aus dem Interface `OnInit`. Dabei handelt es sich um einen sogenannten *Lifecycle-Hook* (siehe [**Angular --> Lifecycle-Hooks**](./angular/#lifecycle-hooks)). Die Methode `ngOnInit()` wird immer dann (automatisch) ausgeführt, wenn die Komponente geladen wird.
 
 Wir ersetzen den bisherigen Code der Datei `book-list.component.ts` durch:
 

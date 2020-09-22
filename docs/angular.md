@@ -635,7 +635,7 @@ In der `AppComponent` (das kann natürlich eine beliebige Komponente sein), wird
 
 Mithilfe von *event binding* wird die Behandlung des Ereignisses `myEvent` an die Methode `handleEventFromEventsComponent()` gebunden. In dieser Methode erfolgt hier einfach nur eine Ausgabe auf die Konsole. 
 
-Interessant ist, dass wir dadurch die Möglichkeit haben, Daten von der Kindkomponente zur Elternkomponente fließen zu lassen. Dazu übergeben wir diese Daten als `payload` des Ereignisses. Dafür typisieren wir `EventEmitter` mit dem Typ, von dem wir Daten übergeben wollen (z.B. `Book` - siehe [Bücher-App](../books/#event-binding)). Die beiden obigen Beispiele sehen dann wie folgt aus (zuerst wieder `EventsComponent`): 
+Interessant ist, dass wir dadurch die Möglichkeit haben, Daten von der Kindkomponente zur Elternkomponente fließen zu lassen. Dazu übergeben wir diese Daten als `payload` des Ereignisses. Dafür typisieren wir `EventEmitter` mit dem Typ, von dem wir Daten übergeben wollen (z.B. `Book` - siehe [Bücher-App](./books/#event-binding)). Die beiden obigen Beispiele sehen dann wie folgt aus (zuerst wieder `EventsComponent`): 
 
 === ".html"
     ``` html
@@ -690,7 +690,7 @@ Wichtig beim *event binding* der Elternkomponente ist, dass der *payload* des Er
 
 !!! success "Zusammenfassung"
     In den letzten drei Abschnitten Interpolation, Property Binding und Event Binding haben wir uns mit Datenfluss beschäftigt. Interpolation wird verwendet, um innerhalb einer Komponente die in der TypeScript-Klasse definierten Daten im Template darzustellen. Mithilfe von Property Binding kann die aufrufende Komponente (Elternkomponente) der aufgerufenen Kopmponente (Kindkomponente) Daten übergeben. Mithilfe von Event Binding kann die Kindkomponente der Elternkomponente mithilfe eines eigenen Ereignisses Daten übergeben.
-    Für die Anwendung dieser Konzepte schauen Sie sich [**Bücher-App-->Datenfluss zwischen Komponenten**](../books/#datenfluss-zwischen-komponenten) an. 
+    Für die Anwendung dieser Konzepte schauen Sie sich [**Bücher-App-->Datenfluss zwischen Komponenten**](./books/#datenfluss-zwischen-komponenten) an. 
 
 
 ### [(Two-Way-Bindings)]
@@ -753,7 +753,7 @@ Der Service kann dann mittels *dependency injection* von einer Komponente verwen
     ```javascript
     import {Component, OnInit} from '@angular/core';
 
-    import {MyService} from '../shared/my.service';
+    import {MyService} from './shared/my.service';
 
     @Component({
       selector: 'app-example',
@@ -771,7 +771,7 @@ Der Service kann dann mittels *dependency injection* von einer Komponente verwen
     }
     ```
 
-Für ein Beispiel einer Service-Definition und der Verwendung eines Services siehe [`BookStoreService`](../books/##service-bookstoreservice). Für weiterführende Informationen siehe [https://angular.io/guide/architecture-services](https://angular.io/guide/architecture-services).
+Für ein Beispiel einer Service-Definition und der Verwendung eines Services siehe [`BookStoreService`](./books/##service-bookstoreservice). Für weiterführende Informationen siehe [https://angular.io/guide/architecture-services](https://angular.io/guide/architecture-services).
 
 
 ## Routing
