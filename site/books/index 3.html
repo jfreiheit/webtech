@@ -1,0 +1,1856 @@
+
+
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für WebTech">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/webtech/books/">
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      <link rel="shortcut icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>Bücher-App - WebTech</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bucher-app" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-header-nav__button md-logo" aria-label="WebTech">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            WebTech
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Bücher-App
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suchbegriff eingeben
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    webtech
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-nav__button md-logo" aria-label="WebTech">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    WebTech
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    webtech
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tools/" title="Werkzeuge" class="md-nav__link">
+      Werkzeuge
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../angular/" title="Angular" class="md-nav__link">
+      Angular
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../html/" title="HTML" class="md-nav__link">
+      HTML
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../css/" title="CSS" class="md-nav__link">
+      CSS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../node/" title="Node.js" class="md-nav__link">
+      Node.js
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Bücher-App
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Bücher-App" class="md-nav__link md-nav__link--active">
+      Bücher-App
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-anlegen" class="md-nav__link">
+    Projekt anlegen
+  </a>
+  
+    <nav class="md-nav" aria-label="Projekt anlegen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#css-framework-semantic-ui-einbinden" class="md-nav__link">
+    CSS-Framework Semantic UI einbinden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datenmodell-und-daten" class="md-nav__link">
+    Datenmodell und Daten
+  </a>
+  
+    <nav class="md-nav" aria-label="Datenmodell und Daten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucherliste-erstellen" class="md-nav__link">
+    Bücherliste erstellen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datenfluss-zwischen-komponenten" class="md-nav__link">
+    Datenfluss zwischen Komponenten
+  </a>
+  
+    <nav class="md-nav" aria-label="Datenfluss zwischen Komponenten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datenfluss-von-eltern-auf-kindkomponenten" class="md-nav__link">
+    Datenfluss von Eltern- auf Kindkomponenten
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datenfluss-von-kind-auf-elternkomponenten" class="md-nav__link">
+    Datenfluss von Kind- auf Elternkomponenten
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-bookstoreservice" class="md-nav__link">
+    Service BookStoreService
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    Routing
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#routen-konfigurieren" class="md-nav__link">
+    Routen konfigurieren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametrisierte-route-auslesen" class="md-nav__link">
+    Parametrisierte Route auslesen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routen-verlinken" class="md-nav__link">
+    Routen verlinken
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aktive-links-stylen-und-aufraumen" class="md-nav__link">
+    Aktive Links stylen und aufräumen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../books-backend/" title="Bücher-Backend" class="md-nav__link">
+      Bücher-Backend
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-anlegen" class="md-nav__link">
+    Projekt anlegen
+  </a>
+  
+    <nav class="md-nav" aria-label="Projekt anlegen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#css-framework-semantic-ui-einbinden" class="md-nav__link">
+    CSS-Framework Semantic UI einbinden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datenmodell-und-daten" class="md-nav__link">
+    Datenmodell und Daten
+  </a>
+  
+    <nav class="md-nav" aria-label="Datenmodell und Daten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucherliste-erstellen" class="md-nav__link">
+    Bücherliste erstellen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datenfluss-zwischen-komponenten" class="md-nav__link">
+    Datenfluss zwischen Komponenten
+  </a>
+  
+    <nav class="md-nav" aria-label="Datenfluss zwischen Komponenten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datenfluss-von-eltern-auf-kindkomponenten" class="md-nav__link">
+    Datenfluss von Eltern- auf Kindkomponenten
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datenfluss-von-kind-auf-elternkomponenten" class="md-nav__link">
+    Datenfluss von Kind- auf Elternkomponenten
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-bookstoreservice" class="md-nav__link">
+    Service BookStoreService
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    Routing
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#routen-konfigurieren" class="md-nav__link">
+    Routen konfigurieren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametrisierte-route-auslesen" class="md-nav__link">
+    Parametrisierte Route auslesen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routen-verlinken" class="md-nav__link">
+    Routen verlinken
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aktive-links-stylen-und-aufraumen" class="md-nav__link">
+    Aktive Links stylen und aufräumen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jfreiheit/webtech/edit/master/docs/books.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="bucher-app">Bücher-App<a class="headerlink" href="#bucher-app" title="Permanent link">&para;</a></h1>
+<p>Das folgende Beispiel ist dem <a href="https://angular-buch.com/">Buch</a></p>
+<blockquote>
+<p>Ferdinand Malcher, Johannes Hoppe, Danny Koppenhagen:
+"Angular: Grundlagen, fortgeschrittene Themen und Best Practices"
+dpunkt.verlag, 2. Auflage, ISBN: 978-3-86490-646-6, 2019 <a href="https://books.google.de/books/about/Angular.html?id=d46gDwAAQBAJ&amp;redir_esc=y">Link</a></p>
+</blockquote>
+<p>entnommen (und nur unwesentlich geändert).</p>
+<p><img alt="Angular" src="../files/06_angularbuch.jpg" /></p>
+<p>In der App soll eine Liste von Büchern angezeigt werden, für jedes einzelne Buch soll eine Detailansicht existieren und Bücher können hinzugefügt werden.</p>
+<h2 id="projekt-anlegen">Projekt anlegen<a class="headerlink" href="#projekt-anlegen" title="Permanent link">&para;</a></h2>
+<p>Wir gehen wie <a href="./angular.md/#erstes-projekt-erstellen">in beschrieben</a> vor. Wir wollen unsere App <code>book-app</code> nennen.</p>
+<div class="highlight"><pre><span></span><code>ng new book-app
+</code></pre></div>
+
+<p>Wir werden gefragt, ob wir Routing verwenden möchten (Antwort: <code>y</code>) und welches StyleSheet-Format wir verwenden (Antwort: <code>CSS</code>):</p>
+<div class="highlight"><pre><span></span><code>? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+</code></pre></div>
+
+<p>Nachdem das Projekt erstellt wurde, wechseln wir im Terminal in das Verzeichnis <code>book-app</code></p>
+<div class="highlight"><pre><span></span><code>cd book-app
+</code></pre></div>
+
+<p>und rufen darin</p>
+<div class="highlight"><pre><span></span><code>npm install
+</code></pre></div>
+
+<p>auf, um alle in <code>package.json</code> definierten Abhängigkeiten und Module einzubinden. Danach kann die Anwendung durch Eingabe von</p>
+<div class="highlight"><pre><span></span><code>ng serve
+</code></pre></div>
+
+<p>gestartet werden. Öffnen Sie den Browser und geben Sie als URL <code>http://localhost:4200/</code> ein. Es erscheint die Angular-Projekt-Startseite (siehe auch <a href="http://localhost:8000/angular/#erstes-projekt-erstellen">Erstes Angular-Projekt erstellen</a>).</p>
+<p>Öffnen Sie nun noch in Ihrer IDE (z.B. <a href="https://www.jetbrains.com/de-de/idea/">IntelliJ IDEA</a>) das Projekt <code>book-app</code>, um Ihre Implementierungen durchzuführen. Zunächst kümmern wir uns allerdings erst noch um das Aussehen des Projektes - um moderne, einheitliche Styles. </p>
+<h3 id="css-framework-semantic-ui-einbinden">CSS-Framework Semantic UI einbinden<a class="headerlink" href="#css-framework-semantic-ui-einbinden" title="Permanent link">&para;</a></h3>
+<p>Es ist üblich, eines der bekannten Style-Frameworks (z.B. <a href="https://getbootstrap.com/">Bootstrap</a> oder <a href="https://materializecss.com/about.html">Material Design</a>) einzubinden. Für die Bücher-App soll dafür <a href="https://semantic-ui.com/">Semantic UI</a> verwendet werden. Geben Sie dazu im Terminal in dem <code>book-app</code>-Verzeichnis </p>
+<div class="highlight"><pre><span></span><code>npm install semantic-ui-css
+</code></pre></div>
+
+<p>ein. Durch diese Anweisung werden die benötigten Style-Dateien geladen und unter dem Ordner <code>node_modules/semantic-ui-css</code> gespeichert. Diese müssen jetzt nur noch in das Projekt eingebunden werden. Öffnen Sie dazu in Ihrer IDE die Datei <code>angular.json</code>. Bei dieser Datei handelt es sich um eine <a href="./javascript/#json">JSON</a>-Datei, die für die Konfiguration unserer Angular-Anwendung zuständig ist. In der <code>angular.json</code>-Datei ändern wir unter <strong>"projects"&rarr;"book-app"&rarr;"architect"&rarr;"build"&rarr;"options"&rarr;"styles"</strong> den Eintrag von </p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;styles&quot;</span><span class="err">:</span> <span class="p">[</span>
+              <span class="s2">&quot;src/styles.css&quot;</span>
+            <span class="p">]</span><span class="err">,</span>
+</code></pre></div>
+
+<p>auf 
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;styles&quot;</span><span class="err">:</span> <span class="p">[</span>
+              <span class="s2">&quot;node_modules/semantic-ui-css/semantic.css&quot;</span>
+            <span class="p">]</span><span class="err">,</span>
+</code></pre></div></p>
+<p>Die gleiche Änderung führen wir in <code>angular.json</code> unter <strong>"test"</strong> (statt <strong>"build"</strong>) durch, um die Styles auch beim Testen einzubeziehen. Also unter <strong>"projects"&rarr;"book-app"&rarr;"architect"&rarr;"test"&rarr;"options"&rarr;"styles"</strong> ebenfalls nach</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;styles&quot;</span><span class="err">:</span> <span class="p">[</span>
+              <span class="s2">&quot;node_modules/semantic-ui-css/semantic.css&quot;</span>
+            <span class="p">]</span><span class="err">,</span>
+</code></pre></div>
+
+<p>ändern.</p>
+<p>Um zu testen, ob das Einbinden der Semantic-UI-Styles geklappt hat, öffnen wir in der IDE die Datei <code>app.component.html</code> und löschen darin alles bis auf <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>. Stattdessen geben wir davor ein (Listing zeigt auch <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code> - also die dann vollständige Datei <code>app.component.html</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui active inverted dimmer&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui text loader large&quot;</span><span class="p">&gt;</span>Lade Bücher ...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Wir gestalten also das Template unserer App-Komponente als ein <code>div</code> im <code>div</code>. Beiden <code>div</code>s werden CSS-Klassen aus dem Semantic-UI-Framework zugeordnet (siehe z.B. Klasse <a href="https://semantic-ui.com/elements/loader.html">loader</a>). </p>
+<p>Unsere Webseite sollte nun so aussehen:</p>
+<p><img alt="Loader" src="../files/11_loader.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Der erste Teil unserer Bücher-App ist erstellt! Wir haben eine Anwendung erstellt und diese aufgerufen. Wir haben ein CSS-Framework eingebunden und erste Änderungen am HTML-Code vorgenommen. Unter <code>http://localhost:4200/</code> ist unsere Anwendung nun im Browser sichtbar und alle unseren zukünftigen Änderungen am Code werden automatisch (ohne erneuten Aufruf) der Seite dargestellt.</p>
+</div>
+<h2 id="datenmodell-und-daten">Datenmodell und Daten<a class="headerlink" href="#datenmodell-und-daten" title="Permanent link">&para;</a></h2>
+<p>Wir wollen Details (Daten) über Bücher speichern und verwenden dazu die <a href="https://www.ecma-international.org/publications/standards/Ecma-404.htm">JavaScript Object Notation (JSON)</a>. Zunächst wird Angular jedoch das dazugehörige Datenmodell bekannt gemacht. Dies geschieht mithilfe eines <a href="https://www.typescriptlang.org/docs/handbook/interfaces.html">Interfaces</a>. Wir erstellen ein solches Interface mithilfe der <a href="https://angular.io/cli">Angular CLI</a> im Terminal (Sie sind im <code>book-app</code>-Verzeichnis): </p>
+<div class="highlight"><pre><span></span><code>ng g interface shared/book
+</code></pre></div>
+
+<p>Die obige Anweisung erstellt eine Datei <code>book.ts</code> im Ordner <code>src/app/shared</code>. Der <code>shared</code>- Ordner wird automatisch angelegt. In der obigen Anweisung steht <code>g</code> für <code>generate</code> (<a href="https://angular.io/cli">hätte man auch schreiben können</a>).</p>
+<p>In der IDE öffnen wir die Datei <code>book.ts</code>. Sie enthält nur die Interface-Deklaration ohne Inhalt:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Book</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Wir implementieren das Interface wie folgt:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Book</span> <span class="p">{</span>
+  <span class="nx">isbn</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">authors</span><span class="o">:</span> <span class="nx">string</span><span class="p">[];</span>
+  <span class="nx">published</span><span class="o">:</span> <span class="nb">Date</span><span class="p">;</span>
+  <span class="nx">subtitle</span><span class="o">?:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">rating</span><span class="o">?:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nx">thumbnails</span><span class="o">?:</span> <span class="nx">Thumbnail</span><span class="p">[];</span>
+  <span class="nx">description</span><span class="o">?:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Thumbnail</span> <span class="p">{</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">title</span><span class="o">?:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Das bedeutet, dass unser Datenmodell so aussieht, dass die Details über ein Buch folgende Daten beinhalten:  <code>isbn</code>, <code>title</code>, <code>authors</code>, <code>published</code>, <code>subtitle</code>, <code>rating</code>, <code>thumbnails</code>, <code>description</code>. Die Fragezeichen hinter den Bezeichnern geben an, dass die jeweilige Eigenschaft optional ist, d.h. dass ihr kein Wert zugeordnet werden muss. Die Eigenschaft <code>thumbnail</code> ist vom Typ <code>Thumbnail</code>-Array. Dieser Typ ist kein Standard-TypeScript-Typ, sondern von uns definiert. <code>Thumbnail</code> definieren wir ebenfalls als Interface, bestehend aus 2 Eigenschaften <code>url</code> und (optional) <code>title</code>. Die Definition dieses Interfaces erfolgt ebenfalls direkt in <code>book.ts</code>. Wir haben also 2 Interfaces diefiniert: <code>Book</code> und <code>Thumbnail</code>. Die Daten werden zunächst direkt in eine neu zu erstellende Komponente zum Anzeigen der Bücher-Liste eingebunden:</p>
+<h3 id="bucherliste-erstellen">Bücherliste erstellen<a class="headerlink" href="#bucherliste-erstellen" title="Permanent link">&para;</a></h3>
+<p>Zur Anzeige aller gespeicherten Bücher erstellen wir eine neue Komponente <code>book-list</code>. Siehe dazu auch <a href="http://127.0.0.1:8000/angular/#eine-neue-komponente-erzeugen"><strong>Angular &rarr; Eine neue Komponente erzeugen</strong></a>:</p>
+<div class="highlight"><pre><span></span><code>ng generate component book-list
+</code></pre></div>
+
+<p>Es ensteht ein neuer Ordner <code>src/app/book-list</code>, welcher die 4 Dateien:</p>
+<ul>
+<li><code>book-list.component.css</code></li>
+<li><code>book-list.component.html</code></li>
+<li><code>book-list.component.spec.ts</code></li>
+<li><code>book-list.component.ts</code></li>
+</ul>
+<p>enthält. In der IDE öffnen wir zunächst die <code>book-list.component.html</code>. Sie sieht so aus:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>book-list works!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Wir ersetzen den Inhalt vollständig durch den folgenden HTML-Code:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui middle aligned selection divided list&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let book of books&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui tiny image&quot;</span>
+       <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;book.thumbnails &amp;&amp; book.thumbnails[0] &amp;&amp; book.thumbnails[0].url&quot;</span>
+       <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">book</span><span class="err">.</span><span class="na">thumbnails</span><span class="err">[</span><span class="na">0</span><span class="err">].</span><span class="na">url</span><span class="err">&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header&quot;</span><span class="p">&gt;</span>{{ book.title }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;book.subtitle&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;description&quot;</span><span class="p">&gt;</span>{{ book.subtitle }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;metadata&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let author of book.authors; last as l&quot;</span><span class="p">&gt;</span>{{ author }}
+          <span class="p">&lt;</span><span class="nt">span</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;!l&quot;</span><span class="p">&gt;</span>, <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+      ISBN {{ book.isbn }}
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Obiger Code enthält einige Strukturdirektiven (siehe <a href="../angular/#strukturdirektiven"><strong>Angular &rarr; *Strukturdirektiven</strong></a>)). So läuft bspw. die <code>*ngFor</code>-Direktive in der zweiten Zeile durch die Liste <code>books</code> und erzeugt für jedes Buch aus der Liste <code>books</code> einen Hyperlink <code>&lt;a&gt;</code>. Diese existiert jedoch noch gar nicht, so dass unsere App sich derzeit nicht ausführen lässt. Die erste <code>*ngIf</code>-Direktive in der vierten Zeile prüft zunächst, ob das Array <code>book.thumbnails</code> überhaupt existiert und wenn ja, ob dieses Array einen ersten Eintrag hat <code>book.thumbnails[0]</code> und wenn das der Fall ist, ob dieser erste Eintrag auch eine <code>url</code> enthält (siehe Interfaces <code>Book</code> und <code>Thumbnail</code>). Wenn diese <code>url</code> existiert, wird durch ein <strong>Property-Binding</strong> (siehe <a href="../angular/#property-bindings"><strong>Angular &rarr; [Property Binding]</strong></a>) dem <code>src</code>-Attribut von <code>&lt;a&gt;</code> der Wert zugeordnet, der unter <code>book.thumbnails[0].url</code> im JSON gespeichert ist.</p>
+<p>Die Liste der Autoren eines Buches wird ebenfalls mithilfe der Strukturdirektive <code>*ngFor</code> durchlaufen. Außerdem findet die Hilfsvariable <code>last</code> dieser Strukturdirektive Anwendung (siehe <a href="../angular/#strukturdirektiven"><strong>Angular &rarr; *Strukturdirektiven</strong></a>)). Alle Autoren werden durch Komma getrennt. Nur nach dem letzten Autor wird kein Komma hinzugefügt. Dies gelingt mithilfe der Strukturdirektive <code>*ngIf</code> und der Abfrage, ob es sich <strong>nicht</strong> um das letzte Element handelt - dann Komma.</p>
+<p>Wir benötigen jetzt für unsere Komponente noch die Liste der Bücher - ein <code>Book</code>-Array. Dieses legen wir in der Datei <code>book-list.component.ts</code> an. Wir öffnen diese Datei - sie sieht wie folgt aus:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-book-list&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./book-list.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-list.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Die (TypeScript-)Klasse <code>BookListComponent</code> enthält zwei Methoden:</p>
+<ul>
+<li>den Konstruktor <code>constructor() { }</code></li>
+<li><code>ngOnInit(): void { }</code></li>
+</ul>
+<p><code>ngOnInit()</code> ist eine Methode aus dem Interface <code>OnInit</code>. Dabei handelt es sich um einen sogenannten <em>Lifecycle-Hook</em> (siehe <a href="../angular/#lifecycle-hooks"><strong>Angular &rarr; Lifecycle-Hooks</strong></a>). Die Methode <code>ngOnInit()</code> wird immer dann (automatisch) ausgeführt, wenn die Komponente geladen wird.</p>
+<p>Wir ersetzen den bisherigen Code der Datei <code>book-list.component.ts</code> durch:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-book-list&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./book-list.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-list.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">books</span><span class="o">:</span> <span class="nx">Book</span><span class="p">[];</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">books</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nx">isbn</span><span class="o">:</span> <span class="s1">&#39;9783864906466&#39;</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Angular&#39;</span><span class="p">,</span>
+        <span class="nx">authors</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Ferdinand Malcher&#39;</span><span class="p">,</span> <span class="s1">&#39;Johannes Hoppe&#39;</span><span class="p">,</span> <span class="s1">&#39;Danny Kopenhagen&#39;</span><span class="p">],</span>
+        <span class="nx">published</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+        <span class="nx">subtitle</span><span class="o">:</span> <span class="s1">&#39;Grundlagen, fortgeschrittene Techniken und Best Practices - mit NativeScript und NgRx&#39;</span><span class="p">,</span>
+        <span class="nx">rating</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="nx">thumbnails</span><span class="o">:</span> <span class="p">[{</span>
+          <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://ng-buch.de/cover2.jpg&#39;</span><span class="p">,</span>
+          <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Buchcover&#39;</span><span class="p">}],</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Die Autoren führen Sie mit einem anspruchsvollen Beispielprojekt durch die Welt von Angular...&#39;</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nx">isbn</span><span class="o">:</span> <span class="s1">&#39;9783864903274&#39;</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;React&#39;</span><span class="p">,</span>
+        <span class="nx">authors</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Oliver Zeigermann&#39;</span><span class="p">,</span> <span class="s1">&#39;Nils Hartmann&#39;</span><span class="p">],</span>
+        <span class="nx">published</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">17</span><span class="p">),</span>
+        <span class="nx">subtitle</span><span class="o">:</span> <span class="s1">&#39;Die praktische Einführung in React, React Router und Redux&#39;</span><span class="p">,</span>
+        <span class="nx">rating</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nx">thumbnails</span><span class="o">:</span> <span class="p">[{</span>
+          <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://ng-buch.de/cover1.jpg&#39;</span><span class="p">,</span>
+          <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Buchcover&#39;</span>
+        <span class="p">}],</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;React ist ein JavaScript-Framework zur Entwicklung von Benutzeroberflächen ...&#39;</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nx">isbn</span><span class="o">:</span> <span class="s1">&#39;978-3-86490-578-0&#39;</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Effective Java&#39;</span><span class="p">,</span>
+        <span class="nx">authors</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Joshua Bloch&#39;</span><span class="p">],</span>
+        <span class="nx">published</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="nx">subtitle</span><span class="o">:</span> <span class="s1">&#39;Best Practices für die Java-Plattform&#39;</span><span class="p">,</span>
+        <span class="nx">rating</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nx">thumbnails</span><span class="o">:</span> <span class="p">[{</span>
+          <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://www.dpunkt.de/common/images/cover_masterid/300/13216.jpg&#39;</span><span class="p">,</span>
+          <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Buchcover&#39;</span>
+        <span class="p">}],</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Seit der Vorauflage von \&quot;Effective Java\&quot; hat sich Java dramatisch verändert...&#39;</span><span class="p">,</span>
+      <span class="p">}</span>
+    <span class="p">];</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Somit existiert die Eigenschaft <code>books</code> für die Komponente nun (siehe <code>books: Book[]</code>). Auf diese Eigenschaft kann innerhalb der Klasse mit <code>this.books</code> zugegriffen werden. Dies passiert auch in der <code>ngOnInit()</code>-Methode. Dort wird das Array mit Daten befüllt (mit zunächst 3 Büchern). Die Syntax entspricht der <a href="../javascript/#json">JavaScript Object Notation (JSON)</a>.</p>
+<p>Damit unsere Komponente überhaupt sichtbar ist, binden wir sie noch in unsere Root-Komponente ein. Der Selektor unserer <code>book-list</code>-Komponente ist <code>app-book-list</code>. Wir binden diesen Selektor als HTML-Element in <code>app.component.html</code> ein. </p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">app.component.html (alt)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui active inverted dimmer&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui text loader large&quot;</span><span class="p">&gt;</span>Lade Bücher ...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">app.component.html (neu)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-book-list</span><span class="p">&gt;&lt;/</span><span class="nt">app-book-list</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Die App ist nun ausführbar. Im Browser erscheint folgende Darstellung:</p>
+<p><img alt="Bücher-Liste" src="../files/13_booklist.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Der zeite Teil unserer Bücher-App ist erstellt! Wir haben zwei Interfaces (<code>Book</code> und <code>Thumbnail</code>) und eine neue Komponente (<code>book-list</code>) erstellt. Wir haben Direktiven verwendet (<code>*ngFor</code> und <code>*ngIf</code>), um durch Daten zu manövrieren und diese entsprechend darszustellen. Wir haben Daten im JSON-Format gespeichert.</p>
+</div>
+<h2 id="datenfluss-zwischen-komponenten">Datenfluss zwischen Komponenten<a class="headerlink" href="#datenfluss-zwischen-komponenten" title="Permanent link">&para;</a></h2>
+<p>In diesem Abschnitt wird der Datenfluss von Eltern- auf Kindkomponenten und von Kind- auf Elternkomponenten betrachtet. Letzteres erreicht man über <em>event binding</em> (siehe <a href="../angular/#event-binding"><strong>Angular&rarr;Event Binding</strong></a>). Wir betrachten zunächst den Datenfluss von Eltern- auf Kindkomponenten. Das grundlegende Prinzip dabei ist das <em>property binding</em> (siehe dazu <a href="../Angular/#property-bindings"><strong>Angular &rarr; [Property Bindings]</strong></a>).</p>
+<h3 id="datenfluss-von-eltern-auf-kindkomponenten">Datenfluss von Eltern- auf Kindkomponenten<a class="headerlink" href="#datenfluss-von-eltern-auf-kindkomponenten" title="Permanent link">&para;</a></h3>
+<p>Wir legen uns dazu zunächst eine weitere Komponente in unserer Bücher-App an - die Komponente <code>book-list-item</code>. Sie ist dafür zuständig, die Informationen über ein einzelnes Buch im Detail anzuzeigen. Wir werden zu dieser Detailansicht gelangen, indem wir ausgehend von der Liste der Bücher auf ein einzelnes Buch klicken - dieses wird dann im Detail angezeigt.</p>
+<p>Wechseln Sie im Terminal in den Ordner Ihrer Bücher-App <code>book-app</code> und geben dort zum Erzeugen der neuen Komponente ein:</p>
+<div class="highlight"><pre><span></span><code>ng g c book-list-item
+</code></pre></div>
+
+<p>Im Ordner <code>book-app/src/app</code> entsteht eine neue Komponente (ein neuer Ordner) <code>book-list-item</code> mit den Dateien <code>book-list-item.component.ts</code>, <code>book-list-item.component.html</code>, <code>book-list-item.component.css</code> und <code>book-list-item.component.spec.ts</code>.</p>
+<p>Wir kopieren zunächst den Teil aus der <code>book-list.component.html</code> in die <code>book-list-item.component.html</code>, der die Details eines Buches anzeigt. Im folgenden Tab sind jeweils die <code>*.component.html</code>gemeint.</p>
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">book-list (alt)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui middle aligned selection divided list&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let book of books&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
+<span class="hll">  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui tiny image&quot;</span>
+</span><span class="hll">       <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;book.thumbnails &amp;&amp; book.thumbnails[0] &amp;&amp; book.thumbnails[0].url&quot;</span>
+</span><span class="hll">       <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">book</span><span class="err">.</span><span class="na">thumbnails</span><span class="err">[</span><span class="na">0</span><span class="err">].</span><span class="na">url</span><span class="err">&quot;</span> <span class="p">/&gt;</span>
+</span><span class="hll">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+</span><span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header&quot;</span><span class="p">&gt;</span>{{ book.title }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;book.subtitle&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;description&quot;</span><span class="p">&gt;</span>{{ book.subtitle }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span class="hll">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;metadata&quot;</span><span class="p">&gt;</span>
+</span><span class="hll">        <span class="p">&lt;</span><span class="nt">span</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let author of book.authors; last as l&quot;</span><span class="p">&gt;</span>{{ author }}
+</span><span class="hll">          <span class="p">&lt;</span><span class="nt">span</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;!l&quot;</span><span class="p">&gt;</span>, <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span class="hll">        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span class="hll">      <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+</span><span class="hll">      ISBN {{ book.isbn }}
+</span><span class="hll">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span class="hll">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">book-list-item</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui tiny image&quot;</span>
+       <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;book.thumbnails &amp;&amp; book.thumbnails[0] &amp;&amp; book.thumbnails[0].url&quot;</span>
+       <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">book</span><span class="err">.</span><span class="na">thumbnails</span><span class="err">[</span><span class="na">0</span><span class="err">].</span><span class="na">url</span><span class="err">&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header&quot;</span><span class="p">&gt;</span>{{ book.title }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;book.subtitle&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;description&quot;</span><span class="p">&gt;</span>{{ book.subtitle }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;metadata&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let author of book.authors; last as l&quot;</span><span class="p">&gt;</span>{{ author }}
+          <span class="p">&lt;</span><span class="nt">span</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;!l&quot;</span><span class="p">&gt;</span>, <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+      ISBN {{ book.isbn }}
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">book-list (neu - zunächst)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui middle aligned selection divided list&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let book of books&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
+  <span class="c">&lt;!-- dieses Anchorelement (Hyperlink &lt;a&gt;) wird gleich geändert</span>
+<span class="c">       aber die Direktive *ngFor bleibt --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Nachdem wir den oben gelb unterlegten Teil nach <code>book-list-item.component.html</code> geschoben haben, fällt auf, dass die Variable <code>book</code> in der Komponente <code>book-list-item</code> (noch) unbekannt ist. Dies wird nun geändert. Zunächst ändern das HTML-Element, das uns die Details eines Buches anzeigen soll von <code>&lt;a&gt;</code> nach <code>&lt;app-book-list-item&gt;</code> - das ist der Selektor unserer neuen Komponente. </p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">book-list.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui middle aligned selection divided list&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">app-book-list-item</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span> 
+    <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let b of books&quot;</span> 
+    <span class="err">[</span><span class="na">book</span><span class="err">]=&quot;</span><span class="na">b</span><span class="err">&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">app-book-list-item</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>In Zeile 2 erkennt man die Verwendung des Selektors <code>app-book-list-item</code>, hier erfolgt der "Aufruf" unserer neuen Komponente. In Zeile 3 wird die bereits bekannte Direktive <code>*ngFor</code> angewendet (siehe <a href="../angular/#strukturdirektiven"><strong>Angular&rarr;*Strukturdirektiven</strong></a>), mit der wir durch unser Array von Büchern (<code>Book[]</code>) laufen. In Zeile 4 findet nun das <em>property binding</em> statt (siehe <a href="../Angular/#property-bindings"><strong>Angular &rarr; [Property Bindings]</strong></a>)). Der Eigenschaft <code>book</code> wird jeweils der Wert der Variable <code>b</code> übergeben. </p>
+<p>Das bedeutet, dass wir in der Elternkomponente <code>book-list</code> die Kindkomponente <code>book-list-item</code> aufrufen und in der Elternkomponente einer Eigenschaft der Kindkomponente <code>book</code> einen Wert zuweisen. Es erfolgt also ein Datenfluss von der Elternkoponente zur Kindkomponente unter Verwendung von <em>property binding</em>. Es fehlt nur noch zwei Sachen: </p>
+<ul>
+<li>die Eigenschaft <code>book</code> (vom Typ <code>Book</code>) muss noch als Eigenschaft (Objektvariable) der Komponente <code>book-list-tem</code> deklariert werden. </li>
+<li>es muss mithilfe des <em>Decorators</em> <code>@Input()</code> aggeben werden, dass die Werte (Daten) für diese Eigenschaft "in die Komponente hineinfließen".</li>
+</ul>
+<p>Beides erreichen wir durch Änderungen der Datei <code>book-list-item.component.ts</code> wie folgt:</p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">book-list-item.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-book-list-item&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./book-list-item.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-list-item.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookListItemComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">Input</span><span class="p">()</span>  <span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Wesentlich ist die Zeile 10. Dort sehen Sie die Deklaration der Eigenschaft <code>book: Book</code> und die Verwendung der Directive <code>@Input()</code>. Sowohl das Interface <code>Book</code> als auch die Directive <code>@Input</code> müssen noch eingebunden werden (Zeilen 1 und 2). Lassen Sie dies am besten Ihre IDE erledigen. Gehen Sie mit der Maus über die rot dargestellten Bezeichner (<code>Book</code> und <code>@Input()</code>) und wählen Sie jeweils den automatischen Korrekturvorschlag aus. </p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Der dritte Teil unserer Bücher-App ist erstellt! Leider hat sich in der Ansicht nichts geändert. Zwar wissen wir jetzt, wie der Datenfluss von Eltern- auf Kindkomponenten erfolgt (nämlich mit <em>property binding</em> und der Deklaration der Eigenschaft (property) mithilfe des <code>@Input()</code>-Decorators). Aber der Wechsel der Ansicht ist noch nicht realisiert. Dieser soll durch ein Ereignis ausgelöst werden, nämlich wenn wir auf eines der Bücher aus der Liste klicken. Die Behandlung von Ereignissen (<em>event binding</em>) ist Thema des nächsten Abschnittes.</p>
+</div>
+<h3 id="datenfluss-von-kind-auf-elternkomponenten">Datenfluss von Kind- auf Elternkomponenten<a class="headerlink" href="#datenfluss-von-kind-auf-elternkomponenten" title="Permanent link">&para;</a></h3>
+<p>Der Datenfluss von Kind- auf Elternkomponenten kann mithilfe von <em>event binding</em> organisiert werden (siehe dazu <a href="../angular/#eigene-ereignisse"><strong>Angular&rarr;Eigene Ereignisse</strong></a>). </p>
+<p>Wir werden eine <code>BookDetailsComponent</code> erzeugen. Diese zeigt die Details eines Buches. In unserer <code>BookListComponent</code> definieren wir ein Ereignis, das diese Detail-Ansicht aufruft und dabei das entsprechende Buch übergibt. In der <code>BookDetailsComponent</code> definieren wir ein Ereignis, das die Listendarstellung aller Bücher wieder aufruft.</p>
+<p>Wir erzeugen zunächst die <code>BookDetailsComponent</code>:</p>
+<div class="highlight"><pre><span></span><code>ng g c book-details
+</code></pre></div>
+
+<p>Wir planen folgende Kommunikation zwischen den Komponenten (Abbildung ebenfalls aus eingangs erwähntem <a href="https://angular-buch.com/">Buch</a>):</p>
+<p><img alt="Kommunikation" src="../files/14_datenfluss.png" /></p>
+<p>Wir erweitern zunächst die Komponente <code>AppComponent</code> um zwei weitere Eigenschaften: <code>book</code> vom Typ <code>Book</code> (die Daten eines Buches sollen ja an die Komponente <code>BookDetailsComponent</code> mithilfe von <em>property binding</em> weitergegeben werden) und einen <code>viewState</code>, der zwischen den beiden Ansichten <code>BookList</code> und <code>BookDetails</code> umschalten soll. Dazu vereinbaren wir einen neuen Typ <code>ViewState</code>, der 2 verschiedene Werte annehmen kann <code>list</code> und <code>details</code>. Die neue <code>app.component.ts</code> sieht dann so aus:</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">app.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Book</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./shared/book&#39;</span><span class="p">;</span>
+
+<span class="nx">type</span> <span class="nx">ViewState</span> <span class="o">=</span> <span class="s1">&#39;list&#39;</span> <span class="o">|</span> <span class="s1">&#39;details&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">;</span>
+  <span class="nx">viewState</span><span class="o">:</span> <span class="nx">ViewState</span> <span class="o">=</span> <span class="s1">&#39;list&#39;</span><span class="p">;</span>
+
+  <span class="nx">showList</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">viewState</span> <span class="o">=</span> <span class="s1">&#39;list&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">showDetails</span><span class="p">(</span><span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">book</span> <span class="o">=</span> <span class="nx">book</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">viewState</span> <span class="o">=</span> <span class="s1">&#39;details&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Neben den beiden Eigenschaften <code>book</code> und <code>viewState</code> (<code>viewState</code> ist vom Typ <code>ViewState</code> - dieser wurde in Zeile 5 erstellt) wurde auch zwei Methoden hinzugefügt: <code>showList()</code> und <code>showDetails(book: Book)</code>. <code>showList()</code> wird von der Kindkomponente <code>BookDetailsComponent</code> als Ereignis aufgerufen (<em>event binding</em>). <code>showDetails()</code> wird von der Kindkomponente <code>BookListComponent</code> als Ereignis aufgerufen und liefert als <em>payload</em> des Ereignisses die Informationen über das Buch mit, auf das innerhalb der Liste geklickt wurde (siehe auch <a href="../angular/#eigene-ereignisse"><strong>Angular&rarr;Eigene Ereignisse</strong></a>). Die beiden Methoden schalten jeweils zwischen den <code>viewState</code>s um. </p>
+<p>Im Template der <code>AppComponent</code> wird mittels der <code>*ngIf</code>-Direktive zwischen den Ansichten der beiden Komponenten <code>BookDetailsComponent</code>und <code>BookListeComponent</code> umgeschaltet, je nachdem, welcher Wert <code>viewState</code> aufweist:</p>
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">app.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">app-book-list</span>
+  <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;viewState === &#39;list&#39;&quot;</span>
+  <span class="err">(</span><span class="na">showDetailsEvent</span><span class="err">)=&quot;</span><span class="na">showDetails</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-book-list</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">app-book-details</span>
+  <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;viewState === &#39;details&#39;&quot;</span>
+  <span class="err">(</span><span class="na">showListEvent</span><span class="err">)=&quot;</span><span class="na">showList</span><span class="err">()&quot;</span>
+  <span class="err">[</span><span class="na">book</span><span class="err">]=&quot;</span><span class="na">book</span><span class="err">&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-book-details</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Die beiden Events <code>showDetailsEvent</code> und <code>showListEvent</code> der beiden Komponenten <code>BookListComponent</code> bzw. <code>BookDetailsComponent</code> sind noch nicht in den jeweiligen Komponenten angelegt, ebenso noch nicht die Eigenschaft <code>book</code> in der <code>BookDetailsComponent</code>. Das machen wir jetzt in beginnen mit der <code>BookListComponent</code>.</p>
+<p>In der <code>BookListComponent</code> soll ein eigenes Event (<code>showDetailsEvent</code>) definiert werden. Wir gehen dazu vor, wie in <a href="../angular/#eigene-ereignisse"><strong>Angular&rarr;Eigene Ereignisse</strong></a> beschrieben. Wichtig ist, dass wir einen <em>payload</em> des Events übergeben, nämlich das jeweilige Buch auf das geklickt wurde. Dieser <em>payload</em> wird in der Methode <code>showDetails($event)</code> der <code>AppComponent</code> verarbeitet. Wir öffnen die <code>book-list.component.ts</code> und <em>fügen hinzu</em>:</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Achten Sie darauf, dass Sie nur den Teil hinzufügen, der noch nicht in Ihrer <code>book-list.component.ts</code> enthalten ist. Diese Datei ist durch das JSON schon recht lang. Es kommen nur die Zeilen 8 und 14-16 hinzu und in der ersten Zeile werden <code>EventEmitter</code> und <code>Output</code> aus <code>@angular/core</code> importiert!</p>
+</div>
+<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">book-list.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span> <span class="cm">/* bleibt wie es ist */</span> <span class="p">})</span>
+
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">books</span><span class="o">:</span> <span class="nx">Book</span><span class="p">[];</span>
+  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">showDetailsEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span> <span class="cm">/* bleibt wie es ist */</span> <span class="p">}</span>
+
+  <span class="nx">showDetails</span><span class="p">(</span><span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">showDetailsEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Im Template der <code>BookListComponent</code> kommt nur ein <em>event binding</em> hinzu. Wir binden das native DOM-Ereignis <code>click</code> an die Ereignisbehandlung <code>showDetails()</code> und übergeben dabei als <em>payload</em> das entsprechende Buch <code>b</code>. Das bedeutet, dass jetzt jedes einzelne <code>BookItem</code> (es gibt für jedes Buch eine eigens <code>BookItem</code> - siehe <code>*ngFor</code>) ein Click-Ereignis existiert. Klicken wir also auf einen Eintrag in unserer <code>BookList</code>, dann wird das <code>showDetails()</code>-Ereignis ausgelöst, das entsprechende Buch als <em>payload</em> übergeben und an die <code>AppComponent</code> weitergereicht, die dann auf die <code>BookDetails</code>-Ansicht umschaltet. Die um diese eine Zeile (Zeile 5) erweiterte <code>book-list.component.html</code> sieht nun so:</p>
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">book-list.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui middle aligned selection divided list&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">app-book-list-item</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span>
+    <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let b of books&quot;</span>
+    <span class="err">[</span><span class="na">book</span><span class="err">]=&quot;</span><span class="na">b</span><span class="err">&quot;</span>
+    <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">showDetails</span><span class="err">(</span><span class="na">b</span><span class="err">)&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">app-book-list-item</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Reflexion</p>
+<p>Wir sehen in dem obigen kleinen Beispiel <code>book-list.component.html</code> sehr schön vier Konzepte: 1. die Komponente <code>BookListComponent</code> ruft die Komponente <code>BookListItemComponent</code> auf. Damit ist <code>BookListComponent</code> eine Elternkomponente der Kindkomponente <code>BookListItemComponent</code> (Zeile 2). 2. der Einsatz der Direktive <code>*ngFor</code>. Für jeden einzelnen Eintrag aus dem Array <code>books</code> wird ein neues HTML-Element <code>&lt;app-book-list-item&gt;</code> erzeugt. 3. Ein <em>property binding</em>, bei der der Ausdruck <code>"b"</code> and die Eigenschaft <code>book</code> gebunden wird und 4. ein <em>event binding</em>, bei der wir die Ereignisbehandlung <code>showDetails(b)</code> an das native DOM-Element <code>click</code> binden.</p>
+</div>
+<p>Jetzt kümmern wir uns noch um unsere neue Komponente <code>BookDetailsComponent</code>. Zwei Konzepte kennen wir bereits:</p>
+<ol>
+<li>definieren wir uns eine Eigenschaft <code>book</code>, deren Wert wir als <code>@Input()</code> von der Elternkomponente <code>AppComponent</code> erhalten (siehe dazu <a href="./#datenfluss-von-eltern-auf-kindkomponenten">Datenfluss von Eltern- auf Kindkomponenten</a>).</li>
+<li>definieren wir uns ein eigenes Ereignis, welches an die Elternkomponente <code>AppComponent</code> weitergereicht wird (siehe dazu <code>book-list.component.ts</code> oben)</li>
+</ol>
+<p>Es wird noch eine dritte Kleinigkeit eingefügt: eine Methode <code>getRating(number)</code>, die für eine gegebene Zahl ein Array der übergebenen Länge zurückgibt. Wir werden im Template sehen, was es damit auf sich hat. Die <code>book-details.component.ts</code> sieht dann wie folgt aus:</p>
+<div class="tabbed-set" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">book-details.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-book-details&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./book-details.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-details.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookDetailsComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">Input</span><span class="p">()</span> <span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">;</span>
+  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">showListEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+  <span class="nx">getRating</span><span class="p">(</span><span class="nx">num</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">showBookList</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">showListEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Das zugehörige Template ist recht umfangreich. Wir gehen auf einzelne Details ein, zeigen es aber zunächst:</p>
+<div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">book-details.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;book&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ book.title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h3</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;book.subtitle&quot;</span><span class="p">&gt;</span>{{ book.subtitle }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui divider&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui grid&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;four wide column&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Autoren<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ng-container</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let author of book.authors&quot;</span><span class="p">&gt;</span>
+        {{ author }}<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ng-container</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;four wide column&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>ISBN<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+      {{ book.isbn }}
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;four wide column&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Erschienen<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+      {{ book.published }}
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;four wide column&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Rating<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;yellow star icon&quot;</span>
+        <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let r of getRating(book.rating)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Beschreibung<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ book.description }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui small images&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let thumbnail of book.thumbnails&quot;</span>
+         <span class="err">[</span><span class="na">src</span><span class="err">]=&quot;</span><span class="na">thumbnail</span><span class="err">.</span><span class="na">url</span><span class="err">&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui red button&quot;</span>
+          <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">showBookList</span><span class="err">()&quot;</span><span class="p">&gt;</span>
+    Zurück zur Buchliste
+  <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Die Detailansicht sollte dann etwa so aussehen:</p>
+<p><img alt="details" src="../files/16_detailansicht.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Der vierte Teil unserer Bücher-App ist erstellt! Wir wissen jetzt, wie wir Ereignisse behandeln und sogar eigene Ereignisse erstellen können und wie wir mit diesen eigenen Ereignissen und <em>event bining</em> Daten an die Elternklasse übergeben können. Damit können wir jetzt sowohl von Eltern- nach Kindklassen als auch zurück Daten transferieren und durch Ereignisse zwischen verschiedenen Komponenten hin- und herwechseln. Für viele Komponenten und eine tiefe Verschachtelung ist die Komplexität jedoch mit diesen Konzepten zu hoch. Wir lernen zwei weitere Konzepte kennen, die uns helfen, diese Komplexität zu meistern: <em>Services</em> und <em>Routing</em>. </p>
+</div>
+<h2 id="service-bookstoreservice">Service <code>BookStoreService</code><a class="headerlink" href="#service-bookstoreservice" title="Permanent link">&para;</a></h2>
+<p>Derzeit ist die Liste (genauer: das Array) unserer Bücher statisch als JSON innerhalb der Komponente <code>BookListComponent</code> gespeichert (siehe in <code>ngOnInit()</code> <code>this.books = [ ... ]</code>). Die <code>BookListComponent</code> verwaltet somit die Bücher und stellt diese auch noch als Liste dar. Wir wollen die Darstellung unabhängig von der "Datenspeicherung" gestalten und die Datenverwaltung (Speicherung und Bereitstellung) in einen <em>Service</em> auslagern (siehe <a href="../angular/#services"><strong>Angular&rarr;Services</strong></a>). </p>
+<p>Um einen Service mithilfe der CLI anzulegen (zu generieren), verwenden wir das Attribut <code>service</code> anstelle von <code>component</code>. Außerdem ist es guter Stil, Services in den <code>shared</code>-Ordner abzulegen, da ja alle Komponenten einen Service nutzen können. Wir erzeugen einen Service <code>BookStoreService</code>:</p>
+<div class="highlight"><pre><span></span><code>ng g service shared/book-store
+</code></pre></div>
+
+<p>Nach der Erzeugung sieht der Service zunächst so aus:</p>
+<div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">book-store.service.ts</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookStoreService</span> <span class="p">{</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Für Services gibt es keine Lifecycle-Hooks. Wir finden hier deshalb auch keine <code>ngOnInit()</code>-Methode. Während Komponenten den Decorator <code>@Component()</code> aufweisen, wird für Services der Decorator <code>@Injectable()</code> verwendet. Mit diesem Decorator geben wir an, dass der Service weitere Abhängigkeiten einbinden kann. Dies geschieht typischerweise über einen Parameter im Konstruktor - eine soganannte <em>dependency injection</em> (wenn über den Konstruktor, dann <em>constructor injection</em>). Auch wenn wir eine solche Abhängigkeit nicht einbinden, sollte der Decorator <code>@Injectable()</code> stets für einen Service angegeben werden. Dies liegt daran, dass wir diesen Decorator um die <code>providedIn</code>-Eigenschaft erweitern. Mit <code>providedIn: 'root'</code> geben wir an, dass der Service allen Komponenten (im gesamten Root-Modul) zur Verfügung steht, er also von allen Komponenten genutzt werden kann. </p>
+<p>In unseren Service integrieren wir nun folgende Eigenschaften:</p>
+<ul>
+<li>das <code>Book</code>-Array <code>books</code> aus der <code>BookListComponent</code> und</li>
+<li>die Methode <code>getAll()</code>, die dieses Array zurückgibt, also alle Bücher aus dem Array <code>books</code>.</li>
+</ul>
+<div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">book-store.service.ts</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./book&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookStoreService</span> <span class="p">{</span>
+  <span class="nx">books</span><span class="o">:</span> <span class="nx">Book</span><span class="p">[];</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="k">this</span><span class="p">.</span><span class="nx">books</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nx">isbn</span><span class="o">:</span> <span class="s1">&#39;9783864906466&#39;</span><span class="p">,</span>
+      <span class="cm">/*  das gesamte Array aus book-list.component.ts </span>
+<span class="cm">          hier her bewegen </span>
+<span class="cm">      */</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+
+  <span class="nx">getAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Book</span><span class="p">[]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">books</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">book-list.component.ts</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-book-list&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./book-list.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-list.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">books</span><span class="o">:</span> <span class="nx">Book</span><span class="p">[];</span>
+  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">showDetailsEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">showDetails</span><span class="p">(</span><span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">showDetailsEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Es wurde also die gesamte Wertebelegung für <code>this.books</code> mit dem JSON von der Datei <code>book-list.component.ts</code> (dort aus <code>ngOnInit()</code>) nach <code>book-store.service.ts</code> (hier in den Konstruktor <code>constructor()</code> - Liefecycle-hooks gibt es für Services ja nicht) verschoben.
+Dazu wurde dem Service die Eigenschaft <code>books</code> hinzugefügt (Typ <code>Book[]</code> - das Interface <code>Book</code> muss dazu importiert werden). Außerdem wurde in dem Service die Methode <code>getAll()</code>implementiert.</p>
+<p>Nun kann der Service in der <code>BookListComponent</code> verwendet werden. Dazu werden</p>
+<ul>
+<li>der <code>BookService</code> importiert, </li>
+<li>der <code>BookService</code> mittels <em>dependency injection</em> (<em>constructor injection</em>) in die Komponente eingebunden und</li>
+<li>die Methode <code>getAll()</code> des Services aufgerufen, um die Eigenschaft <code>this.books</code> mit dem <code>Book</code>-Array zu initialisieren.</li>
+</ul>
+<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">book-list.component.ts</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">BookStoreService</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book-store.service&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-book-list&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./book-list.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-list.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">books</span><span class="o">:</span> <span class="nx">Book</span><span class="p">[];</span>
+  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">showDetailsEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">bs</span><span class="o">:</span> <span class="nx">BookStoreService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">books</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">bs</span><span class="p">.</span><span class="nx">getAll</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="nx">showDetails</span><span class="p">(</span><span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">showDetailsEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Beachten Sie, dass die <em>dependency injection</em> des Services dazu führt, dass <code>bs</code> eine Eigenschaft der <code>BookListComponent</code> ist, ohne dass diese Eigenschaft explizit deklariert wird. In <code>ngOnInit()</code> wird über <code>this.bs</code> auf den Service zugegriffen.</p>
+<p>Die Anwendung sieht zwar genauso aus wie vorher, aber wir haben die <code>BookListComponent</code> davon entlastet, das Bücher-Array speichern zu müssen. Diesen Dienst haben wir in einen Service augelagert, der außerdem noch die Methode <code>getAll()</code> zur Verfügung stellt, mit dem das gesamte Bücher-Array zurückgegeben wird. </p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Der fünfte Teil unserer Bücher-App ist erstellt! Die Anwendung sieht zwar genauso aus wie vorher, aber wir haben die <code>BookListComponent</code> davon entlastet, das Bücher-Array speichern zu müssen. Diesen Dienst haben wir in einen Service augelagert, der außerdem noch die Methode <code>getAll()</code> zur Verfügung stellt, mit dem das gesamte Bücher-Array zurückgegeben wird. Nun wollen wir mithilfe von <em>Routing</em> besser durch unsere Anwendung navigieren. </p>
+</div>
+<h2 id="routing">Routing<a class="headerlink" href="#routing" title="Permanent link">&para;</a></h2>
+<p>Derzeit hat unsere App zwei Sichten: einerseits die Listenansicht aller Bücher (Template der <code>BookListComponent</code>, wobei jede Zeile der Liste/jedes Buch durch das Template der <code>BookListItemComponent</code> dargestellt wird) und die Detailansicht eines Buches (Template der <code>BookDetailsComponent</code>). Zwischen diesen Sichten (<em>views</em>) wechseln wir durch Nutzereignisse hin- und her. Von der Listenansicht auf die Detailansicht kommen wir durch Anklicken einer Buchzeile und zurück kommen wir durch Klicken des Buttons "Zurück zur Buchliste". Unsere URL bleibt jedoch immer gleich, nämlich <code>localhost:4200</code>. Ein direkter Zugriff auf die Detailansicht eines Buches ist nicht möglich, sondern erfolgt immer über die Listenansicht. Dies soll im folgenden geändert werden. Zum Beispiel könnte die Detailansicht des Buches mit der ISBN 9783864906466 mithilfe der URL <code>localhost:4200/books/9783864906466</code> erfolgen. Eine solche URL hätte auch den Vorteil, dass man diese URL an andere versenden könnte, um auf ein konkretes Buch aufmerksam zu machen. Zur Erstellung solcher Pfade wird das Konzept des <em>Routings</em> in Angular verwendet (siehe <a href="../angular/#routing"><strong>Angular &rarr; Routing</strong></a>).</p>
+<p>Wir erweitern unsere Bücher-App zunächst um eine weitere Komponente <code>home</code>.</p>
+<div class="highlight"><pre><span></span><code>ng g c home
+</code></pre></div>
+
+<h3 id="routen-konfigurieren">Routen konfigurieren<a class="headerlink" href="#routen-konfigurieren" title="Permanent link">&para;</a></h3>
+<p>In der <code>app-routing.module.ts</code> werden wir 4 Routen konfigurieren:</p>
+<ul>
+<li><code>/home</code> zeigt die <code>HomeComponent</code></li>
+<li><code>/</code> wird auf die <code>/home</code>-Route umgeleitet, zeigt also ebenfalls auf die <code>HomeComponent</code></li>
+<li><code>/books</code> zeigt auf die <code>BookListComponent</code></li>
+<li><code>/books/:isbn</code> zeigt auf die <code>BooksDetailsComponent</code> für das entsprechende Buch mit der <code>isbn</code> des Parameterwertes</li>
+</ul>
+<div class="tabbed-set" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">app-routing.module.ts</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">HomeComponent</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./home/home.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">BookDetailsComponent</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./book-details/book-details.component&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">BookListComponent</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./book-list/book-list.component&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">routes</span><span class="o">:</span> <span class="nx">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;home&#39;</span><span class="p">,</span>
+    <span class="nx">pathMatch</span><span class="o">:</span> <span class="s1">&#39;full&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;home&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="nx">HomeComponent</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;books&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="nx">BookListComponent</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;books/:isbn&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="nx">BookDetailsComponent</span>
+  <span class="p">},</span>
+<span class="p">];</span>
+
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><label for="__tabbed_14_2">app.component.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Die <code>app.component.html</code> enthält nun nur noch das <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>-Element. Wenn wir nun <code>http://localhost:4200</code> aufrufen, werden wir zu <code>http://localhost:4200/home</code> umgeleitet und es erscheint die View der <code>HomeComponent</code> (<code>home works!</code>).</p>
+<p>Wir können aber auch <code>http://localhost:4200/books</code> eingeben und es erscheint die View der <code>BookListComponent</code>, also die gesamte Liste unserer Bücher. </p>
+<h3 id="parametrisierte-route-auslesen">Parametrisierte Route auslesen<a class="headerlink" href="#parametrisierte-route-auslesen" title="Permanent link">&para;</a></h3>
+<p>Wenn wir z.B. <code>http://localhost:4200/books/9783864906466</code> aufrufen, also eine ISBN übergeben, bleibt die angezeigte Seite der <code>BookDetailsComponent</code> leer. Das liegt daran, dass die in der URL übergebene ISBN noch nicht verwaltet wird, um das entsprechende Buch herauszusuchen und anzuzeigen. Dazu erweitern wir zunächst den <code>BookStoreService</code>: </p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Achten Sie darauf, dass Sie nur den Teil hinzufügen, der noch nicht in Ihrer <code>book-store.service.ts</code> enthalten ist. Diese Datei ist durch das JSON schon recht lang. Es kommen nur die Zeilen 18-20 hinzu!</p>
+</div>
+<div class="tabbed-set" data-tabs="15:1"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">shared/book-store.service.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./book&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookStoreService</span> <span class="p">{</span>
+  <span class="nx">books</span><span class="o">:</span> <span class="nx">Book</span><span class="p">[];</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">books</span> <span class="o">=</span> <span class="p">[</span> <span class="cm">/*  alle Einträge           */</span> <span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="nx">getAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Book</span><span class="p">[]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">books</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">getSingle</span><span class="p">(</span><span class="nx">isbn</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Book</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">books</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">book</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="nx">isbn</span> <span class="o">===</span> <span class="nx">isbn</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Wir müssen nun noch die ISBN auslesen, die in der URL übergeben wird. Das Auslesen von Parameterwerten aus URLs ist in <a href="../angular/#parameter-an-routen"><strong>Angular &rarr; Parameter an Routen</strong></a> beschrieben. Dazu wird <code>book-details.component.ts</code> wie folgt <strong>erweitert</strong>:</p>
+<ul>
+<li><code>ActivatedRoute</code> wird importiert und dem Konstruktor injiziert, um mithilfe von <code>route.snapshot.paramMap</code> die aktuellen Werte der in der URL übergebenen Parameter abzufragen.</li>
+<li>Der <code>BookStoreService</code> wird importiert und dem Konstruktor injiziert, um auf das Array aller Bücher, insbesondere aber auf die <code>getSingle(isbn: string)</code>-Funktion zuzugreifen, die das Buch mit der übergebenen <code>isbn</code> zurückgibt.</li>
+</ul>
+<p>Dafür <strong>entfallen</strong> einige Sachen aus der <code>book-details.component.ts</code>:</p>
+<ul>
+<li>Wir wechseln die Ansichten nicht mehr durch ein Ereignis, sondern überlassen dies dem Router. Deshalb entfernen wir die <code>@Output()</code>-Eigenschaft <code>showListEvent</code> und die Methode <code>showBookList()</code>.</li>
+<li>Das ausgewählte Buch gelangt nun nicht mehr über <em>property binding</em> in das Template, sondern über die Eigenschaft <code>this.book</code> (die ihren Wert von der Methode <code>getSingle()</code> des <code>BookStoreService</code> erhält). Wir können deshalb auch den <code>@Input()</code>-Decorator von <code>book: Book</code> entfernen.</li>
+</ul>
+<div class="tabbed-set" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">book-details.component.ts (neu)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-book-details&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./book-details.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-details.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookDetailsComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">Input</span><span class="p">()</span> <span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">;</span>
+  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">showListEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+  <span class="nx">getRating</span><span class="p">(</span><span class="nx">num</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">showBookList</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">showListEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><label for="__tabbed_16_2">book-details.component.ts (alt)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Output</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-book-details&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./book-details.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-details.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookDetailsComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">Input</span><span class="p">()</span> <span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">;</span>
+  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">showListEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+  <span class="nx">getRating</span><span class="p">(</span><span class="nx">num</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">showBookList</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">showListEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>In der <code>book-details.component.html</code> wird der Button entfernt, also der folgende Teil gelöscht:</p>
+<div class="highlight"><pre><span></span><code>  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui red button&quot;</span>
+          <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">showBookList</span><span class="err">()&quot;</span><span class="p">&gt;</span>
+    Zurück zur Buchliste
+  <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Jetzt wird die Detail-Ansicht eines jeden Buches angezeigt, wenn Sie eine existierende <code>isbn</code> übergeben. Also z.B. <code>http://localhost:4200/books/9783864906466</code> (oder <code>http://localhost:4200/books/9783864903274</code> oder <code>http://localhost:4200/books/978-3-86490-578-0</code>). Bei einer nicht existierenden <code>isbn</code> (z.B. <code>http://localhost:4200/books/123</code>) bleibt die Seite leer.</p>
+</div>
+<h3 id="routen-verlinken">Routen verlinken<a class="headerlink" href="#routen-verlinken" title="Permanent link">&para;</a></h3>
+<p>Derzeit müssen wir die Routen noch jeweils als URL in den Browser eingeben. Wir wollen uns nun ein Navigationsmenü erzeugen, in dem wir die jeweiligen Routen als Links hinterlegen und somit über Klicks die jeweiligen Komponenten aufrufen. Das prinzipielle Vorgehen ist in <a href="../angular/#routen-verlinken"><strong>Angular &rarr; Routen verlinken</strong></a> beschrieben.</p>
+<p>Unsere Navigationsleiste fügen wir am besten in die <code>AppComponent</code> ein, damit sie immer sichtbar bleibt. </p>
+<div class="tabbed-set" data-tabs="17:1"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">app.component.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui menu&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">routerLink</span><span class="o">=</span><span class="s">&quot;home&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">routerLink</span><span class="o">=</span><span class="s">&quot;books&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>Bücher<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Jetzt binden wir in unserer Listen-Ansicht aller Bücher noch die <code>isbn</code>-Eigenschaft an die <code>routerLink</code>-Property, um ein konkretes Buch mit der entsprechenden <code>isbn</code> auszuwählen. Wir passen dazu die <code>book-list.component.html</code> wie folgt an:</p>
+<div class="tabbed-set" data-tabs="18:1"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">book-list.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui middle aligned selection divided list&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">app-book-list-item</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span>
+    <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let b of books&quot;</span>
+    <span class="err">[</span><span class="na">book</span><span class="err">]=&quot;</span><span class="na">b</span><span class="err">&quot;</span>
+    <span class="err">[</span><span class="na">routerLink</span><span class="err">]=&quot;</span><span class="na">b</span><span class="err">.</span><span class="na">isbn</span><span class="err">&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">app-book-list-item</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Das <code>click</code>-Ereignis wird nun also nicht mehr benötigt und behandelt. Stattdessen binden wir mit <em>property binding</em> die <code>isbn</code>als Pfad an die Eigenschaft <code>routerLink</code>. Der Pfad ergibt sich somit aus der aktuellen Komponente (<code>/books</code>) und der <code>isbn</code> des Buches, auf das wir klicken. Daraus ergibt sich der Pfad <code>/books/isbn</code> (<code>isbn</code> wird durch den konkreten String ersetzt).</p>
+<p>Wir erweitern noch das Template der <code>HomeComponent</code> um einen Button, mit dem wir zur Bücherliste kommen:</p>
+<div class="tabbed-set" data-tabs="19:1"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><label for="__tabbed_19_1">home.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Herzlich willkommen zur Bücher-App!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">routerLink</span><span class="o">=</span><span class="s">&quot;../books&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui red button&quot;</span><span class="p">&gt;</span>
+  Bücherliste anzeigen
+  <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;right arrow icon&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Der Pfad <code>../books</code> ist releativ zur <code>HomeComponent</code>, also erst "raus" aus <code>/home</code> und dann nach <code>/books</code>.</p>
+<h3 id="aktive-links-stylen-und-aufraumen">Aktive Links stylen und aufräumen<a class="headerlink" href="#aktive-links-stylen-und-aufraumen" title="Permanent link">&para;</a></h3>
+<p>Den jeweils aktiven Menüpunkt werden wir nun noch farbig gestalten, damit wir am Menü erkennen, wo wir uns in unserer Anwendung gerade befinden. Wir gehen vor wie in <a href="../angular/#styles-fur-aktive-routen"><strong>Angular &rarr; Styles für aktive Routen</strong></a> beschrieben und nutzen die CSS-Klasse <a href="https://semantic-ui.com/collections/menu.html"><code>active</code></a> des <a href="https://semantic-ui.com/">Semantic-UI-CSS-Frameworks</a>. Wir fügen also zwei Mal <code>routerLinkActive="active"</code> in unsere <code>app.component.html</code> ein:</p>
+<div class="tabbed-set" data-tabs="20:1"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><label for="__tabbed_20_1">app.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui menu&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">routerLink</span><span class="o">=</span><span class="s">&quot;home&quot;</span> <span class="na">routerLinkActive</span><span class="o">=</span><span class="s">&quot;active&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">routerLink</span><span class="o">=</span><span class="s">&quot;books&quot;</span> <span class="na">routerLinkActive</span><span class="o">=</span><span class="s">&quot;active&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>Bücher<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>In unserer Navigationsleiste ist nun das jeweilige Element grau hinterlegt, je nachdem, wo wir uns befinden.</p>
+<p>Wir räumen in unseren Komponenten noch ein wenig auf:</p>
+<ul>
+<li>in <code>BookDetailsComponent</code> haben wir bereits <code>showListEvent</code>, <code>showBookList()</code>, <code>@Input()</code>-Decorator und die entsprechenden Importe (<code>Input</code>, <code>Output</code> und <code>EventEmitter</code>) gelöscht</li>
+<li>in <code>BookListComponent</code> löschen wir <code>showDetailsEvent</code>, <code>showDetails()</code> und die entsprechenden Importe (<code>Output</code> und <code>EventEmitter</code>)</li>
+<li>in <code>AppComponent</code> löschen wir <code>book</code>, <code>viewState</code>, <code>showList()</code>, <code>showDetails()</code> und den Typ <code>ViewState</code> sowie den Import für <code>Book</code></li>
+</ul>
+<div class="tabbed-set" data-tabs="21:3"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><label for="__tabbed_21_1">book-details.component.ts</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-book-details&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./book-details.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-details.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookDetailsComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">Input</span><span class="p">()</span> <span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">;</span>
+  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">showListEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+  <span class="nx">getRating</span><span class="p">(</span><span class="nx">num</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">showBookList</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">showListEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><label for="__tabbed_21_2">book-list.component.ts</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Book</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">BookStoreService</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/book-store.service&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-book-list&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./book-list.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-list.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookListComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">books</span><span class="o">:</span> <span class="nx">Book</span><span class="p">[];</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">bs</span><span class="o">:</span> <span class="nx">BookStoreService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">books</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">bs</span><span class="p">.</span><span class="nx">getAll</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_21_3" name="__tabbed_21" type="radio" /><label for="__tabbed_21_3">app.component.ts</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./app.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./app.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Der sechste Teil unserer Bücher-App ist erstellt! Wir haben unsere Anwendung um ein <em>Routing</em> ergänzt. Wir können Routen konfigurieren, parametrisierte Routen auslesen, Routen verlinken und aktive Links stylen. Die Zustände unserer Anwendung werden nun über lesbare URL-Pfade abgebildet. <code>RouterOutlets</code> sind Platzhalter für die zu ladenden Komponenten. Kindkomponenten werden in das <code>RouterOutlet</code> der Elternkomponente geladen. Routen lassen sich so verschachteln.  </p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../node/" title="Node.js" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Zurück
+                </span>
+                Node.js
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../books-backend/" title="Bücher-Backend" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Weiter
+                </span>
+                Bücher-Backend
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Jörn Freiheit
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ["instant", "tabs"],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

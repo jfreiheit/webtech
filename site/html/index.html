@@ -1,0 +1,722 @@
+
+
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für WebTech">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/webtech/html/">
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      <link rel="shortcut icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>HTML - WebTech</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#html" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-header-nav__button md-logo" aria-label="WebTech">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            WebTech
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              HTML
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suchbegriff eingeben
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    webtech
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-nav__button md-logo" aria-label="WebTech">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    WebTech
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    webtech
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tools/" title="Werkzeuge" class="md-nav__link">
+      Werkzeuge
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../angular/" title="Angular" class="md-nav__link">
+      Angular
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        HTML
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="HTML" class="md-nav__link md-nav__link--active">
+      HTML
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einleitung" class="md-nav__link">
+    Einleitung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchische-anordnung-der-html-elemente" class="md-nav__link">
+    Hierarchische Anordnung der HTML-Elemente
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grundgerust-einer-html-seite" class="md-nav__link">
+    Grundgerüst einer HTML-Seite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadaten-im-head" class="md-nav__link">
+    Metadaten im Head
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-und-inline-elemente" class="md-nav__link">
+    Block- und Inline-Elemente
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribute" class="md-nav__link">
+    Attribute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weitere-informationen-uber-html" class="md-nav__link">
+    Weitere Informationen über HTML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    HTTP
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    URLs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../css/" title="CSS" class="md-nav__link">
+      CSS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../node/" title="Node.js" class="md-nav__link">
+      Node.js
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../books/" title="Bücher-App" class="md-nav__link">
+      Bücher-App
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../books-backend/" title="Bücher-Backend" class="md-nav__link">
+      Bücher-Backend
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einleitung" class="md-nav__link">
+    Einleitung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchische-anordnung-der-html-elemente" class="md-nav__link">
+    Hierarchische Anordnung der HTML-Elemente
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grundgerust-einer-html-seite" class="md-nav__link">
+    Grundgerüst einer HTML-Seite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadaten-im-head" class="md-nav__link">
+    Metadaten im Head
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-und-inline-elemente" class="md-nav__link">
+    Block- und Inline-Elemente
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribute" class="md-nav__link">
+    Attribute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weitere-informationen-uber-html" class="md-nav__link">
+    Weitere Informationen über HTML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    HTTP
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    URLs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jfreiheit/webtech/edit/master/docs/html.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="html">HTML<a class="headerlink" href="#html" title="Permanent link">&para;</a></h1>
+<h2 id="einleitung">Einleitung<a class="headerlink" href="#einleitung" title="Permanent link">&para;</a></h2>
+<p>HTML steht für <b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage. HTML ist eine sogenannte <em>Auszeichnungssprache</em>. Das bedeutet, dass Textelementen sogenannte <em>Tags</em> (HTML-Elemente) zugeordnet werden, um dem Text, der von einem solchen Tag umschlossen wird, eine Bedeutung zuzuweisen - der Text wird ausgezeichnet.</p>
+<p><strong>Beispiel:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Große Überschrift<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Im obigen Beispiel wurde der Text Große Überschrift durch das HTML-Element <code>h1</code> ausgezeichnet. Die Bedeutung dieses Elementes ist, dass es sich bei dem ausgezeichneten Text um eine Überschrift handelt. Es gibt 6 HTML-Elemente, die Überschriften charakterisieren: <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code>. Die Nummern geben die Größe der Überschrift an: <code>h1</code> ist die größte Überschrift, <code>h6</code> die kleinste. Klicken Sie im folgenden Fenster auf den Reiter <strong>"Result"</strong>, um die Unterschiede zu sehen:</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/fze5kd0L/2/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+<h2 id="hierarchische-anordnung-der-html-elemente">Hierarchische Anordnung der HTML-Elemente<a class="headerlink" href="#hierarchische-anordnung-der-html-elemente" title="Permanent link">&para;</a></h2>
+<p>HTML-Elemente bestehen - bis auf wenige Ausnahmen - aus einem Start-Tag <code>&lt;tag&gt;</code> und einem Ende-Tag <code>&lt;/tag&gt;</code> (tag steht hier für den Namen eines beliebigen Elementes). Wird ein neues HTML-Element <code>el2</code> innerhalb eines anderen HTML-Elementes <code>el1</code> geöffnet, so muss <code>el2</code> auch geschlossen werden, bevor <code>el1</code> geschlossen wird.  </p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">el1</span><span class="p">&gt;</span> diese Anordnung der
+    <span class="p">&lt;</span><span class="nt">el2</span><span class="p">&gt;</span>
+          Elemente ist korrekt
+    <span class="p">&lt;/</span><span class="nt">el2</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">el1</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">el1</span><span class="p">&gt;</span> diese Anordnung der
+    <span class="p">&lt;</span><span class="nt">el2</span><span class="p">&gt;</span>
+           Elemente ist falsch
+<span class="p">&lt;/</span><span class="nt">el1</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">el2</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+<p>Es gibt nur wenige HTML-Elemente, die nicht aus einem Start- und einem Ende-Tag bestehen, sondern sogenannte <em>stand-alone Tags</em> sind. Ein typisches Beispiel ist der Zeilenumbruch <code>&lt;br&gt;</code>. Um einerseits zu symbolisieren, dass es sich um Start- und Ende-Tag in einem handelt, insbesondere aber, um <a href="https://de.wikipedia.org/wiki/Extensible_Hypertext_Markup_Language">XHTML</a>-konform zu sein, geben wir für solche stand-alone Tags den Slash vor der schließenden spitzen Klammer an, d.h. wir schreiben <code>&lt;br /&gt;</code>.</p>
+<h2 id="grundgerust-einer-html-seite">Grundgerüst einer HTML-Seite<a class="headerlink" href="#grundgerust-einer-html-seite" title="Permanent link">&para;</a></h2>
+<p>Prinzipiell besteht eine HTML-Seite aus einem <code>&lt;head&gt;</code>- und einem <code>&lt;body&gt;</code>-Bereich. Im <head>-Bereich können Metadaten über die Seite definiert werden. Der <code>&lt;body&gt;</code>-Bereich definiert den sichtbaren Bereich der Seite, also das, was im Browser dargestellt wird. Eingeschlossen werden der <code>&lt;head&gt;</code>- und der <code>&lt;body&gt;</code>-Bereich von einem <code>&lt;html&gt;</code>-Element.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Seitentitel<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Das ist eine große Überschrift<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Das ist ein Absatz.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>Das obige Beispiel zeigt ein Grundgerüst einer HTML-Seite. <code>&lt;!DOCTYPE html&gt;</code> gibt dem Browser an, dass es sich um eine HTML-Datei handelt, die vom Browser <strong>"gerendert"</strong>, d.h. dargestellt wird.</p>
+<p>Der <code>&lt;head&gt;</code>-Bereich enthält in diesem Beispiel nur ein <code>&lt;title&gt;</code>-Element. Dieser Titel wird im Browser im Reiter (Tab) gezeigt. Außerdem wird der Titel in der Ergebnisliste einer Suchmaschine verwendet.</p>
+<p>Das <code>&lt;body&gt;</code>-Element, also der im Browser dargestellte Bereich, enthält eine Überschrift (<code>&lt;h1&gt;</code>) und einen Absatz (<code>&lt;p&gt;</code>).</p>
+<div class="admonition question">
+<p class="admonition-title">Aufgabe:</p>
+<p>Erstellen Sie eine Datei <code>index.html</code> und fügen Sie obigen HTML-Code ein. Rufen Sie die Datei im Browser auf.</p>
+</div>
+<h2 id="metadaten-im-head">Metadaten im Head<a class="headerlink" href="#metadaten-im-head" title="Permanent link">&para;</a></h2>
+<h2 id="block-und-inline-elemente">Block- und Inline-Elemente<a class="headerlink" href="#block-und-inline-elemente" title="Permanent link">&para;</a></h2>
+<p>Generell wird zwischen zwei Arten von HTML-Elementen unterschieden:</p>
+<ul>
+<li>Blockelemente</li>
+<li>Inline-Elemente</li>
+</ul>
+<p><strong>Blockelemente</strong> verwenden die gesamte Breite der Browseransicht (des sogenannten <strong>Viewports</strong>). Das bedeutet, dass ein Blockelement stets in einer neuen Zeile beginnt und neben einem Blockelement kein weiteres Element ist (sondern in einer neuen Zeile beginnt).</p>
+<p><strong>Inline-Elemente</strong> nehmen genau so viel Breite ein, wie nötig (Breite des Inhalts) und beginnen nicht in einer neuen Zeile und enden auch nicht mit einem Zeilenumbruch.</p>
+<p>Beispiele für Inline- und Blockelemente (Reiter "Result" wählen, um Ergebnis zu sehen):</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/fze5kd0L/4/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+<p>Eine Übersicht über alle HTML-Elemente mit Erläuterungen findet sich hier.</p>
+<div class="admonition question">
+<p class="admonition-title">Aufgabe:</p>
+<p>Erweitern Sie Ihre Datei <code>index.html</code> und fügen Sie mindestens folgende Elemente ein:</p>
+<ul>
+<li>2 verschiedene Überschriften (<code>h1</code>, ..., <code>h6</code>)</li>
+<li>eine nummerierte Liste (ordered list - <code>ol</code>) mit 3 Einträgen (list items - <code>li</code>)</li>
+<li>eine Strichpunktliste (unordered list - <code>ul</code>) mit 3 Einträgen (<code>li</code>)</li>
+<li>eine Tabelle (<code>table</code>); diese besteht aus einem Tabellenkopf (table head - <code>thead</code>) und einem Tabellenkörper (table body - <code>tbody</code>)</li>
+<li>der thead enthält eine Zeile (table row - <code>tr</code>) als Tabellenüberschrift, wobei jede einzelne Überschrift (eine Spalte) als <code>th</code> definiert wird</li>
+<li>der tbody enthält mehrere Zeilen (<code>tr</code>); jede Zeile enthält so viele Dateneinträge (table data - <code>td</code>) wie es Spalten gibt</li>
+<li>einen Hyperlink (anchor - <code>a</code>), der ein Verweis auf die HTW-Seite enthält</li>
+<li>ein Bild (image - <code>img</code>)</li>
+</ul>
+<p>Rufen Sie die Datei im Browser auf.</p>
+</div>
+<h2 id="attribute">Attribute<a class="headerlink" href="#attribute" title="Permanent link">&para;</a></h2>
+<h2 id="weitere-informationen-uber-html">Weitere Informationen über HTML<a class="headerlink" href="#weitere-informationen-uber-html" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../files/01_WT_HTML.pdf">Folien HTML</a></li>
+</ul>
+<h2 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h2>
+<p><a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol">https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol</a></p>
+<h3 id="urls">URLs<a class="headerlink" href="#urls" title="Permanent link">&para;</a></h3>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../angular/" title="Angular" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Zurück
+                </span>
+                Angular
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../css/" title="CSS" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Weiter
+                </span>
+                CSS
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Jörn Freiheit
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ["instant", "tabs"],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
