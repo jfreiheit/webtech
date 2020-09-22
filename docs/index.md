@@ -12,7 +12,7 @@ Zur erfolgreichen Durchführung der Veranstaltung müssen die Übungen lösen un
 
 Hier sind die Übungen beschrieben, die Sie in jeder Woche ausführen sollen. Damit Sie dies erfolgreich erledigen können, ist jeweils angegeben, welche Themen Sie dafür durcharbeiten müssen. Das Durcharbeiten der jeweiligen Themen entspricht jeweils einer Vorlesung. Diese wird also selbständig durchgeführt. 
 
-Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com/intl/de-de/). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn ich möglichst wenig Fragen - zumindest die inhaltlichen - beantworten müsste, sondern eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, diese von Ihnen dort beantwortet zu sehen. Da es sich schlecht in einer Note objektivieren lässt, wie viele Fragen Sie beantworten, will ich gar nicht offiziell sagen, dass die Beantwortung von Fragen die Note verbessert, aber ich werde aktive Teilnahme sicherlich honorieren.  
+Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com/intl/de-de/). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn ich dort möglichst wenig Fragen - zumindest die inhaltlichen - beantworten müsste, sondern eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, diese von Ihnen dort beantwortet zu sehen. Damit wäre allen geholfen und ich kann besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht.  
 
 ### Wochenplan
 
@@ -22,7 +22,7 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 ## Übungen
 
 ??? question "Übungsaufgabe 1"
-    Arbeiten Sie im Abschnitt [**Angular**](../angular/#angular) die Abschnitte [**Erstes Projekt erstellen**](../angular/#erstes-projekt-erstellen) und [**Angular-Projektstruktur**](../angular/#angular-projektstruktur) durch. Sie müssen dazu [**Angular**](../tools/#angular) installieren, eine [**Integrierte Entwicklungsumgebung**](../tools/#integrated-development-environment-ide) und die passenden [**Developer Tools**](../tools/#developer-tools). 
+    Arbeiten Sie im Abschnitt [**Angular**](./angular/#angular) die Abschnitte [**Erstes Projekt erstellen**](../angular/#erstes-projekt-erstellen) und [**Angular-Projektstruktur**](../angular/#angular-projektstruktur) durch. Sie müssen dazu [**Angular**](../tools/#angular) installieren, eine [**Integrierte Entwicklungsumgebung**](../tools/#integrated-development-environment-ide) und die passenden [**Developer Tools**](../tools/#developer-tools). 
 
 
 ## Aufgabe
