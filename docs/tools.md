@@ -1,7 +1,5 @@
 # Werkzeuge
 
-## Angular
-
 ## Integrated Development Environment (IDE)
 
 Für die Webentwicklung stehen Ihnen viele gute Entwicklungswerkzeuge zur Verfügung. Für welches Sie sich entscheiden, bleibt Ihnen überlassen. Hier eine Auswahl der aus meiner Sicht besten Entwicklungswerkzeuge:
@@ -24,6 +22,34 @@ Für die Tools von Jetbrains benötigen Sie einen Account. Mit Ihrer HTW-E-Mail-
 - [Bibucket](https://bitbucket.org/product/) 
 
 Gewähren Sie mir Zugriff auf Ihr zentrales Repository. Auf GitHub finden Sie mich unter *jfreiheit* bzw. meiner E-Mail-Adresse *joern.freiheit@htw-berlin.de*.
+
+## Webserver
+
+Für das Modul benötigen wir einen Webserver. Wir verwenden den [**Apache Webserver**](https://httpd.apache.org/). Auf dem Mac ist er bereits vorhanden, auf Linux-Systemen meistens auch. Für Windows-Systeme wird die Installation von [**XAMPP**](https://www.apachefriends.org/de/index.html) empfohlen. Hier finden Sie Anleitungen zur Einrichtung des Webservers:
+
+* Windows: 
+    * [**https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/ **](https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/)
+    * [**https://werner-zenk.de/tipps/lokale_webserver_xampp.php **](https://werner-zenk.de/tipps/lokale_webserver_xampp.php)
+    * Wichtig ist, dass Sie wissen, wo sich Ihr *DocumentRoot* befindet (zunächst ``xampp\htdocs`` - lässt sich aber [**ändern**](https://www.seo-head.de/entwicklung/xampp-htdocs-verzeichnis-aendern/))
+* Mac:
+	* der Apache-Webserver ist bereits installiert
+	* achten Sie darauf, dass Sie Ihr *DocumentRoot* kennen (meistens ``Sites``, eventuell [**ändern**](https://sysadminde.com/questions/161529/how-to-change-document-root-for-apache2-in-mac-os-x))
+* Linux:
+    * die meisten Linux-Systeme haben bereits einen Webserver (auch hier wichtig, *DocumentRoot* zu kennen)
+    * wenn nicht, können Sie sich auch [**XAMPP**](https://www.apachefriends.org/de/index.html) installieren
+
+Um zu testen, ob Ihr Webser läuft, erstellen Sie im *DocumentRoot* eine Datei ``index.php`` mit folgendem Inhalt:
+
+```
+<?php phpinfo(); ?>
+```
+
+und rufen in Ihrem Browser ``http://localhost/index.php`` auf. Es sollte eine ähnliche Ausgabe wie folgt erscheinen (nur Ausschnitt:
+
+![localhost](./files/41_localhost.png)
+
+
+
 
 ## Developer Tools
 
