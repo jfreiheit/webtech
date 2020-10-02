@@ -40,7 +40,7 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	- siehe **Übungsaufgabe 0**
 	- 01_Einführung
 		<video controls="controls" width="200">
-  		<source type="video/mp4" src="./files/videos/01_Einführung.mp4"></source>
+  		<source type="video/mp4" src="./files/videos/01_Einfuehrung.mp4"></source>
   		<p>Your browser does not support the video element.</p>
 	  </video>
 	 - 02_Organisatorisches

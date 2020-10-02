@@ -1,0 +1,929 @@
+
+
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für WebTech">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/webtech/css/">
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      <link rel="shortcut icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>CSS - WebTech</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#css" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-header-nav__button md-logo" aria-label="WebTech">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            WebTech
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              CSS
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suchbegriff eingeben
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    webtech
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-nav__button md-logo" aria-label="WebTech">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    WebTech
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    webtech
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tools/" title="Werkzeuge" class="md-nav__link">
+      Werkzeuge
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../angular/" title="Angular" class="md-nav__link">
+      Angular
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../html/" title="HTML" class="md-nav__link">
+      HTML
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        CSS
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="CSS" class="md-nav__link md-nav__link--active">
+      CSS
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ort-der-css-definitionen" class="md-nav__link">
+    Ort der CSS-Definitionen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selektoren" class="md-nav__link">
+    Selektoren
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weitere-informationen-uber-css" class="md-nav__link">
+    Weitere Informationen über CSS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript" class="md-nav__link">
+      JavaScript
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../node/" title="Node.js" class="md-nav__link">
+      Node.js
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../books/" title="Bücher-App" class="md-nav__link">
+      Bücher-App
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../books-backend/" title="Bücher-Backend" class="md-nav__link">
+      Bücher-Backend
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ort-der-css-definitionen" class="md-nav__link">
+    Ort der CSS-Definitionen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selektoren" class="md-nav__link">
+    Selektoren
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weitere-informationen-uber-css" class="md-nav__link">
+    Weitere Informationen über CSS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jfreiheit/webtech/edit/master/docs/css.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="css">CSS<a class="headerlink" href="#css" title="Permanent link">&para;</a></h1>
+<p><b>C</b>ascading <b>S</b>tyle <b>S</b>heets werden verwendet, um</p>
+<ul>
+<li>dem HTML-Dokument einen ansprechenden Stil (Font, Farben, ...) zuzuweisen,</li>
+<li>das Layout des HTML-Dokumentes zu definieren (3-Spalten-Layout, 2-Spalten-Layout, Kopf- und Fußzeile, ...)</li>
+<li>das Layout responsive zu gestalten, d.h. unterschiedliche Ansichten des HTML-Dokumentes zu definieren, je nach Bildschirmgröße (Mobile, Tablet, Desktop)</li>
+</ul>
+<p>Generell gilt, dass wir mit HTML ausschließlich die Inhalte definieren, das Design jedoch mit CSS. Sehen wir uns dazu folgendes erstes Beispiel an:</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/4cvneb80/17/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+<p>In obigem Beispiel werden für die HTML-Elemente, die in unserem HTML-Doument verwendet werden, unterschiedliche CSS-Eigenschaften definiert. Die generelle Syntax für CSS-Eigenschaften ist:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">selektor</span> <span class="p">{</span>
+    <span class="n">eigenschaft</span><span class="p">:</span> <span class="n">wert</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>So wird in obigem Beispiel für das HTML-Element <code>body</code> der Eigenschaft <code>font-family</code> der Wert <code>verdana</code> zugeordnet. Somit ist der gesamte Text in <code>&lt;body&gt;</code> in der Schriftart <code>Verdana</code>. Dies gilt auch für alle Elemente, die hierarchisch "unter" <code>&lt;body&gt;</code> angesiedelt sind, also alle <code>&lt;h1&gt;</code>-, <code>&lt;h3&gt;</code>-, <code>&lt;p&gt;</code>-, <code>&lt;span&gt;</code>- und <code>&lt;a&gt;</code>-Elemente. Die Eigenschaftsdefinitionen kaskadieren also nach unten - daher <em>cascading</em> style sheets. Da alle <code>&lt;p&gt;</code>-Elemente fett geschrieben werden, sind auch die darin enthaltenen Elemente fett, also <code>&lt;a&gt;</code> und <code>&lt;span&gt;</code>. </p>
+<p><em>Begriffsbezeichnungen bei CSS-Definitionen:</em></p>
+<p><img alt="CSS1" src="../files/42_css1.png" /></p>
+<h2 id="ort-der-css-definitionen">Ort der CSS-Definitionen<a class="headerlink" href="#ort-der-css-definitionen" title="Permanent link">&para;</a></h2>
+<p>Es gibt drei "Orte", an denen CSS-Eigenschaften für ein HTML-Dokument definiert werden können: </p>
+<ol>
+<li>in einer externen CSS-Datei. Diese endet typischerweise mit der Dateiendung <code>.css</code> und wird im <code>&lt;head&gt;</code> des HTML-Dokumentes mithilfe von <code>&lt;link rel="stylesheet" href="mystyle.css"&gt;</code> (hier heißt die externe Datei <code>mystyle.css</code>) eingebunden (siehe unten),</li>
+<li>innerhalb eines <code>&lt;style&gt;</code>-Elementes ebenfalls im <code>&lt;head&gt;</code> des HTML-Dokumentes (siehe unten),</li>
+<li>als <code>style</code>-Attribut eines HTML-Elementes (siehe unten).</li>
+</ol>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">3 Orte der CSS-Definitionen - HTML</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;de&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- 1. Einbinden einer externen CSS-Datei --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;mystyle.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>CSS-Einführung<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- 2. Verwenden des &lt;style&gt;-Elementes --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="nt">h1</span> <span class="p">{</span>
+            <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Überschrift<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- 3. style-Attribut eines HTML-Elementes --&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border: 1px solid blue;&quot;</span><span class="p">&gt;</span>
+    Das ist ein Absatz.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">mystyle.css</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nt">body</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="n">vardana</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Im obigen Beispiel wird in der externen CSS-Datei <code>mystyle.css</code> definiert, dass der im gesamten Dokument verwendete Font <em>Verdana</em> sein soll. Im <code>&lt;style&gt;</code>-Element wird als Schriftfarbe für <code>&lt;h1&gt;</code>-Überschriften <em>rot</em> festgelegt, das gilt für alle <code>&lt;h1&gt;</code>-Überschriften des Dokumentes. Das <code>style</code>-Attribut des HTML-Elementes <code>&lt;p&gt;</code> legt für <strong>diesen</strong> Absatz fest, dass er <em>blau umrandet</em> sein soll. Das gilt nicht für alle <code>&lt;p&gt;</code>-Elemente, sondern nur für das Element mit dem <code>style</code>-Attribut.</p>
+<p>Eine recht gute Übersicht über alle existierenden CSS-Eigenschaften bietet <a href="https://www.w3schools.com/cssref/default.asp"><strong>W3Schhols</strong></a>.</p>
+<h2 id="selektoren">Selektoren<a class="headerlink" href="#selektoren" title="Permanent link">&para;</a></h2>
+<p>Bis jetzt haben wir in unseren Beispielen "nur" HTML-Elemente als Selektoren verwendet. Es gibt eine Vielzahl anderer Möglichkeiten, bestimmten HTML-Elementen CSS-Eigenschaften zuzuweisen. Nochmal zur Wiederholung: der generelle Aufbau einer CSS-Definition ist</p>
+<div class="highlight"><pre><span></span><code><span class="nt">selektor</span> <span class="p">{</span>
+    <span class="n">eigenschaft</span><span class="p">:</span> <span class="n">wert</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Wir werden nun die unterschiedlichen Möglichkeiten der Selektoren (und Operatoren über diese Selektoren) betrachten. Wir betrachten zunächst HTML-Elemente, IDs, Klassen und Attribute als Selektoren:</p>
+<table>
+<thead>
+<tr>
+<th>Selektor</th>
+<th>Beispiel</th>
+<th>Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*</code></td>
+<td><code>*</code></td>
+<td>alle HTML-Elemente ausgewählt (Wildcard)</td>
+</tr>
+<tr>
+<td><code>element</code></td>
+<td><code>h1</code></td>
+<td>alle <code>&lt;h1&gt;</code>-Elemente ausgewählt</td>
+</tr>
+<tr>
+<td><code>element element</code></td>
+<td><code>section h1</code></td>
+<td>alle <code>&lt;h1&gt;</code>-Elemente <strong>innnerhalb</strong> eines <code>&lt;section&gt;</code>-Element ausgewählt (Nachfahren)</td>
+</tr>
+<tr>
+<td><code>element, element</code></td>
+<td><code>section, h1</code></td>
+<td>alle <code>&lt;h1&gt;</code>-Elemente <strong>und</strong> alle <code>&lt;section&gt;</code>-Elemente ausgewählt</td>
+</tr>
+<tr>
+<td><code>element&gt;element</code></td>
+<td><code>section&gt;h1</code></td>
+<td>alle <code>&lt;h1&gt;</code>-Elemente deren direkte <strong>Eltern</strong> ein <code>&lt;section&gt;</code>-Element sind (Kinder)</td>
+</tr>
+<tr>
+<td><code>element+element</code></td>
+<td><code>section+h1</code></td>
+<td>alle <code>&lt;h1&gt;</code>-Elemente, die direkt <strong>nach</strong> einem <code>&lt;section&gt;</code>-Element stehen</td>
+</tr>
+<tr>
+<td><code>.class</code></td>
+<td><code>.container</code></td>
+<td>alle Elemente mit <code>class="container"</code>, d.h. <code>container</code> muss eine zugeordnete Klasse sein</td>
+</tr>
+<tr>
+<td><code>.class1.class2</code></td>
+<td><code>.container.top</code></td>
+<td>alle Elemente mit <code>class="container top"</code>, d.h. <code>container</code> und <code>top</code> müssen zugeordnete Klassen sein</td>
+</tr>
+<tr>
+<td><code>.class1 .class2</code></td>
+<td><code>.container .top</code></td>
+<td>alle Elemente mit <code>class="top"</code>, welche <strong>in</strong> Elementen mit <code>class="container"</code> sind (Nachfahren)</td>
+</tr>
+<tr>
+<td><code>#id</code></td>
+<td><code>#main</code></td>
+<td>das Element mit <code>id="main"</code> (id eindeutig - nur einmal vergeben)</td>
+</tr>
+<tr>
+<td><code>[attribute]</code></td>
+<td><code>[src]</code></td>
+<td>alle Elemente mit einem <code>src</code>-Attribut</td>
+</tr>
+<tr>
+<td><code>[attribute=value]</code></td>
+<td><code>[target=_blank]</code></td>
+<td>alle Elemente, die ein <code>target</code>-Attribut besitzen und dessen Wert muss <strong>genau</strong> <code>_blank</code> sein</td>
+</tr>
+<tr>
+<td><code>[attribute~=value]</code></td>
+<td><code>[src~=localhost]</code></td>
+<td>alle Elemente, die ein <code>src</code>-Attribut besitzen und dessen Wert <strong>enthält</strong> das Wort <code>localhost</code></td>
+</tr>
+<tr>
+<td><code>[attribute^=value]</code></td>
+<td><code>[href^="https"]</code></td>
+<td>alle Elemente, die ein <code>href</code>-Attribut besitzen und dessen Wert <strong>beginnt</strong> mit dem Wort <code>https</code></td>
+</tr>
+<tr>
+<td><code>[attribute$=value]</code></td>
+<td><code>[href$="php"]</code></td>
+<td>alle Elemente, die ein <code>href</code>-Attribut besitzen und dessen Wert <strong>endet</strong> mit dem Wort <code>php</code></td>
+</tr>
+</tbody>
+</table>
+<p>Darüber hinaus gibt es auch sogenannte <em>Pseudo-Klassen</em> und <em>Pseudo-Elemente</em>, die wir als Selektoren verwenden können. Wir betrachten zum besseren Verständinis zunächst ein Beispiel, um eine Idee davon zu bekommen. Angenommen, wir haben in unserem HTML-Dokument einen Hyperlink (<code>#</code>refrenziert auf den Beginn derselben Seite):</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Neu laden<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>So ein Hyperlink besitzt zusätzliche <em>Pseudo-Klassen</em> <code>link</code>, <code>visited</code>, <code>hover</code>, <code>active</code>. Diese Klassen sind für bestimmte Zustände des Elementes aktiv. Die Pseudoklasse <code>link</code> ist aktiv für noch nicht angeklickte Hyperlinks, <code>visited</code> bei bereits angeklickten, <code>hover</code> (gibt es für alle Elemente) sobald man die Maus über das Element hält und <code>active</code> für den Zeitpunkt, zu dem man gerade den Hyperlink anklickt. Pseudoklassen werden über <code>element:pseudoklasse</code> angesprochen. Ein CSS könnte also z.B. so aussehen:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">a</span> <span class="p">{</span> <span class="c">/* alle links */</span>
+    <span class="k">text-decoration</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="p">:</span><span class="nd">link</span> <span class="p">{</span> <span class="c">/* noch nicht angeklickt */</span>
+    <span class="k">color</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="p">:</span><span class="nd">visited</span> <span class="p">{</span> <span class="c">/* bereits angeklickt */</span>
+    <span class="k">color</span><span class="p">:</span><span class="kc">darkgrey</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>   <span class="c">/* mouse over */</span>
+    <span class="k">color</span><span class="p">:</span><span class="kc">limegreen</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="p">:</span><span class="nd">active</span> <span class="p">{</span> <span class="c">/* wird gerade angeklickt */</span>
+    <span class="k">color</span><span class="p">:</span><span class="kc">lightblue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th> Pseudo-Klasse</th>
+<th> Beispiel</th>
+<th> Erläuterung des Beispiels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:link</code></td>
+<td><code>a:link</code></td>
+<td> alle <code>&lt;a&gt;</code>-Elemente, die noch nicht besucht (geklickt) wurden</td>
+</tr>
+<tr>
+<td><code>:visited</code></td>
+<td><code>a:visited</code></td>
+<td> alle <code>&lt;a&gt;</code>-Elemente, die bereits besucht (geklickt) wurden</td>
+</tr>
+<tr>
+<td><code>:hover</code></td>
+<td><code>img:hover</code></td>
+<td> das <code>&lt;img&gt;</code>-Element, über dem die Maus verweilt (mouse over)</td>
+</tr>
+<tr>
+<td><code>:active</code></td>
+<td><code>a:active</code></td>
+<td> das <code>&lt;a&gt;</code>-Element, auf das gerade geklickt wird</td>
+</tr>
+<tr>
+<td><code>:empty</code></td>
+<td><code>p:empty</code></td>
+<td> alle <code>&lt;p&gt;</code>-Elemente, die keine Kinder haben</td>
+</tr>
+<tr>
+<td><code>:first-child</code></td>
+<td><code>p:first-child</code></td>
+<td> alle <code>&lt;p&gt;</code>-Elemente, die das jeweils erste Kind ihres Elternelmentes sind</td>
+</tr>
+<tr>
+<td><code>:first-of-type</code></td>
+<td><code>p:first-of-type</code></td>
+<td> alle <code>&lt;p&gt;</code>-Elemente, die das jeweils erste <code>&lt;p&gt;</code>-Element ihres Elternelementes sind</td>
+</tr>
+<tr>
+<td><code>:nth-child(n)</code></td>
+<td><code>p:nth-child(2)</code></td>
+<td> alle <code>&lt;p&gt;</code>-Elemente, die das jeweils zweite Kind ihres Elternelmentes sind</td>
+</tr>
+<tr>
+<td><code>:nth-of-type(n)</code></td>
+<td><code>p:nth-of-type(2)</code></td>
+<td> alle <code>&lt;p&gt;</code>-Elemente, die das jeweils zweite <code>&lt;p&gt;</code>-Element ihres Elternelementes sind</td>
+</tr>
+<tr>
+<td><code>:only-child</code></td>
+<td><code>p:only-child</code></td>
+<td> alle <code>&lt;p&gt;</code>-Elemente, die das jeweils einzige Kind ihres Elternelementes sind</td>
+</tr>
+<tr>
+<td><code>:only-of-type</code></td>
+<td><code>p:only-of-type</code></td>
+<td> alle <code>&lt;p&gt;</code>-Elemente, die das jeweils einzige <code>&lt;p&gt;</code>-Element ihres Elternelementes sind</td>
+</tr>
+</tbody>
+</table>
+<p>In den runden Klammern, in denen Zahlen angegeben werden können (<code>:nth-child(n)</code> und <code>:nth-of-type(n)</code>), können Sie anstelle der Zahl auch <code>odd</code> und <code>even</code> einsetzen. So lassen sich z.B. Tabellenzeilen abwechselnd in verschiedenen Hintergrundfarben anzeigen </p>
+<div class="highlight"><pre><span></span><code><span class="c">/* unterschiedliche Spaltenfarben */</span>
+<span class="nt">td</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="kc">lightgrey</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">td</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="kc">darkgrey</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* unterschidliche Zeilenfarben */</span>
+<span class="nt">tr</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">tr</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Neben den oben genannten Pseudoklassen gibt es auch noch deren Pendants: <code>:last-child</code>, <code>:last-of-type</code>, <code>:nth-last-child(n)</code>, <code>:nth-last-of-type(n)</code>.</p>
+<p>Für <code>&lt;input&gt;</code>-Elemente gibt es zusätzlich eine Reihe weiterer Pseudo-Klassen. Hier eine Auswahl an Pseudo-Klassen für <code>&lt;input&gt;</code>-Elemente:</p>
+<table>
+<thead>
+<tr>
+<th> Pseudo-Klasse</th>
+<th> Beispiel</th>
+<th> Erläuterung des Beispiels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:checked</code></td>
+<td><code>input:checked</code></td>
+<td> alle checked <code>&lt;input&gt;</code>-Elemente</td>
+</tr>
+<tr>
+<td><code>:disabled</code></td>
+<td><code>input:disabled</code></td>
+<td> alle disabled <code>&lt;input&gt;</code>-Elemente</td>
+</tr>
+<tr>
+<td><code>:enabled</code></td>
+<td><code>input:enabled</code></td>
+<td> alle disabled <code>&lt;input&gt;</code>-Elemente</td>
+</tr>
+<tr>
+<td><code>:focus</code></td>
+<td><code>input:focus</code></td>
+<td> das <code>&lt;input&gt;</code>-Element, das Fokus hat</td>
+</tr>
+<tr>
+<td><code>:invalid</code></td>
+<td><code>input:invalid</code></td>
+<td> alle <code>&lt;input&gt;</code>-Elemente mit einem ungültigen Wert</td>
+</tr>
+<tr>
+<td><code>:optional</code></td>
+<td><code>input:optional</code></td>
+<td> alle <code>&lt;input&gt;</code>-Elemente, die nicht "required" sind</td>
+</tr>
+<tr>
+<td><code>:read-only</code></td>
+<td><code>input:read-only</code></td>
+<td> alle <code>&lt;input&gt;</code>-Elemente mit einem "readonly"-Attribut</td>
+</tr>
+<tr>
+<td><code>:read-write</code></td>
+<td><code>input:read-write</code></td>
+<td> alle <code>&lt;input&gt;</code>-Elemente, die kein "readonly"-Attribut haben</td>
+</tr>
+<tr>
+<td><code>:required</code></td>
+<td><code>input:required</code></td>
+<td> alle <code>&lt;input&gt;</code>-Elemente mit einem "required"-Attribut</td>
+</tr>
+<tr>
+<td><code>:valid</code></td>
+<td><code>input:valid</code></td>
+<td> alle <code>&lt;input&gt;</code>-Elemente mit einem gültigen Wert</td>
+</tr>
+</tbody>
+</table>
+<p>Pseudo-Elemente sind so ähnlich wie Pseudo-Klassen, werden aber über <code>::</code> angesprochen anstelle <code>:</code> bei Pseudo-Klassen. Hier ein Beispiel für ein Pseudo-Element:</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">HTML</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">CSS mit Pseudo-Elementen</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="p">::</span><span class="nd">first-letter</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span><span class="mi">300</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">p</span><span class="p">::</span><span class="nd">first-line</span> <span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Das Ergebnis sieht dann so aus: </p>
+<p><img alt="Psudoelemente" src="../files/43_pseudoelemente.png" /></p>
+<p>Der erste Buchstabe in einem Absatz ist um das Dreifache größer als der Rest der Textes und die erste Zeile in diesem Absatz wird fettgedruckt. </p>
+<p>Auswahl an Pseudo-Elementen:</p>
+<table>
+<thead>
+<tr>
+<th> Pseudo-Elemente</th>
+<th> Beispiel</th>
+<th> Erläuterung des Beispiels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>::after</code></td>
+<td><code>p::after</code></td>
+<td> füge etwas hinter den Inhalt aller <code>&lt;p&gt;</code>-Elemente ein</td>
+</tr>
+<tr>
+<td><code>::before</code></td>
+<td><code>p::before</code></td>
+<td> füge etwas vor den Inhalt aller <code>&lt;p&gt;</code>-Elemente ein</td>
+</tr>
+<tr>
+<td><code>::first-letter</code></td>
+<td><code>p::first-letter</code></td>
+<td> alle ersten Buchstaben aller <code>&lt;p&gt;</code>-Elemente</td>
+</tr>
+<tr>
+<td><code>::first-line</code></td>
+<td><code>p::first-line</code></td>
+<td> alle ersten Zeilen aller <code>&lt;p&gt;</code>-Elemente</td>
+</tr>
+<tr>
+<td><code>::selection</code></td>
+<td><code>p::selection</code></td>
+<td> alle vom Nutzer markierten (selektierten) Teile eines <code>&lt;p&gt;</code>-Elementes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="weitere-informationen-uber-css">Weitere Informationen über CSS<a class="headerlink" href="#weitere-informationen-uber-css" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../files/02_WT_CSS.pdf">Folien CSS</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../html/" title="HTML" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Zurück
+                </span>
+                HTML
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../javascript/" title="JavaScript" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Weiter
+                </span>
+                JavaScript
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Jörn Freiheit
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ["instant", "tabs"],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
