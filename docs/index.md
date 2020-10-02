@@ -38,6 +38,17 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 
 ??? question "Woche 1 - Einführung und Organisatorisches"
 	- siehe **Übungsaufgabe 0**
+	- 01_Einführung
+		<video controls="controls" width="200">
+  		<source type="video/mp4" src="./files/videos/01_Einführung.mp4"></source>
+  		<p>Your browser does not support the video element.</p>
+	  </video>
+	 - 02_Organisatorisches
+	 	<video controls="controls" width="200">
+  		<source type="video/mp4" src="./files/videos/02_Organisatorisches.mp4"></source>
+  		<p>Your browser does not support the video element.</p>
+		</video>
+
 
 ## Übungen
 
@@ -54,9 +65,9 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
     Arbeiten Sie im Abschnitt [**Angular**](./angular/#angular) die Abschnitte [**Erstes Projekt erstellen**](./angular/#erstes-projekt-erstellen) und [**Angular-Projektstruktur**](./angular/#angular-projektstruktur) durch. Sie müssen dazu [**Angular**](./tools/#angular) installieren, eine [**Integrierte Entwicklungsumgebung**](./tools/#integrated-development-environment-ide) und die passenden [**Developer Tools**](./tools/#developer-tools). 
 
 
-## Aufgabe
+## Semesteraufgabe
 
-Am Ende des Kurses geben Sie eine Webanwendung ab. Überlegen Sie sich früh, was Sie implementieren wollen. Ihrer Kreativität sind keine Grenzen gesetzt. Es können 2 Studentinnen gemeinsam ein Projekt durchführen und abgeben. Sie erhalten dann die gleiche Note. 
+Am Ende des Kurses geben Sie eine Webanwendung ab. Diese wird bewertet und bildet die Modulnote für "WebTech" (es gibt also keine Klausur o.ä.). Überlegen Sie sich früh, was Sie implementieren wollen. Ihrer Kreativität sind keine Grenzen gesetzt. Es können 2 Studentinnen gemeinsam ein Projekt durchführen und abgeben. Sie erhalten dann (höchstwahrscheinlich) die gleiche Note. Es muss an den Commits erkennbar sein, welchen Anteil am Ergebnis jede der beiden Studentinnen hatte.
 
 ??? question "Mindestanforderungen"
 	Folgende Anforderungen werden an Ihr Projekt gestellt:
@@ -72,4 +83,6 @@ Am Ende des Kurses geben Sie eine Webanwendung ab. Überlegen Sie sich früh, wa
 
 	Datenbankeinträge können Bücher, CDs, ToDos, Einkaufslisten, Vorlesungen, Kühlschrankinhalte usw. sein - wie gesagt, Ihrer Kreativität sind keine Grenzen gesetzt. 
 
-	Verwenden Sie ein CSS-Framework, wie z.B. Materialize, Bootstrap o.ä.! Ihre Anwendung soll modern aussehen. 
+	Die Anwendung soll in einem Git-Dienst (GitHub, GitLab, ...) verfügbar sein. Das README (oder eine andere Form der Projektbeschreibung) soll aussagekräftig sein.
+
+	Verwenden Sie ein CSS-Framework, wie z.B. Materialize, Bootstrap o.ä.! Ihre Anwendung soll "modern" aussehen. 

@@ -1,1 +1,9 @@
+docs/files/videos/01_Einführung.mp4
+docs/files/videos/02_Organisatorisches.mp4
+site/files/videos/01_Einführung.mp4
+site/files/videos/02_Organisatorisches.mp4
+docs/files/videos/*
+site/files/videos/*
+videos/
+videos
 
