@@ -282,6 +282,32 @@
     Git
   </a>
   
+    <nav class="md-nav" aria-label="Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repository-initial-anlegen" class="md-nav__link">
+    Repository initial anlegen
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository initial anlegen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-repository-zunachst-in-github-anlegen-dann-clonen" class="md-nav__link">
+    Option A: Repository zunächst in Github anlegen, dann clonen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -508,6 +534,32 @@
     Git
   </a>
   
+    <nav class="md-nav" aria-label="Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repository-initial-anlegen" class="md-nav__link">
+    Repository initial anlegen
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository initial anlegen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-repository-zunachst-in-github-anlegen-dann-clonen" class="md-nav__link">
+    Option A: Repository zunächst in Github anlegen, dann clonen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -646,6 +698,80 @@
 <li><a href="https://bitbucket.org/product/">Bibucket</a> </li>
 </ul>
 <p>Gewähren Sie mir Zugriff auf Ihr zentrales Repository. Auf GitHub finden Sie mich unter <em>jfreiheit</em> bzw. meiner E-Mail-Adresse <em><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#101;&#114;&#110;&#46;&#102;&#114;&#101;&#105;&#104;&#101;&#105;&#116;&#64;&#104;&#116;&#119;&#45;&#98;&#101;&#114;&#108;&#105;&#110;&#46;&#100;&#101;">&#106;&#111;&#101;&#114;&#110;&#46;&#102;&#114;&#101;&#105;&#104;&#101;&#105;&#116;&#64;&#104;&#116;&#119;&#45;&#98;&#101;&#114;&#108;&#105;&#110;&#46;&#100;&#101;</a></em>.</p>
+<h3 id="repository-initial-anlegen">Repository initial anlegen<a class="headerlink" href="#repository-initial-anlegen" title="Permanent link">&para;</a></h3>
+<p>Wir zeigen das Erstellen eines Repositories exemplarisch für <code>GitHub</code>. </p>
+<h4 id="option-a-repository-zunachst-in-github-anlegen-dann-clonen">Option A: Repository zunächst in Github anlegen, dann clonen<a class="headerlink" href="#option-a-repository-zunachst-in-github-anlegen-dann-clonen" title="Permanent link">&para;</a></h4>
+<p>Als erstes loggen Sie sich in Github ein. Dort gibt es in der linken oberen Ecke einen Button <code>New</code>, siehe Bild:</p>
+<p><img alt="GitHub" src="../files/44_git1.png" /></p>
+<p>Klicken Sie darauf und geben Sie die notwendigen Informationen ein (Beschreibung ist optional):</p>
+<p><img alt="GitHub" src="../files/45_git2.png" /></p>
+<p>Sie können wählen, ob das Repository <code>Public</code> (für alle lesbar) oder <code>Private</code> (nur für Eingeladene lesbar) sein soll. Klicken Sie auf den Button <code>Create repository</code>. Kopieren Sie sich nun den Remote-Pfad in Ihre Zwischenablage, hier <code>https://github.com/jfreiheit/Webtech20.git</code>. </p>
+<p>Wechseln Sie nun lokal in Ihr <code>Terminal</code> und wechseln in Ihren Workspace Ihrer IDE. Ich wähle hier den Pfad <code>/Users/jornfreiheit/Sites</code>, da dieser Pfad gleichzeitig mein <code>DocumentRoot</code>ist, d.h., wenn ich <code>localhost</code> im Browser aufrufe, dann wird in diesem Pfad nach den Webseiten "gesucht". </p>
+<div class="highlight"><pre><span></span><code>jornfreiheit@Jorns-MacBook-Pro Sites % <span class="nb">pwd</span>
+/Users/jornfreiheit/Sites
+</code></pre></div>
+
+<p>Geben Sie dort nun ein: </p>
+<div class="highlight"><pre><span></span><code>jornfreiheit@Jorns-MacBook-Pro Sites % git clone https://github.com/jfreiheit/Webtech20.git
+Cloning into <span class="s1">&#39;Webtech20&#39;</span>...
+warning: You appear to have cloned an empty repository.
+</code></pre></div>
+
+<p>also <code>git clone</code> gefolgt von dem Remote-Pfad aus Ihrer Zwischenablage. Wenn Sie in Github weder <code>README.md</code> noch <code>.gitignore</code> ausgewählt hatten, dann erhalten Sie eine Warnung, dass Sie ein leeres Repository clonen. Das ist aber kein Problem. Sie können aber auch beide Datein in Ihr Repository integrieren, die <code>.gitignore</code>verwenden wir auf jeden Fall. In dem Ordner, in den Sie geclont haben, wird nun ein Ordner <code>Webtech20</code> angelegt. Diesen Ordner können Sie nun als Workspace Ihrer IDE verwenden. Also z.B. mit <code>IntelliJ IDEA</code>:</p>
+<p><img alt="GitHub" src="../files/46_git3.png" /></p>
+<p>öffnen Sie das Projekt (<code>Open or import</code>) <code>Webtech20</code>. Es erscheint:</p>
+<p><img alt="GitHub" src="../files/47_git4.png" /></p>
+<p>Hier können Sie wählen, dass neue Dateien immer automatisch zum Git-Repoitory hinzugefügt werden - das können Sie aber auch immer manuell machen (<code>git add .</code>). Angenommen, wir erstellen uns jetzt eine Datei <code>index.html</code> (<code>File --&gt; New --&gt; HTML File</code>) mit:</p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">index.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Erster Test<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Willkommen<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Das ist die Datei index.html. Sie liegt bei mir
+    unter /Users/jornfreiheit/Sites/Webtech20.
+    Der Ordner /Users/jornfreiheit/Sites ist mein
+    DocumentRoot, deshalb kann ich diese Datei im Browser
+    unter localhost/Webtech20/index.html aufrufen.
+    Der Ordner Webtech20 wird von Git verwaltet. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Da der Ordner <code>Sites</code> bei mir DocumentRoot ist und sich der <code>Webtech20</code>-Ordner (in dem die neue <code>index.html</code> ist) direkt darunter befindet, kann ich mir die Datei im Browser unter <code>localhost/Webtech20/index.html</code> anzeigen lassen. Das nat nichts mit Git zu tun, sondern mit dem DocumentRoot des lokalen Webservers.</p>
+<p>Wir fügen im Terminal im <code>Webtech20</code>-Ordner diese Datei dem Git-Repoitory hinzu (falls noch nicht automatisch durch unsere IDE passiert):</p>
+<div class="highlight"><pre><span></span><code>jornfreiheit@Jorns-MacBook-Pro Webtech20 % git add index.html
+jornfreiheit@Jorns-MacBook-Pro Webtech20 % git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  <span class="o">(</span>use <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+  new file:   .idea/.gitignore
+  new file:   .idea/Webtech20.iml
+  new file:   .idea/misc.xml
+  new file:   .idea/modules.xml
+  new file:   .idea/vcs.xml
+  new file:   index.html
+
+jornfreiheit@Jorns-MacBook-Pro Webtech20 % 
+</code></pre></div>
+
+<p>Außerdem sollten wir den <code>.idea</code>-Ordner von der Git-Verwaltung ausschließen. Dazu erstellen wir im <code>Webtech20</code>-Ordner eine Datei <code>.gitignore</code>, falls diese noch nicht existiert und tragen dort <code>.idea</code> ein. Fügen Sie die Datei <code>.gitignore</code> Ihrem repository hinzu, führen Sie Ihr erstes Commit aus und pushen Ihr Repository nach Github:</p>
+<div class="highlight"><pre><span></span><code>git add .ignore
+git commit -m <span class="s2">&quot;erstes commit&quot;</span>
+git push
+</code></pre></div>
+
+<p>In Github erkenn Sie, dass commit und push geklappt haben:</p>
+<p><img alt="GitHub" src="../files/48_git5.png" /></p>
+<p>In Zukunft fügen Sie Ihre neu erstellten Dateien und Ordner immer mit <code>git add .</code> hinzu, erstellen neue Commits mit <code>git commit -m "Commit-Nachricht"</code> und pushen dann nach Github mit <code>git push</code>. </p>
 <h2 id="webserver">Webserver<a class="headerlink" href="#webserver" title="Permanent link">&para;</a></h2>
 <p>Für das Modul benötigen wir einen Webserver. Wir verwenden den <a href="https://httpd.apache.org/"><strong>Apache Webserver</strong></a>. Auf dem Mac ist er bereits vorhanden, auf Linux-Systemen meistens auch. Für Windows-Systeme wird die Installation von <a href="https://www.apachefriends.org/de/index.html"><strong>XAMPP</strong></a> empfohlen. Hier finden Sie Anleitungen zur Einrichtung des Webservers:</p>
 <ul>

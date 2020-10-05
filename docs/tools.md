@@ -23,6 +23,105 @@ Für die Tools von Jetbrains benötigen Sie einen Account. Mit Ihrer HTW-E-Mail-
 
 Gewähren Sie mir Zugriff auf Ihr zentrales Repository. Auf GitHub finden Sie mich unter *jfreiheit* bzw. meiner E-Mail-Adresse *joern.freiheit@htw-berlin.de*.
 
+### Repository initial anlegen
+
+Wir zeigen das Erstellen eines Repositories exemplarisch für `GitHub`. 
+
+#### Option A: Repository zunächst in Github anlegen, dann clonen
+
+Als erstes loggen Sie sich in Github ein. Dort gibt es in der linken oberen Ecke einen Button `New`, siehe Bild:
+
+![GitHub](./files/44_git1.png)
+
+Klicken Sie darauf und geben Sie die notwendigen Informationen ein (Beschreibung ist optional):
+
+![GitHub](./files/45_git2.png)
+
+Sie können wählen, ob das Repository `Public` (für alle lesbar) oder `Private` (nur für Eingeladene lesbar) sein soll. Klicken Sie auf den Button `Create repository`. Kopieren Sie sich nun den Remote-Pfad in Ihre Zwischenablage, hier `https://github.com/jfreiheit/Webtech20.git`. 
+
+Wechseln Sie nun lokal in Ihr `Terminal` und wechseln in Ihren Workspace Ihrer IDE. Ich wähle hier den Pfad `/Users/jornfreiheit/Sites`, da dieser Pfad gleichzeitig mein `DocumentRoot`ist, d.h., wenn ich `localhost` im Browser aufrufe, dann wird in diesem Pfad nach den Webseiten "gesucht". 
+
+```bash
+jornfreiheit@Jorns-MacBook-Pro Sites % pwd
+/Users/jornfreiheit/Sites
+``` 
+
+Geben Sie dort nun ein: 
+
+```bash
+jornfreiheit@Jorns-MacBook-Pro Sites % git clone https://github.com/jfreiheit/Webtech20.git
+Cloning into 'Webtech20'...
+warning: You appear to have cloned an empty repository.
+```
+
+also `git clone` gefolgt von dem Remote-Pfad aus Ihrer Zwischenablage. Wenn Sie in Github weder `README.md` noch `.gitignore` ausgewählt hatten, dann erhalten Sie eine Warnung, dass Sie ein leeres Repository clonen. Das ist aber kein Problem. Sie können aber auch beide Datein in Ihr Repository integrieren, die `.gitignore`verwenden wir auf jeden Fall. In dem Ordner, in den Sie geclont haben, wird nun ein Ordner `Webtech20` angelegt. Diesen Ordner können Sie nun als Workspace Ihrer IDE verwenden. Also z.B. mit `IntelliJ IDEA`:
+
+![GitHub](./files/46_git3.png)
+
+öffnen Sie das Projekt (`Open or import`) `Webtech20`. Es erscheint:
+
+![GitHub](./files/47_git4.png)
+
+Hier können Sie wählen, dass neue Dateien immer automatisch zum Git-Repoitory hinzugefügt werden - das können Sie aber auch immer manuell machen (`git add .`). Angenommen, wir erstellen uns jetzt eine Datei `index.html` (`File --> New --> HTML File`) mit:
+
+=== "index.html"
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Erster Test</title>
+    </head>
+    <body>
+    <h1>Willkommen</h1>
+    <p>Das ist die Datei index.html. Sie liegt bei mir
+        unter /Users/jornfreiheit/Sites/Webtech20.
+        Der Ordner /Users/jornfreiheit/Sites ist mein
+        DocumentRoot, deshalb kann ich diese Datei im Browser
+        unter localhost/Webtech20/index.html aufrufen.
+        Der Ordner Webtech20 wird von Git verwaltet. </p>
+    </body>
+    </html>
+    ```
+
+Da der Ordner `Sites` bei mir DocumentRoot ist und sich der `Webtech20`-Ordner (in dem die neue `index.html` ist) direkt darunter befindet, kann ich mir die Datei im Browser unter `localhost/Webtech20/index.html` anzeigen lassen. Das nat nichts mit Git zu tun, sondern mit dem DocumentRoot des lokalen Webservers.
+
+Wir fügen im Terminal im `Webtech20`-Ordner diese Datei dem Git-Repoitory hinzu (falls noch nicht automatisch durch unsere IDE passiert):
+
+```bash
+jornfreiheit@Jorns-MacBook-Pro Webtech20 % git add index.html
+jornfreiheit@Jorns-MacBook-Pro Webtech20 % git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+  new file:   .idea/.gitignore
+  new file:   .idea/Webtech20.iml
+  new file:   .idea/misc.xml
+  new file:   .idea/modules.xml
+  new file:   .idea/vcs.xml
+  new file:   index.html
+
+jornfreiheit@Jorns-MacBook-Pro Webtech20 % 
+```
+
+Außerdem sollten wir den `.idea`-Ordner von der Git-Verwaltung ausschließen. Dazu erstellen wir im `Webtech20`-Ordner eine Datei `.gitignore`, falls diese noch nicht existiert und tragen dort `.idea` ein. Fügen Sie die Datei `.gitignore` Ihrem repository hinzu, führen Sie Ihr erstes Commit aus und pushen Ihr Repository nach Github:
+
+```bash
+git add .ignore
+git commit -m "erstes commit"
+git push
+```
+
+In Github erkenn Sie, dass commit und push geklappt haben:
+
+![GitHub](./files/48_git5.png)
+
+In Zukunft fügen Sie Ihre neu erstellten Dateien und Ordner immer mit `git add .` hinzu, erstellen neue Commits mit `git commit -m "Commit-Nachricht"` und pushen dann nach Github mit `git push`. 
+
+
 ## Webserver
 
 Für das Modul benötigen wir einen Webserver. Wir verwenden den [**Apache Webserver**](https://httpd.apache.org/). Auf dem Mac ist er bereits vorhanden, auf Linux-Systemen meistens auch. Für Windows-Systeme wird die Installation von [**XAMPP**](https://www.apachefriends.org/de/index.html) empfohlen. Hier finden Sie Anleitungen zur Einrichtung des Webservers:
