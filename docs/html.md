@@ -41,7 +41,7 @@ Es gibt nur wenige HTML-Elemente, die nicht aus einem Start- und einem Ende-Tag 
 
 ## Grundgerüst einer HTML-Seite
 
-Prinzipiell besteht eine HTML-Seite aus einem `<head>`- und einem `<body>`-Bereich. Im `<head>-Bereich können Metadaten über die Seite definiert werden. Der `<body>`-Bereich definiert den sichtbaren Bereich der Seite, also das, was im Browser dargestellt wird. Eingeschlossen werden der `<head>`- und der `<body>`-Bereich von einem `<html>`-Element.
+Prinzipiell besteht eine HTML-Seite aus einem `<head>`- und einem `<body>`-Bereich. Im `<head>`-Bereich können Metadaten über die Seite definiert werden. Der `<body>`-Bereich definiert den sichtbaren Bereich der Seite, also das, was im Browser dargestellt wird. Eingeschlossen werden der `<head>`- und der `<body>`-Bereich von einem `<html>`-Element.
 
 ```html
 <!DOCTYPE html>
@@ -69,6 +69,41 @@ Das `<body>`-Element, also der im Browser dargestellte Bereich, enthält eine Ü
 
 ## Metadaten im Head
 
+Das `<head>`-Element ist der Container für (Meta-)Daten über das Webdokument. Das `<head>`-Element kommt in das `<html>`-Element und vor das `<body>`-Element. Die Metadaten werden nicht dargestellt. 
+Typische HTML-Elemente für Metadaten sind: 
+
+  - `<title>` : Titel des Dokumentes (im Tab und in der Such-Ergebnisliste, 
+  - `<style>` : für Format-Angaben (CSS), 
+  - `<meta>` : für die Festlegung von Zeichenkodierungen, Schlüsselwörter, Autor usw., 
+  - `<link>` : zum Einbinden externer CSS-Dateien, 
+  - `<script>` : zum Definieren von Client-seitigen JavaScript-Funktionen, 
+  - `<base>` : zum Festlegen, der URL, von der aus alle Pfadangaben relativ sind. 
+
+=== "Beispiel Metadaten"
+    ```html
+     <head>
+      <meta charset="UTF-8">
+      <meta name="description" content="meta data">
+      <meta name="keywords" content="HTML, head, title, meta, link, style">
+      <meta name="author" content="Jörn Freiheit">
+      <meta http-equiv="refresh" content="30">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="mystyle.css">
+      <style>
+        body {background-color: #29e0e6;}        
+        h1 {color: #ff6a3b;}        
+        ul {color: #0000ff;}
+      </style>
+      <script>
+        function myFunction() { 
+          document.getElementById("demo").innerHTML = "Hallo FIW!";        
+        }
+      </script>
+      <base href="localhost/Webtech20" target="_blank">
+      <title>Metadaten</title>
+    </head>
+    ```
+
 
 ## Block- und Inline-Elemente
 
@@ -87,7 +122,7 @@ Beispiele für Inline- und Blockelemente (Reiter "Result" wählen, um Ergebnis z
 
 Eine Übersicht über alle HTML-Elemente mit Erläuterungen findet sich [**hier**](https://developer.mozilla.org/de/docs/Web/HTML/Element).
 
-!!! question "Aufgabe:"
+!!! question "kleine Übungsaufgabe:"
     Erweitern Sie Ihre Datei ```index.html``` und fügen Sie mindestens folgende Elemente ein:
 
     - 2 verschiedene Überschriften (`h1`, ..., `h6`)
@@ -216,13 +251,13 @@ Es gibt nummerierte Listen (*ordered list* ``<ol>``) und nicht-nummerierte Liste
 
 Einige Elemente dienen nur der besseren Strukturierung des HTML-Codes und der besseren "Ansprechbarkeit" im CSS (d.h. für diese Elemente können dann eigene CSS-Eigenschaften zugewisen werden). Vor HTML 5 wurde dafür das Element ``<div>`` verwendet. Es existiert noch immer. Mit HTML 5 wurden aber weitere Container-Elemente hinzugefügt:
 
-  * ``<main>`` - für den Hauptinhalt, sollte genau einmal im Dokument vorkommen
-  * ``<section>`` - für größere Abschnitte (Teile); kann z.B. article enthalten
-  * ``<article>`` - für Abschnitte (z.B. Blog-Einträge) in main 
-  * ``<aside>`` - für z.B. News an der Seite
-  * ``<footer>`` - für die Fußzeile (mit Impressum, Copyright, usw.)
-  * ``<header>`` - für die Kopfzeile (mit Logo, Navigation usw.)
-  * ``<nav>`` - für das Navigationsmenü
+  * `<main>` - für den Hauptinhalt, sollte genau einmal im Dokument vorkommen
+  * `<section>` - für größere Abschnitte (Teile); kann z.B. article enthalten
+  * `<article>` - für Abschnitte (z.B. Blog-Einträge) in main 
+  * `<aside>` - für z.B. News an der Seite
+  * `<footer>` - für die Fußzeile (mit Impressum, Copyright, usw.)
+  * `<header>` - für die Kopfzeile (mit Logo, Navigation usw.)
+  * `<nav>` - für das Navigationsmenü
 
 Container-Elemente sind nicht "sichtbar", jedoch Block-Elemente. Es ist empfehlenswert, die eigene Webseite mit solchen Container-Elementen zu strukturieren, um erstens einen besseren Überblick über die Seite zu bewahren und insbesondere gezielter die Formatierungseigenschaften von CSS verwenden zu können. Dies schließt das Layout ein. 
 

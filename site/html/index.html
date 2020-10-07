@@ -742,7 +742,7 @@
 </div>
 <p>Es gibt nur wenige HTML-Elemente, die nicht aus einem Start- und einem Ende-Tag bestehen, sondern sogenannte <em>stand alone Tags</em> sind. Ein typisches Beispiel ist der Zeilenumbruch <code>&lt;br&gt;</code>. Um einerseits zu symbolisieren, dass es sich um Start- und Ende-Tag in einem handelt, insbesondere aber, um <a href="https://de.wikipedia.org/wiki/Extensible_Hypertext_Markup_Language">XHTML</a>-konform zu sein, geben wir für solche stand-alone Tags den Slash vor der schließenden spitzen Klammer an, d.h. wir schreiben <code>&lt;br /&gt;</code>.</p>
 <h2 id="grundgerust-einer-html-seite">Grundgerüst einer HTML-Seite<a class="headerlink" href="#grundgerust-einer-html-seite" title="Permanent link">&para;</a></h2>
-<p>Prinzipiell besteht eine HTML-Seite aus einem <code>&lt;head&gt;</code>- und einem <code>&lt;body&gt;</code>-Bereich. Im <code>&lt;head&gt;-Bereich können Metadaten über die Seite definiert werden. Der</code><body><code>-Bereich definiert den sichtbaren Bereich der Seite, also das, was im Browser dargestellt wird. Eingeschlossen werden der</code><head><code>- und der</code><body><code>-Bereich von einem</code><html>`-Element.</p>
+<p>Prinzipiell besteht eine HTML-Seite aus einem <code>&lt;head&gt;</code>- und einem <code>&lt;body&gt;</code>-Bereich. Im <code>&lt;head&gt;</code>-Bereich können Metadaten über die Seite definiert werden. Der <code>&lt;body&gt;</code>-Bereich definiert den sichtbaren Bereich der Seite, also das, was im Browser dargestellt wird. Eingeschlossen werden der <code>&lt;head&gt;</code>- und der <code>&lt;body&gt;</code>-Bereich von einem <code>&lt;html&gt;</code>-Element.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -763,6 +763,42 @@
 <p>Erstellen Sie eine Datei <code>index.html</code> und fügen Sie obigen HTML-Code ein. Rufen Sie die Datei im Browser auf.</p>
 </div>
 <h2 id="metadaten-im-head">Metadaten im Head<a class="headerlink" href="#metadaten-im-head" title="Permanent link">&para;</a></h2>
+<p>Das <code>&lt;head&gt;</code>-Element ist der Container für (Meta-)Daten über das Webdokument. Das <code>&lt;head&gt;</code>-Element kommt in das <code>&lt;html&gt;</code>-Element und vor das <code>&lt;body&gt;</code>-Element. Die Metadaten werden nicht dargestellt. 
+Typische HTML-Elemente für Metadaten sind: </p>
+<ul>
+<li><code>&lt;title&gt;</code> : Titel des Dokumentes (im Tab und in der Such-Ergebnisliste, </li>
+<li><code>&lt;style&gt;</code> : für Format-Angaben (CSS), </li>
+<li><code>&lt;meta&gt;</code> : für die Festlegung von Zeichenkodierungen, Schlüsselwörter, Autor usw., </li>
+<li><code>&lt;link&gt;</code> : zum Einbinden externer CSS-Dateien, </li>
+<li><code>&lt;script&gt;</code> : zum Definieren von Client-seitigen JavaScript-Funktionen, </li>
+<li><code>&lt;base&gt;</code> : zum Festlegen, der URL, von der aus alle Pfadangaben relativ sind. </li>
+</ul>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Beispiel Metadaten</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code> <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;meta data&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;HTML, head, title, meta, link, style&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;author&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Jörn Freiheit&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;refresh&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;30&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;mystyle.css&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="nt">body</span> <span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="mh">#29e0e6</span><span class="p">;}</span>        
+    <span class="nt">h1</span> <span class="p">{</span><span class="k">color</span><span class="p">:</span> <span class="mh">#ff6a3b</span><span class="p">;}</span>        
+    <span class="nt">ul</span> <span class="p">{</span><span class="k">color</span><span class="p">:</span> <span class="mh">#0000ff</span><span class="p">;}</span>
+  <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span> 
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Hallo FIW!&quot;</span><span class="p">;</span>        
+    <span class="p">}</span>
+  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">base</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;localhost/Webtech20&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Metadaten<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+</div>
 <h2 id="block-und-inline-elemente">Block- und Inline-Elemente<a class="headerlink" href="#block-und-inline-elemente" title="Permanent link">&para;</a></h2>
 <p>Generell wird zwischen zwei Arten von HTML-Elementen unterschieden:</p>
 <ul>
@@ -776,7 +812,7 @@
 
 <p>Eine Übersicht über alle HTML-Elemente mit Erläuterungen findet sich <a href="https://developer.mozilla.org/de/docs/Web/HTML/Element"><strong>hier</strong></a>.</p>
 <div class="admonition question">
-<p class="admonition-title">Aufgabe:</p>
+<p class="admonition-title">kleine Übungsaufgabe:</p>
 <p>Erweitern Sie Ihre Datei <code>index.html</code> und fügen Sie mindestens folgende Elemente ein:</p>
 <ul>
 <li>2 verschiedene Überschriften (<code>h1</code>, ..., <code>h6</code>)</li>
@@ -844,7 +880,7 @@
 <p>Das Formatieren der Tabellen (Rahmen, rechtsbündig usw.) sollte stets CSS überlassen werden.</p>
 <h4 id="listen">Listen<a class="headerlink" href="#listen" title="Permanent link">&para;</a></h4>
 <p>Es gibt nummerierte Listen (<em>ordered list</em> <code>&lt;ol&gt;</code>) und nicht-nummerierte Listen (<em>unordered list</em> <code>&lt;ul&gt;</code>). Die Einträge in einer Liste sind die <em>list items</em> <code>&lt;li&gt;</code>. Listen können auch ineinander verschachtelt werden. Dabei ist nur zu beachten, dass Listen immer nur <em>list items</em> enthalten sollen und die list items dann selbst wieder eine neue Liste enthalten können.</p>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">ordered list</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">ordered list</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>eins<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>zwei<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -853,7 +889,7 @@
 </code></pre></div>
 
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">unordered list</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">unordered list</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>eins<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>zwei<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -862,7 +898,7 @@
 </code></pre></div>
 
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">verschachtelte Liste</label><div class="tabbed-content">
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">verschachtelte Liste</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
@@ -957,7 +993,7 @@
 <li><a href="../files/01_WT_HTML.pdf">Folien HTML</a></li>
 <li>um das untenstehende Beispiel auszuführen, benötigen Sie die Datei <a href="../files/fiw.jpg"><strong>fiw.jpg</strong></a>, die Sie in einem <code>Logos</code>-Ordner ablegen sollten, um wenig Änderungsaufwand bei der folgenden HTML-Datei zu haben</li>
 </ul>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">alle Beispiele in einem</label><div class="tabbed-content"></div>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">alle Beispiele in einem</label><div class="tabbed-content"></div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
