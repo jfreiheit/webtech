@@ -6,6 +6,8 @@ Herzlich willkommen zur WebTech-Veranstaltung!
 
 In dieser Veranstaltung lernen Sie, was das World Wide Web ist und wie man eigene Webseiten und -anwendungen realisiert. Sie lernen die Protokolle und Sprachen ``http``, ``HTML``, ``CSS``und ``JavaScript`` kennen und machen sich mit ``Angular``, ``Node.js`` und ``REST`` vertraut.  
 
+Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst). Die Vorlesungsvideos finden Sie darunter für die einzelnen Wochen (unter [**Inhalte**](http://freiheit.f4.htw-berlin.de/webtech/#inhalte)).
+
 | | Woche | Themen (Vorlesung) | Übung | Aufgabe (Stand) | Abgabe Übung bis | 
 |-|-------|--------------------|-------|-----------------|------------------|
 | 1. | 05.-09.10.2020 | Einführung und Organsitorisches | Übung 0 | - | - | 
@@ -34,7 +36,7 @@ Hier sind die Übungen beschrieben, die Sie in jeder Woche ausführen sollen. Da
 
 Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com/intl/de-de/). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn ich dort möglichst wenig Fragen - zumindest die inhaltlichen - beantworten müsste, sondern eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, diese von Ihnen dort beantwortet zu sehen. Damit wäre allen geholfen und ich kann besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht.  
 
-### Wochenplan
+### Inhalte
 
 ??? question "Woche 1 - Einführung und Organisatorisches"
 	- siehe **Übungsaufgabe 0**
@@ -136,6 +138,180 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	</html>
 	```
 
+??? question "Woche 3 - Cascading Style Sheets (CSS)"
+	- siehe **Übungsaufgabe 2**
+	- 04_CSS
+		<video controls="controls" width="200">
+  		<source type="video/mp4" src="./files/videos/04_CSS-1.mp4"></source>
+  		<p>Your browser does not support the video element.</p>
+	  </video>
+
+??? "css.html aus CSS-Vorlesung"
+	```html
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>CSS</title>
+	    <!-- 1. externe CSS-Datei -->
+	    <link rel="stylesheet" href="./styles/mystyles.css">
+	    <!-- 2. style-Element -->
+	    <style>
+	        h1 {
+	            font-weight: normal;
+	            color: red;
+	        }
+
+	        div > ul {
+	            color: grey;
+	        }
+
+	        li {
+	            display: inline;
+	            padding: 10px;
+	            margin: 5px;
+	        }
+
+	        span {
+	            display: block;
+	            color: red;
+	        }
+
+	    </style>
+	</head>
+	<body>
+	    <h1>Cascading Style Sheets (CSS)</h1>
+	    <div>living standard - weiterentwickelt von W3C. <span>Seit 2000 CSS3.</span>
+	        Wichtig: Trennung zwischen Inhalten (HTML) und Aussehen (CSS).
+	    </div>
+	    <div> Wofür CSS?
+	        <section>
+	         <ul class="orangeBackground blackColor">
+	             <li>ansprechender Stil (Font, Farben, Schriftgröße, Rahmen, ...)
+	                 <a href="index.html">Link 2</a>
+	             </li>
+	             <li>Layout (2-spaltig, 3-spaltig, Kopf- und Fußzeilen, ...)
+	                 <a href="index.html">Link 3</a>
+	             </li>
+	             <li>responsives Webdesign (unterschiedlich für Mobile, Tablets, Desktop, ...)
+	                 <a href="index.html">Link 4</a>
+	             </li>
+	         </ul>
+	        </section>
+	    </div>
+	    <ul class="orangeBackground">Inhalte heute:
+	        <li>Orte für CSS-Definitionen
+	            <a href="Unter/dok1.html">Link 5</a>
+	        </li>
+	        <li>Selektoren
+	            <a href="Unter/dok1.html">Link 6</a>
+	        </li>
+	        <li>Box Model
+	            <a href="Unter/dok1.html">Link 7</a>
+	        </li>
+	        <li>Layout (Prinzip, float)
+	            <a href="Unter/dok1.html">Link 8</a>
+	        </li>
+	        <li>Gewichtung der Selektoren
+	            <a href="Unter/dok1.html">Link 9</a>
+	        </li>
+	    </ul>
+	</body>
+	</html>
+	```
+??? "styles/mystyles.css aus CSS-Vorlesung"
+	```css
+	/*
+	Kommentar in CSS
+
+	selektor {
+	    eigenschaft1: wert;
+	    eigenschaft2: wert;
+	   }
+	*/
+
+	body {
+	    font-family: Verdana;
+	    color: blue;
+	}
+
+	a {
+	    text-decoration: none;
+	    color: sandybrown;
+	}
+	```
+??? "layout.html aus CSS-Vorlesung"
+	```html
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Layout mit float</title>
+	    <style>
+	        #p1, #p2, #p3 {
+	            float: left;
+	            width: 31.33%;
+	            padding: 1%;
+	        }
+	    </style>
+	</head>
+	<body>
+	    <p id="p1"><img src="./images/fiw.jpg" alt="fiw-logo" style="width:100%;"/></p>
+	    <p id="p2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+	        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+	        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+	        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+	        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+	        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+	        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+	        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+	        ipsum dolor sit amet.</p>
+	    <p id="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+	        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+	        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+	        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+	        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+	        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+	        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+	        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+	        ipsum dolor sit amet.</p>
+	</body>
+	</html>
+	```
+??? "gewichtung.html aus CSS-Vorlesung"
+	```html
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Gewichtung der Selektoren</title>
+	    <style>
+	        a:link { /* B=0  C=1 D=1 */
+	            color: blue;
+	        }
+	        li a {  /* B=0 C=0 D=2 */
+	            color: magenta;
+	        }
+	        #navigation a.link { /* B=1 C=1 D=1 */
+	            color: red;
+	        }
+	        #navigation li a { /* B=1 C=0 D=2 */
+	            color: black;
+	        }
+	    </style>
+	</head>
+	<body>
+	<ul id="navigation">
+	    <li><a href="startseite.html" class="link">Startseite</a></li>
+	    <li><a href="unterseite.html" class="link">Unterseite</a></li>
+	    <li> Kategorie A: style-Attribut im html-Element (Beispiel 0)</li>
+	    <li> Kategorie B: für id</li>
+	    <li> Kategorie C: Anzahl Klassen und Pseudoklassen</li>
+	    <li> Kategorie D: Anzahl der Elemente und Pseudoelemente</li>
+	</ul>
+	</body>
+	</html>
+	```
+
 ## Übungen
 
 ??? question "Übungsaufgabe 0"
@@ -149,14 +325,12 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 ??? question "Übungsaufgabe 1"
 	- Erstellen Sie in einem `Uebung1`-Ordner eine Datei `uebung1.html`. Das `body`-Element soll ein `header`-Element, ein `nav`-Element, ein `section`-Element und ein `footer`-Element enthalten. 
 	- Unter dieser Übungsaufgabe (siehe `mockupdata`) ist der HTML-Code einer Tabelle mit allen Teilnehmerinnen einer Veranstaltung. Kopieren Sie den Inhalt der Datei so in Ihren HTML-Code, dass folgende Seite erscheint:
-
 	![Uebung1](./files/49_uebung1.png)
 
-	- Es sollen 4 Unterseiten erstellt werden. Bei Klick auf diese Seiten soll die Tabelle jeweils nur die Teilnehmerinnen enthalten, deren Nachname mit dem entsprechenden Anfangsbuchstaben beginnt. Die Seiten `ag.html`, `hl.html`, `mr.html` und `sz.html` sollen im Ordner `NN` abgelegt werden, der Unterordner von `Uebung1` ist.
+	- Es sollen 4 Unterseiten erstellt werden. Bei Klick auf diese Seiten soll die Tabelle jeweils nur die Teilnehmerinnen enthalten, deren Nachname mit dem entsprechenden Anfangsbuchstaben beginnt (also in `ag.html` nur alle Nachnamen, die mit A bis G beginnen). Die Seiten `ag.html`, `hl.html`, `mr.html` und `sz.html` sollen im Ordner `NN` abgelegt werden, der Unterordner von `Uebung1` ist.
 	- Achten Sie darauf, dass man von jeder Unterseite auf jede andere Unterseite und auch auf die Hauptseite (`uebung1.html`) wechseln können muss.
 	- Das einzubindende Logo des Studiengangs liegt [hier](./files/fiw.jpg). Es soll in einen `images`-Ordner gespeichert werden, der in der Ordner-Hierarchie neben dem `Uebung1`-Ordner liegt. Um die Größe des Bildes festzulegen, können Sie mit Hilfe des `style`-Attributes die Höhe und die Breite bestimmen: `style="width:53px; height=48px;"` 
 	- Nächste Woche wird Uebung1 um CSS erweitert. 
-
 
 ??? "mockupdata"
 	```html
@@ -474,6 +648,26 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	</table>
 	```
 
+??? question "Übungsaufgabe 2"
+	- Erstellen Sie (falls noch nicht geschehen) eine `index.html`-Datei in Ihrem Repository-Ordner (also z.B. `DocumentRoot/Webtech20`) derart, dass diese direkte Links auf Ihre Lösungen der Übungen enthalten (z.B. in einer Tabelle oder einer Liste).
+	- Kopieren Sie den Ordner `Uebung1` in den Ordner `Uebung2` (also inkl. Ordner `NN`). Ändern Sie darin die Datei `uebung1.html` zu `uebung2.html` (umbenennen). Ändern Sie entsprechend alle Links innerhalb der Datei, damit Sie z.B. auf den Ordner `Uebung2/NN` zugreifen und nicht mehr auf `Uebung1/NN`.
+	- Legen Sie sich im `Uebung2`-Ordner einen Ordner `styles` an. Erstellen Sie in dem `styles`-Ordner eine Datei `mystyles.css`.
+	- Fügen Sie im `<head>`-Bereich der `uebung2.html` eine logische Verknüpfung zur `mystyles.css`-Datei ein (`<link href="./styles/mystyles.css" rel="stylesheet">`). 
+	- In `mystyles.css` definieren Sie (versuchen Sie mind. 6 der genannten 8 Punkte umzusetzen):
+		- Verdana als Schriftart für das ganze Dokument
+		- der `<header>` soll das HTW-Grau als Hintergrundfarbe, HTW-Orange als Schriftfarbe und der Text zentriert sein (siehe [**HTW Corporate Design**](http://corporatedesign.htw-berlin.de/schrift-farbe/markenfarben/)).
+		- die Tabelle soll ungefähr wie dargestellt aussehen: 
+		  ![Uebung2](./files/55_uebung2.png) 
+		- d.h. mit Rahmen, mit einem Schatten, die Spaltenüberschriften in weiß, mit HTW-grünem Hintergrund.   
+		- Das `<nav>`-Feld hat einen Abstand nach oben und nach unten von jeweils `50px`.
+		- `<a>`-Elemente in einem `<nav>`-Element haben einen grauen Rand, deren Ecken abgerundet sind. Die Hintergrundfarbe ist HTW-blau. Schriftart ist weiß und bold. `<a>`-Elemente in einem `<nav>`-Element sind nicht unterstrichen!
+		- Fährt man mit der Maus über ein `<a>`-Element in einem `<nav>`-Element ändert sich die Hintergrundfarbe in HTW-grau und die Schriftfarbe in HTW-orange. 
+			![Mouseover](./files/56_uebung2_2.png)
+		- Die Tabelle hat eine Breite von 80% des `<section>`-Elements. 
+		- Der `<footer>` ist in HTW-Orange, die Schrift ist schwarz, der Text ist mittig und die Schrift ist kleiner. Die Höhe des footers entsteht dadurch, dass die Schrift einen Abstand nach oben und nach unten von jeweils `20px` hat.
+	- Am Ende soll es *ungefähr* so aussehen:  
+	  ![Uebung2](./files/57_uebung2_3.png) 
+
 ??? question "Übungsaufgabe 4 - wird aber noch geändert!"
     Arbeiten Sie im Abschnitt [**Angular**](./angular/#angular) die Abschnitte [**Erstes Projekt erstellen**](./angular/#erstes-projekt-erstellen) und [**Angular-Projektstruktur**](./angular/#angular-projektstruktur) durch. Sie müssen dazu [**Angular**](./tools/#angular) installieren, eine [**Integrierte Entwicklungsumgebung**](./tools/#integrated-development-environment-ide) und die passenden [**Developer Tools**](./tools/#developer-tools). 
 
@@ -499,3 +693,5 @@ Am Ende des Kurses geben Sie eine Webanwendung ab. Diese wird bewertet und bilde
 	Die Anwendung soll in einem Git-Dienst (GitHub, GitLab, ...) verfügbar sein. Das README (oder eine andere Form der Projektbeschreibung) soll aussagekräftig sein.
 
 	Verwenden Sie ein CSS-Framework, wie z.B. Materialize, Bootstrap o.ä.! Ihre Anwendung soll "modern" aussehen. 
+
+	Nach Abgabe vereinbaren wir ein Online-Meeting, in dem Sie mir Ihre Anwendung nochmal zeigen können und ich Ihnen Fragen zu Ihrem Code stellen werde. Ist keine Prüfung, sondern eher ein fachliches Gespräch. 

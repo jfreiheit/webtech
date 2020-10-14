@@ -273,8 +273,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wochenplan" class="md-nav__link">
-    Wochenplan
+  <a href="#inhalte" class="md-nav__link">
+    Inhalte
   </a>
   
 </li>
@@ -436,8 +436,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wochenplan" class="md-nav__link">
-    Wochenplan
+  <a href="#inhalte" class="md-nav__link">
+    Inhalte
   </a>
   
 </li>
@@ -480,6 +480,7 @@
 <p>Herzlich willkommen zur WebTech-Veranstaltung! </p>
 <h3 id="grober-inhalt">Grober Inhalt<a class="headerlink" href="#grober-inhalt" title="Permanent link">&para;</a></h3>
 <p>In dieser Veranstaltung lernen Sie, was das World Wide Web ist und wie man eigene Webseiten und -anwendungen realisiert. Sie lernen die Protokolle und Sprachen <code>http</code>, <code>HTML</code>, <code>CSS</code>und <code>JavaScript</code> kennen und machen sich mit <code>Angular</code>, <code>Node.js</code> und <code>REST</code> vertraut.  </p>
+<p>Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst). Die Vorlesungsvideos finden Sie darunter für die einzelnen Wochen (unter <a href="http://freiheit.f4.htw-berlin.de/webtech/#inhalte"><strong>Inhalte</strong></a>).</p>
 <table>
 <thead>
 <tr>
@@ -634,7 +635,7 @@
 <p>Zur erfolgreichen Durchführung der Veranstaltung müssen die Übungen lösen und zu den jeweiligen Fristen per Git auf einen Server (GitHub oder GitLab) laden. Am Ende des Semesters ist eine Aufgabe abzugeben. Diese Aufgabe wird bewertet. Die Bewertung entspricht dann der Modulnote. </p>
 <p>Hier sind die Übungen beschrieben, die Sie in jeder Woche ausführen sollen. Damit Sie dies erfolgreich erledigen können, ist jeweils angegeben, welche Themen Sie dafür durcharbeiten müssen. Das Durcharbeiten der jeweiligen Themen entspricht jeweils einer Vorlesung. Diese wird also selbständig durchgeführt. </p>
 <p>Für die Kommunikation untereinander verwenden wir <a href="https://slack.com/intl/de-de/"><strong>Slack</strong></a>. Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn ich dort möglichst wenig Fragen - zumindest die inhaltlichen - beantworten müsste, sondern eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, diese von Ihnen dort beantwortet zu sehen. Damit wäre allen geholfen und ich kann besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht.  </p>
-<h3 id="wochenplan">Wochenplan<a class="headerlink" href="#wochenplan" title="Permanent link">&para;</a></h3>
+<h3 id="inhalte">Inhalte<a class="headerlink" href="#inhalte" title="Permanent link">&para;</a></h3>
 <details class="question"><summary>Woche 1 - Einführung und Organisatorisches</summary><ul>
 <li>siehe <strong>Übungsaufgabe 0</strong></li>
 <li>01_Einführung
@@ -736,6 +737,180 @@ das ist Text <span class="p">&lt;</span><span class="nt">a</span> <span class="n
 </code></pre></div>
 
 </details>
+<details class="question"><summary>Woche 3 - Cascading Style Sheets (CSS)</summary><ul>
+<li>siehe <strong>Übungsaufgabe 2</strong></li>
+<li>04_CSS
+    <video controls="controls" width="200">
+    <source type="video/mp4" src="./files/videos/04_CSS-1.mp4"></source>
+    <p>Your browser does not support the video element.</p>
+  </video></li>
+</ul>
+</details>
+<details><summary>css.html aus CSS-Vorlesung</summary><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>CSS<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- 1. externe CSS-Datei --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;./styles/mystyles.css&quot;</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- 2. style-Element --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="nt">h1</span> <span class="p">{</span>
+            <span class="k">font-weight</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
+            <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nt">div</span> <span class="o">&gt;</span> <span class="nt">ul</span> <span class="p">{</span>
+            <span class="k">color</span><span class="p">:</span> <span class="kc">grey</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nt">li</span> <span class="p">{</span>
+            <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
+            <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">margin</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nt">span</span> <span class="p">{</span>
+            <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+            <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+        <span class="p">}</span>
+
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Cascading Style Sheets (CSS)<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>living standard - weiterentwickelt von W3C. <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Seit 2000 CSS3.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        Wichtig: Trennung zwischen Inhalten (HTML) und Aussehen (CSS).
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> Wofür CSS?
+        <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;orangeBackground blackColor&quot;</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>ansprechender Stil (Font, Farben, Schriftgröße, Rahmen, ...)
+                 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;index.html&quot;</span><span class="p">&gt;</span>Link 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+             <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Layout (2-spaltig, 3-spaltig, Kopf- und Fußzeilen, ...)
+                 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;index.html&quot;</span><span class="p">&gt;</span>Link 3<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+             <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>responsives Webdesign (unterschiedlich für Mobile, Tablets, Desktop, ...)
+                 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;index.html&quot;</span><span class="p">&gt;</span>Link 4<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+             <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;orangeBackground&quot;</span><span class="p">&gt;</span>Inhalte heute:
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Orte für CSS-Definitionen
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;Unter/dok1.html&quot;</span><span class="p">&gt;</span>Link 5<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Selektoren
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;Unter/dok1.html&quot;</span><span class="p">&gt;</span>Link 6<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Box Model
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;Unter/dok1.html&quot;</span><span class="p">&gt;</span>Link 7<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Layout (Prinzip, float)
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;Unter/dok1.html&quot;</span><span class="p">&gt;</span>Link 8<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Gewichtung der Selektoren
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;Unter/dok1.html&quot;</span><span class="p">&gt;</span>Link 9<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</details>
+<details><summary>styles/mystyles.css aus CSS-Vorlesung</summary><div class="highlight"><pre><span></span><code><span class="c">/*</span>
+<span class="c">Kommentar in CSS</span>
+
+<span class="c">selektor {</span>
+<span class="c">    eigenschaft1: wert;</span>
+<span class="c">    eigenschaft2: wert;</span>
+<span class="c">   }</span>
+<span class="c">*/</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="n">Verdana</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span> <span class="p">{</span>
+    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">sandybrown</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</details>
+<details><summary>layout.html aus CSS-Vorlesung</summary><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Layout mit float<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="p">#</span><span class="nn">p1</span><span class="o">,</span> <span class="p">#</span><span class="nn">p2</span><span class="o">,</span> <span class="p">#</span><span class="nn">p3</span> <span class="p">{</span>
+            <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+            <span class="k">width</span><span class="p">:</span> <span class="mf">31.33</span><span class="kt">%</span><span class="p">;</span>
+            <span class="k">padding</span><span class="p">:</span> <span class="mi">1</span><span class="kt">%</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;p1&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./images/fiw.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;fiw-logo&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:100%;&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;p2&quot;</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+        ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;p3&quot;</span><span class="p">&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+        ipsum dolor sit amet.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</details>
+<details><summary>gewichtung.html aus CSS-Vorlesung</summary><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Gewichtung der Selektoren<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="nt">a</span><span class="p">:</span><span class="nd">link</span> <span class="p">{</span> <span class="c">/* B=0  C=1 D=1 */</span>
+            <span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span>  <span class="c">/* B=0 C=0 D=2 */</span>
+            <span class="k">color</span><span class="p">:</span> <span class="kc">magenta</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="p">#</span><span class="nn">navigation</span> <span class="nt">a</span><span class="p">.</span><span class="nc">link</span> <span class="p">{</span> <span class="c">/* B=1 C=1 D=1 */</span>
+            <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="p">#</span><span class="nn">navigation</span> <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span> <span class="c">/* B=1 C=0 D=2 */</span>
+            <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;navigation&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;startseite.html&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;link&quot;</span><span class="p">&gt;</span>Startseite<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;unterseite.html&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;link&quot;</span><span class="p">&gt;</span>Unterseite<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Kategorie A: style-Attribut im html-Element (Beispiel 0)<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Kategorie B: für id<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Kategorie C: Anzahl Klassen und Pseudoklassen<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Kategorie D: Anzahl der Elemente und Pseudoelemente<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</details>
 <h2 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h2>
 <details class="question"><summary>Übungsaufgabe 0</summary><ul>
 <li>wählen Sie eine <a href="./tools/#integrated-development-environment-ide"><strong>IDE</strong></a> aus und installieren Sie diese </li>
@@ -748,11 +923,13 @@ das ist Text <span class="p">&lt;</span><span class="nt">a</span> <span class="n
 </details>
 <details class="question"><summary>Übungsaufgabe 1</summary><ul>
 <li>Erstellen Sie in einem <code>Uebung1</code>-Ordner eine Datei <code>uebung1.html</code>. Das <code>body</code>-Element soll ein <code>header</code>-Element, ein <code>nav</code>-Element, ein <code>section</code>-Element und ein <code>footer</code>-Element enthalten. </li>
-<li>Unter dieser Übungsaufgabe (siehe <code>mockupdata</code>) ist der HTML-Code einer Tabelle mit allen Teilnehmerinnen einer Veranstaltung. Kopieren Sie den Inhalt der Datei so in Ihren HTML-Code, dass folgende Seite erscheint:</li>
-</ul>
-<p><img alt="Uebung1" src="files/49_uebung1.png" /></p>
-<ul>
-<li>Es sollen 4 Unterseiten erstellt werden. Bei Klick auf diese Seiten soll die Tabelle jeweils nur die Teilnehmerinnen enthalten, deren Nachname mit dem entsprechenden Anfangsbuchstaben beginnt. Die Seiten <code>ag.html</code>, <code>hl.html</code>, <code>mr.html</code> und <code>sz.html</code> sollen im Ordner <code>NN</code> abgelegt werden, der Unterordner von <code>Uebung1</code> ist.</li>
+<li>
+<p>Unter dieser Übungsaufgabe (siehe <code>mockupdata</code>) ist der HTML-Code einer Tabelle mit allen Teilnehmerinnen einer Veranstaltung. Kopieren Sie den Inhalt der Datei so in Ihren HTML-Code, dass folgende Seite erscheint:
+<img alt="Uebung1" src="files/49_uebung1.png" /></p>
+</li>
+<li>
+<p>Es sollen 4 Unterseiten erstellt werden. Bei Klick auf diese Seiten soll die Tabelle jeweils nur die Teilnehmerinnen enthalten, deren Nachname mit dem entsprechenden Anfangsbuchstaben beginnt (also in <code>ag.html</code> nur alle Nachnamen, die mit A bis G beginnen). Die Seiten <code>ag.html</code>, <code>hl.html</code>, <code>mr.html</code> und <code>sz.html</code> sollen im Ordner <code>NN</code> abgelegt werden, der Unterordner von <code>Uebung1</code> ist.</p>
+</li>
 <li>Achten Sie darauf, dass man von jeder Unterseite auf jede andere Unterseite und auch auf die Hauptseite (<code>uebung1.html</code>) wechseln können muss.</li>
 <li>Das einzubindende Logo des Studiengangs liegt <a href="files/fiw.jpg">hier</a>. Es soll in einen <code>images</code>-Ordner gespeichert werden, der in der Ordner-Hierarchie neben dem <code>Uebung1</code>-Ordner liegt. Um die Größe des Bildes festzulegen, können Sie mit Hilfe des <code>style</code>-Attributes die Höhe und die Breite bestimmen: <code>style="width:53px; height=48px;"</code> </li>
 <li>Nächste Woche wird Uebung1 um CSS erweitert. </li>
@@ -1073,6 +1250,29 @@ das ist Text <span class="p">&lt;</span><span class="nt">a</span> <span class="n
 </code></pre></div>
 
 </details>
+<details class="question"><summary>Übungsaufgabe 2</summary><ul>
+<li>Erstellen Sie (falls noch nicht geschehen) eine <code>index.html</code>-Datei in Ihrem Repository-Ordner (also z.B. <code>DocumentRoot/Webtech20</code>) derart, dass diese direkte Links auf Ihre Lösungen der Übungen enthalten (z.B. in einer Tabelle oder einer Liste).</li>
+<li>Kopieren Sie den Ordner <code>Uebung1</code> in den Ordner <code>Uebung2</code> (also inkl. Ordner <code>NN</code>). Ändern Sie darin die Datei <code>uebung1.html</code> zu <code>uebung2.html</code> (umbenennen). Ändern Sie entsprechend alle Links innerhalb der Datei, damit Sie z.B. auf den Ordner <code>Uebung2/NN</code> zugreifen und nicht mehr auf <code>Uebung1/NN</code>.</li>
+<li>Legen Sie sich im <code>Uebung2</code>-Ordner einen Ordner <code>styles</code> an. Erstellen Sie in dem <code>styles</code>-Ordner eine Datei <code>mystyles.css</code>.</li>
+<li>Fügen Sie im <code>&lt;head&gt;</code>-Bereich der <code>uebung2.html</code> eine logische Verknüpfung zur <code>mystyles.css</code>-Datei ein (<code>&lt;link href="./styles/mystyles.css" rel="stylesheet"&gt;</code>). </li>
+<li>In <code>mystyles.css</code> definieren Sie (versuchen Sie mind. 6 der genannten 8 Punkte umzusetzen):<ul>
+<li>Verdana als Schriftart für das ganze Dokument</li>
+<li>der <code>&lt;header&gt;</code> soll das HTW-Grau als Hintergrundfarbe, HTW-Orange als Schriftfarbe und der Text zentriert sein (siehe <a href="http://corporatedesign.htw-berlin.de/schrift-farbe/markenfarben/"><strong>HTW Corporate Design</strong></a>).</li>
+<li>die Tabelle soll ungefähr wie dargestellt aussehen: 
+  <img alt="Uebung2" src="files/55_uebung2.png" /> </li>
+<li>d.h. mit Rahmen, mit einem Schatten, die Spaltenüberschriften in weiß, mit HTW-grünem Hintergrund.   </li>
+<li>Das <code>&lt;nav&gt;</code>-Feld hat einen Abstand nach oben und nach unten von jeweils <code>50px</code>.</li>
+<li><code>&lt;a&gt;</code>-Elemente in einem <code>&lt;nav&gt;</code>-Element haben einen grauen Rand, deren Ecken abgerundet sind. Die Hintergrundfarbe ist HTW-blau. Schriftart ist weiß und bold. <code>&lt;a&gt;</code>-Elemente in einem <code>&lt;nav&gt;</code>-Element sind nicht unterstrichen!</li>
+<li>Fährt man mit der Maus über ein <code>&lt;a&gt;</code>-Element in einem <code>&lt;nav&gt;</code>-Element ändert sich die Hintergrundfarbe in HTW-grau und die Schriftfarbe in HTW-orange. 
+    <img alt="Mouseover" src="files/56_uebung2_2.png" /></li>
+<li>Die Tabelle hat eine Breite von 80% des <code>&lt;section&gt;</code>-Elements. </li>
+<li>Der <code>&lt;footer&gt;</code> ist in HTW-Orange, die Schrift ist schwarz, der Text ist mittig und die Schrift ist kleiner. Die Höhe des footers entsteht dadurch, dass die Schrift einen Abstand nach oben und nach unten von jeweils <code>20px</code> hat.</li>
+</ul>
+</li>
+<li>Am Ende soll es <em>ungefähr</em> so aussehen:<br />
+<img alt="Uebung2" src="files/57_uebung2_3.png" /> </li>
+</ul>
+</details>
 <details class="question"><summary>Übungsaufgabe 4 - wird aber noch geändert!</summary><p>Arbeiten Sie im Abschnitt <a href="./angular/#angular"><strong>Angular</strong></a> die Abschnitte <a href="./angular/#erstes-projekt-erstellen"><strong>Erstes Projekt erstellen</strong></a> und <a href="./angular/#angular-projektstruktur"><strong>Angular-Projektstruktur</strong></a> durch. Sie müssen dazu <a href="./tools/#angular"><strong>Angular</strong></a> installieren, eine <a href="./tools/#integrated-development-environment-ide"><strong>Integrierte Entwicklungsumgebung</strong></a> und die passenden <a href="./tools/#developer-tools"><strong>Developer Tools</strong></a>. </p>
 </details>
 <h2 id="semesteraufgabe">Semesteraufgabe<a class="headerlink" href="#semesteraufgabe" title="Permanent link">&para;</a></h2>
@@ -1093,6 +1293,7 @@ das ist Text <span class="p">&lt;</span><span class="nt">a</span> <span class="n
 <p>Datenbankeinträge können Bücher, CDs, ToDos, Einkaufslisten, Vorlesungen, Kühlschrankinhalte usw. sein - wie gesagt, Ihrer Kreativität sind keine Grenzen gesetzt. </p>
 <p>Die Anwendung soll in einem Git-Dienst (GitHub, GitLab, ...) verfügbar sein. Das README (oder eine andere Form der Projektbeschreibung) soll aussagekräftig sein.</p>
 <p>Verwenden Sie ein CSS-Framework, wie z.B. Materialize, Bootstrap o.ä.! Ihre Anwendung soll "modern" aussehen. </p>
+<p>Nach Abgabe vereinbaren wir ein Online-Meeting, in dem Sie mir Ihre Anwendung nochmal zeigen können und ich Ihnen Fragen zu Ihrem Code stellen werde. Ist keine Prüfung, sondern eher ein fachliches Gespräch. </p>
 </details>
                 
               

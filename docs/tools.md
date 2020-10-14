@@ -124,20 +124,20 @@ In Zukunft fügen Sie Ihre neu erstellten Dateien und Ordner immer mit `git add 
 
 ## Webserver
 
-Für das Modul benötigen wir einen Webserver. Wir verwenden den [**Apache Webserver**](https://httpd.apache.org/). Auf dem Mac ist er bereits vorhanden, auf Linux-Systemen meistens auch. Für Windows-Systeme wird die Installation von [**XAMPP**](https://www.apachefriends.org/de/index.html) empfohlen. Hier finden Sie Anleitungen zur Einrichtung des Webservers:
+Für das Modul benötigen wir einen Webserver. Wir verwenden den [**Apache Webserver**](https://httpd.apache.org/ ). Auf dem Mac ist er bereits vorhanden, auf Linux-Systemen meistens auch. Für Windows-Systeme wird die Installation von [**XAMPP**](https://www.apachefriends.org/de/index.html ) empfohlen. Hier finden Sie Anleitungen zur Einrichtung des Webservers:
 
 * Windows: 
-    * [**https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/ **](https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/)
-    * [**https://werner-zenk.de/tipps/lokale_webserver_xampp.php **](https://werner-zenk.de/tipps/lokale_webserver_xampp.php)
-    * Wichtig ist, dass Sie wissen, wo sich Ihr *DocumentRoot* befindet (zunächst ``xampp\htdocs`` - lässt sich aber [**ändern**](https://www.seo-head.de/entwicklung/xampp-htdocs-verzeichnis-aendern/))
+    * [**https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/**](https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/ )
+    * [**https://werner-zenk.de/tipps/lokale_webserver_xampp.php**](https://werner-zenk.de/tipps/lokale_webserver_xampp.php )
+    * Wichtig ist, dass Sie wissen, wo sich Ihr *DocumentRoot* befindet (zunächst `xampp\htdocs` - lässt sich aber [**ändern**](https://www.seo-head.de/entwicklung/xampp-htdocs-verzeichnis-aendern/ ))
 * Mac:
 	* der Apache-Webserver ist bereits installiert
-	* achten Sie darauf, dass Sie Ihr *DocumentRoot* kennen (meistens ``Sites``, eventuell [**ändern**](https://sysadminde.com/questions/161529/how-to-change-document-root-for-apache2-in-mac-os-x))
+	* achten Sie darauf, dass Sie Ihr *DocumentRoot* kennen (meistens `Sites`, eventuell [**ändern**](https://sysadminde.com/questions/161529/how-to-change-document-root-for-apache2-in-mac-os-x))
 * Linux:
     * die meisten Linux-Systeme haben bereits einen Webserver (auch hier wichtig, *DocumentRoot* zu kennen)
-    * wenn nicht, können Sie sich auch [**XAMPP**](https://www.apachefriends.org/de/index.html) installieren
+    * wenn nicht, können Sie sich auch [**XAMPP**](https://www.apachefriends.org/de/index.html ) installieren
 
-Um zu testen, ob Ihr Webser läuft, erstellen Sie im *DocumentRoot* eine Datei ``index.php`` mit folgendem Inhalt:
+Um zu testen, ob Ihr Webser läuft, erstellen Sie im *DocumentRoot* eine Datei `index.php` mit folgendem Inhalt:
 
 ```
 <?php phpinfo(); ?>
