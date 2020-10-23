@@ -181,6 +181,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -296,6 +298,13 @@
           <li class="md-nav__item">
   <a href="#option-a-repository-zunachst-in-github-anlegen-dann-clonen" class="md-nav__link">
     Option A: Repository zunächst in Github anlegen, dann clonen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-repository-in-github-anlegen-und-lokal-anlegen-dann-verbinden" class="md-nav__link">
+    Option B: Repository in Github anlegen und lokal anlegen, dann verbinden
   </a>
   
 </li>
@@ -455,6 +464,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../rwd/" title="RWD" class="md-nav__link">
+      RWD
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../javascript/" title="JavaScript" class="md-nav__link">
       JavaScript
     </a>
@@ -548,6 +569,13 @@
           <li class="md-nav__item">
   <a href="#option-a-repository-zunachst-in-github-anlegen-dann-clonen" class="md-nav__link">
     Option A: Repository zunächst in Github anlegen, dann clonen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-repository-in-github-anlegen-und-lokal-anlegen-dann-verbinden" class="md-nav__link">
+    Option B: Repository in Github anlegen und lokal anlegen, dann verbinden
   </a>
   
 </li>
@@ -771,6 +799,16 @@ git push
 
 <p>In Github erkenn Sie, dass commit und push geklappt haben:</p>
 <p><img alt="GitHub" src="../files/48_git5.png" /></p>
+<p>In Zukunft fügen Sie Ihre neu erstellten Dateien und Ordner immer mit <code>git add .</code> hinzu, erstellen neue Commits mit <code>git commit -m "Commit-Nachricht"</code> und pushen dann nach Github mit <code>git push</code>. </p>
+<h4 id="option-b-repository-in-github-anlegen-und-lokal-anlegen-dann-verbinden">Option B: Repository in Github anlegen und lokal anlegen, dann verbinden<a class="headerlink" href="#option-b-repository-in-github-anlegen-und-lokal-anlegen-dann-verbinden" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Legen Sie sich wie oben beschrieben ein Repository unter GitHub an. Kopieren Sie die <em>Remote-URL</em> (z.B. <code>https://github.com/jfreiheit/Webtech20.git</code>). </li>
+<li>Erstellen Sie sich lokal einen Ordner (am besten in Ihrem <em>DocumentRoot</em>), z.B. <code>Webtech20</code> (<code>mkdir Webtech20</code>). Wechseln Sie in diesen Ordner (<code>cd Webtech20</code>) und führen Sie dort <code>git init</code> aus. Es entsteht ein <code>.git</code>-Ordner. </li>
+<li>Fügen Sie diesem lokalen Repository alle Ihre bisher in <code>Webtech20</code> erstellten Dateien mit <code>git add .</code> hinzu. </li>
+<li>Erstellen Sie ein Commit, z.B. <code>git commit -m "initial commit"</code>.</li>
+<li>Verbinden Sie Ihr lokales Repository mit dem remote-Repository auf Github durch <code>git remote add origin https://github.com/jfreiheit/Webtech20.git</code> (für <code>https://...</code> setzen Sie Ihre <em>Remote-URL</em> ein).</li>
+<li>Pushen Sie die Dateien auf Ihr remote-Repository: <code>git push --set-upstream origin master</code>. </li>
+</ol>
 <p>In Zukunft fügen Sie Ihre neu erstellten Dateien und Ordner immer mit <code>git add .</code> hinzu, erstellen neue Commits mit <code>git commit -m "Commit-Nachricht"</code> und pushen dann nach Github mit <code>git push</code>. </p>
 <h2 id="webserver">Webserver<a class="headerlink" href="#webserver" title="Permanent link">&para;</a></h2>
 <p>Für das Modul benötigen wir einen Webserver. Wir verwenden den <a href="https://httpd.apache.org/"><strong>Apache Webserver</strong></a>. Auf dem Mac ist er bereits vorhanden, auf Linux-Systemen meistens auch. Für Windows-Systeme wird die Installation von <a href="https://www.apachefriends.org/de/index.html"><strong>XAMPP</strong></a> empfohlen. Hier finden Sie Anleitungen zur Einrichtung des Webservers:</p>

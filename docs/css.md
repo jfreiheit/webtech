@@ -192,7 +192,6 @@ Pseudo-Elemente sind so ähnlich wie Pseudo-Klassen, werden aber über `::` ange
 	p::first-letter {
 	    font-size:300%;
 	}
-
 	p::first-line {
 	    font-weight: bold;
 	}

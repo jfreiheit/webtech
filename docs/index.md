@@ -10,22 +10,23 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst). Die Vorlesung
 
 | | Woche | Themen (Vorlesung) | Übung | Aufgabe (Stand) | Abgabe Übung bis | 
 |-|-------|--------------------|-------|-----------------|------------------|
-| 1. | 05.-09.10.2020 | Einführung und Organsitorisches | Übung 0 | - | - | 
-| 3. | 12.-16.10.2020 | HTML | Übung 1 | Idee | 25.10.2020 | 
-| 4. | 19.-23.10.2020 | CSS (Eigenschaften und Selektoren) | Übung 2 | - | 01.11.2020 | 
-| 5. | 26.-30.10.2020 | CSS (Layout und Responsive Webdesign) | Übung 3 | Konzept | 08.11.2020 | 
-| 6. | 02.-06.11.2020 | Angular (Einführung und Komponenten) | Übung 4 | - | 15.11.2020 | 
-| 7. | 09.-13.11.2020 | Angular (Direktiven, data-, property-, event-binding) | Übung 5 | Datenmodell | 22.11.2020 | 
-| 8. | 16.-20.11.2020 | Angular (Lifecycle-Hooks, Services, Routing) | Übung 6 | Schnittstelle | 29.11.2020 | 
-| 9. | 23.-27.11.2020 | Angular (HTTP-Client), MySQL, REST | Übung 7 | Frontend (c+r)| 06.12.2020 | 
-| 10. | 30.-04.12.2020 | Angular (Formulare) | Übung 8 | Frontend (u+d)| 13.12.2020 | 
-| 11. | 07.-11.12.2020 | Node.js (Einführung, Webserver) | Übung 9 | Frontend fertig | 20.12.2020 | 
-| 12. | 14.-18.12.2020 | Node.js (Express, Request, Response, URL) | Übung 10 | Backend (c) | 10.01.2020 | 
-| 13. | 21.-25.12.2020 | Node.js (Model View Controller), JSON | - | Backend (r) | - |
-| 14. | 04.-08.01.2021 | Node.js (Datenbankanbindung, REST-Server) | - | Backend (u) | - |
-| 15. | 11.-15.01.2021 | JSON Web Tokens | - | Backend (d + fertig)| - |
-| 16. | 18.-22.01.2021 | Wiederholung | - | fertig stellen | - |
-| 17. | 25.-29.01.2021 | - | Fragen | Abgabe 1.PZ 13.02.2021 | - |
+| 1. | 05.-09.10.2020 | Einführung und Organisatorisches | Übung 0 | - | - | 
+| 2. | 12.-16.10.2020 | HTML | Übung 1 | Idee | 25.10.2020 | 
+| 3. | 19.-23.10.2020 | CSS (Eigenschaften und Selektoren) | Übung 2 | - | 01.11.2020 | 
+| 4. | 26.-30.10.2020 | RWD (Responsive Webdesign) | Übung 3 | Konzept | 08.11.2020 | 
+| 5. | 02.-06.11.2020 | Angular (Einführung und Komponenten) | Übung 4 | - | 15.11.2020 | 
+| 6. | 09.-13.11.2020 | Angular (Direktiven, data-, property-, event-binding) | Übung 5 | Datenmodell | 22.11.2020 | 
+| 7. | 16.-20.11.2020 | Angular (Lifecycle-Hooks, Services, Routing) | Übung 6 | Schnittstelle | 29.11.2020 | 
+| 8. | 23.-27.11.2020 | Angular (HTTP-Client), MySQL, REST | Übung 7 | Frontend (c+r)| 06.12.2020 | 
+| 9. | 30.-04.12.2020 | Angular (Formulare) | Übung 8 | Frontend (u+d)| 13.12.2020 | 
+| 10. | 07.-11.12.2020 | Node.js (Einführung, Webserver) | Übung 9 | Frontend fertig | 20.12.2020 | 
+| 11. | 14.-18.12.2020 | Node.js (Express, Request, Response, URL) | Übung 10 | Backend ( c ) | 10.01.2020 | 
+| 12. | 21.-25.12.2020 | Node.js (Model View Controller), JSON | - | Backend ( r ) | - |
+| | | | | | | |
+| 13. | 04.-08.01.2021 | Node.js (Datenbankanbindung, REST-Server) | - | Backend (u) | - |
+| 14. | 11.-15.01.2021 | JSON Web Tokens | - | Backend (d + fertig)| - |
+| 15. | 18.-22.01.2021 | Wiederholung | - | fertig stellen | - |
+| 16. | 25.-29.01.2021 | - | Fragen | Abgabe 1.PZ 13.02.2021 | - |
 |  |  |  |  | Abgabe 2.PZ 01.04.2021 | - |
 
 ### Organisatorisches 
@@ -40,26 +41,15 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 
 ??? question "Woche 1 - Einführung und Organisatorisches"
 	- siehe **Übungsaufgabe 0**
-	- 01_Einführung
-		<video controls="controls" width="200">
-  		<source type="video/mp4" src="./files/videos/01_Einfuehrung.mp4"></source>
-  		<p>Your browser does not support the video element.</p>
-	  </video>
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=aa2dc92b4a4b18e89e85a195be581512&width=720&height=405&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="405" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
 	- die Notizen dazu finden Sie [**hier**](./files/01_WebTech_Einfuehrung.pdf)
-	- 02_Organisatorisches
-	 	<video controls="controls" width="200">
-  		<source type="video/mp4" src="./files/videos/02_Organisatorisches.mp4"></source>
-  		<p>Your browser does not support the video element.</p>
-		</video>
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=e4f7b04a1f1065daf8ecaeff5e99fd62&width=720&height=540&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="540" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
 	- die Notizen dazu finden Sie [**hier**](./files/02_Organisatorisches.pdf)
 
 ??? question "Woche 2 - Hypertext Markup Language (HTML)"
-	- siehe **Übungsaufgabe 1**
-	- 03_HTML
-		<video controls="controls" width="200">
-  		<source type="video/mp4" src="./files/videos/03_HTML.mp4"></source>
-  		<p>Your browser does not support the video element.</p>
-	  </video>
+	- siehe [**HTML**](./html/#html)
+	- siehe **Übungsaufgabe 1 (HTML)**
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=6d5f322f330f0a9a46cd6d6b5486a51f&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
 	- hier die Bilder [**htw.jpg**](./files/htw.jpg) und [**fiw.jpg**](./files/fiw.jpg)
 
 ??? "index.html aus HTML-Vorlesung"
@@ -139,12 +129,9 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	```
 
 ??? question "Woche 3 - Cascading Style Sheets (CSS)"
-	- siehe **Übungsaufgabe 2**
-	- 04_CSS
-		<video controls="controls" width="200">
-  		<source type="video/mp4" src="./files/videos/04_CSS-1.mp4"></source>
-  		<p>Your browser does not support the video element.</p>
-	  </video>
+	- siehe [**CSS**](./css/#css)
+	- siehe **Übungsaufgabe 2 (CSS)**
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=3aaeac8e5d171874bdd0933e776165c4&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
 
 ??? "css.html aus CSS-Vorlesung"
 	```html
@@ -312,6 +299,11 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	</html>
 	```
 
+??? question "Woche 4 - Responsive Webdesign (RWD)"
+	- siehe [**Responsive Webdesign**](./rwd/#responsive-web-design)
+	- siehe **Übungsaufgabe 3 (RWD + Bootstrap)**
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=f5fb8d51009c1106b925a2d42d42ddc1&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
+
 ## Übungen
 
 ??? question "Übungsaufgabe 0"
@@ -322,7 +314,7 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
     - richten Sie Ihren Webserver so ein, dass ``WebTech20`` Ihr *DocumentRoot* ist ([**siehe**](./tools/#webserver))
     - commiten und pushen Sie Ihr Repository
 
-??? question "Übungsaufgabe 1"
+??? question "Übungsaufgabe 1 (HTML)"
 	- Erstellen Sie in einem `Uebung1`-Ordner eine Datei `uebung1.html`. Das `body`-Element soll ein `header`-Element, ein `nav`-Element, ein `section`-Element und ein `footer`-Element enthalten. 
 	- Unter dieser Übungsaufgabe (siehe `mockupdata`) ist der HTML-Code einer Tabelle mit allen Teilnehmerinnen einer Veranstaltung. Kopieren Sie den Inhalt der Datei so in Ihren HTML-Code, dass folgende Seite erscheint:
 	![Uebung1](./files/49_uebung1.png)
@@ -648,7 +640,7 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	</table>
 	```
 
-??? question "Übungsaufgabe 2"
+??? question "Übungsaufgabe 2 (CSS)"
 	- Erstellen Sie (falls noch nicht geschehen) eine `index.html`-Datei in Ihrem Repository-Ordner (also z.B. `DocumentRoot/Webtech20`) derart, dass diese direkte Links auf Ihre Lösungen der Übungen enthalten (z.B. in einer Tabelle oder einer Liste).
 	- Kopieren Sie den Ordner `Uebung1` in den Ordner `Uebung2` (also inkl. Ordner `NN`). Ändern Sie darin die Datei `uebung1.html` zu `uebung2.html` (umbenennen). Ändern Sie entsprechend alle Links innerhalb der Datei, damit Sie z.B. auf den Ordner `Uebung2/NN` zugreifen und nicht mehr auf `Uebung1/NN`.
 	- Legen Sie sich im `Uebung2`-Ordner einen Ordner `styles` an. Erstellen Sie in dem `styles`-Ordner eine Datei `mystyles.css`.
@@ -667,6 +659,52 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 		- Der `<footer>` ist in HTW-Orange, die Schrift ist schwarz, der Text ist mittig und die Schrift ist kleiner. Die Höhe des footers entsteht dadurch, dass die Schrift einen Abstand nach oben und nach unten von jeweils `20px` hat.
 	- Am Ende soll es *ungefähr* so aussehen:  
 	  ![Uebung2](./files/57_uebung2_3.png) 
+
+??? question "Übungsaufgabe 3 (RWD + Bootstrap)"
+	- Kopieren Sie `uebung2.html` aus Übung 2 in einen neuen `Uebung3`-Ordner und benennen Sie die Datei in `uebung3.html` um (der `NN`-Ordner muss nicht mehr mitkopiert werden). Achten Sie aber darauf, dass das FIW-Logo noch angezeigt wird
+	- Binden Sie in Ihre `uebung3.html` Bootstrap ein (entweder per CDN oder als lokalen Zugriff – siehe [**Bootstrap**](./rwd/#bootstrap))
+	- **Header**:
+		- der `<header>` enthält das FIW-Logo und die Überschrift `<h1>Teilnehmerinnen WebTech</h1>`
+		- weisen Sie dem `<header>` die Bootstrap-Klasse [**jumbotron**](https://getbootstrap.com/docs/4.5/components/jumbotron/) zu
+		- definieren Sie eine CSS-Eigenschaft so, dass eine `h1`-Überschrift in einem `header` ein Inline-Element ist
+		- definieren Sie eine `padding-left`-Eigenschaft für eine solche Überschrift so, dass die Überschrift ungefähr mittig ist (relative Größenangabe)
+		- der header soll ungefähr so aussehen (Navigation und Anfang des Hauptteils sind auch schon zu sehen): ![header](./files/66_uebung3_1.png)
+	- **Navigation**: 
+		- *interne Links* (Links innerhalb der Seite) funktionieren wie folgt: Sie weisen einem Element eine `id` zu, z.B. der Tabellenzeile, die den ersten Nachnamen enthält, der mit "H" beginnt: 
+		```html
+			<tr id="H">
+    			<td>Steven</td>
+    			<td>Hamilton</td>
+    			<td>shamiltonu@state.tx.us</td>
+    			<td>38.194.91.201</td>
+			</tr>
+		```
+		- Jetzt können Sie in einem internen Link mithilfe des Doppelkreuzes (`#`) und des Bezeichners für die id (`H`) darauf verweisen, z.B.
+		```html 
+			<a class="nav-link" href="#H">H-L</a>
+		```
+		- Vergeben Sie entsprechend IDs für die entsprechenden Tabellenzeilen (A, H, M, S) und passen Sie Ihre Hyperlinks im Navigationsmenü entsprechend an
+		- Weisen Sie Ihrem `<nav>`-Element einen lightgrey-Hintergrund zu
+		- Erstellen Sie für die einzelnen Links eine `<ul>`, deren `<li>` jeweils ein `<a>`-Element mit den Referenzen auf die oben beschriebenen IDs enthalten
+		- Informieren Sie sich unter [**Navs**](https://getbootstrap.com/docs/4.5/components/navs/) (oder wo Sie möchten) über „Navs“ und erstellen Sie Ihr Navigationsmenü so, wie oben in der Abbildung (siehe **Header**) gezeigt
+		- Ändern Sie aber die Farbe der Links so, dass sie im HTW-Orange (`#FF5F00`) erscheinen und wenn man mit der Maus darüber fährt im HTW-Blau (`#0082D1`) (Definieren Sie sich gerne [**Custom Properties**](./css/#custom-properties) und wenden Sie diese an)
+	- **Hauptteil**:
+		- der Hauptteil soll aus drei Containern bestehen: einer, der nur das Wort (Überschrift) "links" enthält, einer, der die Tabelle enthält und ein dritter, der nur das Wort (Überschrift) "rechts" enthält
+		- Weisen Sie Ihrem Hauptteil (z.B. `<main>`) die Klasse `row` zu und gestalten gestalten Sie die drei inneren Container (links, Tabelle, rechts) so, dass
+			- sie ab einer Viewportbreite `>= 992px` (`lg`) nebeneinander sind, wobei die Tabelle 4x so breit ist wie die jeweiligen Container an der Seite
+  			- unterhalb der Viewportbreite von `992px` sollen die drei Teile untereinander sein
+			- Abbildung für Breite unter `992px`:  
+			![uebung3](./files/67_uebung3_2.png)
+			- Abbildung für Breite oberhalb `992px`:  
+			![uebung3](./files/68_uebung3_3.png)
+		-	Mithilfe eigener Media-Queries sollen Sie dafür sorgen, dass die beiden Container links und rechts 
+			- einen orangenen Hintergrund und eine Höhe von `100px` haben, wenn der Viewport kleiner als `992px` ist und 
+			- einen hellgrauen (`lightgrey`) Hintergrund und eine automatische Höhe (`height: auto;`), wenn der Viewport größer ist
+		-	Tabelle: 
+			- Erkundigen Sie sich unter [**Tables**](https://getbootstrap.com/docs/4.5/content/tables/) und gestalten Sie die Tabelle so, dass sie ungefähr so aussieht: ![uebung3](./files/69_uebung3_4.png)
+			- Sie müssen mit einer eigenen CSS-Definition dafür sorgen, dass die Zeile, in der Sie mit der Maus sind, nicht mehr dunkelgrau, sondern in HTW-Grün erscheint
+
+
 
 ??? question "Übungsaufgabe 4 - wird aber noch geändert!"
     Arbeiten Sie im Abschnitt [**Angular**](./angular/#angular) die Abschnitte [**Erstes Projekt erstellen**](./angular/#erstes-projekt-erstellen) und [**Angular-Projektstruktur**](./angular/#angular-projektstruktur) durch. Sie müssen dazu [**Angular**](./tools/#angular) installieren, eine [**Integrierte Entwicklungsumgebung**](./tools/#integrated-development-environment-ide) und die passenden [**Developer Tools**](./tools/#developer-tools). 
