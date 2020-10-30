@@ -258,7 +258,7 @@ Führen Sie das Beispiel aus und ändern Sie Ihre Browserbreite, dann werden Sie
 
 ![RWD](./files/59_rwd_2.png) 
 
-Eine Anmerkung noch: Sie stellen sich vielleicht die Frage, warum z.B. bei einer Viewportbreite von mehr als `1200px` die Definition der Klasse `large` wirkt, nicht jedoch die Definitionen der Klassen `small` und `medium`. Wenn wir uns an die [**Gewichtung der Selektoren**](../css/#gewichtung-der-selektoren) erinnern, dann sollten alle drei Definitionen gleich gewichtet sein, denn es ist jeweils eine Klasse betroffen. Es steht als jeweils in Kategorie A eine 0 (`style`-Attribut), in Kategorie B eine 0 (keine `id`), in Kategorei C eine 1 (eine Klasse) und in Kategorie D eine 0 (kein Element). Tatsächlich sind auch alle drei Definitionen gleich gewichtet. Hier entscheidet jetzt tatsächlich die Reihenfolge der Definitionen udn da zuerst `small`definiert wird, dann `medium` und dann `large`, wirkt `large` am stärksten, wenn alle drei Klassen definiert sind. Das heißt auch, sie dürfen nicht zuerst mit der Media Query für große Viewports beginnen, dann die Media Query für mittlere Viewports und erst dann die `small`-Definition. Dann würde es nicht funktionieren. 
+Eine Anmerkung noch: Sie stellen sich vielleicht die Frage, warum z.B. bei einer Viewportbreite von mehr als `1200px` die Definition der Klasse `large` wirkt, nicht jedoch die Definitionen der Klassen `small` und `medium`. Wenn wir uns an die [**Gewichtung der Selektoren**](../css/#gewichtung-der-selektoren) erinnern, dann sollten alle drei Definitionen gleichgewichtet sein, denn es ist jeweils eine Klasse betroffen. Es steht als jeweils in Kategorie A eine 0 (`style`-Attribut), in Kategorie B eine 0 (keine `id`), in Kategorei C eine 1 (eine Klasse) und in Kategorie D eine 0 (kein Element). Tatsächlich sind auch alle drei Definitionen gleichgewichtet. Hier entscheidet jetzt tatsächlich die Reihenfolge der Definitionen und da zuerst `small` definiert wird, dann `medium` und dann `large`, wirkt `large` am stärksten, wenn alle drei Klassen definiert sind. Das heißt auch, Sie dürfen nicht zuerst mit der Media Query für große Viewports beginnen, dann die Media Query für mittlere Viewports und erst dann die `small`-Definition, denn dann würde es nicht funktionieren. 
 
 ## CSS-Frameworks
 
@@ -275,7 +275,7 @@ Wir erläutern hier die Verwendung eines solchen Frameworks anhand von Bootstrap
 
 ### Bootstrap
 
-Um Bootsrap zu verwenden, haben Sie zunächst die Wahl zwischen 
+Um Bootstrap zu verwenden, haben Sie zunächst die Wahl zwischen 
 
 - der Verwendung eines *Content Delivery Networks (CDN)* oder
 - dem Download der externen Bootstrap-CSS-Datei. 
@@ -304,7 +304,7 @@ Sie können die CSS-Dateien aber auch herunterladen. Auf der [**Download Bootstr
 </head>
 ```
 
-Das `min`im Dateinamen `bootstrap.min.css` steht übrigens dafür, dass aus dieser CSS-Datei alle unnötigen Whitespaces (Leerzeichen und Tabs) entfernt wurden, um die Datei möglichst klein zu halten (sie ist immer noch 160 KB) groß - das muss bei jedem Abruf vom Webserver mitgeladen werden (wenn es nicht bereits im Cache ist). Mit den Whitespaces (`bootstrap.css`) ist die Datei sogar 198 KB groß. 
+Das `min` im Dateinamen `bootstrap.min.css` steht übrigens dafür, dass aus dieser CSS-Datei alle unnötigen Whitespaces (Leerzeichen und Tabs) entfernt wurden, um die Datei möglichst klein zu halten (sie ist immer noch 160 KB) groß - das muss bei jedem Abruf vom Webserver mitgeladen werden (wenn es nicht bereits im Cache ist). Mit den Whitespaces (`bootstrap.css`) ist die Datei sogar 198 KB groß. 
 
 Wir erstellen mal eine erste Seite:
 

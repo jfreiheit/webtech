@@ -183,6 +183,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -240,18 +242,6 @@
   <li class="md-nav__item">
     <a href="../tools/" title="Werkzeuge" class="md-nav__link">
       Werkzeuge
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../angular/" title="Angular" class="md-nav__link">
-      Angular
     </a>
   </li>
 
@@ -429,6 +419,30 @@
   <li class="md-nav__item">
     <a href="../javascript/" title="JavaScript" class="md-nav__link">
       JavaScript
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../json/" title="JSON" class="md-nav__link">
+      JSON
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../angular/" title="Angular" class="md-nav__link">
+      Angular
     </a>
   </li>
 
@@ -831,7 +845,7 @@
 <p>Für eine Viewport-Breite größer als <code>1199px</code> definieren wir die Klasse <code>large</code> so, dass jedes Element, dem diese Klasse zugeordnet ist (hier alle <code>&lt;p&gt;</code>-Elemente) umflossen werden kann (<code>float: left</code>) und eine Breite von <code>25%</code> des Viewports einnimmt. Das führt dazu, dass dann vier Absätze nebeneinander passen. </p>
 <p>Führen Sie das Beispiel aus und ändern Sie Ihre Browserbreite, dann werden Sie den Effekt sehen:</p>
 <p><img alt="RWD" src="../files/59_rwd_2.png" /> </p>
-<p>Eine Anmerkung noch: Sie stellen sich vielleicht die Frage, warum z.B. bei einer Viewportbreite von mehr als <code>1200px</code> die Definition der Klasse <code>large</code> wirkt, nicht jedoch die Definitionen der Klassen <code>small</code> und <code>medium</code>. Wenn wir uns an die <a href="../css/#gewichtung-der-selektoren"><strong>Gewichtung der Selektoren</strong></a> erinnern, dann sollten alle drei Definitionen gleich gewichtet sein, denn es ist jeweils eine Klasse betroffen. Es steht als jeweils in Kategorie A eine 0 (<code>style</code>-Attribut), in Kategorie B eine 0 (keine <code>id</code>), in Kategorei C eine 1 (eine Klasse) und in Kategorie D eine 0 (kein Element). Tatsächlich sind auch alle drei Definitionen gleich gewichtet. Hier entscheidet jetzt tatsächlich die Reihenfolge der Definitionen udn da zuerst <code>small</code>definiert wird, dann <code>medium</code> und dann <code>large</code>, wirkt <code>large</code> am stärksten, wenn alle drei Klassen definiert sind. Das heißt auch, sie dürfen nicht zuerst mit der Media Query für große Viewports beginnen, dann die Media Query für mittlere Viewports und erst dann die <code>small</code>-Definition. Dann würde es nicht funktionieren. </p>
+<p>Eine Anmerkung noch: Sie stellen sich vielleicht die Frage, warum z.B. bei einer Viewportbreite von mehr als <code>1200px</code> die Definition der Klasse <code>large</code> wirkt, nicht jedoch die Definitionen der Klassen <code>small</code> und <code>medium</code>. Wenn wir uns an die <a href="../css/#gewichtung-der-selektoren"><strong>Gewichtung der Selektoren</strong></a> erinnern, dann sollten alle drei Definitionen gleichgewichtet sein, denn es ist jeweils eine Klasse betroffen. Es steht als jeweils in Kategorie A eine 0 (<code>style</code>-Attribut), in Kategorie B eine 0 (keine <code>id</code>), in Kategorei C eine 1 (eine Klasse) und in Kategorie D eine 0 (kein Element). Tatsächlich sind auch alle drei Definitionen gleichgewichtet. Hier entscheidet jetzt tatsächlich die Reihenfolge der Definitionen und da zuerst <code>small</code> definiert wird, dann <code>medium</code> und dann <code>large</code>, wirkt <code>large</code> am stärksten, wenn alle drei Klassen definiert sind. Das heißt auch, Sie dürfen nicht zuerst mit der Media Query für große Viewports beginnen, dann die Media Query für mittlere Viewports und erst dann die <code>small</code>-Definition, denn dann würde es nicht funktionieren. </p>
 <h2 id="css-frameworks">CSS-Frameworks<a class="headerlink" href="#css-frameworks" title="Permanent link">&para;</a></h2>
 <p>Für größere Webanwendungen müssen wir keine eigenen CSS-Definitionen schreiben, sondern können auf CSS-Frameworks zurückgreifen, die ein einheitliches und mordernes Aussehen für Webanwendungen zur Verfügung stellen. In diesen Frameworks wurden viele Klassen definiert und wir können unter Verwendung eines solchen Frameworks unseren HTML-Elementen gezielt Klassen zuweisen, die dann das Aussehen dieses Elementes beeinflussen. Einige solcher Frameworks haben bereits eine hohe Verbreitung:</p>
 <ul>
@@ -843,7 +857,7 @@
 <p>Einen Überblick über bekannte CSS-Frameworks finden Sie z.B. <a href="https://www.designerinaction.de/tipps-tricks/web-development/css-frameworks/"><strong>hier</strong></a> und <a href="https://dev.to/theme_selection/best-css-frameworks-in-2020-1jjh"><strong>hier</strong></a>.</p>
 <p>Wir erläutern hier die Verwendung eines solchen Frameworks anhand von Bootstrap. </p>
 <h3 id="bootstrap">Bootstrap<a class="headerlink" href="#bootstrap" title="Permanent link">&para;</a></h3>
-<p>Um Bootsrap zu verwenden, haben Sie zunächst die Wahl zwischen </p>
+<p>Um Bootstrap zu verwenden, haben Sie zunächst die Wahl zwischen </p>
 <ul>
 <li>der Verwendung eines <em>Content Delivery Networks (CDN)</em> oder</li>
 <li>dem Download der externen Bootstrap-CSS-Datei. </li>
@@ -867,7 +881,7 @@
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </code></pre></div>
 
-<p>Das <code>min</code>im Dateinamen <code>bootstrap.min.css</code> steht übrigens dafür, dass aus dieser CSS-Datei alle unnötigen Whitespaces (Leerzeichen und Tabs) entfernt wurden, um die Datei möglichst klein zu halten (sie ist immer noch 160 KB) groß - das muss bei jedem Abruf vom Webserver mitgeladen werden (wenn es nicht bereits im Cache ist). Mit den Whitespaces (<code>bootstrap.css</code>) ist die Datei sogar 198 KB groß. </p>
+<p>Das <code>min</code> im Dateinamen <code>bootstrap.min.css</code> steht übrigens dafür, dass aus dieser CSS-Datei alle unnötigen Whitespaces (Leerzeichen und Tabs) entfernt wurden, um die Datei möglichst klein zu halten (sie ist immer noch 160 KB) groß - das muss bei jedem Abruf vom Webserver mitgeladen werden (wenn es nicht bereits im Cache ist). Mit den Whitespaces (<code>bootstrap.css</code>) ist die Datei sogar 198 KB groß. </p>
 <p>Wir erstellen mal eine erste Seite:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>

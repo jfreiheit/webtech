@@ -59,11 +59,12 @@ markdown_extensions:
 nav:
     - Home: index.md
     - Werkzeuge: tools.md
-    - Angular: angular.md
     - HTML: html.md
     - CSS: css.md
     - RWD: rwd.md
     - JavaScript: javascript.md
+    - JSON: json.md
+    - Angular: angular.md
     - Node.js: node.md
     - Bücher-App: books.md
     - Bücher-Backend: books-backend.md

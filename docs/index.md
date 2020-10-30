@@ -14,24 +14,24 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst). Die Vorlesung
 | 2. | 12.-16.10.2020 | HTML | Übung 1 | Idee | 25.10.2020 | 
 | 3. | 19.-23.10.2020 | CSS (Eigenschaften und Selektoren) | Übung 2 | - | 01.11.2020 | 
 | 4. | 26.-30.10.2020 | RWD (Responsive Webdesign) | Übung 3 | Konzept | 08.11.2020 | 
-| 5. | 02.-06.11.2020 | Angular (Einführung und Komponenten) | Übung 4 | - | 15.11.2020 | 
-| 6. | 09.-13.11.2020 | Angular (Direktiven, data-, property-, event-binding) | Übung 5 | Datenmodell | 22.11.2020 | 
-| 7. | 16.-20.11.2020 | Angular (Lifecycle-Hooks, Services, Routing) | Übung 6 | Schnittstelle | 29.11.2020 | 
-| 8. | 23.-27.11.2020 | Angular (HTTP-Client), MySQL, REST | Übung 7 | Frontend (c+r)| 06.12.2020 | 
-| 9. | 30.-04.12.2020 | Angular (Formulare) | Übung 8 | Frontend (u+d)| 13.12.2020 | 
-| 10. | 07.-11.12.2020 | Node.js (Einführung, Webserver) | Übung 9 | Frontend fertig | 20.12.2020 | 
-| 11. | 14.-18.12.2020 | Node.js (Express, Request, Response, URL) | Übung 10 | Backend ( c ) | 10.01.2020 | 
-| 12. | 21.-25.12.2020 | Node.js (Model View Controller), JSON | - | Backend ( r ) | - |
+| 5. | 02.-06.11.2020 | JavaScript (DOM, Events, DOM-Funktionen) | Übung 4 | - | 15.11.2020 | 
+| 6. | 09.-13.11.2020 | JavaScript (JSON, AJAX) | Übung 5 | Datenmodell | 22.11.2020 | 
+| 7. | 16.-20.11.2020 | Angular (Einführung und Komponenten) | Übung 6 | Schnittstelle | 29.11.2020 | 
+| 8. | 23.-27.11.2020 | Angular (Direktiven, data-, property-, event-binding) | Übung 7 | Frontend (c+r)| 06.12.2020 | 
+| 9. | 30.-04.12.2020 | Angular (Lifecycle-Hooks, Services, Routing) | Übung 8 | Frontend (u+d)| 13.12.2020 | 
+| 10. | 07.-11.12.2020 | Angular (HTTP-Client, Formulare), MySQL, REST | Übung 9 | Frontend fertig | 20.12.2020 | 
+| 11. | 14.-18.12.2020 | Node.js (Einführung, Webserver) | Übung 10 | Backend ( c ) | 10.01.2020 | 
+| 12. | 21.-25.12.2020 | Node.js (Express, Request, Response, URL)  | - | Backend ( r ) | - |
 | | | | | | | |
-| 13. | 04.-08.01.2021 | Node.js (Datenbankanbindung, REST-Server) | - | Backend (u) | - |
-| 14. | 11.-15.01.2021 | JSON Web Tokens | - | Backend (d + fertig)| - |
+| 13. | 04.-08.01.2021 | Node.js (Model View Controller) | - | Backend (u) | - |
+| 14. | 11.-15.01.2021 | Node.js (Datenbankanbindung, REST-Server)  | - | Backend (d + fertig)| - |
 | 15. | 18.-22.01.2021 | Wiederholung | - | fertig stellen | - |
 | 16. | 25.-29.01.2021 | - | Fragen | Abgabe 1.PZ 13.02.2021 | - |
 |  |  |  |  | Abgabe 2.PZ 01.04.2021 | - |
 
 ### Organisatorisches 
 
-Zur erfolgreichen Durchführung der Veranstaltung müssen die Übungen lösen und zu den jeweiligen Fristen per Git auf einen Server (GitHub oder GitLab) laden. Am Ende des Semesters ist eine Aufgabe abzugeben. Diese Aufgabe wird bewertet. Die Bewertung entspricht dann der Modulnote. 
+Zur erfolgreichen Durchführung der Veranstaltung müssen Sie die Übungen lösen und zu den jeweiligen Fristen per Git auf einen Server (GitHub oder GitLab) laden. Am Ende des Semesters ist eine Aufgabe abzugeben. Diese Aufgabe wird bewertet. Die Bewertung entspricht dann der Modulnote. 
 
 Hier sind die Übungen beschrieben, die Sie in jeder Woche ausführen sollen. Damit Sie dies erfolgreich erledigen können, ist jeweils angegeben, welche Themen Sie dafür durcharbeiten müssen. Das Durcharbeiten der jeweiligen Themen entspricht jeweils einer Vorlesung. Diese wird also selbständig durchgeführt. 
 
@@ -303,6 +303,98 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	- siehe [**Responsive Webdesign**](./rwd/#responsive-web-design)
 	- siehe **Übungsaufgabe 3 (RWD + Bootstrap)**
 	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=f5fb8d51009c1106b925a2d42d42ddc1&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
+
+??? question "Woche 5 - JavaScript (DOM)"
+	- siehe [**JavaScript**](./javascript/#javascript)
+	- siehe **Übungsaufgabe 4 (JavaScript, DOM)**
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=0ae493c2d44631540aae98380fce7e58&width=720&height=529&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="529" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
+
+??? "javascript.html aus JavaScript-Vorlesung"
+	```html
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	    <title>HTML ändern</title>
+	</head>
+	<body class="container-fluid">
+	    <input id="input1" type="text" class="form-control" placeholder="neues Item" onchange="doSomething()"/>
+	    <ul id = "ul1" class="list-group">
+	        <li class="list-group-item active">erster</li>
+	        <li class="list-group-item">zweiter</li>
+	        <li class="list-group-item">dritter</li>
+	    </ul>
+	    <button type="button" class="btn btn-primary" onclick="createHeadline()">Klick mich</button>
+	    <script>
+	        var idnr = 1;
+	        function doSomething()
+	        {
+	            let input1 = document.getElementById('input1');
+	            let input1_value = input1.value;
+	            let ul1 = document.getElementById('ul1');
+	            let new_item = document.createElement('li');
+	            new_item.classList.add("list-group-item");
+	            new_item.id = "li" + idnr++;
+	            /*
+	            let new_text = document.createTextNode(input1_value);
+	            new_item.appendChild(new_text);     // li --> value
+	             */
+	            new_item.innerHTML = input1_value + "<span style='color: red;'> test </span>";
+	            let listitems = document.getElementsByTagName('li');
+
+	            console.log("--------- drei ---------" + listitems.length);
+	            for(let i=0; i<listitems.length; i++)
+	            {
+	                console.log(listitems[i]);
+	            }
+	            ul1.insertBefore(new_item, listitems[0]);
+	            let new_item2 = document.createElement('li');
+	            new_item2.classList.add("list-group-item");
+	            new_item2.id = "li" + idnr++;
+	            new_item2.innerHTML = "fuenftes";
+	            ul1.appendChild(new_item2);
+
+	            console.log("--------- nach 2 neuen ---------" + listitems.length);
+	            for(let i=0; i<listitems.length; i++)
+	            {
+	                console.log(listitems[i]);
+	            }
+	            listitems[1].classList.remove("active");
+	            listitems[3].classList.add("active");
+	        }
+
+	        function createHeadline()
+	        {
+	            let body = document.body;
+	            let input = document.getElementById('input1');
+	            let h1 = document.createElement('h1');
+	            h1.innerHTML = "HTML ändern";
+	            h1.addEventListener('mouseover', doSomethingElse);
+	            h1.addEventListener('mouseout', doSomethingElse);
+	            body.insertBefore(h1, input);
+	        }
+
+	        function doSomethingElse(event)
+	        {
+	            let h1 = event.target;
+	            if(h1.style.color === "red")
+	            {
+	                h1.style.color = "green";
+	                h1.style.fontSize = "xx-large";
+	                h1.innerHTML = "... und weg";
+	            }
+	            else {
+	                h1.style.color = "red";
+	                h1.style.fontSize = "400%";
+	                h1.innerHTML = "... und wieder da";
+	            }
+	        }
+	    </script>
+	</body>
+	</html>
+	```
 
 ## Übungen
 
@@ -705,8 +797,29 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 			- Sie müssen mit einer eigenen CSS-Definition dafür sorgen, dass die Zeile, in der Sie mit der Maus sind, nicht mehr dunkelgrau, sondern in HTW-Grün erscheint
 
 
+??? question "Übungsaufgabe 4 (JavaScript, DOM)"
+    - Kopieren Sie den `Uebung3`-Ordner in einen `Uebung4`-Ordner und benennen Sie die `uebung3.html` in `uebung4.html` um
+    - Fügen Sie Ihrer Tabelle eine fünfte Spalte hinzu mit leerer Überschrift, also einfach ein weiteres `<th></th>`. Fügen Sie im Table-Body `<tbody>` auch in allen Zeilen ein fünftes `<td></td>` hinzu (nicht händisch! - *Find and Replace* der IDE nutzen!) 
+    - Fügen Sie Ihrer Tablle nun in HTML eine weitere Zeile hinzu, die wie folgt aussehen soll:
+      ![uebun4](./files/72_uebung4_1.png)
+    - Verwenden Sie für den Button das Attribut `onclick` und rufen Sie eine JavaScript-Funktion `checkAndAdd()` auf, die Sie selbst schreiben
+    - in der `checkAndAdd()`-Funktion soll folgendes geschehen:
+    	- sie prüfen, ob in jedem der vier `<input>`-Felder (Vorname, Nachname, E-Mail-Adresse, IP-Adresse) etwas eingegeben wurde
+    	- wenn ja, dann werden diese Werte für eine neue Tabellenzeile (über der Eingabezeile) verwendet (in der folgenden Abbildung wurde `test1`, `test2`, `test3`, `test4` eingegeben):
+    	![uebun4](./files/73_uebung4_2.png)
+    	- wenn nicht, dann werden die Felder, in denen nichts eingegeben wurde, durch Bootstrap rot umrandet (`is-invalid` - siehe Tipps):
+    	![uebun4](./files/74_uebung4_3.png)
+    - **Tipps:**
+    	- am einfachsten ist es sicherlich, wenn Sie für den `<tbody>`, die vier neuen `<input>`-Elemente und auch die Tabellenzeile `<tr>`, in der die `<input>`-Elemente sind, eine `id` vergeben, damit Sie in Ihrer Funktion `checkAndAdd()` jeweils mit `document.getElementById()` direkt darauf zugreifen können (siehe [**lokalisieren**](./javascript/#dom-funktionen-lokalisation-von-elementen))
+    	- benutzen Sie für Ihre `<input>`-Elemente die Bootstrap-Klasse `form-control`, also z.B. `<input id="i1" type="text" class="form-control" placeholder="Vorname" />` (siehe [**Bootstrap Forms**](https://getbootstrap.com/docs/4.5/components/forms/))
+    	- haben Sie ein `input`-Objekt lokalisiert, z.B. durch `let i1 = document.getElementById('i1')`, dann können Sie über `i1.value` auf den eingegeben Wert zugreifen (siehe Beispiele in [**HTML-Ereignisse**](./javascript/#html-ereignisse) und [**create**](./javascript/#create))
+    	- Angenommen, Sie haben den `value` von `i1` in der Variablen `value_i1` gespeichert, dann können Sie mithilfe von `value_i1 === ""` prüfen, ob der eingegebene String leer ist, ob also nichts eingegeben wurde (`===` steht für identisch, d.h. Inhalt und Typ sind gleich - `==` würde auch gehen, dann muss der Typ nicht unbedingt gleich sein, der Inhalt aber schon - siehe z.B. [**Vergleichsoperatoren**](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Vergleichsoperatoren))
+    	- einem solchen `i1`-Objekt können Sie die CSS-Klasse `is-invalid` mit `i1.classList.add('is-invalid')` hinzufügen und mit `i1.classList.remove('is-invalid')` wieder entfernen (selbst, wenn dem Element die Klasse gar nicht zuegordnet ist, gibt es keinen Fehler - siehe z.B. [**hier**](./javascript/#beispiel-vollstandig-mit-javascript-erzeugt))
+    	- für die neu entstehende Tabellenzeile müssen Sie fünf neue `td`-Obejkte kreieren und diese an ein neu kreiertes `tr`-Objekt anhängen. Die ersten vier `td`-Obejkte bekommen für ihr `innerHTML` den entsprechenden `value` des `input`-Objektes (siehe [**create**](./javascript/#create))
+    	- fügen Sie das neue `tr`-Objekt in den `tbody` vor der Tabellenzeile mit den `input`-Feldern ein (siehe [**create**](./javascript/#create))
+	- **Zusatz:** sehr beeindruckend wäre es, wenn Sie die neue Zeile nicht immer direkt vor die Eingabezeile einfügen, sondern alphabetisch korrekt nach dem Wert des Nachnamens. Sollte das jemand von Ihnen schaffen, schicken Sie mir bitte einen *Pull-Request*. Das wäre sehr cool!
 
-??? question "Übungsaufgabe 4 - wird aber noch geändert!"
+??? question "Übungsaufgabe x - wird aber noch geändert!"
     Arbeiten Sie im Abschnitt [**Angular**](./angular/#angular) die Abschnitte [**Erstes Projekt erstellen**](./angular/#erstes-projekt-erstellen) und [**Angular-Projektstruktur**](./angular/#angular-projektstruktur) durch. Sie müssen dazu [**Angular**](./tools/#angular) installieren, eine [**Integrierte Entwicklungsumgebung**](./tools/#integrated-development-environment-ide) und die passenden [**Developer Tools**](./tools/#developer-tools). 
 
 
