@@ -309,7 +309,7 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	- siehe **Übungsaufgabe 4 (JavaScript, DOM)**
 	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=0ae493c2d44631540aae98380fce7e58&width=720&height=529&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="529" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
 
-??? "javascript.html aus JavaScript-Vorlesung"
+??? "javascript.html aus JavaScript (DOM)-Vorlesung"
 	```html
 	<!DOCTYPE html>
 	<html lang="en">
@@ -394,6 +394,125 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	    </script>
 	</body>
 	</html>
+	```
+
+
+??? question "Woche 6 - JavaScript (JSON, Ajax)"
+	- siehe [**JSON**](./json/#javascript-object-notation-json) und [**Ajax**](./json/#ajax)
+	- siehe **Übungsaufgabe 5 (JSON, Ajax)**
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=8d22ab3fc07dd403c6a66849c34f6f9b&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
+
+??? "json+ajax.html aus JavaScript (JSON, Ajax)-Vorlesung"
+	```html
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>JSON+AJAX</title>
+	</head>
+	<body onload="loadJSON()">
+	<h3>Objekte</h3>
+	<div id="div1"></div>
+	<button type="button" onclick="showObjects()">Show Objects</button>
+	<script>
+	    let person_obj;
+
+	    function showObjects()
+	    {
+	        /*
+	        let person = {
+	            vorname: "Maria",
+	            nachname: "Musterfrau",
+	            kinder: {
+	                max: {
+	                    vorname: "Max",
+	                    alter: 7
+	                },
+	                moritz: {
+	                    vorname: "Moritz",
+	                    alter: 3
+	                }
+	            },
+	            auskunft: function() {
+	                return "F: " + this.vorname + " " + this.nachname;
+	            }
+	        }
+	        console.log(person.auskunft());
+
+	        person.wohnort = "Musterdorf";
+	        */
+	        let person = person_obj;
+
+	        console.log(person);
+	        console.log(person.vorname + " " + person.nachname);
+	        document.getElementById('div1').innerHTML += person.vorname + " " + person.nachname + "<br/>";
+	        console.log(person.wohnort);
+
+	        /*
+	        let kinder = person.kinder;
+	        for(let i=0; i<kinder.length; i++)
+	        {
+	            console.log(kinder[i].vorname);
+	        }
+
+	         */
+	        console.log(person.kinder.max.vorname);
+	        console.log(person.kinder.moritz.vorname);
+
+	        for(let eigenschaften in person)
+	        {
+	            console.log(eigenschaften);
+	            console.log(person[eigenschaften]);
+	        }
+
+	        for(let eigenschaften in person.kinder)
+	        {
+	            console.log(person.kinder[eigenschaften].vorname);
+	            for(let kidseig in person.kinder[eigenschaften])
+	            {
+	                console.log(person.kinder[eigenschaften][kidseig]);
+	            }
+	        }
+
+	        let json_obj = JSON.stringify(person);
+	        document.getElementById('div1').innerHTML += json_obj;
+	    }
+
+	    function loadJSON()
+	    {
+	        let xhttp = new XMLHttpRequest();
+	        xhttp.onreadystatechange = function() {
+	            if(this.readyState === 4 && this.status === 200)
+	            {
+	                person_obj = JSON.parse(this.responseText);
+	                showObjects();
+	            }
+	        };
+	        xhttp.open("GET", "http://localhost/Webtech20/person.json", true);
+	        xhttp.send();
+	    }
+	</script>
+	</body>
+	</html>
+	```
+
+??? "person.json aus JavaScript (JSON, Ajax)-Vorlesung"
+	```json
+	{
+	  "vorname": "Maria",
+	  "nachname": "Musterfrau",
+	  "kinder": {
+	    "max": {
+	      "vorname": "Max",
+	      "alter": 7
+	    },
+	    "moritz": {
+	      "vorname": "Moritz",
+	      "alter": 3
+	    }
+	  },
+	  "wohnort": "Musterdorf"
+	}
 	```
 
 ## Übungen
@@ -781,8 +900,8 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 		- Informieren Sie sich unter [**Navs**](https://getbootstrap.com/docs/4.5/components/navs/) (oder wo Sie möchten) über „Navs“ und erstellen Sie Ihr Navigationsmenü so, wie oben in der Abbildung (siehe **Header**) gezeigt
 		- Ändern Sie aber die Farbe der Links so, dass sie im HTW-Orange (`#FF5F00`) erscheinen und wenn man mit der Maus darüber fährt im HTW-Blau (`#0082D1`) (Definieren Sie sich gerne [**Custom Properties**](./css/#custom-properties) und wenden Sie diese an)
 	- **Hauptteil**:
-		- der Hauptteil soll aus drei Containern bestehen: einer, der nur das Wort (Überschrift) "links" enthält, einer, der die Tabelle enthält und ein dritter, der nur das Wort (Überschrift) "rechts" enthält
-		- Weisen Sie Ihrem Hauptteil (z.B. `<main>`) die Klasse `row` zu und gestalten gestalten Sie die drei inneren Container (links, Tabelle, rechts) so, dass
+		- der Hauptteil (ein Container) soll aus drei Containern bestehen: einer, der nur das Wort (Überschrift) "links" enthält, einer, der die Tabelle enthält und ein dritter, der nur das Wort (Überschrift) "rechts" enthält
+		- Weisen Sie diesem Hauptteil die Klasse `row` zu und gestalten gestalten Sie die drei inneren Container (links, Tabelle, rechts) so, dass
 			- sie ab einer Viewportbreite `>= 992px` (`lg`) nebeneinander sind, wobei die Tabelle 4x so breit ist wie die jeweiligen Container an der Seite
   			- unterhalb der Viewportbreite von `992px` sollen die drei Teile untereinander sein
 			- Abbildung für Breite unter `992px`:  
@@ -818,6 +937,55 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
     	- für die neu entstehende Tabellenzeile müssen Sie fünf neue `td`-Obejkte kreieren und diese an ein neu kreiertes `tr`-Objekt anhängen. Die ersten vier `td`-Obejkte bekommen für ihr `innerHTML` den entsprechenden `value` des `input`-Objektes (siehe [**create**](./javascript/#create))
     	- fügen Sie das neue `tr`-Objekt in den `tbody` vor der Tabellenzeile mit den `input`-Feldern ein (siehe [**create**](./javascript/#create))
 	- **Zusatz:** sehr beeindruckend wäre es, wenn Sie die neue Zeile nicht immer direkt vor die Eingabezeile einfügen, sondern alphabetisch korrekt nach dem Wert des Nachnamens. Sollte das jemand von Ihnen schaffen, schicken Sie mir bitte einen *Pull-Request*. Das wäre sehr cool!
+
+??? question "Übungsaufgabe 5 (JSON, Ajax)"
+    - Laden Sie sich [hier](./files/Uebung5.zip) die Datei [Uebung5.zip](./files/Uebung5.zip) herunter und entpacken Sie sie. Es entsteht der Ordner `Uebung5`. Dieser enthält
+    	- eine Datei `uebung5.html` (bereits ausführbar),
+    	- eine Datei `staedte.json`, die ein JSON enthält, das ausgelesen werden soll
+    	- einen Ordner `images`, der Bilder enthält; die Referenzen darauf stehen im JSON
+	- Die Datei `staedte.json` enthält in JSON beschriebene Objekte der Form 
+		```json
+		{
+	      "jahr": 1237,
+	      "stadt": "Berlin",
+	      "link": "http://de.wikipedia.org/wiki/Berlin",
+	      "bild": "images/berlin.png"
+	    }
+		```
+		Alle diese Objekte sind in einem Array. Die Aufgabe ist, die Datei `uebung5.html` so zu erweitern, dass eine Tabelle in der folgenden Form entsteht:
+		![uebung5](./files/75_uebung5_1.png) 
+	- Öffnen Sie die Datei `uebung5.html` in Ihrer IDE und starten Sie sie auch schonmal im Browser. Es sind bereits angelegt:
+		- ein `input`-Element und
+		- eine Tabelle mit Überschriften.
+	  Dies geschieht in der Funktion `createTable()`. Diese Funktion wird in der Ereignisbehandlung des `load`-Events aufgerufen (siehe `<body>`). 
+	- Sie sollen nun:
+		1. eine Funktion schreiben, die die JSON-Datei mithilfe eines `XMLHttpRequest`-Objektes (oder mithilfe von `fetch()`) vom Server lädt --> siehe [**XMLHttpRequest**](./json/#xmlhttprequest)
+		2. rufen Sie diese Funktion anstelle der `createTable()` als Ereignisbehandlung des `load`-Events auf
+		3. speichern Sie in dieser Funktion das JSON in der globalen Variable `staedte_obj` (die Variable ist bereits deklariert, Sie können aber auch nochmal [**hier**](./javascript/#var-let-und-const) über globale Variablen nachlesen)
+		4. rufen Sie in dieser Funktion die `createTable()`-Funktion auf
+		5. in der `createTable()`-Funktion sollten Sie sich zunächst eine Variable `staedte` anlegen, die das Array referenziert (`staedte_obj` referenziert das Objekt, welches das Array enthält) --> siehe dazu z.B. [**hier**](./json/#zugriff-auf-ein-json) und [**hier**](./json/#viele-objekte-im-array)
+		6. in der Funktion gibt es einen großen Blockkommentar. An dieser Stelle sollten Sie
+			- jedes einzelne Element (Objekt) des `staedte`-Arrays (numerisch indiziert) auslesen
+			- für jedes Element eine neue Tabellenzeile generieren
+			- jede einzelne Eigenschaft eines Elementes entsprechend verwenden, um das Jahr, die Stadt, einen Link (als Button) und ein Bild (`img`) als eigenes `<td>`-Element in der Zeile zu erstellen
+		7. **Filter :** in das `input`-Feld kann eine Zahl oder der Name einer Stadt eingegeben werden. Nach jedem eingegeben Zeichen wird überprüft, ob es eine entsprechende Stadt (oder mehrere) gibt. Die Liste der passenden Städte wird in der Tabelle angezeigt, z.B.: (alle Städte, die mit **Br** anfangen):
+		![uebung5](./files/76_uebung5_2.png)
+		oder alle Städte, deren Gründungsjahr mit **12** beginnt:
+		![uebung5](./files/77_uebung5_3.png)
+	- **Tipps:**
+		- der im JSON gespeicherte Link für das Bild kann als Wert des `src`-Attributes eines `<img>`-Elementes verwendet werden; das Bild wird dann geladen
+		- definieren Sie für die Bilder ein `style`-Attribut für die Höhe; wählen Sie `height = '60px'`
+		- für den Wert des `alt`-Attributes des Bildes wählen Sie erneut den Namen der Stadt
+		- der Link ist ein `<a>`-Element. Wenn Sie ihm die (Bootstrap-)CSS-Klassen `btn`, `btn-sm` und `btn-success` zuweisen, sieht er aus wie der "Button" auf dem Bild
+		- **Filter :** Eine Zahl (`number`) kann mithilfe der `toString()`-Methode in einen String umgewandelt werden (z.B. `staedte[i].jahr.toString()`) 
+		- Die Länge eines Strings wird mithilfe von `length` ermittelt (z.B. `input.length`)
+		- Ein Teilstring kann mithilfe der `substring(start,end)`-Methode erzeugt werden (z.B. `staedte[i].stadt.substring(0,input.length)`)
+		- der Teilstring kann mit dem aktuellen Wert des `input`-Feldes verglichen werden
+		- Vergessen Sie nicht, als Ereignisbehandlung für das `input`-Element die `createTable()`-Methode aufzurufen! Welches Ereignis soll darin beahndelt werden?
+	- Viel Spaß und viel Erfolg!
+	
+
+
 
 ??? question "Übungsaufgabe x - wird aber noch geändert!"
     Arbeiten Sie im Abschnitt [**Angular**](./angular/#angular) die Abschnitte [**Erstes Projekt erstellen**](./angular/#erstes-projekt-erstellen) und [**Angular-Projektstruktur**](./angular/#angular-projektstruktur) durch. Sie müssen dazu [**Angular**](./tools/#angular) installieren, eine [**Integrierte Entwicklungsumgebung**](./tools/#integrated-development-environment-ide) und die passenden [**Developer Tools**](./tools/#developer-tools). 

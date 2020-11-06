@@ -27,6 +27,8 @@ theme:
   favicon: img/favicon.png
   logo: img/fiw.jpg
 
+extra_css:
+  - extra.css
 
 # Extensions
 markdown_extensions:

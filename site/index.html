@@ -45,6 +45,8 @@
     
     
     
+      <link rel="stylesheet" href="extra.css">
+    
     
       
     
@@ -945,7 +947,7 @@ das ist Text <span class="p">&lt;</span><span class="nt">a</span> <span class="n
 <li><iframe src="https://mediathek.htw-berlin.de/media/embed?key=0ae493c2d44631540aae98380fce7e58&width=720&height=529&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="529" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe></li>
 </ul>
 </details>
-<details><summary>javascript.html aus JavaScript-Vorlesung</summary><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<details><summary>javascript.html aus JavaScript (DOM)-Vorlesung</summary><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
@@ -1028,6 +1030,123 @@ das ist Text <span class="p">&lt;</span><span class="nt">a</span> <span class="n
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</details>
+<details class="question"><summary>Woche 6 - JavaScript (JSON, Ajax)</summary><ul>
+<li>siehe <a href="./json/#javascript-object-notation-json"><strong>JSON</strong></a> und <a href="./json/#ajax"><strong>Ajax</strong></a></li>
+<li>siehe <strong>Übungsaufgabe 5 (JSON, Ajax)</strong></li>
+<li><iframe src="https://mediathek.htw-berlin.de/media/embed?key=8d22ab3fc07dd403c6a66849c34f6f9b&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe></li>
+</ul>
+</details>
+<details><summary>json+ajax.html aus JavaScript (JSON, Ajax)-Vorlesung</summary><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>JSON+AJAX<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;loadJSON()&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Objekte<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;div1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;showObjects()&quot;</span><span class="p">&gt;</span>Show Objects<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">let</span> <span class="nx">person_obj</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">showObjects</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="cm">/*</span>
+<span class="cm">        let person = {</span>
+<span class="cm">            vorname: &quot;Maria&quot;,</span>
+<span class="cm">            nachname: &quot;Musterfrau&quot;,</span>
+<span class="cm">            kinder: {</span>
+<span class="cm">                max: {</span>
+<span class="cm">                    vorname: &quot;Max&quot;,</span>
+<span class="cm">                    alter: 7</span>
+<span class="cm">                },</span>
+<span class="cm">                moritz: {</span>
+<span class="cm">                    vorname: &quot;Moritz&quot;,</span>
+<span class="cm">                    alter: 3</span>
+<span class="cm">                }</span>
+<span class="cm">            },</span>
+<span class="cm">            auskunft: function() {</span>
+<span class="cm">                return &quot;F: &quot; + this.vorname + &quot; &quot; + this.nachname;</span>
+<span class="cm">            }</span>
+<span class="cm">        }</span>
+<span class="cm">        console.log(person.auskunft());</span>
+
+<span class="cm">        person.wohnort = &quot;Musterdorf&quot;;</span>
+<span class="cm">        */</span>
+        <span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">person_obj</span><span class="p">;</span>
+
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">vorname</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">person</span><span class="p">.</span><span class="nx">nachname</span><span class="p">);</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;div1&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="nx">person</span><span class="p">.</span><span class="nx">vorname</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">person</span><span class="p">.</span><span class="nx">nachname</span> <span class="o">+</span> <span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">wohnort</span><span class="p">);</span>
+
+        <span class="cm">/*</span>
+<span class="cm">        let kinder = person.kinder;</span>
+<span class="cm">        for(let i=0; i&lt;kinder.length; i++)</span>
+<span class="cm">        {</span>
+<span class="cm">            console.log(kinder[i].vorname);</span>
+<span class="cm">        }</span>
+
+<span class="cm">         */</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">kinder</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">vorname</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">kinder</span><span class="p">.</span><span class="nx">moritz</span><span class="p">.</span><span class="nx">vorname</span><span class="p">);</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">eigenschaften</span> <span class="k">in</span> <span class="nx">person</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eigenschaften</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="nx">eigenschaften</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">eigenschaften</span> <span class="k">in</span> <span class="nx">person</span><span class="p">.</span><span class="nx">kinder</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">kinder</span><span class="p">[</span><span class="nx">eigenschaften</span><span class="p">].</span><span class="nx">vorname</span><span class="p">);</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">kidseig</span> <span class="k">in</span> <span class="nx">person</span><span class="p">.</span><span class="nx">kinder</span><span class="p">[</span><span class="nx">eigenschaften</span><span class="p">])</span>
+            <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">kinder</span><span class="p">[</span><span class="nx">eigenschaften</span><span class="p">][</span><span class="nx">kidseig</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="kd">let</span> <span class="nx">json_obj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;div1&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="nx">json_obj</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">loadJSON</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">xhttp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+        <span class="nx">xhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="nx">person_obj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+                <span class="nx">showObjects</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="nx">xhttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;http://localhost/Webtech20/person.json&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="nx">xhttp</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</details>
+<details><summary>person.json aus JavaScript (JSON, Ajax)-Vorlesung</summary><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;vorname&quot;</span><span class="p">:</span> <span class="s2">&quot;Maria&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;nachname&quot;</span><span class="p">:</span> <span class="s2">&quot;Musterfrau&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;kinder&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;max&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;vorname&quot;</span><span class="p">:</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;alter&quot;</span><span class="p">:</span> <span class="mi">7</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;moritz&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;vorname&quot;</span><span class="p">:</span> <span class="s2">&quot;Moritz&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;alter&quot;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;wohnort&quot;</span><span class="p">:</span> <span class="s2">&quot;Musterdorf&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 
 </details>
@@ -1424,8 +1543,8 @@ das ist Text <span class="p">&lt;</span><span class="nt">a</span> <span class="n
 </ul>
 </li>
 <li><strong>Hauptteil</strong>:<ul>
-<li>der Hauptteil soll aus drei Containern bestehen: einer, der nur das Wort (Überschrift) "links" enthält, einer, der die Tabelle enthält und ein dritter, der nur das Wort (Überschrift) "rechts" enthält</li>
-<li>Weisen Sie Ihrem Hauptteil (z.B. <code>&lt;main&gt;</code>) die Klasse <code>row</code> zu und gestalten gestalten Sie die drei inneren Container (links, Tabelle, rechts) so, dass<ul>
+<li>der Hauptteil (ein Container) soll aus drei Containern bestehen: einer, der nur das Wort (Überschrift) "links" enthält, einer, der die Tabelle enthält und ein dritter, der nur das Wort (Überschrift) "rechts" enthält</li>
+<li>Weisen Sie diesem Hauptteil die Klasse <code>row</code> zu und gestalten gestalten Sie die drei inneren Container (links, Tabelle, rechts) so, dass<ul>
 <li>sie ab einer Viewportbreite <code>&gt;= 992px</code> (<code>lg</code>) nebeneinander sind, wobei die Tabelle 4x so breit ist wie die jeweiligen Container an der Seite</li>
 <li>unterhalb der Viewportbreite von <code>992px</code> sollen die drei Teile untereinander sein</li>
 <li>Abbildung für Breite unter <code>992px</code>:<br />
@@ -1473,6 +1592,62 @@ das ist Text <span class="p">&lt;</span><span class="nt">a</span> <span class="n
 </ul>
 </li>
 <li><strong>Zusatz:</strong> sehr beeindruckend wäre es, wenn Sie die neue Zeile nicht immer direkt vor die Eingabezeile einfügen, sondern alphabetisch korrekt nach dem Wert des Nachnamens. Sollte das jemand von Ihnen schaffen, schicken Sie mir bitte einen <em>Pull-Request</em>. Das wäre sehr cool!</li>
+</ul>
+</details>
+<details class="question"><summary>Übungsaufgabe 5 (JSON, Ajax)</summary><ul>
+<li>Laden Sie sich <a href="files/Uebung5.zip">hier</a> die Datei <a href="files/Uebung5.zip">Uebung5.zip</a> herunter und entpacken Sie sie. Es entsteht der Ordner <code>Uebung5</code>. Dieser enthält<ul>
+<li>eine Datei <code>uebung5.html</code> (bereits ausführbar),</li>
+<li>eine Datei <code>staedte.json</code>, die ein JSON enthält, das ausgelesen werden soll</li>
+<li>einen Ordner <code>images</code>, der Bilder enthält; die Referenzen darauf stehen im JSON</li>
+</ul>
+</li>
+<li>Die Datei <code>staedte.json</code> enthält in JSON beschriebene Objekte der Form 
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">1237</span><span class="p">,</span>
+  <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Berlin&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;images/berlin.png&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+    Alle diese Objekte sind in einem Array. Die Aufgabe ist, die Datei <code>uebung5.html</code> so zu erweitern, dass eine Tabelle in der folgenden Form entsteht:
+    <img alt="uebung5" src="files/75_uebung5_1.png" /> </li>
+<li>Öffnen Sie die Datei <code>uebung5.html</code> in Ihrer IDE und starten Sie sie auch schonmal im Browser. Es sind bereits angelegt:<ul>
+<li>ein <code>input</code>-Element und</li>
+<li>eine Tabelle mit Überschriften.
+  Dies geschieht in der Funktion <code>createTable()</code>. Diese Funktion wird in der Ereignisbehandlung des <code>load</code>-Events aufgerufen (siehe <code>&lt;body&gt;</code>). </li>
+</ul>
+</li>
+<li>Sie sollen nun:<ol>
+<li>eine Funktion schreiben, die die JSON-Datei mithilfe eines <code>XMLHttpRequest</code>-Objektes (oder mithilfe von <code>fetch()</code>) vom Server lädt &rarr; siehe <a href="./json/#xmlhttprequest"><strong>XMLHttpRequest</strong></a></li>
+<li>rufen Sie diese Funktion anstelle der <code>createTable()</code> als Ereignisbehandlung des <code>load</code>-Events auf</li>
+<li>speichern Sie in dieser Funktion das JSON in der globalen Variable <code>staedte_obj</code> (die Variable ist bereits deklariert, Sie können aber auch nochmal <a href="./javascript/#var-let-und-const"><strong>hier</strong></a> über globale Variablen nachlesen)</li>
+<li>rufen Sie in dieser Funktion die <code>createTable()</code>-Funktion auf</li>
+<li>in der <code>createTable()</code>-Funktion sollten Sie sich zunächst eine Variable <code>staedte</code> anlegen, die das Array referenziert (<code>staedte_obj</code> referenziert das Objekt, welches das Array enthält) &rarr; siehe dazu z.B. <a href="./json/#zugriff-auf-ein-json"><strong>hier</strong></a> und <a href="./json/#viele-objekte-im-array"><strong>hier</strong></a></li>
+<li>in der Funktion gibt es einen großen Blockkommentar. An dieser Stelle sollten Sie<ul>
+<li>jedes einzelne Element (Objekt) des <code>staedte</code>-Arrays (numerisch indiziert) auslesen</li>
+<li>für jedes Element eine neue Tabellenzeile generieren</li>
+<li>jede einzelne Eigenschaft eines Elementes entsprechend verwenden, um das Jahr, die Stadt, einen Link (als Button) und ein Bild (<code>img</code>) als eigenes <code>&lt;td&gt;</code>-Element in der Zeile zu erstellen</li>
+</ul>
+</li>
+<li><strong>Filter :</strong> in das <code>input</code>-Feld kann eine Zahl oder der Name einer Stadt eingegeben werden. Nach jedem eingegeben Zeichen wird überprüft, ob es eine entsprechende Stadt (oder mehrere) gibt. Die Liste der passenden Städte wird in der Tabelle angezeigt, z.B.: (alle Städte, die mit <strong>Br</strong> anfangen):
+<img alt="uebung5" src="files/76_uebung5_2.png" />
+oder alle Städte, deren Gründungsjahr mit <strong>12</strong> beginnt:
+<img alt="uebung5" src="files/77_uebung5_3.png" /></li>
+</ol>
+</li>
+<li><strong>Tipps:</strong><ul>
+<li>der im JSON gespeicherte Link für das Bild kann als Wert des <code>src</code>-Attributes eines <code>&lt;img&gt;</code>-Elementes verwendet werden; das Bild wird dann geladen</li>
+<li>definieren Sie für die Bilder ein <code>style</code>-Attribut für die Höhe; wählen Sie <code>height = '60px'</code></li>
+<li>für den Wert des <code>alt</code>-Attributes des Bildes wählen Sie erneut den Namen der Stadt</li>
+<li>der Link ist ein <code>&lt;a&gt;</code>-Element. Wenn Sie ihm die (Bootstrap-)CSS-Klassen <code>btn</code>, <code>btn-sm</code> und <code>btn-success</code> zuweisen, sieht er aus wie der "Button" auf dem Bild</li>
+<li><strong>Filter :</strong> Eine Zahl (<code>number</code>) kann mithilfe der <code>toString()</code>-Methode in einen String umgewandelt werden (z.B. <code>staedte[i].jahr.toString()</code>) </li>
+<li>Die Länge eines Strings wird mithilfe von <code>length</code> ermittelt (z.B. <code>input.length</code>)</li>
+<li>Ein Teilstring kann mithilfe der <code>substring(start,end)</code>-Methode erzeugt werden (z.B. <code>staedte[i].stadt.substring(0,input.length)</code>)</li>
+<li>der Teilstring kann mit dem aktuellen Wert des <code>input</code>-Feldes verglichen werden</li>
+<li>Vergessen Sie nicht, als Ereignisbehandlung für das <code>input</code>-Element die <code>createTable()</code>-Methode aufzurufen! Welches Ereignis soll darin beahndelt werden?</li>
+</ul>
+</li>
+<li>Viel Spaß und viel Erfolg!</li>
 </ul>
 </details>
 <details class="question"><summary>Übungsaufgabe x - wird aber noch geändert!</summary><p>Arbeiten Sie im Abschnitt <a href="./angular/#angular"><strong>Angular</strong></a> die Abschnitte <a href="./angular/#erstes-projekt-erstellen"><strong>Erstes Projekt erstellen</strong></a> und <a href="./angular/#angular-projektstruktur"><strong>Angular-Projektstruktur</strong></a> durch. Sie müssen dazu <a href="./tools/#angular"><strong>Angular</strong></a> installieren, eine <a href="./tools/#integrated-development-environment-ide"><strong>Integrierte Entwicklungsumgebung</strong></a> und die passenden <a href="./tools/#developer-tools"><strong>Developer Tools</strong></a>. </p>

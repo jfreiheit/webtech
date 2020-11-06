@@ -45,6 +45,8 @@
     
     
     
+      <link rel="stylesheet" href="../extra.css">
+    
     
       
     
@@ -308,9 +310,82 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        JSON
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
     <a href="./" title="JSON" class="md-nav__link md-nav__link--active">
       JSON
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zugriff-auf-ein-json" class="md-nav__link">
+    Zugriff auf ein JSON
+  </a>
+  
+    <nav class="md-nav" aria-label="Zugriff auf ein JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viele-objekte-im-array" class="md-nav__link">
+    Viele Objekte im Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajax" class="md-nav__link">
+    Ajax
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xmlhttprequest" class="md-nav__link">
+    XMLHttpRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-api" class="md-nav__link">
+    fetch()-API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -380,6 +455,63 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zugriff-auf-ein-json" class="md-nav__link">
+    Zugriff auf ein JSON
+  </a>
+  
+    <nav class="md-nav" aria-label="Zugriff auf ein JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viele-objekte-im-array" class="md-nav__link">
+    Viele Objekte im Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajax" class="md-nav__link">
+    Ajax
+  </a>
+  
+    <nav class="md-nav" aria-label="Ajax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xmlhttprequest" class="md-nav__link">
+    XMLHttpRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-api" class="md-nav__link">
+    fetch()-API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -399,6 +531,703 @@
                 
                 
                 <h1 id="javascript-object-notation-json">JavaScript Object Notation (JSON)<a class="headerlink" href="#javascript-object-notation-json" title="Permanent link">&para;</a></h1>
+<p>Eine kurze Einführung zu Objekten in JavaScript haben wir bereits im <a href="../javascript/#objekte"><strong>JavaScript-Kapitel</strong></a> gegeben. Dort haben wir auch gesagt, dass wir auf die Notation solcher Objekte in JavaScript nochmal genauer eingehen wollen. Dies geschieht hier. <em>JavaScript Object Notation (JSON)</em> ist ein Datenaustauschformat, das einerseits einfach für Menschen zu lesen und zu schreiben ist und andererseits gut von Maschinen <em>geparst</em> (analysiert) und erzeugt werden kann. Ein Objekt in JSON beginnt mit einer geschweiften Klammer <code>{</code> und endet mit <code>}</code>. JSON besteht im wesentlichen aus Schlüssel-Werte-Paaren, die durch Komma getrennt sind. </p>
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+    <span class="s2">&quot;schlüssel1&quot;</span>: wert1,
+    <span class="s2">&quot;schlüssel2&quot;</span>: wert2,
+<span class="o">}</span>
+</code></pre></div>
+
+<p>Die <em>Schlüssel</em> sind Strings in doppelten Hochkamma (<code>""</code>), dann folgt ein Doppelpunkt <code>:</code> und dann folgt der Wert. <em>Werte</em> können Strings, Zahlen, Wahrheitswerte, Arrays, Funktionen und Objekte (und <code>null</code>) sein. </p>
+<p>Hier ein Beispiel (erweitert <a href="https://wiki.selfhtml.org/wiki/JSON"><strong>aus</strong></a>):</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Georg&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;alter&quot;</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span>
+  <span class="nt">&quot;verheiratet&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;beruf&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;kinder&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lukas&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;alter&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+      <span class="nt">&quot;schulabschluss&quot;</span><span class="p">:</span> <span class="s2">&quot;Gymnasium&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;alter&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+      <span class="nt">&quot;schulabschluss&quot;</span><span class="p">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;biografie&quot;</span><span class="p">:</span> <span class="err">function()</span> <span class="p">{</span>
+            <span class="err">return</span> <span class="err">this.name</span> <span class="err">+</span> <span class="nt">&quot; ist &quot;</span> <span class="err">+</span> <span class="err">this.alter</span> <span class="err">+</span> <span class="s2">&quot; und hat &quot;</span> <span class="err">+</span> <span class="err">this.kinder.length</span> <span class="err">+</span> <span class="s2">&quot; Kinder.&quot;</span><span class="err">;</span>
+  <span class="p">},</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+<ul>
+<li>Der Wert zum Schlüssel <code>"name"</code> in Zeile <code>2</code> ist ein String (<code>string</code>). </li>
+<li>Der Wert zum Schlüssel <code>"alter"</code> in Zeile <code>3</code> ist eine Zahl (<code>number</code>). </li>
+<li>Der Wert zum Schlüssel <code>"verheiratet"</code> in Zeile <code>4</code> ist ein Wahrheitswert (<code>boolean</code>). </li>
+<li>Der Wert zum Schlüssel <code>"kinder"</code> in Zeilen <code>6-17</code> ist Array. </li>
+<li>Die Elemente in diesem Array sind selbst wieder Objekte in JavaScript Object Notation, bestehend aus jeweils drei Schlüssel-Werte-Paaren.</li>
+<li>Das <code>"kinder"</code>ist numerisch indiziert, d.h. wir können über den Index <code>0</code> auf das erste Kind (<code>"Lukas"</code>) und über den Index <code>1</code> auf das zweite Kind (<code>"Lisa"</code>) zugreifen</li>
+</ul>
+<h2 id="zugriff-auf-ein-json">Zugriff auf ein JSON<a class="headerlink" href="#zugriff-auf-ein-json" title="Permanent link">&para;</a></h2>
+<p>Der Zugriff auf die Werte eines JSON erfolgt mittels Punktnotation über den Schlüssel. Wir nehmen obiges Beispiel und speichern es in einer Variablen <code>georg</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">georg</span> <span class="o">=</span> <span class="p">{</span>
+              <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Georg&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;alter&quot;</span><span class="o">:</span> <span class="mi">47</span><span class="p">,</span>
+              <span class="s2">&quot;verheiratet&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+              <span class="s2">&quot;beruf&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+              <span class="s2">&quot;kinder&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Lukas&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;alter&quot;</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
+                  <span class="s2">&quot;schulabschluss&quot;</span><span class="o">:</span> <span class="s2">&quot;Gymnasium&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;alter&quot;</span><span class="o">:</span> <span class="mi">14</span><span class="p">,</span>
+                  <span class="s2">&quot;schulabschluss&quot;</span><span class="o">:</span> <span class="kc">null</span>
+                <span class="p">}</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;biografie&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; ist &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">alter</span> <span class="o">+</span> <span class="s2">&quot; und hat &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">kinder</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="s2">&quot; Kinder.&quot;</span><span class="p">;</span>
+              <span class="p">},</span>
+            <span class="p">};</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>Dann können wir auf die einzelnen Werte wie folgt zugreifen:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">georg</span><span class="p">.</span><span class="nx">name</span>      <span class="c1">// &quot;Georg&quot;</span>
+<span class="nx">georg</span><span class="p">.</span><span class="nx">alter</span>     <span class="c1">// 47</span>
+<span class="kd">let</span> <span class="nx">kinder</span> <span class="o">=</span> <span class="nx">georg</span><span class="p">.</span><span class="nx">kinder</span><span class="p">;</span>  <span class="c1">// Array aus 2 Objekten</span>
+<span class="nx">kinder</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span>      <span class="c1">// &quot;Lukas&quot;</span>
+<span class="nx">kinder</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">name</span>      <span class="c1">// &quot;Lisa&quot;</span>
+<span class="nx">georg</span><span class="p">.</span><span class="nx">biografie</span><span class="p">()</span>   <span class="c1">// &quot;Georg ist 47 und hat 2 Kinder.&quot;</span>
+</code></pre></div>
+
+<p>Man kann übrigens auch anstelle der Punktnotation ein JSON wie ein assoziatives Array auffassen und z.B. anstelle von <code>georg.name</code> über <code>georg['name']</code> auf den Wert <code>"Georg"</code> zugreifen. </p>
+<p>Es wäre auch möglich, das "Kinder"-Array in ein weiteres JSON umzuwandeln:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// anstelle von:</span>
+<span class="hll">  <span class="s2">&quot;kinder&quot;</span><span class="o">:</span> <span class="p">[</span>
+</span><span class="hll">    <span class="p">{</span>
+</span>      <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Lukas&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;alter&quot;</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
+      <span class="s2">&quot;schulabschluss&quot;</span><span class="o">:</span> <span class="s2">&quot;Gymnasium&quot;</span>
+    <span class="p">},</span>
+<span class="hll">    <span class="p">{</span>
+</span>      <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;alter&quot;</span><span class="o">:</span> <span class="mi">14</span><span class="p">,</span>
+      <span class="s2">&quot;schulabschluss&quot;</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+<span class="hll">  <span class="p">],</span>
+</span><span class="c1">// ginge z.B. auch:</span>
+<span class="hll">  <span class="s2">&quot;kinder&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class="hll">    <span class="s2">&quot;erstesKind&quot;</span> <span class="o">:</span> <span class="p">{</span>
+</span>      <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Lukas&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;alter&quot;</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
+      <span class="s2">&quot;schulabschluss&quot;</span><span class="o">:</span> <span class="s2">&quot;Gymnasium&quot;</span>
+    <span class="p">},</span>
+<span class="hll">    <span class="s2">&quot;zweitesKind&quot;</span> <span class="o">:</span> <span class="p">{</span>
+</span>      <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;alter&quot;</span><span class="o">:</span> <span class="mi">14</span><span class="p">,</span>
+      <span class="s2">&quot;schulabschluss&quot;</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+<span class="hll">  <span class="p">},</span>
+</span></code></pre></div>
+</td></tr></table>
+
+<p>Dann ist der Zugriff über den Index (also z.B. <code>georg.kinder[0]</code>) nicht mehr möglich. Stattdessen aber:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">georg</span><span class="p">.</span><span class="nx">kinder</span><span class="p">.</span><span class="nx">erstesKind</span><span class="p">.</span><span class="nx">name</span>
+<span class="nx">georg</span><span class="p">.</span><span class="nx">kinder</span><span class="p">.</span><span class="nx">zweitesKind</span><span class="p">.</span><span class="nx">alter</span>
+</code></pre></div>
+
+<h3 id="viele-objekte-im-array">Viele Objekte im Array<a class="headerlink" href="#viele-objekte-im-array" title="Permanent link">&para;</a></h3>
+<p>Wenn Sie viele "gleiche" Objekte speichern, dann in einem Array. Die folgende Datei zeigt viele Objekte in JSON, die in einem Array abgelegt sind:</p>
+<details><summary>data/members.json</summary><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Catherine&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Williams&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;cwilliamsl@360.cn&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Adam&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Anderson&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;aanderson8@google.fr&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Susan&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Andrews&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;sandrewsn@google.co.jp&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Catherine&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Andrews&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;candrewsp@noaa.gov&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Alan&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Bradley&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;abradley1c@globo.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Anne&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Brooks&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;abrooks16@bravesites.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Russell&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Brown&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;rbrownq@nifty.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Ryan&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Burton&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;rburton18@foxnews.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Roy&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Campbell&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;rcampbell1@geocities.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Russell&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Campbell&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;rcampbell17@eventbrite.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Bonnie&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Coleman&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;bcoleman11@fc2.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Ernest&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Coleman&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;ecoleman15@businessweek.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Richard&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Cruz&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;rcruz7@unc.edu&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Sean&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Cruz&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;scruz10@answers.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Rebecca&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Cunningham&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;rcunninghamd@mac.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Margaret&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Evans&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mevansh@pcworld.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Jeffrey&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Ford&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;jford14@cnet.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Andrea&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Gardner&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;agardnerv@woothemes.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Deborah&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;George&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;dgeorge6@furl.net&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Sean&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Gibson&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;sgibsony@alexa.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Virginia&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Graham&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;vgrahamk@aol.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Steven&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Hamilton&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;shamiltonu@state.tx.us&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Virginia&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Hawkins&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;vhawkinsf@ehow.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Edward&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Hicks&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;ehicksc@pcworld.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Mark&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Johnson&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mjohnsonj@hostgator.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Ruth&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Jordan&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;rjordan1a@smugmug.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Antonio&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Kim&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;akim4@odnoklassniki.ru&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Jennifer&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Marshall&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;jmarshallt@gnu.org&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Eric&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Matthews&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;ematthews5@independent.co.uk&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Raymond&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Mcdonald&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;rmcdonald2@ihg.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Eric&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Miller&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;emillere@creativecommons.org&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Jonathan&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Morales&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;jmoralesa@ovh.net&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Marie&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Morgan&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mmorganb@cloudflare.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Amanda&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Nelson&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;anelson13@indiatimes.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Olson&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;lolsonr@telegraph.co.uk&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Ortiz&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;aortizw@histats.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Peter&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Phillips&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;pphillipss@1688.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Matthew&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Porter&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mporter9@europa.eu&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Tammy&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Ray&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;trayx@weather.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Mark&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Richardson&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mrichardson1d@ihg.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Joan&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Roberts&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;jroberts12@alibaba.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Kathleen&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Rose&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;kroseg@pinterest.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Steve&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Sanders&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;ssanders1b@wikispaces.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Shirley&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Scott&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;sscottm@macromedia.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Lillian&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Stephens&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;lstephens19@hugedomains.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Nicole&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Thompson&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;nthompson3@admin.ch&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Marie&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Thompson&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mthompsonz@yelp.com&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Alan&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Vasquez&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;avasquezo@miibeian.gov.cn&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Mildred&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Watkins&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mwatkins0@miibeian.gov.cn&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;forename&quot;</span><span class="p">:</span> <span class="s2">&quot;Eugene&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Williams&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;ewilliamsi@deliciousdays.com&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</details>
+<p>Ein Array ist stets numerisch indiziert, d.h. Sie können unter Verwendung des Index die einzelnen Objekte auslesen. Wir hatten das oben bereits für das <code>"kinder"</code>-Array gezeigt, geben hier aber noch ein Beispiel an:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>JSON + Array<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;loadJSON()&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">main</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container m-5&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ul1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;list-group&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">var</span> <span class="nx">members_obj</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">loadJSON</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">xhttp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+            <span class="nx">xhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span>  <span class="p">{</span>
+                    <span class="nx">members_obj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">members_obj</span><span class="p">);</span>
+                    <span class="nx">createList</span><span class="p">();</span>
+                <span class="p">}};</span>
+            <span class="nx">xhttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;./data/members.json&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+            <span class="nx">xhttp</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">createList</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">members</span> <span class="o">=</span> <span class="nx">members_obj</span><span class="p">.</span><span class="nx">members</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">members_obj</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">members_obj</span><span class="p">.</span><span class="nx">members</span><span class="p">);</span>
+
+        <span class="kd">let</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;ul1&#39;</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">members</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
+            <span class="nx">li</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;list-group-item&#39;</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+            <span class="nx">a</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s1">&#39;mailto:&#39;</span> <span class="o">+</span> <span class="nx">members</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">email</span> <span class="o">+</span> <span class="s1">&#39;?subject=Webtech&amp;body=Hallo%20FIW!&#39;</span><span class="p">;</span>
+            <span class="nx">a</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;&lt;i class=&quot;fa fa-envelope&quot;&gt; &#39;</span> <span class="o">+</span> <span class="s1">&#39;to: &#39;</span> <span class="o">+</span> <span class="nx">members</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">forename</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">members</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">surname</span><span class="p">;</span>
+            <span class="nx">li</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+            <span class="nx">ul</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>Es entsteht eine Liste aus Hyperlinks, wobei jeder Hyperlink in der Form zusammengesetzt ist: <code>mailto:email-adresse</code>. Es sind sogar noch <code>subject</code> (also Betreff) und <code>body</code> (als Nachrichteninhalt) angehängt, d.h. die Form ist <code>mailto:email-adresse?subject=Webtech&amp;body=Hallo%20FIW!</code>. Beachten Sie, dass es sich dabei um eine URL handelt und diese deshalb <em>URL encoded</em> sein muss, d.h. dass z.B. Leerzeichen durch <code>%20</code> ersetzt werden. </p>
+<p>Die Seite sieht dann so aus:
+<img alt="json" src="../files/78_jsonarray.png" /></p>
+<p>Und wenn man auf einen Link klickt (z.B. <code>Adam Anderson</code>), öffnet sich das Mailprogramm:
+<img alt="json" src="../files/79_mail.png" /></p>
+<h2 id="ajax">Ajax<a class="headerlink" href="#ajax" title="Permanent link">&para;</a></h2>
+<p><em>Ajax</em> steht für <em>Asynchronous JavaScript and XML</em>. Es wird verwendet, um Daten vom Server zu laden oder an den Server zu senden, ohne die Seite neu zu laden. Ajax ist somit die Basis für eine <em>Single Page Application</em>. Obwohl <em>XML</em> im Namen von Ajax vorkommt, wird hauptsächlich JSON als Datenaustauschformat für das Senden und Empfangen von Daten zwischen Client und Server verwendet. </p>
+<p>Der Begriff <em>asynchron</em> beschreibt, dass der Austausch nicht die Webseite blockiert, d.h. dass weitere Nutzerinteraktionen möglich sind während der Datenaustausch erfolgt. </p>
+<h3 id="xmlhttprequest">XMLHttpRequest<a class="headerlink" href="#xmlhttprequest" title="Permanent link">&para;</a></h3>
+<p>Der Grundbaustein von Ajax ist ein <code>XMLHttpRequest</code>-Objekt. Ein solches Objekt stellt Methoden zur Verfügung, um</p>
+<ul>
+<li>eine Webseite (per JavaScript) aktualisieren zu können, ohne sie neu zu laden,</li>
+<li>Daten vom Server anzufordern nachdem die Seite geladen ist,</li>
+<li>Daten zu einem Server im Hintergrund zu senden. </li>
+</ul>
+<p>Angenommen, folgende JSON-Datei liegt auf unserem Server (<em>DocumentRoot</em> ist mein DocumentRoot-Ordner): </p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">DocumentRoot/Webtech20/georg.json</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Georg&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;alter&quot;</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span>
+  <span class="nt">&quot;verheiratet&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;beruf&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;kinder&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;erstesKind&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lukas&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;alter&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+      <span class="nt">&quot;schulabschluss&quot;</span><span class="p">:</span> <span class="s2">&quot;Gymnasium&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;zweitesKind&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;alter&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+      <span class="nt">&quot;schulabschluss&quot;</span><span class="p">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Client-seitig besteht die Anfrage an einen Webeserver per <code>XMLHttpRequest</code> aus drei Schritten:</p>
+<ol>
+<li><code>XMLHttpRequest</code>-Objekt erzeugen</li>
+<li>Anfrage (Request) an Server senden</li>
+<li>Antwort (Response) verarbeiten/ausgeben</li>
+</ol>
+<p>Wir schauen uns das an einem Beispiel an:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ajax<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>AJAX wird nachfolgend Daten aus einer JSON-Datei einfügen<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;div1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;loadJSON();&quot;</span><span class="p">&gt;</span>JSON lesen<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">function</span> <span class="nx">loadJSON</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">xhttp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+        <span class="nx">xhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span>  <span class="p">{</span>
+                <span class="nx">createFormular</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+            <span class="p">}};</span>
+        <span class="nx">xhttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;http://localhost/Webtech20/georg.json&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="nx">xhttp</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">createFormular</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">georg</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">json</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">georg</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">georg</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">georg</span><span class="p">.</span><span class="nx">kinder</span><span class="p">.</span><span class="nx">erstesKind</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+<ul>
+<li>In Zeile <code>10</code> definieren wir uns einen Button, der an den EventListener für das <code>click</code>-Ereignis angemeldet ist. In der Ereignisbehandlung wird die Funktion <code>loadJSON()</code> aufgerufen.</li>
+<li>In Zeile <code>13</code> wird das <code>XMLHttpRequest</code>-Objekt erzeugt. Die Referenz darauf speichern wir in der Variablen <code>xhttp</code>.</li>
+<li>In Zeile <code>18</code> wird die Verbindung zum Webserver hergestellt und der Request konfiguriert. Die <code>open()</code>-Funktion des <code>XMLHttpRequest</code>-Objektes enthält drei Parameter:<ul>
+<li>der erste Parameter beschreibt die http-Methode, mit der angefragt werden soll (<code>"GET"</code> oder <code>"POST"</code>)</li>
+<li>der zweite Parameter gibt die Zieladresse der angefragten Ressource auf dem Server an</li>
+<li>der dritte Parameter gibt die Art der Kommunikation an (<code>true</code>: asynchron, `false: synchron)</li>
+</ul>
+</li>
+<li>In Zeile <code>19</code> wird diese Anfrage (Request) gesendet</li>
+<li>In den Zeilen <code>14-17</code> wird für die <code>onreadystatechange</code>-Eigenschaft des <code>XMLHttpRequest</code>-Objektes eine Funktion definiert, die immer dann (automatisch) aufgerufen wird, wenn sich der <code>readyState</code> des <code>XMLHttpRequest</code>-Objektes ändert. <code>readyState</code> kann folgende Werte annehmen:<ul>
+<li><code>0</code> (<code>UNSENT</code>): <code>open()</code> wurde noch nicht aufgerufen</li>
+<li><code>1</code> (<code>OPENED</code>): <code>send()</code> wurde noch nicht aufgerufen</li>
+<li><code>2</code> (<code>HEADERS_RECEIVED</code>): <code>send()</code> wurde aufgerufen und Headers sowie Status sind verfügbar</li>
+<li><code>3</code> (<code>LOADING</code>): Download ist im Gange; <code>responseText</code> enthält bereit sunvollständige Daten</li>
+<li><code>4</code> (<code>DONE</code>): Download-Vorgang abgeschlossen</li>
+</ul>
+</li>
+<li>wenn <code>readyState</code> den Wert <code>4</code> hat und der http-Status <code>200</code> (<code>OK</code>) ist (Zeile <code>15</code>), dann ist der Download der angefragten Ressource fertig und die Ressource kann verwendet werden. Dazu wird in Zeile <code>16</code> die Funktion <code>createFormular(json)</code> aufgerufen dabei das <code>XMLHttpRequest</code>-Objekt übergeben</li>
+<li>in der Eigenschaft <code>responseText</code> des <code>XMLHttpRequest</code>-Objektes ist das heruntergeladene JSON enthalten. Dies wird in Zeile <code>23</code> in der Funktion <code>createFormular(json)</code> ausgelesen</li>
+<li>die JavaScript-Funktion <code>JSON.parse()</code> erzeugt aus einem JSON-formatierten Text ein entsprechendes Javascript-Objekt. Dies geschieht ebenfalls in Zeile <code>23</code>. Die referenz auf dieses JavaScript-Objekt wird in der Variablen <code>georg</code> gespeichert. </li>
+<li>in den Zeilen <code>24-26</code> sind einige Zugriffe auf das Objekt exemplarisch implementiert. Die Ausgabe erfolgt auf die Konsole. <strong>Wenn Sie das Beispiel also ausprobieren, dann schauen Sie auf die Konsole in Ihren DeveloperTools.</strong></li>
+</ul>
+<h3 id="fetch-api"><code>fetch()</code>-API<a class="headerlink" href="#fetch-api" title="Permanent link">&para;</a></h3>
+<p>In den letzten Jahren wurde eine sogenannte <code>fetch()</code>-API entwickelt, die leistungsfähigere und flexiblere Funktionen zur Verfügung stellt, als ein <code>XMLHttpRequest</code>-Objekt. Da wir näher auf <a href="./javascript/#promises"><strong>Promises</strong></a> eingehen müssten, erwähnen wir das Thema hier nur und geben ein Beispiel an, das dem oberen sehr ähnlich ist:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">loadJSONmitFetch</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;http://localhost/Webtech20/georg.json&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+            <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Warning! Status Code: &#39;</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">// Lese json aus der response aus</span>
+                <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+                  <span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+                      <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+                      <span class="p">}</span>
+                <span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Fetch Error :-S&#39;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+        <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
                 
               
               

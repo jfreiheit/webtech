@@ -45,6 +45,8 @@
     
     
     
+      <link rel="stylesheet" href="../extra.css">
+    
     
       
     
@@ -1253,9 +1255,10 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
 <h2 id="javascript-sprachelemente">JavaScript - Sprachelemente<a class="headerlink" href="#javascript-sprachelemente" title="Permanent link">&para;</a></h2>
 <h3 id="var-let-und-const"><code>var</code>, <code>let</code> und <code>const</code><a class="headerlink" href="#var-let-und-const" title="Permanent link">&para;</a></h3>
 <p>Mithilfe der Schlüsselwörter <code>var</code>, <code>let</code> und <code>const</code> können in JavaScript Variablen deklariert werden. Wenn Sie eine Variable mit <code>var</code> deklarieren, dann ist diese Variable innerhalb der gesamten Funktion, in der Sie die Variable deklarieren, gültig. Dagegen hat <code>let</code> nur eine <em>Blockgültigkeit</em>, d.h. eine mit <code>let</code> deklarierte Variable ist nur in dem Anweisungsblock gültig, in dem sie deklariert wurde. Eine mit <code>let</code> deklarierte Variable verhält sich also wie eine in Java deklarierte Variable. <code>const</code> wird zur Deklaration von Konstanten verwendet. Es ist zu bachten: Falls es sich bei der mit <code>const</code> deklarierten Konstante um eine Referenzvariable handelt (also auf ein Objekt oder Array zeigt), dann kann diese Variable ihre Referenz zwar nicht mehr ändern, das jeweilige Objekt, auf das die Variable (konstant) zeigt, kann sich aber schon ändern.</p>
+<p>Globale Variablen, also Variablen, die von allen Funktionen geteilt werden (in allen Funktionen genutzt werden können), werden außerhalb der Funktionen deklariert. Man sollte nur sehr selten globale Variablen einsetzen, da sie in allen anderen Funktionen (auch externen) überschrieben werden können. Blöderweise ist eine Variable auch dann global, wenn sie ohne eines der genannten Schlüsselwörter (<code>var</code>, <code>let</code> und <code>const</code> ) innerhalb einer Funktion "deklariert" wurde. Das geschieht meistens durch eine Wertzuweisung in der Annahme, dass die Variable bereits deklariert wurde. Eine solche unbeabsichtigte Erstellung einer globalen Variable sollte vermieden werden - die absichtliche erst recht. Wenn globale Variable, dann die Deklaration außerhalb aller Funktionen.</p>
 <h3 id="objekte">Objekte<a class="headerlink" href="#objekte" title="Permanent link">&para;</a></h3>
-<p>Objekte in JavaScript werden in <em>JavaScript Object Notation</em> beschrieben. Wir werden darauf noch <a href="./#javascript-object-notation-json"><strong>genauer eingehen</strong></a>, zeigen hier aber schonmal ein einfaches Beispiel zur Einführung:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">person</span><span class="o">=</span><span class="p">{</span><span class="nx">vorname</span><span class="o">:</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="nx">nachname</span><span class="o">:</span> <span class="s2">&quot;Musterfrau&quot;</span><span class="p">};</span>
+<p>Objekte in JavaScript werden in <em>JavaScript Object Notation</em> beschrieben. Wir werden darauf noch <a href="../json/#javascript-object-notation-json"><strong>genauer eingehen</strong></a>, zeigen hier aber schonmal ein einfaches Beispiel zur Einführung:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">person</span><span class="o">=</span><span class="p">{</span><span class="nx">vorname</span><span class="o">:</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="nx">nachname</span><span class="o">:</span> <span class="s2">&quot;Musterfrau&quot;</span><span class="p">};</span>
 </code></pre></div>
 
 <p>Es wurde eine <code>person</code> definiert mit 2 Feldern <code>vorname</code> und <code>nachname</code> und diesen Feldern wurden Werte zugewiesen. Der Zugriff auf die Felder erfolgt mittels Punkt-Notation, also <code>person.vorname</code> und <code>person.nachname</code>. </p>

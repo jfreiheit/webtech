@@ -436,12 +436,14 @@ Es entsteht die exakt gleiche Webseite wie in dem Beispiel davor (siehe Beispiel
 
 Mithilfe der Schlüsselwörter `var`, `let` und `const` können in JavaScript Variablen deklariert werden. Wenn Sie eine Variable mit `var` deklarieren, dann ist diese Variable innerhalb der gesamten Funktion, in der Sie die Variable deklarieren, gültig. Dagegen hat `let` nur eine *Blockgültigkeit*, d.h. eine mit `let` deklarierte Variable ist nur in dem Anweisungsblock gültig, in dem sie deklariert wurde. Eine mit `let` deklarierte Variable verhält sich also wie eine in Java deklarierte Variable. `const` wird zur Deklaration von Konstanten verwendet. Es ist zu bachten: Falls es sich bei der mit `const` deklarierten Konstante um eine Referenzvariable handelt (also auf ein Objekt oder Array zeigt), dann kann diese Variable ihre Referenz zwar nicht mehr ändern, das jeweilige Objekt, auf das die Variable (konstant) zeigt, kann sich aber schon ändern.
 
+Globale Variablen, also Variablen, die von allen Funktionen geteilt werden (in allen Funktionen genutzt werden können), werden außerhalb der Funktionen deklariert. Man sollte nur sehr selten globale Variablen einsetzen, da sie in allen anderen Funktionen (auch externen) überschrieben werden können. Blöderweise ist eine Variable auch dann global, wenn sie ohne eines der genannten Schlüsselwörter (`var`, `let` und `const` ) innerhalb einer Funktion "deklariert" wurde. Das geschieht meistens durch eine Wertzuweisung in der Annahme, dass die Variable bereits deklariert wurde. Eine solche unbeabsichtigte Erstellung einer globalen Variable sollte vermieden werden - die absichtliche erst recht. Wenn globale Variable, dann die Deklaration außerhalb aller Funktionen.
+
 ### Objekte
 
-Objekte in JavaScript werden in *JavaScript Object Notation* beschrieben. Wir werden darauf noch [**genauer eingehen**](./#javascript-object-notation-json), zeigen hier aber schonmal ein einfaches Beispiel zur Einführung:
+Objekte in JavaScript werden in *JavaScript Object Notation* beschrieben. Wir werden darauf noch [**genauer eingehen**](../json/#javascript-object-notation-json), zeigen hier aber schonmal ein einfaches Beispiel zur Einführung:
 
 ```javascript
-var person={vorname:"Maria", nachname: "Musterfrau"};
+let person={vorname:"Maria", nachname: "Musterfrau"};
 ```
 
 Es wurde eine `person` definiert mit 2 Feldern `vorname` und `nachname` und diesen Feldern wurden Werte zugewiesen. Der Zugriff auf die Felder erfolgt mittels Punkt-Notation, also `person.vorname` und `person.nachname`. 
