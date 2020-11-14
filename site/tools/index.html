@@ -187,6 +187,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -232,6 +234,18 @@
   <li class="md-nav__item">
     <a href=".." title="Home" class="md-nav__link">
       Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../uebungen/" title="Übungen" class="md-nav__link">
+      Übungen
     </a>
   </li>
 
@@ -382,6 +396,33 @@
   <a href="#nodejs" class="md-nav__link">
     Node.js
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#angular" class="md-nav__link">
+    Angular
+  </a>
+  
+    <nav class="md-nav" aria-label="Angular">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installationen" class="md-nav__link">
+    Installationen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-angularcli" class="md-nav__link">
+    Update @angular/cli
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -669,6 +710,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#angular" class="md-nav__link">
+    Angular
+  </a>
+  
+    <nav class="md-nav" aria-label="Angular">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installationen" class="md-nav__link">
+    Installationen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-angularcli" class="md-nav__link">
+    Update @angular/cli
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mysql" class="md-nav__link">
     MySQL
   </a>
@@ -830,9 +898,9 @@ git push
 <p>Für das Modul benötigen wir einen Webserver. Wir verwenden den <a href="https://httpd.apache.org/"><strong>Apache Webserver</strong></a>. Auf dem Mac ist er bereits vorhanden, auf Linux-Systemen meistens auch. Für Windows-Systeme wird die Installation von <a href="https://www.apachefriends.org/de/index.html"><strong>XAMPP</strong></a> empfohlen. Hier finden Sie Anleitungen zur Einrichtung des Webservers:</p>
 <ul>
 <li>Windows: <ul>
-<li><a href="https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/"><strong>https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/</strong></a></li>
-<li><a href="https://werner-zenk.de/tipps/lokale_webserver_xampp.php"><strong>https://werner-zenk.de/tipps/lokale_webserver_xampp.php</strong></a></li>
-<li>Wichtig ist, dass Sie wissen, wo sich Ihr <em>DocumentRoot</em> befindet (zunächst <code>xampp\htdocs</code> - lässt sich aber <a href="https://www.seo-head.de/entwicklung/xampp-htdocs-verzeichnis-aendern/"><strong>ändern</strong></a>)</li>
+<li><a href="https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/">https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/</a></li>
+<li><a href="https://werner-zenk.de/tipps/lokale_webserver_xampp.php">https://werner-zenk.de/tipps/lokale_webserver_xampp.php</a></li>
+<li>Wichtig ist, dass Sie wissen, wo sich Ihr <em>DocumentRoot</em> befindet (zunächst <code>xampp\htdocs</code> - lässt sich aber <a href="https://www.seo-head.de/entwicklung/xampp-htdocs-verzeichnis-aendern/">ändern</a>)</li>
 </ul>
 </li>
 <li>Mac:<ul>
@@ -842,7 +910,7 @@ git push
 </li>
 <li>Linux:<ul>
 <li>die meisten Linux-Systeme haben bereits einen Webserver (auch hier wichtig, <em>DocumentRoot</em> zu kennen)</li>
-<li>wenn nicht, können Sie sich auch <a href="https://www.apachefriends.org/de/index.html"><strong>XAMPP</strong></a> installieren</li>
+<li>wenn nicht, können Sie sich auch <a href="https://www.apachefriends.org/de/index.html">XAMPP</a> installieren</li>
 </ul>
 </li>
 </ul>
@@ -935,7 +1003,72 @@ Content-Type: text/html
 <li><code>DELETE</code> - löscht die angegebenen Daten auf dem Server</li>
 </ul>
 <h2 id="nodejs">Node.js<a class="headerlink" href="#nodejs" title="Permanent link">&para;</a></h2>
-<p><a href="https://nodejs.org/en/">Node.js</a> ist eine JavaScript-Laufzeitumgebung. Node.js reagiert auf Ereignisse und antwortet asynchron. Das bedeutet, dass die Ausführung einer Ereignisbearbeitung nicht zum Blockieren der Laufzeitumgebung führt, sondern nebenläufig weitere Ereignisse eintreffen können, die ebenfalls asynchron behandelt werden. Dies geschieht mithilfe des <em>Callback-Patterns</em>. Callbacks sind Funktionen, die anderen Funktionen als Parameter übergeben werden (siehe <a href="./javascript/#callback-funktionen"><strong>JavaScript &rarr; Callback-Funktionen</strong></a>). </p>
+<p><a href="https://nodejs.org/en/">Node.js</a> ist eine JavaScript-Laufzeitumgebung. Node.js reagiert auf Ereignisse und antwortet asynchron. Das bedeutet, dass die Ausführung einer Ereignisbearbeitung nicht zum Blockieren der Laufzeitumgebung führt, sondern nebenläufig weitere Ereignisse eintreffen können, die ebenfalls asynchron behandelt werden. Dies geschieht mithilfe des <em>Callback-Patterns</em>. Callbacks sind Funktionen, die anderen Funktionen als Parameter übergeben werden (siehe <a href="./javascript/#callback-funktionen">JavaScript &rarr; Callback-Funktionen</a>). </p>
+<h2 id="angular">Angular<a class="headerlink" href="#angular" title="Permanent link">&para;</a></h2>
+<p>Um <a href="https://angular.io/">Angular</a> verwenden zu können (siehe auch <a href="https://angular.io/guide/setup-local">Angular&rarr;Getting started</a>), benötigen Sie das <a href="https://cli.angular.io/"><em>Angular Command Line Interface (CLI)</em></a>. Zur Installation des Angular CLI geben Sie 
+<div class="highlight"><pre><span></span><code>npm install -g @angular/cli
+</code></pre></div>
+ein. Den Paketmanager <code>npm</code> können Sie sich mit <code>node.js</code> installieren. Mithilfe des Angular CLI haben Sie dann die Möglichkeit, ein neues Projekt anzulegen (<code>ng new projektName</code>), eine neue Componente (<code>ng generate component componentenName</code>) usw. und das Projekt auszuführen (<code>ng serve</code>). </p>
+<h3 id="installationen">Installationen<a class="headerlink" href="#installationen" title="Permanent link">&para;</a></h3>
+<p>Um den Paketmanager <code>npm</code> zu installieren, laden sie sich <code>node.js</code> <a href="https://nodejs.org/en/download/"><strong>hier</strong></a> herunter und installieren Sie es. Nach erfolgreicher Installation sollte sowohl </p>
+<div class="highlight"><pre><span></span><code>node -v
+</code></pre></div>
+
+<p>funktionieren und eine Versionsnummer ausgeben (z.B. <code>v14.15.0</code>) als auch </p>
+<div class="highlight"><pre><span></span><code>npm -v
+</code></pre></div>
+
+<p>(z.B. <code>6.14.8</code>). </p>
+<p>Außerdem benötigen Sie das <em>Angular-Command-Line-Interface (CLI)</em>, das Sie mithilfe des Befehls </p>
+<div class="highlight"><pre><span></span><code>npm install -g @angular/cli 
+</code></pre></div>
+
+<p>installieren. Danach sollte </p>
+<div class="highlight"><pre><span></span><code>ng --version 
+</code></pre></div>
+
+<p>funktionieren und Ihnen etwas in dieser Art ausgeben:</p>
+<div class="highlight"><pre><span></span><code>     _                      _                 ____ _     ___
+    / <span class="se">\ </span>  _ __   __ _ _   _<span class="p">|</span> <span class="p">|</span> __ _ _ __     / ___<span class="p">|</span> <span class="p">|</span>   <span class="p">|</span>_ _<span class="p">|</span>
+   / △ <span class="se">\ </span><span class="p">|</span> <span class="s1">&#39;_ \ / _` | | | | |/ _` | &#39;</span>__<span class="p">|</span>   <span class="p">|</span> <span class="p">|</span>   <span class="p">|</span> <span class="p">|</span>    <span class="p">|</span> <span class="p">|</span>
+  / ___ <span class="se">\|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="o">(</span>_<span class="p">|</span> <span class="p">|</span> <span class="p">|</span>_<span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="o">(</span>_<span class="p">|</span> <span class="p">|</span> <span class="p">|</span>      <span class="p">|</span> <span class="p">|</span>___<span class="p">|</span> <span class="p">|</span>___ <span class="p">|</span> <span class="p">|</span>
+ /_/   <span class="se">\_\_</span><span class="p">|</span> <span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>_, <span class="p">|</span><span class="se">\_</span>_,_<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>_,_<span class="p">|</span>_<span class="p">|</span>       <span class="se">\_</span>___<span class="p">|</span>_____<span class="p">|</span>___<span class="p">|</span>
+                <span class="p">|</span>___/
+
+
+Angular CLI: <span class="m">11</span>.0.1
+Node: <span class="m">14</span>.15.0
+OS: darwin x64
+
+Angular: 
+... 
+Ivy Workspace: 
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    <span class="m">0</span>.1100.1 <span class="o">(</span>cli-only<span class="o">)</span>
+@angular-devkit/core         <span class="m">11</span>.0.1 <span class="o">(</span>cli-only<span class="o">)</span>
+@angular-devkit/schematics   <span class="m">11</span>.0.1 <span class="o">(</span>cli-only<span class="o">)</span>
+@schematics/angular          <span class="m">11</span>.0.1 <span class="o">(</span>cli-only<span class="o">)</span>
+@schematics/update           <span class="m">0</span>.1100.1 <span class="o">(</span>cli-only<span class="o">)</span>
+rxjs                         <span class="m">6</span>.6.3
+typescript                   <span class="m">4</span>.0.5
+</code></pre></div>
+
+<p>Jetzt können wir unser <a href="./angular/#erstes-projekt-erstellen">erstes Angular-Projekt</a> erstellen. </p>
+<h3 id="update-angularcli">Update @angular/cli<a class="headerlink" href="#update-angularcli" title="Permanent link">&para;</a></h3>
+<p>Manchmal gibt es vielleicht Warnungen beim Erstellen eines Projektes - etwas in der Art, wie:
+<div class="highlight"><pre><span></span><code>npm WARN @angular-devkit/build-angular@0.1100.0 requires a peer of @angular/compiler-cli@^11.0.0 <span class="o">||</span> ^11.0.0-next but none is installed. You must install peer dependencies yourself.
+npm WARN @angular-devkit/build-angular@0.1100.0 requires a peer of typescript@~4.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngtools/webpack@11.0.0 requires a peer of @angular/compiler-cli@^11.0.0 <span class="o">||</span> ^11.0.0-next but none is installed. You must install peer dependencies yourself.
+npm WARN @ngtools/webpack@11.0.0 requires a peer of typescript@~4.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN icss-utils@5.0.0 requires a peer of postcss@^8.1.0 but none is installed. You must install peer dependencies yourself.
+npm WARN postcss-modules-extract-imports@3.0.0 requires a peer of postcss@^8.1.0 but none is installed. You must install peer dependencies yourself.
+npm WARN postcss-modules-local-by-default@4.0.0 requires a peer of postcss@^8.1.0 but none is installed. You must install peer dependencies yourself.
+npm WARN postcss-modules-scope@3.0.0 requires a peer of postcss@^8.1.0 but none is installed. You must install peer dependencies yourself.
+npm WARN postcss-modules-values@4.0.0 requires a peer of postcss@^8.1.0 but none is installed. You must install peer dependencies yourself.
+</code></pre></div></p>
+<p>Das liegt meistens daran, dass das Angular-CLI updated werden müsste. Für das Update von Angular gibt es eine <a href="https://update.angular.io/">eigene Seite</a>. Gehen Sie wie dort beschrieben vor. </p>
 <h2 id="mysql">MySQL<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.mysql.com/de/">MySQL</a> ist eine relationale Datenbank und gehört zu den am meisten verwendeten relationalen Datenbanken bei Webanwendungen. Wir hätten uns auch für <a href="https://www.postgresql.org/">PostgreSQL</a> entscheiden können. Für einen kurzen Vergleich von MySQL und PostgreSQL siehe <a href="https://developer.okta.com/blog/2019/07/19/mysql-vs-postgres">hier</a>. Informationen zur Installation von MySQL finden Sie <a href="https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/">hier</a>. Nach der Installation finden Sie z.B. auf dem Mac unter <strong>Systemeinstellungen &rarr; MySQL</strong>:</p>
 <p><img alt="MySQL" src="../files/31_mysql.png" /></p>
@@ -984,7 +1117,7 @@ Python    9138 jornfreiheit    5u  IPv4 0x5cee55fcfdf7753      0t0  TCP localhos
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="">
         
-          <a href=".." title="Home" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../uebungen/" title="Übungen" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -993,7 +1126,7 @@ Python    9138 jornfreiheit    5u  IPv4 0x5cee55fcfdf7753      0t0  TCP localhos
                 <span class="md-footer-nav__direction">
                   Zurück
                 </span>
-                Home
+                Übungen
               </div>
             </div>
           </a>

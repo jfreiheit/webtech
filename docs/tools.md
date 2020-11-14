@@ -138,15 +138,15 @@ In Zukunft fügen Sie Ihre neu erstellten Dateien und Ordner immer mit `git add 
 Für das Modul benötigen wir einen Webserver. Wir verwenden den [**Apache Webserver**](https://httpd.apache.org/ ). Auf dem Mac ist er bereits vorhanden, auf Linux-Systemen meistens auch. Für Windows-Systeme wird die Installation von [**XAMPP**](https://www.apachefriends.org/de/index.html ) empfohlen. Hier finden Sie Anleitungen zur Einrichtung des Webservers:
 
 * Windows: 
-    * [**https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/**](https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/ )
-    * [**https://werner-zenk.de/tipps/lokale_webserver_xampp.php**](https://werner-zenk.de/tipps/lokale_webserver_xampp.php )
-    * Wichtig ist, dass Sie wissen, wo sich Ihr *DocumentRoot* befindet (zunächst `xampp\htdocs` - lässt sich aber [**ändern**](https://www.seo-head.de/entwicklung/xampp-htdocs-verzeichnis-aendern/ ))
+    * [https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/](https://www.ionos.de/digitalguide/server/tools/xampp-tutorial-so-erstellen-sie-ihren-lokalen-testserver/ )
+    * [https://werner-zenk.de/tipps/lokale_webserver_xampp.php](https://werner-zenk.de/tipps/lokale_webserver_xampp.php )
+    * Wichtig ist, dass Sie wissen, wo sich Ihr *DocumentRoot* befindet (zunächst `xampp\htdocs` - lässt sich aber [ändern](https://www.seo-head.de/entwicklung/xampp-htdocs-verzeichnis-aendern/ ))
 * Mac:
 	* der Apache-Webserver ist bereits installiert
 	* achten Sie darauf, dass Sie Ihr *DocumentRoot* kennen (meistens `Sites`, eventuell [**ändern**](https://sysadminde.com/questions/161529/how-to-change-document-root-for-apache2-in-mac-os-x))
 * Linux:
     * die meisten Linux-Systeme haben bereits einen Webserver (auch hier wichtig, *DocumentRoot* zu kennen)
-    * wenn nicht, können Sie sich auch [**XAMPP**](https://www.apachefriends.org/de/index.html ) installieren
+    * wenn nicht, können Sie sich auch [XAMPP](https://www.apachefriends.org/de/index.html ) installieren
 
 Um zu testen, ob Ihr Webser läuft, erstellen Sie im *DocumentRoot* eine Datei `index.php` mit folgendem Inhalt:
 
@@ -157,8 +157,6 @@ Um zu testen, ob Ihr Webser läuft, erstellen Sie im *DocumentRoot* eine Datei `
 und rufen in Ihrem Browser ``http://localhost/index.php`` auf. Es sollte eine ähnliche Ausgabe wie folgt erscheinen (nur Ausschnitt:
 
 ![localhost](./files/41_localhost.png)
-
-
 
 
 ## Developer Tools
@@ -283,7 +281,93 @@ Neben der `GET`-Anfrage sind folgende weitere Anfragen (siehe auch [**HTML --> H
 
 ## Node.js
 
-[Node.js](https://nodejs.org/en/) ist eine JavaScript-Laufzeitumgebung. Node.js reagiert auf Ereignisse und antwortet asynchron. Das bedeutet, dass die Ausführung einer Ereignisbearbeitung nicht zum Blockieren der Laufzeitumgebung führt, sondern nebenläufig weitere Ereignisse eintreffen können, die ebenfalls asynchron behandelt werden. Dies geschieht mithilfe des *Callback-Patterns*. Callbacks sind Funktionen, die anderen Funktionen als Parameter übergeben werden (siehe [**JavaScript --> Callback-Funktionen**](./javascript/#callback-funktionen)). 
+[Node.js](https://nodejs.org/en/) ist eine JavaScript-Laufzeitumgebung. Node.js reagiert auf Ereignisse und antwortet asynchron. Das bedeutet, dass die Ausführung einer Ereignisbearbeitung nicht zum Blockieren der Laufzeitumgebung führt, sondern nebenläufig weitere Ereignisse eintreffen können, die ebenfalls asynchron behandelt werden. Dies geschieht mithilfe des *Callback-Patterns*. Callbacks sind Funktionen, die anderen Funktionen als Parameter übergeben werden (siehe [JavaScript --> Callback-Funktionen](./javascript/#callback-funktionen)). 
+
+## Angular
+
+Um [Angular](https://angular.io/) verwenden zu können (siehe auch [Angular-->Getting started](https://angular.io/guide/setup-local)), benötigen Sie das [*Angular Command Line Interface (CLI)*](https://cli.angular.io/). Zur Installation des Angular CLI geben Sie 
+```bash
+npm install -g @angular/cli
+```
+ein. Den Paketmanager `npm` können Sie sich mit `node.js` installieren. Mithilfe des Angular CLI haben Sie dann die Möglichkeit, ein neues Projekt anzulegen (`ng new projektName`), eine neue Componente (`ng generate component componentenName`) usw. und das Projekt auszuführen (`ng serve`). 
+
+### Installationen
+
+Um den Paketmanager `npm` zu installieren, laden sie sich `node.js` [**hier**](https://nodejs.org/en/download/) herunter und installieren Sie es. Nach erfolgreicher Installation sollte sowohl 
+
+```bash
+node -v
+```
+
+funktionieren und eine Versionsnummer ausgeben (z.B. `v14.15.0`) als auch 
+
+```bash 
+npm -v
+```
+
+(z.B. `6.14.8`). 
+
+Außerdem benötigen Sie das *Angular-Command-Line-Interface (CLI)*, das Sie mithilfe des Befehls 
+
+```bash 
+npm install -g @angular/cli 
+```
+
+installieren. Danach sollte 
+
+```bash
+ng --version 
+```
+
+funktionieren und Ihnen etwas in dieser Art ausgeben:
+
+```bash
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+    
+
+Angular CLI: 11.0.1
+Node: 14.15.0
+OS: darwin x64
+
+Angular: 
+... 
+Ivy Workspace: 
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.1100.1 (cli-only)
+@angular-devkit/core         11.0.1 (cli-only)
+@angular-devkit/schematics   11.0.1 (cli-only)
+@schematics/angular          11.0.1 (cli-only)
+@schematics/update           0.1100.1 (cli-only)
+rxjs                         6.6.3
+typescript                   4.0.5
+```
+
+Jetzt können wir unser [erstes Angular-Projekt](./angular/#erstes-projekt-erstellen) erstellen. 
+
+### Update @angular/cli
+
+Manchmal gibt es vielleicht Warnungen beim Erstellen eines Projektes - etwas in der Art, wie:
+```bash
+npm WARN @angular-devkit/build-angular@0.1100.0 requires a peer of @angular/compiler-cli@^11.0.0 || ^11.0.0-next but none is installed. You must install peer dependencies yourself.
+npm WARN @angular-devkit/build-angular@0.1100.0 requires a peer of typescript@~4.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngtools/webpack@11.0.0 requires a peer of @angular/compiler-cli@^11.0.0 || ^11.0.0-next but none is installed. You must install peer dependencies yourself.
+npm WARN @ngtools/webpack@11.0.0 requires a peer of typescript@~4.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN icss-utils@5.0.0 requires a peer of postcss@^8.1.0 but none is installed. You must install peer dependencies yourself.
+npm WARN postcss-modules-extract-imports@3.0.0 requires a peer of postcss@^8.1.0 but none is installed. You must install peer dependencies yourself.
+npm WARN postcss-modules-local-by-default@4.0.0 requires a peer of postcss@^8.1.0 but none is installed. You must install peer dependencies yourself.
+npm WARN postcss-modules-scope@3.0.0 requires a peer of postcss@^8.1.0 but none is installed. You must install peer dependencies yourself.
+npm WARN postcss-modules-values@4.0.0 requires a peer of postcss@^8.1.0 but none is installed. You must install peer dependencies yourself.
+```
+
+Das liegt meistens daran, dass das Angular-CLI updated werden müsste. Für das Update von Angular gibt es eine [eigene Seite](https://update.angular.io/). Gehen Sie wie dort beschrieben vor. 
 
 ## MySQL
 

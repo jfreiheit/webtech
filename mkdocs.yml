@@ -60,6 +60,7 @@ markdown_extensions:
 #Navigation
 nav:
     - Home: index.md
+    - Übungen: uebungen.md
     - Werkzeuge: tools.md
     - HTML: html.md
     - CSS: css.md

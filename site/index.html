@@ -187,6 +187,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -286,13 +288,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ubungen" class="md-nav__link">
-    Übungen
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#semesteraufgabe" class="md-nav__link">
     Semesteraufgabe
   </a>
@@ -303,6 +298,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="uebungen/" title="Übungen" class="md-nav__link">
+      Übungen
+    </a>
   </li>
 
     
@@ -468,13 +475,6 @@
         <li class="md-nav__item">
   <a href="#inhalte" class="md-nav__link">
     Inhalte
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ubungen" class="md-nav__link">
-    Übungen
   </a>
   
 </li>
@@ -1150,507 +1150,11 @@ das ist Text <span class="p">&lt;</span><span class="nt">a</span> <span class="n
 </code></pre></div>
 
 </details>
-<h2 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h2>
-<details class="question"><summary>Übungsaufgabe 0</summary><ul>
-<li>wählen Sie eine <a href="./tools/#integrated-development-environment-ide"><strong>IDE</strong></a> aus und installieren Sie diese </li>
-<li>richten Sie sich ein Git-Repository ein (z.B. <code>WebTech20</code>) und pushen Sie es auf einen zentralen Dienst (<a href="./tools/#git"><strong>siehe</strong></a>)</li>
-<li>laden Sie mich zu Ihrem Git-Dienst ein (<a href="./tools/#git"><strong>siehe</strong></a>)</li>
-<li>erstellen Sie in Ihrem Repostory eine Datei <code>index.php</code> mit folgendem Inhalt: <code>&lt;?php phpinfo(); ?&gt;</code></li>
-<li>richten Sie Ihren Webserver so ein, dass <code>WebTech20</code> Ihr <em>DocumentRoot</em> ist (<a href="./tools/#webserver"><strong>siehe</strong></a>)</li>
-<li>commiten und pushen Sie Ihr Repository</li>
+<details class="question"><summary>Woche 7 - Angular (erstes Angular-Projekt)</summary><ul>
+<li>Diese Woche geht es darum, dass für alle die gesamte Entwicklungsumgebung (<code>npm</code>, <code>ng</code>) so funktioniert, dass Sie sich ein erstes Angular-Projekt aufsetzen können. Es gibt deshalb auch kein Video, weil ich da nur zeigen würde, wie ich das Projekt aufsetze. Arbeiten Sie die Übungsaufgabe 6 (<a href="./uebungen/#ubungen">die Übungen wurden verschoben</a>) ab. Wenn alles klappt, sollte es schnell gehen. Ich werde in der Übung am 24.11. die Durchführung der Übung 6 zeigen und dabei ein Video aufnehmen, das ich hier einstelle. </li>
+<li>siehe <strong>Übungsaufgabe 6</strong></li>
+<li>siehe <a href="./angular/#angular"><strong>Angular</strong></a></li>
 </ul>
-</details>
-<details class="question"><summary>Übungsaufgabe 1 (HTML)</summary><ul>
-<li>Erstellen Sie in einem <code>Uebung1</code>-Ordner eine Datei <code>uebung1.html</code>. Das <code>body</code>-Element soll ein <code>header</code>-Element, ein <code>nav</code>-Element, ein <code>section</code>-Element und ein <code>footer</code>-Element enthalten. </li>
-<li>
-<p>Unter dieser Übungsaufgabe (siehe <code>mockupdata</code>) ist der HTML-Code einer Tabelle mit allen Teilnehmerinnen einer Veranstaltung. Kopieren Sie den Inhalt der Datei so in Ihren HTML-Code, dass folgende Seite erscheint:
-<img alt="Uebung1" src="files/49_uebung1.png" /></p>
-</li>
-<li>
-<p>Es sollen 4 Unterseiten erstellt werden. Bei Klick auf diese Seiten soll die Tabelle jeweils nur die Teilnehmerinnen enthalten, deren Nachname mit dem entsprechenden Anfangsbuchstaben beginnt (also in <code>ag.html</code> nur alle Nachnamen, die mit A bis G beginnen). Die Seiten <code>ag.html</code>, <code>hl.html</code>, <code>mr.html</code> und <code>sz.html</code> sollen im Ordner <code>NN</code> abgelegt werden, der Unterordner von <code>Uebung1</code> ist.</p>
-</li>
-<li>Achten Sie darauf, dass man von jeder Unterseite auf jede andere Unterseite und auch auf die Hauptseite (<code>uebung1.html</code>) wechseln können muss.</li>
-<li>Das einzubindende Logo des Studiengangs liegt <a href="files/fiw.jpg">hier</a>. Es soll in einen <code>images</code>-Ordner gespeichert werden, der in der Ordner-Hierarchie neben dem <code>Uebung1</code>-Ordner liegt. Um die Größe des Bildes festzulegen, können Sie mit Hilfe des <code>style</code>-Attributes die Höhe und die Breite bestimmen: <code>style="width:53px; height=48px;"</code> </li>
-<li>Nächste Woche wird Uebung1 um CSS erweitert. </li>
-</ul>
-</details>
-<details><summary>mockupdata</summary><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Vorname<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nachname<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>E-Mail-Adresse<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>IP-Adresse<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Adam<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Anderson<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>aanderson8@google.fr<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>118.93.83.157<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Susan<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Andrews<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>sandrewsn@google.co.jp<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>228.214.9.251<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Catherine<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Andrews<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>candrewsp@noaa.gov<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>112.111.87.178<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Alan<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Bradley<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>abradley1c@globo.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>229.152.117.127<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Anne<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Brooks<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>abrooks16@bravesites.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>243.159.39.234<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Russell<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Brown<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>rbrownq@nifty.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>215.38.120.242<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ryan<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Burton<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>rburton18@foxnews.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>159.60.107.14<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Roy<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Campbell<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>rcampbell1@geocities.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>237.232.34.20<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Russell<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Campbell<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>rcampbell17@eventbrite.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>251.2.92.63<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Bonnie<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Coleman<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>bcoleman11@fc2.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>109.150.122.102<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ernest<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Coleman<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>ecoleman15@businessweek.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>213.173.4.7<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Richard<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Cruz<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>rcruz7@unc.edu<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>235.124.23.221<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Sean<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Cruz<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>scruz10@answers.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>92.255.49.227<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Rebecca<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Cunningham<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>rcunninghamd@mac.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>65.79.191.52<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Margaret<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Evans<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>mevansh@pcworld.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>162.10.86.196<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Jeffrey<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ford<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>jford14@cnet.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>210.216.54.14<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Andrea<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Gardner<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>agardnerv@woothemes.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>179.91.0.30<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Deborah<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>George<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>dgeorge6@furl.net<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>201.76.47.162<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Sean<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Gibson<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>sgibsony@alexa.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>48.114.103.55<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Virginia<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Graham<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>vgrahamk@aol.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>165.219.171.1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Steven<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Hamilton<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>shamiltonu@state.tx.us<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>38.194.91.201<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Virginia<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Hawkins<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>vhawkinsf@ehow.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>93.120.46.203<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Edward<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Hicks<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>ehicksc@pcworld.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>199.153.27.1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Mark<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Johnson<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>mjohnsonj@hostgator.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>73.87.135.206<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ruth<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Jordan<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>rjordan1a@smugmug.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>193.140.80.64<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Antonio<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Kim<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>akim4@odnoklassniki.ru<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>168.244.191.78<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Jennifer<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Marshall<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>jmarshallt@gnu.org<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>104.191.49.94<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Eric<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Matthews<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>ematthews5@independent.co.uk<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>138.194.30.1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Raymond<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Mcdonald<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>rmcdonald2@ihg.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>161.24.42.24<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Eric<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Miller<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>emillere@creativecommons.org<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>122.159.17.218<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Jonathan<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Morales<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>jmoralesa@ovh.net<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>97.65.110.105<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Marie<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Morgan<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>mmorganb@cloudflare.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>226.79.152.112<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Amanda<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Nelson<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>anelson13@indiatimes.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>161.185.121.245<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Lisa<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Olson<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>lolsonr@telegraph.co.uk<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>77.245.172.100<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Alice<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ortiz<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>aortizw@histats.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>179.52.222.21<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Peter<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Phillips<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>pphillipss@1688.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>11.158.255.76<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Matthew<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Porter<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>mporter9@europa.eu<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>174.81.178.88<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Tammy<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ray<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>trayx@weather.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>192.243.38.190<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Mark<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Richardson<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>mrichardson1d@ihg.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>209.217.14.154<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Joan<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Roberts<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>jroberts12@alibaba.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>4.91.143.62<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Kathleen<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Rose<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>kroseg@pinterest.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>222.172.140.56<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Steve<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Sanders<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>ssanders1b@wikispaces.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>91.61.109.245<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Shirley<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Scott<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>sscottm@macromedia.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>219.237.108.82<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Lillian<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Stephens<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>lstephens19@hugedomains.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>89.85.137.204<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Nicole<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Thompson<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>nthompson3@admin.ch<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>13.183.208.155<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Marie<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Thompson<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>mthompsonz@yelp.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>162.164.5.231<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Alan<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Vasquez<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>avasquezo@miibeian.gov.cn<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>178.109.86.172<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Mildred<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Watkins<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>mwatkins0@miibeian.gov.cn<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>150.67.132.64<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Eugene<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Williams<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>ewilliamsi@deliciousdays.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>67.208.26.182<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Catherine<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Williams<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>cwilliamsl@360.cn<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>154.87.204.51<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-</code></pre></div>
-
-</details>
-<details class="question"><summary>Übungsaufgabe 2 (CSS)</summary><ul>
-<li>Erstellen Sie (falls noch nicht geschehen) eine <code>index.html</code>-Datei in Ihrem Repository-Ordner (also z.B. <code>DocumentRoot/Webtech20</code>) derart, dass diese direkte Links auf Ihre Lösungen der Übungen enthalten (z.B. in einer Tabelle oder einer Liste).</li>
-<li>Kopieren Sie den Ordner <code>Uebung1</code> in den Ordner <code>Uebung2</code> (also inkl. Ordner <code>NN</code>). Ändern Sie darin die Datei <code>uebung1.html</code> zu <code>uebung2.html</code> (umbenennen). Ändern Sie entsprechend alle Links innerhalb der Datei, damit Sie z.B. auf den Ordner <code>Uebung2/NN</code> zugreifen und nicht mehr auf <code>Uebung1/NN</code>.</li>
-<li>Legen Sie sich im <code>Uebung2</code>-Ordner einen Ordner <code>styles</code> an. Erstellen Sie in dem <code>styles</code>-Ordner eine Datei <code>mystyles.css</code>.</li>
-<li>Fügen Sie im <code>&lt;head&gt;</code>-Bereich der <code>uebung2.html</code> eine logische Verknüpfung zur <code>mystyles.css</code>-Datei ein (<code>&lt;link href="./styles/mystyles.css" rel="stylesheet"&gt;</code>). </li>
-<li>In <code>mystyles.css</code> definieren Sie (versuchen Sie mind. 6 der genannten 8 Punkte umzusetzen):<ul>
-<li>Verdana als Schriftart für das ganze Dokument</li>
-<li>der <code>&lt;header&gt;</code> soll das HTW-Grau als Hintergrundfarbe, HTW-Orange als Schriftfarbe und der Text zentriert sein (siehe <a href="http://corporatedesign.htw-berlin.de/schrift-farbe/markenfarben/"><strong>HTW Corporate Design</strong></a>).</li>
-<li>die Tabelle soll ungefähr wie dargestellt aussehen: 
-  <img alt="Uebung2" src="files/55_uebung2.png" /> </li>
-<li>d.h. mit Rahmen, mit einem Schatten, die Spaltenüberschriften in weiß, mit HTW-grünem Hintergrund.   </li>
-<li>Das <code>&lt;nav&gt;</code>-Feld hat einen Abstand nach oben und nach unten von jeweils <code>50px</code>.</li>
-<li><code>&lt;a&gt;</code>-Elemente in einem <code>&lt;nav&gt;</code>-Element haben einen grauen Rand, deren Ecken abgerundet sind. Die Hintergrundfarbe ist HTW-blau. Schriftart ist weiß und bold. <code>&lt;a&gt;</code>-Elemente in einem <code>&lt;nav&gt;</code>-Element sind nicht unterstrichen!</li>
-<li>Fährt man mit der Maus über ein <code>&lt;a&gt;</code>-Element in einem <code>&lt;nav&gt;</code>-Element ändert sich die Hintergrundfarbe in HTW-grau und die Schriftfarbe in HTW-orange. 
-    <img alt="Mouseover" src="files/56_uebung2_2.png" /></li>
-<li>Die Tabelle hat eine Breite von 80% des <code>&lt;section&gt;</code>-Elements. </li>
-<li>Der <code>&lt;footer&gt;</code> ist in HTW-Orange, die Schrift ist schwarz, der Text ist mittig und die Schrift ist kleiner. Die Höhe des footers entsteht dadurch, dass die Schrift einen Abstand nach oben und nach unten von jeweils <code>20px</code> hat.</li>
-</ul>
-</li>
-<li>Am Ende soll es <em>ungefähr</em> so aussehen:<br />
-<img alt="Uebung2" src="files/57_uebung2_3.png" /> </li>
-</ul>
-</details>
-<details class="question"><summary>Übungsaufgabe 3 (RWD + Bootstrap)</summary><ul>
-<li>Kopieren Sie <code>uebung2.html</code> aus Übung 2 in einen neuen <code>Uebung3</code>-Ordner und benennen Sie die Datei in <code>uebung3.html</code> um (der <code>NN</code>-Ordner muss nicht mehr mitkopiert werden). Achten Sie aber darauf, dass das FIW-Logo noch angezeigt wird</li>
-<li>Binden Sie in Ihre <code>uebung3.html</code> Bootstrap ein (entweder per CDN oder als lokalen Zugriff – siehe <a href="./rwd/#bootstrap"><strong>Bootstrap</strong></a>)</li>
-<li><strong>Header</strong>:<ul>
-<li>der <code>&lt;header&gt;</code> enthält das FIW-Logo und die Überschrift <code>&lt;h1&gt;Teilnehmerinnen WebTech&lt;/h1&gt;</code></li>
-<li>weisen Sie dem <code>&lt;header&gt;</code> die Bootstrap-Klasse <a href="https://getbootstrap.com/docs/4.5/components/jumbotron/"><strong>jumbotron</strong></a> zu</li>
-<li>definieren Sie eine CSS-Eigenschaft so, dass eine <code>h1</code>-Überschrift in einem <code>header</code> ein Inline-Element ist</li>
-<li>definieren Sie eine <code>padding-left</code>-Eigenschaft für eine solche Überschrift so, dass die Überschrift ungefähr mittig ist (relative Größenangabe)</li>
-<li>der header soll ungefähr so aussehen (Navigation und Anfang des Hauptteils sind auch schon zu sehen): <img alt="header" src="files/66_uebung3_1.png" /></li>
-</ul>
-</li>
-<li><strong>Navigation</strong>: <ul>
-<li><em>interne Links</em> (Links innerhalb der Seite) funktionieren wie folgt: Sie weisen einem Element eine <code>id</code> zu, z.B. der Tabellenzeile, die den ersten Nachnamen enthält, der mit "H" beginnt: 
-<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;H&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Steven<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Hamilton<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>shamiltonu@state.tx.us<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>38.194.91.201<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-</code></pre></div></li>
-<li>Jetzt können Sie in einem internen Link mithilfe des Doppelkreuzes (<code>#</code>) und des Bezeichners für die id (<code>H</code>) darauf verweisen, z.B.
-<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-link&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#H&quot;</span><span class="p">&gt;</span>H-L<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</code></pre></div></li>
-<li>Vergeben Sie entsprechend IDs für die entsprechenden Tabellenzeilen (A, H, M, S) und passen Sie Ihre Hyperlinks im Navigationsmenü entsprechend an</li>
-<li>Weisen Sie Ihrem <code>&lt;nav&gt;</code>-Element einen lightgrey-Hintergrund zu</li>
-<li>Erstellen Sie für die einzelnen Links eine <code>&lt;ul&gt;</code>, deren <code>&lt;li&gt;</code> jeweils ein <code>&lt;a&gt;</code>-Element mit den Referenzen auf die oben beschriebenen IDs enthalten</li>
-<li>Informieren Sie sich unter <a href="https://getbootstrap.com/docs/4.5/components/navs/"><strong>Navs</strong></a> (oder wo Sie möchten) über „Navs“ und erstellen Sie Ihr Navigationsmenü so, wie oben in der Abbildung (siehe <strong>Header</strong>) gezeigt</li>
-<li>Ändern Sie aber die Farbe der Links so, dass sie im HTW-Orange (<code>#FF5F00</code>) erscheinen und wenn man mit der Maus darüber fährt im HTW-Blau (<code>#0082D1</code>) (Definieren Sie sich gerne <a href="./css/#custom-properties"><strong>Custom Properties</strong></a> und wenden Sie diese an)</li>
-</ul>
-</li>
-<li><strong>Hauptteil</strong>:<ul>
-<li>der Hauptteil (ein Container) soll aus drei Containern bestehen: einer, der nur das Wort (Überschrift) "links" enthält, einer, der die Tabelle enthält und ein dritter, der nur das Wort (Überschrift) "rechts" enthält</li>
-<li>Weisen Sie diesem Hauptteil die Klasse <code>row</code> zu und gestalten gestalten Sie die drei inneren Container (links, Tabelle, rechts) so, dass<ul>
-<li>sie ab einer Viewportbreite <code>&gt;= 992px</code> (<code>lg</code>) nebeneinander sind, wobei die Tabelle 4x so breit ist wie die jeweiligen Container an der Seite</li>
-<li>unterhalb der Viewportbreite von <code>992px</code> sollen die drei Teile untereinander sein</li>
-<li>Abbildung für Breite unter <code>992px</code>:<br />
-<img alt="uebung3" src="files/67_uebung3_2.png" /></li>
-<li>Abbildung für Breite oberhalb <code>992px</code>:<br />
-<img alt="uebung3" src="files/68_uebung3_3.png" /></li>
-</ul>
-</li>
-<li>Mithilfe eigener Media-Queries sollen Sie dafür sorgen, dass die beiden Container links und rechts <ul>
-<li>einen orangenen Hintergrund und eine Höhe von <code>100px</code> haben, wenn der Viewport kleiner als <code>992px</code> ist und </li>
-<li>einen hellgrauen (<code>lightgrey</code>) Hintergrund und eine automatische Höhe (<code>height: auto;</code>), wenn der Viewport größer ist</li>
-</ul>
-</li>
-<li>Tabelle: <ul>
-<li>Erkundigen Sie sich unter <a href="https://getbootstrap.com/docs/4.5/content/tables/"><strong>Tables</strong></a> und gestalten Sie die Tabelle so, dass sie ungefähr so aussieht: <img alt="uebung3" src="files/69_uebung3_4.png" /></li>
-<li>Sie müssen mit einer eigenen CSS-Definition dafür sorgen, dass die Zeile, in der Sie mit der Maus sind, nicht mehr dunkelgrau, sondern in HTW-Grün erscheint</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</details>
-<details class="question"><summary>Übungsaufgabe 4 (JavaScript, DOM)</summary><ul>
-<li>Kopieren Sie den <code>Uebung3</code>-Ordner in einen <code>Uebung4</code>-Ordner und benennen Sie die <code>uebung3.html</code> in <code>uebung4.html</code> um</li>
-<li>Fügen Sie Ihrer Tabelle eine fünfte Spalte hinzu mit leerer Überschrift, also einfach ein weiteres <code>&lt;th&gt;&lt;/th&gt;</code>. Fügen Sie im Table-Body <code>&lt;tbody&gt;</code> auch in allen Zeilen ein fünftes <code>&lt;td&gt;&lt;/td&gt;</code> hinzu (nicht händisch! - <em>Find and Replace</em> der IDE nutzen!) </li>
-<li>Fügen Sie Ihrer Tablle nun in HTML eine weitere Zeile hinzu, die wie folgt aussehen soll:
-  <img alt="uebun4" src="files/72_uebung4_1.png" /></li>
-<li>Verwenden Sie für den Button das Attribut <code>onclick</code> und rufen Sie eine JavaScript-Funktion <code>checkAndAdd()</code> auf, die Sie selbst schreiben</li>
-<li>in der <code>checkAndAdd()</code>-Funktion soll folgendes geschehen:<ul>
-<li>sie prüfen, ob in jedem der vier <code>&lt;input&gt;</code>-Felder (Vorname, Nachname, E-Mail-Adresse, IP-Adresse) etwas eingegeben wurde</li>
-<li>wenn ja, dann werden diese Werte für eine neue Tabellenzeile (über der Eingabezeile) verwendet (in der folgenden Abbildung wurde <code>test1</code>, <code>test2</code>, <code>test3</code>, <code>test4</code> eingegeben):
-<img alt="uebun4" src="files/73_uebung4_2.png" /></li>
-<li>wenn nicht, dann werden die Felder, in denen nichts eingegeben wurde, durch Bootstrap rot umrandet (<code>is-invalid</code> - siehe Tipps):
-<img alt="uebun4" src="files/74_uebung4_3.png" /></li>
-</ul>
-</li>
-<li><strong>Tipps:</strong><ul>
-<li>am einfachsten ist es sicherlich, wenn Sie für den <code>&lt;tbody&gt;</code>, die vier neuen <code>&lt;input&gt;</code>-Elemente und auch die Tabellenzeile <code>&lt;tr&gt;</code>, in der die <code>&lt;input&gt;</code>-Elemente sind, eine <code>id</code> vergeben, damit Sie in Ihrer Funktion <code>checkAndAdd()</code> jeweils mit <code>document.getElementById()</code> direkt darauf zugreifen können (siehe <a href="./javascript/#dom-funktionen-lokalisation-von-elementen"><strong>lokalisieren</strong></a>)</li>
-<li>benutzen Sie für Ihre <code>&lt;input&gt;</code>-Elemente die Bootstrap-Klasse <code>form-control</code>, also z.B. <code>&lt;input id="i1" type="text" class="form-control" placeholder="Vorname" /&gt;</code> (siehe <a href="https://getbootstrap.com/docs/4.5/components/forms/"><strong>Bootstrap Forms</strong></a>)</li>
-<li>haben Sie ein <code>input</code>-Objekt lokalisiert, z.B. durch <code>let i1 = document.getElementById('i1')</code>, dann können Sie über <code>i1.value</code> auf den eingegeben Wert zugreifen (siehe Beispiele in <a href="./javascript/#html-ereignisse"><strong>HTML-Ereignisse</strong></a> und <a href="./javascript/#create"><strong>create</strong></a>)</li>
-<li>Angenommen, Sie haben den <code>value</code> von <code>i1</code> in der Variablen <code>value_i1</code> gespeichert, dann können Sie mithilfe von <code>value_i1 === ""</code> prüfen, ob der eingegebene String leer ist, ob also nichts eingegeben wurde (<code>===</code> steht für identisch, d.h. Inhalt und Typ sind gleich - <code>==</code> würde auch gehen, dann muss der Typ nicht unbedingt gleich sein, der Inhalt aber schon - siehe z.B. <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Vergleichsoperatoren"><strong>Vergleichsoperatoren</strong></a>)</li>
-<li>einem solchen <code>i1</code>-Objekt können Sie die CSS-Klasse <code>is-invalid</code> mit <code>i1.classList.add('is-invalid')</code> hinzufügen und mit <code>i1.classList.remove('is-invalid')</code> wieder entfernen (selbst, wenn dem Element die Klasse gar nicht zuegordnet ist, gibt es keinen Fehler - siehe z.B. <a href="./javascript/#beispiel-vollstandig-mit-javascript-erzeugt"><strong>hier</strong></a>)</li>
-<li>für die neu entstehende Tabellenzeile müssen Sie fünf neue <code>td</code>-Obejkte kreieren und diese an ein neu kreiertes <code>tr</code>-Objekt anhängen. Die ersten vier <code>td</code>-Obejkte bekommen für ihr <code>innerHTML</code> den entsprechenden <code>value</code> des <code>input</code>-Objektes (siehe <a href="./javascript/#create"><strong>create</strong></a>)</li>
-<li>fügen Sie das neue <code>tr</code>-Objekt in den <code>tbody</code> vor der Tabellenzeile mit den <code>input</code>-Feldern ein (siehe <a href="./javascript/#create"><strong>create</strong></a>)</li>
-</ul>
-</li>
-<li><strong>Zusatz:</strong> sehr beeindruckend wäre es, wenn Sie die neue Zeile nicht immer direkt vor die Eingabezeile einfügen, sondern alphabetisch korrekt nach dem Wert des Nachnamens. Sollte das jemand von Ihnen schaffen, schicken Sie mir bitte einen <em>Pull-Request</em>. Das wäre sehr cool!</li>
-</ul>
-</details>
-<details class="question"><summary>Übungsaufgabe 5 (JSON, Ajax)</summary><ul>
-<li>Laden Sie sich <a href="files/Uebung5.zip">hier</a> die Datei <a href="files/Uebung5.zip">Uebung5.zip</a> herunter und entpacken Sie sie. Es entsteht der Ordner <code>Uebung5</code>. Dieser enthält<ul>
-<li>eine Datei <code>uebung5.html</code> (bereits ausführbar),</li>
-<li>eine Datei <code>staedte.json</code>, die ein JSON enthält, das ausgelesen werden soll</li>
-<li>einen Ordner <code>images</code>, der Bilder enthält; die Referenzen darauf stehen im JSON</li>
-</ul>
-</li>
-<li>Die Datei <code>staedte.json</code> enthält in JSON beschriebene Objekte der Form 
-    <div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;jahr&quot;</span><span class="p">:</span> <span class="mi">1237</span><span class="p">,</span>
-  <span class="nt">&quot;stadt&quot;</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;link&quot;</span><span class="p">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Berlin&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;bild&quot;</span><span class="p">:</span> <span class="s2">&quot;images/berlin.png&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-    Alle diese Objekte sind in einem Array. Die Aufgabe ist, die Datei <code>uebung5.html</code> so zu erweitern, dass eine Tabelle in der folgenden Form entsteht:
-    <img alt="uebung5" src="files/75_uebung5_1.png" /> </li>
-<li>Öffnen Sie die Datei <code>uebung5.html</code> in Ihrer IDE und starten Sie sie auch schonmal im Browser. Es sind bereits angelegt:<ul>
-<li>ein <code>input</code>-Element und</li>
-<li>eine Tabelle mit Überschriften.
-  Dies geschieht in der Funktion <code>createTable()</code>. Diese Funktion wird in der Ereignisbehandlung des <code>load</code>-Events aufgerufen (siehe <code>&lt;body&gt;</code>). </li>
-</ul>
-</li>
-<li>Sie sollen nun:<ol>
-<li>eine Funktion schreiben, die die JSON-Datei mithilfe eines <code>XMLHttpRequest</code>-Objektes (oder mithilfe von <code>fetch()</code>) vom Server lädt &rarr; siehe <a href="./json/#xmlhttprequest"><strong>XMLHttpRequest</strong></a></li>
-<li>rufen Sie diese Funktion anstelle der <code>createTable()</code> als Ereignisbehandlung des <code>load</code>-Events auf</li>
-<li>speichern Sie in dieser Funktion das JSON in der globalen Variable <code>staedte_obj</code> (die Variable ist bereits deklariert, Sie können aber auch nochmal <a href="./javascript/#var-let-und-const"><strong>hier</strong></a> über globale Variablen nachlesen)</li>
-<li>rufen Sie in dieser Funktion die <code>createTable()</code>-Funktion auf</li>
-<li>in der <code>createTable()</code>-Funktion sollten Sie sich zunächst eine Variable <code>staedte</code> anlegen, die das Array referenziert (<code>staedte_obj</code> referenziert das Objekt, welches das Array enthält) &rarr; siehe dazu z.B. <a href="./json/#zugriff-auf-ein-json"><strong>hier</strong></a> und <a href="./json/#viele-objekte-im-array"><strong>hier</strong></a></li>
-<li>in der Funktion gibt es einen großen Blockkommentar. An dieser Stelle sollten Sie<ul>
-<li>jedes einzelne Element (Objekt) des <code>staedte</code>-Arrays (numerisch indiziert) auslesen</li>
-<li>für jedes Element eine neue Tabellenzeile generieren</li>
-<li>jede einzelne Eigenschaft eines Elementes entsprechend verwenden, um das Jahr, die Stadt, einen Link (als Button) und ein Bild (<code>img</code>) als eigenes <code>&lt;td&gt;</code>-Element in der Zeile zu erstellen</li>
-</ul>
-</li>
-<li><strong>Filter :</strong> in das <code>input</code>-Feld kann eine Zahl oder der Name einer Stadt eingegeben werden. Nach jedem eingegeben Zeichen wird überprüft, ob es eine entsprechende Stadt (oder mehrere) gibt. Die Liste der passenden Städte wird in der Tabelle angezeigt, z.B.: (alle Städte, die mit <strong>Br</strong> anfangen):
-<img alt="uebung5" src="files/76_uebung5_2.png" />
-oder alle Städte, deren Gründungsjahr mit <strong>12</strong> beginnt:
-<img alt="uebung5" src="files/77_uebung5_3.png" /></li>
-</ol>
-</li>
-<li><strong>Tipps:</strong><ul>
-<li>der im JSON gespeicherte Link für das Bild kann als Wert des <code>src</code>-Attributes eines <code>&lt;img&gt;</code>-Elementes verwendet werden; das Bild wird dann geladen</li>
-<li>definieren Sie für die Bilder ein <code>style</code>-Attribut für die Höhe; wählen Sie <code>height = '60px'</code></li>
-<li>für den Wert des <code>alt</code>-Attributes des Bildes wählen Sie erneut den Namen der Stadt</li>
-<li>der Link ist ein <code>&lt;a&gt;</code>-Element. Wenn Sie ihm die (Bootstrap-)CSS-Klassen <code>btn</code>, <code>btn-sm</code> und <code>btn-success</code> zuweisen, sieht er aus wie der "Button" auf dem Bild</li>
-<li><strong>Filter :</strong> Eine Zahl (<code>number</code>) kann mithilfe der <code>toString()</code>-Methode in einen String umgewandelt werden (z.B. <code>staedte[i].jahr.toString()</code>) </li>
-<li>Die Länge eines Strings wird mithilfe von <code>length</code> ermittelt (z.B. <code>input.length</code>)</li>
-<li>Ein Teilstring kann mithilfe der <code>substring(start,end)</code>-Methode erzeugt werden (z.B. <code>staedte[i].stadt.substring(0,input.length)</code>)</li>
-<li>der Teilstring kann mit dem aktuellen Wert des <code>input</code>-Feldes verglichen werden</li>
-<li>Vergessen Sie nicht, als Ereignisbehandlung für das <code>input</code>-Element die <code>createTable()</code>-Methode aufzurufen! Welches Ereignis soll darin beahndelt werden?</li>
-</ul>
-</li>
-<li>Viel Spaß und viel Erfolg!</li>
-</ul>
-</details>
-<details class="question"><summary>Übungsaufgabe x - wird aber noch geändert!</summary><p>Arbeiten Sie im Abschnitt <a href="./angular/#angular"><strong>Angular</strong></a> die Abschnitte <a href="./angular/#erstes-projekt-erstellen"><strong>Erstes Projekt erstellen</strong></a> und <a href="./angular/#angular-projektstruktur"><strong>Angular-Projektstruktur</strong></a> durch. Sie müssen dazu <a href="./tools/#angular"><strong>Angular</strong></a> installieren, eine <a href="./tools/#integrated-development-environment-ide"><strong>Integrierte Entwicklungsumgebung</strong></a> und die passenden <a href="./tools/#developer-tools"><strong>Developer Tools</strong></a>. </p>
 </details>
 <h2 id="semesteraufgabe">Semesteraufgabe<a class="headerlink" href="#semesteraufgabe" title="Permanent link">&para;</a></h2>
 <p>Am Ende des Kurses geben Sie eine Webanwendung ab. Diese wird bewertet und bildet die Modulnote für "WebTech" (es gibt also keine Klausur o.ä.). Überlegen Sie sich früh, was Sie implementieren wollen. Ihrer Kreativität sind keine Grenzen gesetzt. Es können 2 Studentinnen gemeinsam ein Projekt durchführen und abgeben. Sie erhalten dann (höchstwahrscheinlich) die gleiche Note. Es muss an den Commits erkennbar sein, welchen Anteil am Ergebnis jede der beiden Studentinnen hatte.</p>
@@ -1691,13 +1195,13 @@ oder alle Städte, deren Gründungsjahr mit <strong>12</strong> beginnt:
       <nav class="md-footer-nav__inner md-grid" aria-label="">
         
         
-          <a href="tools/" title="Werkzeuge" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="uebungen/" title="Übungen" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Weiter
                 </span>
-                Werkzeuge
+                Übungen
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

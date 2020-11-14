@@ -144,6 +144,122 @@ Nach den Änderungen in `app.component.css` erscheint der Text der Überschrift 
     `app.component.css`, um Änderungen an der Darstellung
     (dem Stil) des Inhalts durchzuführen.
 
+### Single Page Application
+
+Wenn wir eine Anwendung mit Angular erstellen, dann handelt es sich dabei um eine sogenannte *Single Page Application (SPA)*, d.h. es wird genau eine Seite vom Webserver geladen und alle Inhalte werden in diese Seite (nach-)geladen, je nach Nutzerinteraktion. Die hier geladene Seite ist die `index.html`, die in unserem Projekte-Ordner `frontend`liegt. Sie sieht so aus:
+
+=== "index.html"
+  ```html
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Frontend</title>
+      <base href="/">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+      <app-root></app-root>
+    </body>
+  </html>
+  ```
+
+Das Element `<app-root>` ist dabei ein sogenannter *Tag-Selektor* (auch *Element-Selektor* oder *Komponenten-Selektor*). 
+
+
+
+### Prefix ändern - optional
+
+`app`ist dabei ein Prefix, der für die gesamte Anwendung gilt. Diesen Prefix können Sie ändern. Im folgenden ist beschrieben, wie Sie ihn von `app` auf `htw` ändern. Öffnen Sie dazu die Datei `angular.json`, die sich im Projekt-Ordner `frontend` befindet. Diese Datei enthält die zentrale Konfiguration Ihres Projektes. Sie sieht wie folgt aus (Ausschnitt):
+
+=== "angular.json" 
+  ```json linenums="1" hl_lines="11"
+  {
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1, 
+    "newProjectRoot": "projects",
+    "projects": {
+      "frontend": {
+        "projectType": "application",
+        "schematics": {},
+        "root": "",
+        "sourceRoot": "src",
+        "prefix": "app",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {
+              "outputPath": "dist/frontend",
+              "index": "src/index.html",
+  ```
+
+Ändern Sie den Prefix in der hell markierten Zeile auf z.B. "htw" (oder Ihre Initialen vielleicht). Außerdem muss auch noch die `tslint.json` angepasst werden:
+
+=== "tslint.json" 
+  ```json linenums="1" hl_lines="15 21"
+  {
+    "extends": "tslint:recommended",
+    "rules": {
+      "array-type": false,
+      "arrow-parens": false,
+      "deprecation": {
+        "severity": "warning"
+      },
+      "component-class-suffix": true,
+      "contextual-lifecycle": true,
+      "directive-class-suffix": true,
+      "directive-selector": [
+        true,
+        "attribute",
+        "htw",
+        "camelCase"
+      ],
+      "component-selector": [
+        true,
+        "element",
+        "htw",
+        "kebab-case"
+      ],
+      "import-blacklist": [
+        true,
+  ```
+
+Dort wo in den hervorgehobenen Zeilen nun das neue Prefix "htw" steht, stand vorher "app". In der `index.html` und in der `app.component.ts` auch noch ändern. Ab dann ist die Verwendung von "htw" als Prefix einegrichtet. Sie können es aber auch bei "app" belassen. Es soll an dieser Stelle einem besseren Verständnis des Prinzips dienen.
+
+=== "index.html" 
+  ```html linenums="1" hl_lines="11"
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Frontend</title>
+      <base href="/">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+      <htw-root></htw-root>
+    </body>
+  </html>
+  ```
+=== "app/app.component.ts" 
+  ```javascript linenums="1" hl_lines="3"
+  import { Component } from '@angular/core';
+  @Component({
+    selector: 'htw-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  export class AppComponent {
+    title = 'frontend';
+  }
+  ```
+ 
+### Komponenten-Selektoren
+
+Nochmal zurück zu unserer `index.html` - der single page, die vom Webserver geladen wird und in die alle weiteren Komponenten eingebunden werden. Wir haben dort nun also den Komponenten-Selektor `<htw-root></htw-root>`. In diesen Selektor wird nun dir `root`-Komponente (`app.component`) geladen. Dieser Selektor wird durch die `root`-Komponente ersetzt. Das ist unsere `app/app.component.*`. Eine solche Komponente besteht immer aus einer `css`-, einer `html`- und einer `ts`-Datei. Es wird also in diesen Komponenten-Selektor der HTML-Code der `app.component.html` eingebunden. Das sehen Sie auch, wenn Sie die Developer-Tools an Ihrem Browser öffnen und sich den Quellcode der aktuellen Anwendung anschauen:  ![angular](./files/04_angular_2.png) 
+
 ## Komponenten
 
 Eine Angular-Anwendung besteht hauptsächlich aus *Komponenten*. Jede Anwendung hat eine Hauptkomponente - die sogenannte Root Component. Diese Hauptkomponente ist meistens die **AppComponent**. Eine Komponente hat eine in sich geschlossene Bedeutung, z.B. ein Formular für Dateneingabe, eine Liste aller Daten oder auch nur ein bestimmtes Element.
