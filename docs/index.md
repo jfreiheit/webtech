@@ -516,7 +516,7 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	```
 
 ??? question "Woche 7 - Angular (erstes Angular-Projekt)"
-	- Diese Woche geht es darum, dass für alle die gesamte Entwicklungsumgebung (`npm`, `ng`) so funktioniert, dass Sie sich ein erstes Angular-Projekt aufsetzen können. Es gibt deshalb auch kein Video, weil ich da nur zeigen würde, wie ich das Projekt aufsetze. Arbeiten Sie die Übungsaufgabe 6 ([die Übungen wurden verschoben](./uebungen/#ubungen)) ab. Wenn alles klappt, sollte es schnell gehen. Ich werde in der Übung am 24.11. die Durchführung der Übung 6 zeigen und dabei ein Video aufnehmen, das ich hier einstelle. 
+	- Diese Woche geht es darum, dass für alle die gesamte Entwicklungsumgebung (`npm`, `ng`) so funktioniert, dass Sie sich ein erstes Angular-Projekt aufsetzen können. Es gibt deshalb auch kein Video, weil ich da nur zeigen würde, wie ich das Projekt aufsetze. Arbeiten Sie die Übungsaufgabe 6 ([die Übungen wurden verschoben](./uebungen/#ubungen)) ab. Wenn alles klappt, sollte es schnell gehen. Ich werde in der Übung am 24.11. die Durchführung der Übung 6 zeigen und dabei ein Video aufnehmen, das ich hier einstelle.
 	- siehe **Übungsaufgabe 6**
 	- siehe [**Angular**](./angular/#angular)
 

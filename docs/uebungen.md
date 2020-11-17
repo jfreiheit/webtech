@@ -1143,7 +1143,7 @@
 
 	
 ??? note "Eine mögliche Lösung für Übung 3"
-	```html
+	```html linenums="1"
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -1544,7 +1544,6 @@
 	</div>
 	</body>
 	</html>
-
 	```
 
 ??? question "Übungsaufgabe 4 (JavaScript, DOM)"
@@ -1568,6 +1567,532 @@
     	- für die neu entstehende Tabellenzeile müssen Sie fünf neue `td`-Obejkte kreieren und diese an ein neu kreiertes `tr`-Objekt anhängen. Die ersten vier `td`-Obejkte bekommen für ihr `innerHTML` den entsprechenden `value` des `input`-Objektes (siehe [**create**](../javascript/#create))
     	- fügen Sie das neue `tr`-Objekt in den `tbody` vor der Tabellenzeile mit den `input`-Feldern ein (siehe [**create**](../javascript/#create))
 	- **Zusatz:** sehr beeindruckend wäre es, wenn Sie die neue Zeile nicht immer direkt vor die Eingabezeile einfügen, sondern alphabetisch korrekt nach dem Wert des Nachnamens. Sollte das jemand von Ihnen schaffen, schicken Sie mir bitte einen *Pull-Request*. Das wäre sehr cool!
+
+??? note "Eine mögliche Lösung für Übung 4"
+	```html linenums="1"
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	    <style>
+	        .table tbody tr:hover {
+	            background-color : #76B900;
+	        }
+	        nav {
+	            background-color: lightgrey;
+	        }
+	        header h1 {
+	            text-align: center;
+	        }
+	        #links, #rechts  {
+	            background-color: #FF5F00;
+	            height: 100px;
+	        }
+	        main {
+	            margin: 1%;
+	        }
+	        ul li a {
+	            color: #FF5F00;
+	        }
+	        ul li a:hover {
+	            color: #0082D1;
+	        }
+	        footer {
+	            background-color: grey;
+	            color: white;
+	            text-align: center;
+	            padding: 10px;
+	        }
+	        @media screen and (min-width: 992px) {
+	            #links, #rechts {
+	                background-color: lightgrey;
+	                height: auto;
+	            }
+	        }
+	    </style>
+	    <title>Uebung 4</title>
+	</head>
+	<body>
+	<div class="container-fluid">
+	    <header class="jumbotron">
+	        <img src="../../images/fiw.jpg" alt="FIW Logo" style="width:53px; height:48px;"/>
+	        <h1>Teilnehmerinnen WebTech</h1>
+	    </header>
+	    <nav>
+	        <ul class="nav nav-pills nav-fills">
+	            <li class="nav-item active">
+	                <a class="nav-link" href="#">ALLE</a>
+	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="#A">A-G</a>
+	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="#H">H-L</a>
+	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="#M">M-R</a>
+	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="#S">S-Z</a>
+	            </li>
+	        </ul>
+	    </nav>
+	    <main class="row mx-1">
+	        <aside id="links" class="col-12 col-lg-2"><h5 class="pt-3">links</h5></aside>
+	        <section class="col-12 col-lg-8">
+	            <table class="table table-striped table-responsive-md table-hover">
+	                <thead>
+	                    <tr>
+	                        <th>Vorname</th>
+	                        <th>Nachname</th>
+	                        <th>E-Mail-Adresse</th>
+	                        <th>IP-Adresse</th>
+	                        <th></th>
+	                    </tr>
+	                </thead>
+	                <tbody id="tbody">
+	                    <tr id="A">
+	                        <td>Adam</td>
+	                        <td>Anderson</td>
+	                        <td>aanderson8@google.fr</td>
+	                        <td>118.93.83.157</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Susan</td>
+	                        <td>Andrews</td>
+	                        <td>sandrewsn@google.co.jp</td>
+	                        <td>228.214.9.251</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Catherine</td>
+	                        <td>Andrews</td>
+	                        <td>candrewsp@noaa.gov</td>
+	                        <td>112.111.87.178</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Alan</td>
+	                        <td>Bradley</td>
+	                        <td>abradley1c@globo.com</td>
+	                        <td>229.152.117.127</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Anne</td>
+	                        <td>Brooks</td>
+	                        <td>abrooks16@bravesites.com</td>
+	                        <td>243.159.39.234</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Russell</td>
+	                        <td>Brown</td>
+	                        <td>rbrownq@nifty.com</td>
+	                        <td>215.38.120.242</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Ryan</td>
+	                        <td>Burton</td>
+	                        <td>rburton18@foxnews.com</td>
+	                        <td>159.60.107.14</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Roy</td>
+	                        <td>Campbell</td>
+	                        <td>rcampbell1@geocities.com</td>
+	                        <td>237.232.34.20</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Russell</td>
+	                        <td>Campbell</td>
+	                        <td>rcampbell17@eventbrite.com</td>
+	                        <td>251.2.92.63</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Bonnie</td>
+	                        <td>Coleman</td>
+	                        <td>bcoleman11@fc2.com</td>
+	                        <td>109.150.122.102</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Ernest</td>
+	                        <td>Coleman</td>
+	                        <td>ecoleman15@businessweek.com</td>
+	                        <td>213.173.4.7</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Richard</td>
+	                        <td>Cruz</td>
+	                        <td>rcruz7@unc.edu</td>
+	                        <td>235.124.23.221</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Sean</td>
+	                        <td>Cruz</td>
+	                        <td>scruz10@answers.com</td>
+	                        <td>92.255.49.227</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Rebecca</td>
+	                        <td>Cunningham</td>
+	                        <td>rcunninghamd@mac.com</td>
+	                        <td>65.79.191.52</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Margaret</td>
+	                        <td>Evans</td>
+	                        <td>mevansh@pcworld.com</td>
+	                        <td>162.10.86.196</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Jeffrey</td>
+	                        <td>Ford</td>
+	                        <td>jford14@cnet.com</td>
+	                        <td>210.216.54.14</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Andrea</td>
+	                        <td>Gardner</td>
+	                        <td>agardnerv@woothemes.com</td>
+	                        <td>179.91.0.30</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Deborah</td>
+	                        <td>George</td>
+	                        <td>dgeorge6@furl.net</td>
+	                        <td>201.76.47.162</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Sean</td>
+	                        <td>Gibson</td>
+	                        <td>sgibsony@alexa.com</td>
+	                        <td>48.114.103.55</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Virginia</td>
+	                        <td>Graham</td>
+	                        <td>vgrahamk@aol.com</td>
+	                        <td>165.219.171.1</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr id="H">
+	                        <td>Steven</td>
+	                        <td>Hamilton</td>
+	                        <td>shamiltonu@state.tx.us</td>
+	                        <td>38.194.91.201</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Virginia</td>
+	                        <td>Hawkins</td>
+	                        <td>vhawkinsf@ehow.com</td>
+	                        <td>93.120.46.203</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Edward</td>
+	                        <td>Hicks</td>
+	                        <td>ehicksc@pcworld.com</td>
+	                        <td>199.153.27.1</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Mark</td>
+	                        <td>Johnson</td>
+	                        <td>mjohnsonj@hostgator.com</td>
+	                        <td>73.87.135.206</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Ruth</td>
+	                        <td>Jordan</td>
+	                        <td>rjordan1a@smugmug.com</td>
+	                        <td>193.140.80.64</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Antonio</td>
+	                        <td>Kim</td>
+	                        <td>akim4@odnoklassniki.ru</td>
+	                        <td>168.244.191.78</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr id="M">
+	                        <td>Jennifer</td>
+	                        <td>Marshall</td>
+	                        <td>jmarshallt@gnu.org</td>
+	                        <td>104.191.49.94</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Eric</td>
+	                        <td>Matthews</td>
+	                        <td>ematthews5@independent.co.uk</td>
+	                        <td>138.194.30.1</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Raymond</td>
+	                        <td>Mcdonald</td>
+	                        <td>rmcdonald2@ihg.com</td>
+	                        <td>161.24.42.24</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Eric</td>
+	                        <td>Miller</td>
+	                        <td>emillere@creativecommons.org</td>
+	                        <td>122.159.17.218</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Jonathan</td>
+	                        <td>Morales</td>
+	                        <td>jmoralesa@ovh.net</td>
+	                        <td>97.65.110.105</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Marie</td>
+	                        <td>Morgan</td>
+	                        <td>mmorganb@cloudflare.com</td>
+	                        <td>226.79.152.112</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Amanda</td>
+	                        <td>Nelson</td>
+	                        <td>anelson13@indiatimes.com</td>
+	                        <td>161.185.121.245</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Lisa</td>
+	                        <td>Olson</td>
+	                        <td>lolsonr@telegraph.co.uk</td>
+	                        <td>77.245.172.100</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Alice</td>
+	                        <td>Ortiz</td>
+	                        <td>aortizw@histats.com</td>
+	                        <td>179.52.222.21</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Peter</td>
+	                        <td>Phillips</td>
+	                        <td>pphillipss@1688.com</td>
+	                        <td>11.158.255.76</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Matthew</td>
+	                        <td>Porter</td>
+	                        <td>mporter9@europa.eu</td>
+	                        <td>174.81.178.88</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Tammy</td>
+	                        <td>Ray</td>
+	                        <td>trayx@weather.com</td>
+	                        <td>192.243.38.190</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Mark</td>
+	                        <td>Richardson</td>
+	                        <td>mrichardson1d@ihg.com</td>
+	                        <td>209.217.14.154</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Joan</td>
+	                        <td>Roberts</td>
+	                        <td>jroberts12@alibaba.com</td>
+	                        <td>4.91.143.62</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Kathleen</td>
+	                        <td>Rose</td>
+	                        <td>kroseg@pinterest.com</td>
+	                        <td>222.172.140.56</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr id="S">
+	                        <td>Steve</td>
+	                        <td>Sanders</td>
+	                        <td>ssanders1b@wikispaces.com</td>
+	                        <td>91.61.109.245</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Shirley</td>
+	                        <td>Scott</td>
+	                        <td>sscottm@macromedia.com</td>
+	                        <td>219.237.108.82</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Lillian</td>
+	                        <td>Stephens</td>
+	                        <td>lstephens19@hugedomains.com</td>
+	                        <td>89.85.137.204</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Nicole</td>
+	                        <td>Thompson</td>
+	                        <td>nthompson3@admin.ch</td>
+	                        <td>13.183.208.155</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Marie</td>
+	                        <td>Thompson</td>
+	                        <td>mthompsonz@yelp.com</td>
+	                        <td>162.164.5.231</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Alan</td>
+	                        <td>Vasquez</td>
+	                        <td>avasquezo@miibeian.gov.cn</td>
+	                        <td>178.109.86.172</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Mildred</td>
+	                        <td>Watkins</td>
+	                        <td>mwatkins0@miibeian.gov.cn</td>
+	                        <td>150.67.132.64</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Eugene</td>
+	                        <td>Williams</td>
+	                        <td>ewilliamsi@deliciousdays.com</td>
+	                        <td>67.208.26.182</td>
+	                        <td></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Catherine</td>
+	                        <td>Williams</td>
+	                        <td>cwilliamsl@360.cn</td>
+	                        <td>154.87.204.51</td>
+	                        <td></td>
+	                    </tr>
+	                <tr id="lasttr">
+	                    <td><input id="i1" type="text" class="form-control" placeholder="Vorname" /></td>
+	                    <td><input id="i2" type="text" class="form-control" placeholder="Nachname" /></td>
+	                    <td><input id="i3" type="text" class="form-control" placeholder="E-Mail-Adresse" /></td>
+	                    <td><input id="i4" type="text" class="form-control" placeholder="IP-Adresse" /></td>
+	                    <td><button type="button" class="btn btn-secondary" onclick="checkAndAdd()">Add</button></td>
+	                </tr>
+	                </tbody>
+	            </table>
+	        </section>
+	        <section id="rechts" class="col-12 col-lg-2"><h5 class="pt-3">rechts</h5></section>
+	    </main>
+	    <footer>
+	        Übung 4 - Jörn Freiheit
+	    </footer>
+	</div>
+	<script>
+	    function checkAndAdd()
+	    {
+	        let inp1 = document.getElementById('i1');       // inputs[0] --> inp1
+	        let inp1value = inp1.value;
+	        console.log(inp1value);
+
+	        let inputs = document.getElementsByTagName('input');
+	        console.log(inputs);
+
+	        let inputOk = true;
+	        for(let i=0; i<inputs.length; i++)
+	        {
+	            if(inputs[i].value === "")
+	            {
+	                inputOk = false;
+	                inputs[i].classList.add('is-invalid');
+	            }
+	            else
+	            {
+	                inputs[i].classList.remove('is-invalid');
+	            }
+	        }
+
+	        if(inputOk)
+	        {
+	            let newTr = document.createElement('tr');
+	            let td1 = document.createElement('td');
+	            let td2 = document.createElement('td');
+	            let td3 = document.createElement('td');
+	            let td4 = document.createElement('td');
+	            let td5 = document.createElement('td');
+	            td1.innerHTML = inputs[0].value;
+	            td2.innerHTML = inputs[1].value;
+	            td3.innerHTML = inputs[2].value;
+	            td4.innerHTML = inputs[3].value;
+	            td5.innerHTML = "";
+	            newTr.appendChild(td1);
+	            newTr.appendChild(td2);
+	            newTr.appendChild(td3);
+	            newTr.appendChild(td4);
+	            newTr.appendChild(td5);
+
+	            let tbody = document.getElementById('tbody');
+	            let lasttr = document.getElementById('lasttr');
+
+	            let notFound = true;
+	            let allTr = document.getElementById('tbody').getElementsByTagName('tr');
+	            for(let i=0; i<allTr.length && notFound; i++) {
+	                //console.log(allTr[i]);
+	                let curRow = allTr[i];
+	                let allTd = allTr[i].getElementsByTagName('td');
+	                if(allTd[1].innerHTML > inputs[1].value) {
+	                    console.log(allTd[1].innerHTML);
+	                    tbody.insertBefore(newTr, curRow);
+	                    notFound = false;
+	                }
+	            }
+
+	            if(notFound) tbody.insertBefore(newTr, lasttr);
+
+	            for(let i=0; i<inputs.length; i++) inputs[i].value = "";
+	            inputs[0].focus();
+	        }
+
+	    }
+	</script>
+	</body>
+	</html>
+
+	```
+
+??? note "Video zu Übung 4"
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=aa0a426a1d261c17655bda66e57697de&width=720&height=405&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="405" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
 
 ??? question "Übungsaufgabe 5 (JSON, Ajax)"
     - Laden Sie sich [hier](./files/Uebung5.zip) die Datei [Uebung5.zip](./files/Uebung5.zip) herunter und entpacken Sie sie. Es entsteht der Ordner `Uebung5`. Dieser enthält
@@ -1793,6 +2318,9 @@
 	</html>
 
 	```
+
+??? note "Video zu Übung 5"
+	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=87329a3f2e2664ee5e1207ec06123eac&width=720&height=450&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="450" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
 
 ??? question "Übungsaufgabe 6"
     - Arbeiten Sie im Abschnitt [Angular](../angular/#angular) die Abschnitte [Erstes Projekt erstellen](../angular/#erstes-projekt-erstellen) und [Angular-Projektstruktur](../angular/#angular-projektstruktur) durch. 
