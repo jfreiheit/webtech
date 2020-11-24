@@ -17,10 +17,10 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst). Die Vorlesung
 | 5. | 02.-06.11.2020 | JavaScript (DOM, Events, DOM-Funktionen) | Übung 4 | - | 15.11.2020 | 
 | 6. | 09.-13.11.2020 | JavaScript (JSON, AJAX) | Übung 5 | Datenmodell | 22.11.2020 | 
 | 7. | 16.-20.11.2020 | Angular (Einführung und Komponenten) | Übung 6 | Schnittstelle | 29.11.2020 | 
-| 8. | 23.-27.11.2020 | Angular (Direktiven, data-, property-, event-binding) | Übung 7 | Frontend (c+r)| 06.12.2020 | 
-| 9. | 30.-04.12.2020 | Angular (Lifecycle-Hooks, Services, Routing) | Übung 8 | Frontend (u+d)| 13.12.2020 | 
-| 10. | 07.-11.12.2020 | Angular (HTTP-Client, Formulare), MySQL, REST | Übung 9 | Frontend fertig | 20.12.2020 | 
-| 11. | 14.-18.12.2020 | Node.js (Einführung, Webserver) | Übung 10 | Backend ( c ) | 10.01.2020 | 
+| 8. | 23.-27.11.2020 | Angular (Material und Routen) | Übung 7 | Frontend (c+r)| 13.12.2020 | 
+| 9. | 30.-04.12.2020 | Node.js + Express (REST-Server + MySQL) | Übung 8 | Frontend (u+d)| 20.12.2020 | 
+| 10. | 07.-11.12.2020 | Angular (Anbindung ans Backend) | Übung 9 | Frontend fertig | 10.01.2020 | 
+| 11. | 14.-18.12.2020 | Node.js (Einführung, Webserver) | Übung 10 | Backend ( c ) | 17.01.2020 | 
 | 12. | 21.-25.12.2020 | Node.js (Express, Request, Response, URL)  | - | Backend ( r ) | - |
 | | | | | | | |
 | 13. | 04.-08.01.2021 | Node.js (Model View Controller) | - | Backend (u) | - |
@@ -519,6 +519,16 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	- Diese Woche geht es darum, dass für alle die gesamte Entwicklungsumgebung (`npm`, `ng`) so funktioniert, dass Sie sich ein erstes Angular-Projekt aufsetzen können. Es gibt deshalb auch kein Video, weil ich da nur zeigen würde, wie ich das Projekt aufsetze. Arbeiten Sie die Übungsaufgabe 6 ([die Übungen wurden verschoben](./uebungen/#ubungen)) ab. Wenn alles klappt, sollte es schnell gehen. Ich werde in der Übung am 24.11. die Durchführung der Übung 6 zeigen und dabei ein Video aufnehmen, das ich hier einstelle.
 	- siehe **Übungsaufgabe 6**
 	- siehe [**Angular**](./angular/#angular)
+
+??? question "Woche 8 - Angular (Material und Routing)"
+	- Wir erweitern das Frontend. Wir nutzen Material als CSS-Framework. Wir verwenden das Tables-Schema, um eine Tabelle unserer Mockup-Daten zu erstellen und implementieren ein kleines Formular. Wir führen Routing ein, auch parametrisiertes Routing. Es wird ein Service erstellt, der sich um die (client-seitige) Verwaltung der Daten kümmert und der allen Komponenten zur Verfügung steht. 
+	- Es gibt kein Video, da der Abschnitt [Material](./material/#material-fur-angular) vollständig als Schritt-für-Schritt-Anleitung geschrieben wurde. 
+	- die **Übungsaufgabe 7** besteht darin, diesen Abschnitt Schritt für Schritt nachzuvollziehen. 
+
+??? question "Woche 9 - Node.js + Express (REST-Server + MySQL)"
+	- Wir erstellen ein Backend. Wir nutzen Node.js und Express, um einen REST-Server zu implementieren, der uns alle CRUD-Funktionalitäten für die Verwaltung unseres Mockup-Datensatzes zur Verfügung stellt. Wir verwenden MySQL zur Speicherung unserer Mockup-Daten. Der REST-Server enthält ein Model und einen Controller.  
+	- Es gibt kein Video, da der Abschnitt [REST-API](./backend/#rest-api) vollständig als Schritt-für-Schritt-Anleitung geschrieben wurde. 
+	- die **Übungsaufgabe 8** besteht darin, diesen Abschnitt Schritt für Schritt nachzuvollziehen. 
 
 ## Semesteraufgabe
 

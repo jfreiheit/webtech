@@ -69,6 +69,7 @@ nav:
     - JSON: json.md
     - Angular: angular.md
     - Material: material.md
+    - REST-API: backend.md
     - Node.js: node.md
     - Bücher-App: books.md
     - Bücher-Backend: books-backend.md

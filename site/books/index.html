@@ -191,6 +191,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -344,6 +346,18 @@
   <li class="md-nav__item">
     <a href="../material/" title="Material" class="md-nav__link">
       Material
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../backend/" title="REST-API" class="md-nav__link">
+      REST-API
     </a>
   </li>
 
@@ -1624,8 +1638,6 @@ Dazu wurde dem Service die Eigenschaft <code>books</code> hinzugefügt (Typ <cod
   <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./book-details.component.css&#39;</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">BookDetailsComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
-  <span class="err">@</span><span class="nx">Input</span><span class="p">()</span> <span class="nx">book</span><span class="o">:</span> <span class="nx">Book</span><span class="p">;</span>
-  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">showListEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">();</span>
 
   <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
   <span class="p">}</span>
@@ -1634,9 +1646,6 @@ Dazu wurde dem Service die Eigenschaft <code>books</code> hinzugefügt (Typ <cod
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="nx">showBookList</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">showListEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">();</span>
-  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 

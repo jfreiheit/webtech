@@ -848,8 +848,6 @@ Dafür **entfallen** einige Sachen aus der `book-details.component.ts`:
       styleUrls: ['./book-details.component.css']
     })
     export class BookDetailsComponent implements OnInit {
-      @Input() book: Book;
-      @Output() showListEvent = new EventEmitter<any>();
 
       ngOnInit() {
       }
@@ -858,9 +856,6 @@ Dafür **entfallen** einige Sachen aus der `book-details.component.ts`:
         return new Array(num);
       }
 
-      showBookList() {
-        this.showListEvent.emit();
-      }
     }
     ```
 === "book-details.component.ts (alt)"

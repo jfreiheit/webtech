@@ -65,6 +65,8 @@ erscheint am Ende eine Ausgabe, wie z.B.
 :Compiled successfully.
 ```
 
+Sie **müssen** jetzt immer compileren! Wenn Sie aber einmal `ng serve` ausgeführt haben, wird im Browser automatisch auf die Änderungen reagiert. Sie müssen also nicht jedes Mal neu `ng serve` eingeben, bzw. nicht jedes Mal neu auf das grüne Dreieck in Ihrer IDE klicken: ![ngserve](./files/86_ngserve.png)
+
 Öffnen Sie Ihren Browser und geben Sie als URL
 
 ```
@@ -229,20 +231,21 @@ Dort wo in den hervorgehobenen Zeilen nun das neue Prefix "htw" steht, stand vor
 
 === "index.html" 
   ```html linenums="1" hl_lines="11"
-  <!doctype html>
-  <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>Frontend</title>
-      <base href="/">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="icon" type="image/x-icon" href="favicon.ico">
-    </head>
-    <body>
-      <htw-root></htw-root>
-    </body>
-  </html>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <title>Frontend</title>
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+      </head>
+      <body>
+        <htw-root></htw-root>
+      </body>
+    </html>
   ```
+
 === "app/app.component.ts" 
   ```javascript linenums="1" hl_lines="3"
   import { Component } from '@angular/core';
@@ -423,7 +426,7 @@ In Angular gibt es 3 Arten sogenannter *Direktiven* (engl. *Directives*):
 
 Komponentendirektiven sind die meistverwendete Art und bereits in [**Angular --> Kompnenten**](./#komponenten) betrachtet. Attribut- und Strukturdirektiven können als HTML-Attribute verstanden werden, die dem HTML-Element ein zusätzliches Verhalten hinzufügt. Attributdirektiven wirken sich das innere Verhalten eines HTML-Elementes aus (z.B. können damit CSS-Eigenschaften geändert, hinzugefügt oder gelöscht werden). Mit Strukturdirektiven kann die Struktur des DOMs geändert werden (z.B. können ganze HTML-Elemente dem DOM-Baum hinzugefügt werden).
 
-#### \*Strukturdirektiven
+#### Strukturdirektiven
 
 Strukturdirektiven beginnen immer mit einem Stern `*`. Die bekanntesten Vertreter sind 
 
@@ -1165,7 +1168,7 @@ In der `first.component.ts` kommen verschiedene Sachen hinzu:
 2. es wird der Service `ActivatedRoute` per *dependency injection* der Klasse `FirstComponent` injiziert --> die Eigenschaft `route` ist vom Typ `ActivatedRoute`
 3. `ActivatedRoute` stellt uns Informationen über den aktuellen Router (die aktuelle URL) zur Verfügung --> die Eigenschaft `this.route.snapshot.paramMap` enthält alle Parameter der aktuellen Route --> mithilfe der Methode `get()` kann nach einem konkreten Parameter gefragt werden --> wir fragen nach dem Parameter `id`, da wir so unseren Pfad konfiguriert haben (siehe oben `app-routing.module.ts`)
 
-Wenn wir nun z.B. die URL `http://localhost:4200/first/42` eingeben, dann erscheint im Brower der Wert des Parameters (als Inhalt des `<p>`-Elementes; siehe oben `first.component.html`).
+Wenn wir nun z.B. die URL `http://localhost:4200/first/42` eingeben, dann erscheint im Browser der Wert des Parameters (als Inhalt des `<p>`-Elementes; siehe oben `first.component.html`).
 
 Die aktuelle Implementierung von `first.component.ts` liest also während der Initialisierung der Komponente die Routenparameter aus. Finden jedoch am Parameterwert Änderungen statt, ohne dass die Komponente neu initialisiert wird, bekommt die Komponente von den Änderungen nichts mit. Die oben gezeigte Form der Implementierung ist deshalb nicht für alle Fälle geeignet. Vielmehr ist es besser auszunutzen, dass es sich bei `this.route.paramMap` (ohne `snapshot`) um ein [*Observable*](https://angular.io/guide/observables-in-angular) handelt.  
 

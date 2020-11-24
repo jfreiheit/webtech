@@ -2377,12 +2377,13 @@
 			export class AppModule { }
 			```
 		- Ihre Seite (`http://localhost:4200/`) sollte nun so aussehen: ![Übung6](./files/80_uebung6.png)
+			Sie **müssen** jetzt immer compileren! Wenn Sie aber einmal `ng serve` ausgeführt haben, wird im Browser automatisch auf die Änderungen reagiert. Sie müssen also nicht jedes Mal neu `ng serve` eingeben, bzw. nicht jedes Mal neu auf das grüne Dreieck in Ihrer IDE klicken: ![ngserve](./files/86_ngserve.png)
 		- Geben Sie im Terminal im `frontend`-Ordner nun 
 			```bash
 			ng generate @angular/material:navigation nav
 			```
 			Damit erstellen Sie eine Komponente namens `nav`, die einer von [Material vorgefertigte Navigationskomponente](https://material.angular.io/guide/schematics) entspricht. 
-			Ergänzen Sie in der `app.component.html` noch:
+			Ergänzen Sie in der `app.component.html` noch (Sie müssen Ihren Prefix verwenden):
 
 			=== "src/app/app.component.html"
 				```html linenums="1" hl_lines="1"
@@ -2426,3 +2427,9 @@
 				![uebung6](./files/82_uebung6.png)
 		
 
+??? question "Übungsaufgabe 7"
+    - Arbeiten Sie den Abschnitt [Material](./material/#material-fur-angular) vollständig durch und erweitern Sie Ihr Frontend entsprechend. 
+
+
+??? question "Übungsaufgabe 8"
+    - Arbeiten Sie den Abschnitt [REST-API](./backend/#rest-api) vollständig durch und erstellen Sie ein Backend (REST-Server) für die Bereitstellung der CRUD-Funktionalitäten über unsere Mockup-Daten. Speichern Sie diese Daten in einer MySQL-Datenbank.  

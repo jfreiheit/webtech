@@ -191,6 +191,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -353,6 +355,18 @@
   <li class="md-nav__item">
     <a href="../material/" title="Material" class="md-nav__link">
       Material
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../backend/" title="REST-API" class="md-nav__link">
+      REST-API
     </a>
   </li>
 
@@ -3777,13 +3791,14 @@ rm -rf .git
 </div>
 </div>
 <ul>
-<li>Ihre Seite (<code>http://localhost:4200/</code>) sollte nun so aussehen: <img alt="Übung6" src="../files/80_uebung6.png" /></li>
+<li>Ihre Seite (<code>http://localhost:4200/</code>) sollte nun so aussehen: <img alt="Übung6" src="../files/80_uebung6.png" />
+    Sie <strong>müssen</strong> jetzt immer compileren! Wenn Sie aber einmal <code>ng serve</code> ausgeführt haben, wird im Browser automatisch auf die Änderungen reagiert. Sie müssen also nicht jedes Mal neu <code>ng serve</code> eingeben, bzw. nicht jedes Mal neu auf das grüne Dreieck in Ihrer IDE klicken: <img alt="ngserve" src="../files/86_ngserve.png" /></li>
 <li>
 <p>Geben Sie im Terminal im <code>frontend</code>-Ordner nun 
     <div class="highlight"><pre><span></span><code>ng generate @angular/material:navigation nav
 </code></pre></div>
     Damit erstellen Sie eine Komponente namens <code>nav</code>, die einer von <a href="https://material.angular.io/guide/schematics">Material vorgefertigte Navigationskomponente</a> entspricht. 
-    Ergänzen Sie in der <code>app.component.html</code> noch:</p>
+    Ergänzen Sie in der <code>app.component.html</code> noch (Sie müssen Ihren Prefix verwenden):</p>
 <div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">src/app/app.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -3852,6 +3867,14 @@ rm -rf .git
 </li>
 </ul>
 </li>
+</ul>
+</details>
+<details class="question"><summary>Übungsaufgabe 7</summary><ul>
+<li>Arbeiten Sie den Abschnitt <a href="./material/#material-fur-angular">Material</a> vollständig durch und erweitern Sie Ihr Frontend entsprechend. </li>
+</ul>
+</details>
+<details class="question"><summary>Übungsaufgabe 8</summary><ul>
+<li>Arbeiten Sie den Abschnitt <a href="./backend/#rest-api">REST-API</a> vollständig durch und erstellen Sie ein Backend (REST-Server) für die Bereitstellung der CRUD-Funktionalitäten über unsere Mockup-Daten. Speichern Sie diese Daten in einer MySQL-Datenbank.  </li>
 </ul>
 </details>
                 

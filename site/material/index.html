@@ -191,6 +191,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -385,22 +387,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dashboard" class="md-nav__link">
-    Dashboard
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#navigation" class="md-nav__link">
-    Navigation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#table" class="md-nav__link">
     Table
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    Routing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datenmodell" class="md-nav__link">
+    Datenmodell
+  </a>
+  
+    <nav class="md-nav" aria-label="Datenmodell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametrisierte-routen" class="md-nav__link">
+    Parametrisierte Routen
   </a>
   
 </li>
@@ -414,6 +436,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../backend/" title="REST-API" class="md-nav__link">
+      REST-API
+    </a>
   </li>
 
     
@@ -487,22 +521,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dashboard" class="md-nav__link">
-    Dashboard
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#navigation" class="md-nav__link">
-    Navigation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#table" class="md-nav__link">
     Table
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    Routing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datenmodell" class="md-nav__link">
+    Datenmodell
+  </a>
+  
+    <nav class="md-nav" aria-label="Datenmodell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametrisierte-routen" class="md-nav__link">
+    Parametrisierte Routen
   </a>
   
 </li>
@@ -553,105 +607,26 @@
 </ul>
 <p>Einen Überblick über die unterschiedlichen Komponenten, die Material bereitstellt, finden Sie <a href="https://material.angular.io/components/categories">hier</a>. Wir werden einige davon im folgenden verwenden. </p>
 <h2 id="material-schematics">Material Schematics<a class="headerlink" href="#material-schematics" title="Permanent link">&para;</a></h2>
-<p>Ein großer Vorteil von Material ist, dass dieses Framework bereits sogenannte <a href="https://material.angular.io/guide/schematics"><em>Schematics</em></a> liefert, welche vorgefertigte Komponenten erstellen können. Wir werden hier drei davon näher beleuchten</p>
-<ul>
-<li>Navigation</li>
-<li>Dashboard</li>
-<li>Tabelle</li>
-</ul>
-<p>Wir erstellen uns nachfolgend nochmal eine Anwendung mit diesen Schematics. Sie können sich mit diesem GitHub-Link das gesamte Projekt clonen und es hier miterstellen.</p>
-<p>Wir erstellen uns ein neues Projekt <code>frontend2</code> mithilfe von
-<div class="highlight"><pre><span></span><code>ng new frontend2
-</code></pre></div></p>
-<p>Wir wählen <code>stricter type checking</code>, <code>routing</code> und <code>CSS</code>. Dann wechseln wir in den <code>fromntend2</code>-Ordner und fügen <code>Material</code> hinzu.
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> frontend2
-ng add @angular/material
-</code></pre></div></p>
-<p>Als <code>prebuilt theme</code> wählen wir <code>Indigo/Pink</code> und entscheiden uns für <code>Material typography styles</code> und <code>browser animations</code> (jeweils <code>y</code>). </p>
-<h3 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Permanent link">&para;</a></h3>
-<p>Jetzt verwenden wir das erste Schema von Material, das <code>dashboard</code>-Schema und erstellen damit eine Komponente <code>dashboard</code>. 
-<div class="highlight"><pre><span></span><code>ng generate @angular/material:dashboard dashboard
-</code></pre></div></p>
-<p>Unsere Komponente heißt also genauso wie das Schema (<code>:dashboard</code> ist das Schema, das letzte Argument der Name der Komponente).</p>
-<p>Wir öffnen unsere IDE und sehen, dass die <code>dashboard</code>-Komponente angelegt wurde:
-<img alt="frontend2" src="../files/83_frontend2.png" /></p>
-<p>Jetzt binden wir die <code>dashboard</code>-Komponente in die <code>app</code>-Komponente ein. Dazu löschen wir alles aus <code>src/app/app.component.html</code> und fügen stattdessen den Komponenten-Selektor der <code>dashboard</code>-Komponente ein:</p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">src/app/app.component.html</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">app</span><span class="o">-</span><span class="nx">dashboard</span><span class="o">&gt;&lt;</span><span class="err">/app-dashboard&gt;</span>
+<p>Ein großer Vorteil von Material ist, dass dieses Framework bereits sogenannte <a href="https://material.angular.io/guide/schematics"><em>Schematics</em></a> liefert, welche vorgefertigte Komponenten erstellen können. In Übung 6 haben wir bereits das Schema <code>navigation</code>verwendet. Wir setzen auf die <a href="https://github.com/jfreiheit/frontend2.git">Lösung von Übung 6</a> auf. </p>
+<p>Wir betrachten zunächst nochmal den aktuellen Stand dieser Lösung. Die <code>app.component.html</code> sah so aus (je, nachdem, wie Sie Ihren Projekt-Prefix gewählt haben - hier <code>jf</code>):</p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">/src/app/app.component.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">jf-nav</span><span class="p">&gt;&lt;/</span><span class="nt">jf-nav</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Tis is app<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">mat-slider</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">mat-slider</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
 </code></pre></div>
 
 </div>
 </div>
-<p>Unsere Seite (<code>http://localhost:4200/</code>) sieht dann so aus:
-<img alt="frontend2" src="../files/84_frontend2.png" /></p>
-<details><summary>typischer Fehler</summary><p>Sollte in Ihrer IDE ein Fehler wie z.B. 
-<div class="highlight"><pre><span></span><code>This likely means that the library <span class="o">(</span>@angular/material/sidenav<span class="o">)</span> which declares MatSidenavModule has not been processed correctly by ngcc, or is not compatible with Angular Ivy. Check <span class="k">if</span> a newer version of the library is available, and update <span class="k">if</span> so. Also consider checking with the library<span class="s1">&#39;s authors to see if the library is expected to be compatible with Ivy.</span>
-
-<span class="s1">1 export declare class MatSidenavModule {</span>
-<span class="s1">                       ~~~~~~~~~~~~~~~~</span>
-<span class="s1">node_modules/@angular/material/list/list-module.d.ts:8:22 - error NG6002: Appears in the NgModule.imports of AppModule, but could not be resolved to an NgModule class.</span>
-
-<span class="s1">This likely means that the library (@angular/material/list) which declares MatListModule has not been processed correctly by ngcc, or is not compatible with Angular Ivy. Check if a newer version of the library is available, and update if so. Also consider checking with the library&#39;</span>s authors to see <span class="k">if</span> the library is expected to be compatible with Ivy.
-
-<span class="m">8</span> <span class="nb">export</span> <span class="nb">declare</span> class MatListModule <span class="o">{</span>
-                       ~~~~~~~~~~~~~
+<p>Es wird also zunächst die Navigationskomponente eingebunden und dann kommen noch eine Überschrift und ein Slider. In der Anwendung sieht man aber diese Sachen nicht mehr:</p>
+<p><img alt="uebung6" src="../files/81_uebung6.png" /></p>
+<p>Das liegt daran, dass wir unsere Inhalte nun in die Navigationskomponente einfügen müssen. Die App-Komponente enthält nur noch den Komponentenselektor für die Navigationskomponente:</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">/src/app/app.component.html</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">jf-nav</span><span class="p">&gt;&lt;/</span><span class="nt">jf-nav</span><span class="p">&gt;</span>
 </code></pre></div>
-erscheinen, dann stoppen Sie einfach die Ausführung von <code>ng serve</code> (z.B. rotes Rechteck rechts oben in der IDE) und starten <code>ng serve</code> erneut.</p>
-</details>
-<p>Schauen wir uns die <code>dashboard.component.html</code> und die <code>dashboard.component.ts</code> einmal etwas genauer an: </p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">src/app/dashboard/dashboard.component.html</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid-container&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mat-h1&quot;</span><span class="p">&gt;</span>Dashboard<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">mat-grid-list</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">rowHeight</span><span class="o">=</span><span class="s">&quot;350px&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">mat-grid-tile</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let card of cards | async&quot;</span> <span class="err">[</span><span class="na">colspan</span><span class="err">]=&quot;</span><span class="na">card</span><span class="err">.</span><span class="na">cols</span><span class="err">&quot;</span> <span class="err">[</span><span class="na">rowspan</span><span class="err">]=&quot;</span><span class="na">card</span><span class="err">.</span><span class="na">rows</span><span class="err">&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">mat-card</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;dashboard-card&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">mat-card-header</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">mat-card-title</span><span class="p">&gt;</span>
-            {{card.title}}
-            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">mat-icon-button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;more-button&quot;</span> <span class="err">[</span><span class="na">matMenuTriggerFor</span><span class="err">]=&quot;</span><span class="na">menu</span><span class="err">&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Toggle menu&quot;</span><span class="p">&gt;</span>
-              <span class="p">&lt;</span><span class="nt">mat-icon</span><span class="p">&gt;</span>more_vert<span class="p">&lt;/</span><span class="nt">mat-icon</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">mat-menu</span> <span class="err">#</span><span class="na">menu</span><span class="o">=</span><span class="s">&quot;matMenu&quot;</span> <span class="na">xPosition</span><span class="o">=</span><span class="s">&quot;before&quot;</span><span class="p">&gt;</span>
-              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">mat-menu-item</span><span class="p">&gt;</span>Expand<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-              <span class="p">&lt;</span><span class="nt">button</span> <span class="na">mat-menu-item</span><span class="p">&gt;</span>Remove<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">mat-menu</span><span class="p">&gt;</span>
-          <span class="p">&lt;/</span><span class="nt">mat-card-title</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">mat-card-header</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">mat-card-content</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;dashboard-card-content&quot;</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Card Content Here<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">mat-card-content</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">mat-card</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">mat-grid-tile</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">mat-grid-list</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-</td></tr></table>
 
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">src/app/dashboard/dashboard.component.ts</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">/src/app/nav/nav.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -684,126 +659,53 @@ erscheinen, dann stoppen Sie einfach die Ausführung von <code>ng serve</code> (
 30
 31
 32
-33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">map</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/operators&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Breakpoints</span><span class="p">,</span> <span class="nx">BreakpointObserver</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/cdk/layout&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
-  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-dashboard&#39;</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./dashboard.component.html&#39;</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./dashboard.component.css&#39;</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">DashboardComponent</span> <span class="p">{</span>
-  <span class="cm">/** Based on the screen size, switch from standard to one column per row */</span>
-  <span class="nx">cards</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">breakpointObserver</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="nx">Breakpoints</span><span class="p">.</span><span class="nx">Handset</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
-    <span class="nx">map</span><span class="p">(({</span> <span class="nx">matches</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">matches</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span>
-          <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Card 1&#39;</span><span class="p">,</span> <span class="nx">cols</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">rows</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
-          <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Card 2&#39;</span><span class="p">,</span> <span class="nx">cols</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">rows</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
-          <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Card 3&#39;</span><span class="p">,</span> <span class="nx">cols</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">rows</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
-          <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Card 4&#39;</span><span class="p">,</span> <span class="nx">cols</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">rows</span><span class="o">:</span> <span class="mi">1</span> <span class="p">}</span>
-        <span class="p">];</span>
-      <span class="p">}</span>
-
-      <span class="k">return</span> <span class="p">[</span>
-        <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Card 1&#39;</span><span class="p">,</span> <span class="nx">cols</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">rows</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Card 2&#39;</span><span class="p">,</span> <span class="nx">cols</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">rows</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Card 3&#39;</span><span class="p">,</span> <span class="nx">cols</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">rows</span><span class="o">:</span> <span class="mi">2</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Card 4&#39;</span><span class="p">,</span> <span class="nx">cols</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">rows</span><span class="o">:</span> <span class="mi">1</span> <span class="p">}</span>
-      <span class="p">];</span>
-    <span class="p">})</span>
-  <span class="p">);</span>
-
-  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">breakpointObserver</span><span class="o">:</span> <span class="nx">BreakpointObserver</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-
-</div>
-</div>
-<p>In Zeile <code>4</code> der <code>.html</code>-Datei wird durch das <code>cards</code>-Array gelaufen und alle darin enthaltenen <code>card</code>-Elemente dargestellt. Das <code>cards</code>-Array ist in der <code>.ts</code>-Datei definiert. Abhängig von der Breite des Viewports liefert das <a href="https://material.angular.io/cdk/layout/overview"><code>BreakpointObserver</code></a>-Objekt ein Array aus vier <code>cards</code> zurück. Angular Material CDK verwendet das <a href="https://material.angular.io/cdk/layout/overview"><code>layout</code></a>-Paket, um das responsive Grid zu stylen. Es sind dort verschiedene <a href="https://material.io/design/layout/responsive-layout-grid.html#breakpoints"><em>Breakpoints</em></a> für unterschiedliche Verhalten je nach Viewport-Breite definiert.</p>
-<p>Wir wollen uns zunächst um diese <code>cards</code> kümmern und uns eine Komponente <code>card</code> erstellen, auf der alle andern <code>cards</code> basieren. Dazu geben wir innerhalb des <code>frontend2</code>-Ordners ein:
-<div class="highlight"><pre><span></span><code>ng g c card -m app
-</code></pre></div></p>
-<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">src/app/card/card.component.html</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c">&lt;!-- aus dashboard.component.html kopiert --&gt;</span>
-<span class="p">&lt;</span><span class="nt">mat-card</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;dashboard-card&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">mat-card-header</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">mat-card-title</span><span class="p">&gt;</span>
-<span class="hll">      {{title}}
-</span>      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">mat-icon-button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;more-button&quot;</span> <span class="err">[</span><span class="na">matMenuTriggerFor</span><span class="err">]=&quot;</span><span class="na">menu</span><span class="err">&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Toggle menu&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">mat-icon</span><span class="p">&gt;</span>more_vert<span class="p">&lt;/</span><span class="nt">mat-icon</span><span class="p">&gt;</span>
+33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">mat-sidenav-container</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sidenav-container&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mat-sidenav</span> <span class="err">#</span><span class="na">drawer</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sidenav&quot;</span> <span class="na">fixedInViewport</span>
+      <span class="err">[</span><span class="na">attr</span><span class="err">.</span><span class="na">role</span><span class="err">]=&quot;(</span><span class="na">isHandset</span><span class="err">$</span> <span class="err">|</span> <span class="na">async</span><span class="err">)</span> <span class="err">?</span> <span class="err">&#39;</span><span class="na">dialog</span><span class="err">&#39;</span> <span class="na">:</span> <span class="err">&#39;</span><span class="na">navigation</span><span class="err">&#39;&quot;</span>
+      <span class="err">[</span><span class="na">mode</span><span class="err">]=&quot;(</span><span class="na">isHandset</span><span class="err">$</span> <span class="err">|</span> <span class="na">async</span><span class="err">)</span> <span class="err">?</span> <span class="err">&#39;</span><span class="na">over</span><span class="err">&#39;</span> <span class="na">:</span> <span class="err">&#39;</span><span class="na">side</span><span class="err">&#39;&quot;</span>
+      <span class="err">[</span><span class="na">opened</span><span class="err">]=&quot;(</span><span class="na">isHandset</span><span class="err">$</span> <span class="err">|</span> <span class="na">async</span><span class="err">)</span> <span class="err">===</span> <span class="na">false</span><span class="err">&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-toolbar</span><span class="p">&gt;</span>Menu<span class="p">&lt;/</span><span class="nt">mat-toolbar</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-nav-list</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">mat-list-item</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Link 1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">mat-list-item</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Link 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">mat-list-item</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Link 3<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">mat-nav-list</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">mat-sidenav</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mat-sidenav-content</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-toolbar</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;primary&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span>
+        <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span>
+        <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Toggle sidenav&quot;</span>
+        <span class="na">mat-icon-button</span>
+        <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">drawer</span><span class="err">.</span><span class="na">toggle</span><span class="err">()&quot;</span>
+        <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;isHandset$ | async&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">mat-icon</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Side nav toggle icon&quot;</span><span class="p">&gt;</span>menu<span class="p">&lt;/</span><span class="nt">mat-icon</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">mat-menu</span> <span class="err">#</span><span class="na">menu</span><span class="o">=</span><span class="s">&quot;matMenu&quot;</span> <span class="na">xPosition</span><span class="o">=</span><span class="s">&quot;before&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">mat-menu-item</span><span class="p">&gt;</span>Expand<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">mat-menu-item</span><span class="p">&gt;</span>Remove<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">mat-menu</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">mat-card-title</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">mat-card-header</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">mat-card-content</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;dashboard-card-content&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Card Content Here<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">mat-card-content</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">mat-card</span><span class="p">&gt;</span>
-</code></pre></div>
-</td></tr></table>
-
-</div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">src/app/dashboard/dashboard.component.html</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid-container&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mat-h1&quot;</span><span class="p">&gt;</span>Dashboard<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">mat-grid-list</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">rowHeight</span><span class="o">=</span><span class="s">&quot;350px&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">mat-grid-tile</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let card of cards | async&quot;</span> <span class="err">[</span><span class="na">colspan</span><span class="err">]=&quot;</span><span class="na">card</span><span class="err">.</span><span class="na">cols</span><span class="err">&quot;</span> <span class="err">[</span><span class="na">rowspan</span><span class="err">]=&quot;</span><span class="na">card</span><span class="err">.</span><span class="na">rows</span><span class="err">&quot;</span><span class="p">&gt;</span>
-<span class="hll">      <span class="c">&lt;!-- hier herausgeschnitten und nach card.component.html kopiert --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Frontend<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">mat-toolbar</span><span class="p">&gt;</span>
+<span class="hll">    <span class="c">&lt;!-- Add Content Here --&gt;</span>
 </span><span class="hll">
-</span><span class="hll">      <span class="c">&lt;!-- bis hier --&gt;</span>
-</span>    <span class="p">&lt;/</span><span class="nt">mat-grid-tile</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">mat-grid-list</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span class="hll">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Tis is nav-Content<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span class="hll">    <span class="p">&lt;</span><span class="nt">mat-slider</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">mat-slider</span><span class="p">&gt;</span>
+</span><span class="hll">    <span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="c">&lt;!-- end of nav-Content --&gt;</span>
+</span>  <span class="p">&lt;/</span><span class="nt">mat-sidenav-content</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">mat-sidenav-container</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
 
 </div>
 </div>
-<p>Die <code>title</code>-Eigenschaft für eine <code>card</code> muss aus <code>dashboard</code> importiert werden. Wir ändern deshalb die <code>card.component.ts</code>:</p>
-<p>Mithilfe von <code>-m app</code> melden wir die neue Komponente gleich in <code>app.module.ts</code> an. Dann brauchen wir das nicht selbst zu tun. </p>
-<h3 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">&para;</a></h3>
-<p>Jetzt verwenden wir ein weiteres Schema, das <code>navigation</code>-Schema von Material. In unserem Ordner <code>frontend2</code> rufen wir
-<div class="highlight"><pre><span></span><code>ng generate @angular/material:navigation nav
-</code></pre></div>
-auf, um eine <code>nav</code>-Komponente zu erstellen. Nun rufen wir die <code>dashboard</code>-Komponente nicht mehr in der <code>app</code>-Komponente auf, sondern in der <code>nav</code>-Komponente. Stattdessen wird die <code>nav</code>-Komponente in der <code>app</code>-Komponente aufgerufen:</p>
-<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">src/app/app.component.html</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">app</span><span class="o">-</span><span class="nx">nav</span><span class="o">&gt;&lt;</span><span class="err">/app-nav&gt;</span>
-</code></pre></div>
-
-</div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">src/app/nav/nav.component.html</label><div class="tabbed-content">
+<p>Das ist dann auch sichtbar:</p>
+<p><img alt="Frontend" src="../files/87_frontend.png" /></p>
+<p>Ehe wir uns mit dem Routing beschäftigen, erstellen wir zunächst noch zwei weitere Komponenten.</p>
+<h3 id="table">Table<a class="headerlink" href="#table" title="Permanent link">&para;</a></h3>
+<p>Ein weiteres Schema, das wir verwenden wollen, ist das <code>table</code>-Schema von Material. In unserem Ordner <code>frontend2</code> rufen wir
+<div class="highlight"><pre><span></span><code>ng generate @angular/material:table table
+</code></pre></div></p>
+<p>Um diese Komponente zu testen, binden wir sie zunächst in unsere <code>nav</code>-Komponente ein (Beachten Sie, dass Ihr Prefix anders ist).</p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">/src/app/nav/nav.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -831,46 +733,1359 @@ auf, um eine <code>nav</code>-Komponente zu erstellen. Nun rufen wir die <code>d
 25
 26
 27
-28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">mat</span><span class="o">-</span><span class="nx">sidenav</span><span class="o">-</span><span class="nx">container</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;sidenav-container&quot;</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">mat</span><span class="o">-</span><span class="nx">sidenav</span> <span class="err">#</span><span class="nx">drawer</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;sidenav&quot;</span> <span class="nx">fixedInViewport</span>
-      <span class="p">[</span><span class="nx">attr</span><span class="p">.</span><span class="nx">role</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;(isHandset$ | async) ? &#39;dialog&#39; : &#39;navigation&#39;&quot;</span>
-      <span class="p">[</span><span class="nx">mode</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;(isHandset$ | async) ? &#39;over&#39; : &#39;side&#39;&quot;</span>
-      <span class="p">[</span><span class="nx">opened</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;(isHandset$ | async) === false&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">mat</span><span class="o">-</span><span class="nx">toolbar</span><span class="o">&gt;</span><span class="nx">Menu</span><span class="o">&lt;</span><span class="err">/mat-toolbar&gt;</span>
-    <span class="o">&lt;</span><span class="nx">mat</span><span class="o">-</span><span class="nx">nav</span><span class="o">-</span><span class="nx">list</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">mat</span><span class="o">-</span><span class="nx">list</span><span class="o">-</span><span class="nx">item</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="o">&gt;</span><span class="nx">Link</span> <span class="mi">1</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
-      <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">mat</span><span class="o">-</span><span class="nx">list</span><span class="o">-</span><span class="nx">item</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="o">&gt;</span><span class="nx">Link</span> <span class="mi">2</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
-      <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">mat</span><span class="o">-</span><span class="nx">list</span><span class="o">-</span><span class="nx">item</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="o">&gt;</span><span class="nx">Link</span> <span class="mi">3</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
-    <span class="o">&lt;</span><span class="err">/mat-nav-list&gt;</span>
-  <span class="o">&lt;</span><span class="err">/mat-sidenav&gt;</span>
-  <span class="o">&lt;</span><span class="nx">mat</span><span class="o">-</span><span class="nx">sidenav</span><span class="o">-</span><span class="nx">content</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">mat</span><span class="o">-</span><span class="nx">toolbar</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">button</span>
-        <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span>
-        <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Toggle sidenav&quot;</span>
-        <span class="nx">mat</span><span class="o">-</span><span class="nx">icon</span><span class="o">-</span><span class="nx">button</span>
-        <span class="p">(</span><span class="nx">click</span><span class="p">)</span><span class="o">=</span><span class="s2">&quot;drawer.toggle()&quot;</span>
-        <span class="o">*</span><span class="nx">ngIf</span><span class="o">=</span><span class="s2">&quot;isHandset$ | async&quot;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">mat</span><span class="o">-</span><span class="nx">icon</span> <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Side nav toggle icon&quot;</span><span class="o">&gt;</span><span class="nx">menu</span><span class="o">&lt;</span><span class="err">/mat-icon&gt;</span>
-      <span class="o">&lt;</span><span class="err">/button&gt;</span>
-      <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">frontend2</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
-    <span class="o">&lt;</span><span class="err">/mat-toolbar&gt;</span>
-    <span class="c">&lt;!--</span> <span class="nx">Add</span> <span class="nx">Content</span> <span class="nx">Here</span> <span class="o">--&gt;</span>
-<span class="hll">    <span class="o">&lt;</span><span class="nx">app</span><span class="o">-</span><span class="nx">dashboard</span><span class="o">&gt;&lt;</span><span class="err">/app-dashboard&gt;</span>
-</span>  <span class="o">&lt;</span><span class="err">/mat-sidenav-content&gt;</span>
-<span class="o">&lt;</span><span class="err">/mat-sidenav-container&gt;</span>
+28
+29
+30
+31
+32
+33
+34</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">mat-sidenav-container</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sidenav-container&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mat-sidenav</span> <span class="err">#</span><span class="na">drawer</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sidenav&quot;</span> <span class="na">fixedInViewport</span>
+      <span class="err">[</span><span class="na">attr</span><span class="err">.</span><span class="na">role</span><span class="err">]=&quot;(</span><span class="na">isHandset</span><span class="err">$</span> <span class="err">|</span> <span class="na">async</span><span class="err">)</span> <span class="err">?</span> <span class="err">&#39;</span><span class="na">dialog</span><span class="err">&#39;</span> <span class="na">:</span> <span class="err">&#39;</span><span class="na">navigation</span><span class="err">&#39;&quot;</span>
+      <span class="err">[</span><span class="na">mode</span><span class="err">]=&quot;(</span><span class="na">isHandset</span><span class="err">$</span> <span class="err">|</span> <span class="na">async</span><span class="err">)</span> <span class="err">?</span> <span class="err">&#39;</span><span class="na">over</span><span class="err">&#39;</span> <span class="na">:</span> <span class="err">&#39;</span><span class="na">side</span><span class="err">&#39;&quot;</span>
+      <span class="err">[</span><span class="na">opened</span><span class="err">]=&quot;(</span><span class="na">isHandset</span><span class="err">$</span> <span class="err">|</span> <span class="na">async</span><span class="err">)</span> <span class="err">===</span> <span class="na">false</span><span class="err">&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-toolbar</span><span class="p">&gt;</span>Menu<span class="p">&lt;/</span><span class="nt">mat-toolbar</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-nav-list</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">mat-list-item</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Link 1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">mat-list-item</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Link 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">mat-list-item</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Link 3<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">mat-nav-list</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">mat-sidenav</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mat-sidenav-content</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-toolbar</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;primary&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span>
+        <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span>
+        <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Toggle sidenav&quot;</span>
+        <span class="na">mat-icon-button</span>
+        <span class="err">(</span><span class="na">click</span><span class="err">)=&quot;</span><span class="na">drawer</span><span class="err">.</span><span class="na">toggle</span><span class="err">()&quot;</span>
+        <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;isHandset$ | async&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">mat-icon</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Side nav toggle icon&quot;</span><span class="p">&gt;</span>menu<span class="p">&lt;/</span><span class="nt">mat-icon</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Frontend<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">mat-toolbar</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- Add Content Here --&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Tis is nav-Content<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-slider</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">mat-slider</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">jf-table</span><span class="p">&gt;&lt;/</span><span class="nt">jf-table</span><span class="p">&gt;</span>
+</span>    <span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- end of nav-Content --&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">mat-sidenav-content</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">mat-sidenav-container</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
 
 </div>
 </div>
-<p>Unsere Seite (<code>http://localhost:4200/</code>) sieht dann so aus:
-<img alt="frontend2" src="../files/85_frontend2.png" /></p>
-<h3 id="table">Table<a class="headerlink" href="#table" title="Permanent link">&para;</a></h3>
-<p>Ein weiteres Schema, das wir verwenden wollen, ist das <code>table</code>-Schema von Material. In unserem Ordner <code>frontend2</code> rufen wir
-<div class="highlight"><pre><span></span><code>ng generate @angular/material:table table
-</code></pre></div></p>
-<p><a href="https://blog.angular-university.io/angular-material-data-table/">Angular Tabelle</a></p>
+<p>Die Tabelle erscheint so:</p>
+<p><img alt="Frontend" src="../files/88_frontend.png" /></p>
+<p>Wir ändern die Tabelle und fügen eigene Daten ein, um uns mit der Komponente vertraut zu machen. Wir öffnen <code>src/app/table/table-datasource.ts</code>. Je nach verwendeter Angular-Version sehen einige von Ihnen, dass diese Datei Fehler enthält. Die Funktionen sind rot unterstrichen. Das liegt daran, dass nun auch Funktionen typisiert werden müssen. Wir fügen die Rückgabetypen für die Funktionen deshalb zunächst ein:</p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">src/app/table/table-datasource.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">DataSource</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/cdk/collections&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatPaginator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/paginator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatSort</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/sort&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">map</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/operators&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Observable</span><span class="p">,</span> <span class="k">of</span> <span class="nx">as</span> <span class="nx">observableOf</span><span class="p">,</span> <span class="nx">merge</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+
+<span class="c1">// TODO: Replace this with your own data model type</span>
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">TableItem</span> <span class="p">{</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">id</span><span class="o">:</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// TODO: replace this with real data from your application</span>
+<span class="kr">const</span> <span class="nx">EXAMPLE_DATA</span><span class="o">:</span> <span class="nx">TableItem</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Hydrogen&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Helium&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Lithium&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Beryllium&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Boron&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Carbon&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Nitrogen&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Oxygen&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Fluorine&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Neon&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Sodium&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Magnesium&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">13</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Aluminum&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Silicon&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Phosphorus&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Sulfur&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">17</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Chlorine&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Argon&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Potassium&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Calcium&#39;</span><span class="p">},</span>
+<span class="p">];</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Data source for the Table view. This class should</span>
+<span class="cm"> * encapsulate all logic for fetching and manipulating the displayed data</span>
+<span class="cm"> * (including sorting, pagination, and filtering).</span>
+<span class="cm"> */</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TableDataSource</span> <span class="kr">extends</span> <span class="nx">DataSource</span><span class="o">&lt;</span><span class="nx">TableItem</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="nx">TableItem</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">EXAMPLE_DATA</span><span class="p">;</span>
+  <span class="nx">paginator</span><span class="o">:</span> <span class="nx">MatPaginator</span><span class="p">;</span>
+  <span class="nx">sort</span><span class="o">:</span> <span class="nx">MatSort</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * Connect this data source to the table. The table will only update when</span>
+<span class="cm">   * the returned stream emits new items.</span>
+<span class="cm">   * @returns A stream of the items to be rendered.</span>
+<span class="cm">   */</span>
+  <span class="nx">connect</span><span class="p">()</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">TableItem</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="c1">// Combine everything that affects the rendered data into one update</span>
+    <span class="c1">// stream for the data-table to consume.</span>
+    <span class="kr">const</span> <span class="nx">dataMutations</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="nx">observableOf</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">),</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">page</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">sortChange</span>
+    <span class="p">];</span>
+
+    <span class="k">return</span> <span class="nx">merge</span><span class="p">(...</span><span class="nx">dataMutations</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">map</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">getPagedData</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getSortedData</span><span class="p">([...</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">]));</span>
+    <span class="p">}));</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   *  Called when the table is being destroyed. Use this function, to clean up</span>
+<span class="cm">   * any open connections or free any held resources that were set up during connect.</span>
+<span class="cm">   */</span>
+<span class="hll">  <span class="nx">disconnect</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{}</span>
+</span>
+  <span class="cm">/**</span>
+<span class="cm">   * Paginate the data (client-side). If you&#39;re using server-side pagination,</span>
+<span class="cm">   * this would be replaced by requesting the appropriate data from the server.</span>
+<span class="cm">   */</span>
+<span class="hll">  <span class="kr">private</span> <span class="nx">getPagedData</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span> <span class="nx">TableItem</span><span class="p">[])</span><span class="o">:</span> <span class="nx">TableItem</span><span class="p">[]</span> <span class="p">{</span>
+</span>    <span class="kr">const</span> <span class="nx">startIndex</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">pageIndex</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">pageSize</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">startIndex</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">.</span><span class="nx">pageSize</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * Sort the data (client-side). If you&#39;re using server-side sorting,</span>
+<span class="cm">   * this would be replaced by requesting the appropriate data from the server.</span>
+<span class="cm">   */</span>
+<span class="hll">  <span class="kr">private</span> <span class="nx">getSortedData</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span> <span class="nx">TableItem</span><span class="p">[])</span><span class="o">:</span> <span class="nx">TableItem</span><span class="p">[]</span> <span class="p">{</span>
+</span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">active</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">direction</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">isAsc</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">direction</span> <span class="o">===</span> <span class="s1">&#39;asc&#39;</span><span class="p">;</span>
+      <span class="k">switch</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">active</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s1">&#39;name&#39;</span><span class="o">:</span> <span class="k">return</span> <span class="nx">compare</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">b</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">isAsc</span><span class="p">);</span>
+        <span class="k">case</span> <span class="s1">&#39;id&#39;</span><span class="o">:</span> <span class="k">return</span> <span class="nx">compare</span><span class="p">(</span><span class="o">+</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="o">+</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">isAsc</span><span class="p">);</span>
+        <span class="k">default</span><span class="o">:</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/** Simple sort comparator for example ID/Name columns (for client-side sorting). */</span>
+<span class="hll"><span class="kd">function</span> <span class="nx">compare</span><span class="p">(</span><span class="nx">a</span><span class="o">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">isAsc</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">)</span><span class="o">:</span> <span class="nx">number</span> <span class="p">{</span>
+</span>  <span class="k">return</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">b</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nx">isAsc</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Wir werden die Komponente nun dahingehend ändern, dass unsere Mockup-Daten aus den vorherigen Übungen dargestellt werden, also diese hier:</p>
+<details><summary>mockup-data aus den vorherigen Übungen</summary><div class="highlight"><pre><span></span><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">1,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Catherine&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Williams&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;cwilliamsl@360.cn&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">2,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Adam&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Anderson&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;aanderson8@google.fr&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">3,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Susan&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Andrews&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;sandrewsn@google.co.jp&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">4,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Catherine&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Andrews&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;candrewsp@noaa.gov&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">5,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Alan&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Bradley&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;abradley1c@globo.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">6,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Anne&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Brooks&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;abrooks16@bravesites.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">7,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Russell&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Brown&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;rbrownq@nifty.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">8,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Ryan&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Burton&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;rburton18@foxnews.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">9,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Roy&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Campbell&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;rcampbell1@geocities.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">10,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Russell&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Campbell&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;rcampbell17@eventbrite.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">11,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Bonnie&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Coleman&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;bcoleman11@fc2.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">12,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Ernest&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Coleman&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;ecoleman15@businessweek.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">13,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Richard&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Cruz&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;rcruz7@unc.edu&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">14,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Sean&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Cruz&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;scruz10@answers.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">15,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Rebecca&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Cunningham&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;rcunninghamd@mac.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">16,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Margaret&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Evans&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;mevansh@pcworld.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">17,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Jeffrey&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Ford&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;jford14@cnet.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">18,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Andrea&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Gardner&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;agardnerv@woothemes.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">19,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Deborah&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;George&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;dgeorge6@furl.net&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">20,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Sean&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Gibson&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;sgibsony@alexa.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">21,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Virginia&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Graham&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;vgrahamk@aol.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">22,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Steven&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Hamilton&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;shamiltonu@state.tx.us&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">23,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Virginia&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Hawkins&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;vhawkinsf@ehow.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">24,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Edward&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Hicks&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;ehicksc@pcworld.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">25,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Mark&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Johnson&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;mjohnsonj@hostgator.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">26,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Ruth&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Jordan&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;rjordan1a@smugmug.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">27,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Antonio&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Kim&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;akim4@odnoklassniki.ru&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">28,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Jennifer&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Marshall&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;jmarshallt@gnu.org&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">29,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Eric&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Matthews&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;ematthews5@independent.co.uk&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">30,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Raymond&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Mcdonald&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;rmcdonald2@ihg.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">31,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Eric&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Miller&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;emillere@creativecommons.org&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">32,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Jonathan&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Morales&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;jmoralesa@ovh.net&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">33,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Marie&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Morgan&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;mmorganb@cloudflare.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">34,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Amanda&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Nelson&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;anelson13@indiatimes.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">35,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Lisa&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Olson&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;lolsonr@telegraph.co.uk&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">36,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Alice&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Ortiz&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;aortizw@histats.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">37,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Peter&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Phillips&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;pphillipss@1688.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">38,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Matthew&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Porter&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;mporter9@europa.eu&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">39,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Tammy&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Ray&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;trayx@weather.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">40,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Mark&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Richardson&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;mrichardson1d@ihg.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">41,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Joan&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Roberts&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;jroberts12@alibaba.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">42,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Kathleen&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Rose&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;kroseg@pinterest.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">43,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Steve&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Sanders&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;ssanders1b@wikispaces.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">44,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Shirley&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Scott&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;sscottm@macromedia.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">45,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Lillian&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Stephens&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;lstephens19@hugedomains.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">46,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Nicole&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Thompson&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;nthompson3@admin.ch&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">47,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Marie&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Thompson&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;mthompsonz@yelp.com&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">48,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Alan&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Vasquez&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;avasquezo@miibeian.gov.cn&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">49,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Mildred&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Watkins&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;mwatkins0@miibeian.gov.cn&#39;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="err">id:</span> <span class="err">50,</span>
+    <span class="err">forename:</span> <span class="err">&#39;Eugene&#39;,</span>
+    <span class="err">surname:</span> <span class="err">&#39;Williams&#39;,</span>
+    <span class="err">email:</span> <span class="err">&#39;ewilliamsi@deliciousdays.com&#39;</span>
+  <span class="p">}</span>
+<span class="p">]</span><span class="err">;</span>
+</code></pre></div>
+
+</details>
+<p>Ersetzen Sie das <code>EXAMPLE_DATA</code>-Array in <code>table-datasource.ts</code> durch obiges Array. Das Ersetzen der Arrays führt zu vielen Fehlern in <code>table-datasource.ts</code>. Insbesondere sind z.B. die <code>forename</code>-Eigenschaften rot unterstrichen. Das liegt daran, dass das <code>interface TableItem</code> nicht mit dem Datenmodell der Mockup-Daten übereinstimmt. Wir müssen also das Interface wie folgt anpassen:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// TODO: Replace this with your own data model type</span>
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">TableItem</span> <span class="p">{</span>
+  <span class="nx">id</span><span class="o">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nx">forename</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">surname</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">email</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Jetzt stimmt die Sortiermethode <code>sort()</code> nicht mehr, da dort auf die Eigenschaft <code>name</code> zugegriffen wird, diese Eigenschaft aber nicht mehr existiert. Wir passen also die Sortierfunktion entsprechend an:</p>
+<div class="highlight"><pre><span></span><code>  <span class="kr">private</span> <span class="nx">getSortedData</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span> <span class="nx">TableItem</span><span class="p">[])</span><span class="o">:</span> <span class="nx">TableItem</span><span class="p">[]</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">active</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">direction</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">isAsc</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">direction</span> <span class="o">===</span> <span class="s1">&#39;asc&#39;</span><span class="p">;</span>
+      <span class="k">switch</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">.</span><span class="nx">active</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s1">&#39;forename&#39;</span><span class="o">:</span> <span class="k">return</span> <span class="nx">compare</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">forename</span><span class="p">,</span> <span class="nx">b</span><span class="p">.</span><span class="nx">forename</span><span class="p">,</span> <span class="nx">isAsc</span><span class="p">);</span>
+        <span class="k">case</span> <span class="s1">&#39;surname&#39;</span><span class="o">:</span> <span class="k">return</span> <span class="nx">compare</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">surname</span><span class="p">,</span> <span class="nx">b</span><span class="p">.</span><span class="nx">surname</span><span class="p">,</span> <span class="nx">isAsc</span><span class="p">);</span>
+        <span class="k">case</span> <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="k">return</span> <span class="nx">compare</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span> <span class="nx">b</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span> <span class="nx">isAsc</span><span class="p">);</span>
+        <span class="k">case</span> <span class="s1">&#39;id&#39;</span><span class="o">:</span> <span class="k">return</span> <span class="nx">compare</span><span class="p">(</span><span class="o">+</span><span class="nx">a</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="o">+</span><span class="nx">b</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">isAsc</span><span class="p">);</span>
+        <span class="k">default</span><span class="o">:</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+</code></pre></div>
+
+<p>Die Datei <code>table-datasource.ts</code> sollte nun fehlerfrei sein. Nun passen wir noch die <code>table.component.html</code> an. In ihr sind derzeit zwei Spalten für die Tabelle definiert, die <code>id</code>-Spalte und die <code>name</code>-Spalte (jeweils unter den entsprechenden HTML-Kommentaren). Kopieren Sie die <code>name</code>-Spalte und fügern Sie sie zwei Mal in die <code>table.component.html</code> ein. Passen Sie die Einträge entsprechend an. Die <code>table.component.html</code> sollte dann so aussehen:</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">src/app/table/table.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mat-elevation-z8&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">table</span> <span class="na">mat-table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;full-width-table&quot;</span> <span class="na">matSort</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Elements&quot;</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- Id Column --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ng-container</span> <span class="na">matColumnDef</span><span class="o">=</span><span class="s">&quot;id&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">mat-header-cell</span> <span class="err">*</span><span class="na">matHeaderCellDef</span> <span class="na">mat-sort-header</span><span class="p">&gt;</span>Id<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span> <span class="na">mat-cell</span> <span class="err">*</span><span class="na">matCellDef</span><span class="o">=</span><span class="s">&quot;let row&quot;</span><span class="p">&gt;</span>{{row.id}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ng-container</span><span class="p">&gt;</span>
+
+<span class="hll">    <span class="c">&lt;!-- forename Column --&gt;</span>
+</span><span class="hll">    <span class="p">&lt;</span><span class="nt">ng-container</span> <span class="na">matColumnDef</span><span class="o">=</span><span class="s">&quot;forename&quot;</span><span class="p">&gt;</span>
+</span><span class="hll">      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">mat-header-cell</span> <span class="err">*</span><span class="na">matHeaderCellDef</span> <span class="na">mat-sort-header</span><span class="p">&gt;</span>Vorname<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span class="hll">      <span class="p">&lt;</span><span class="nt">td</span> <span class="na">mat-cell</span> <span class="err">*</span><span class="na">matCellDef</span><span class="o">=</span><span class="s">&quot;let row&quot;</span><span class="p">&gt;</span>{{row.forename}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span class="hll">    <span class="p">&lt;/</span><span class="nt">ng-container</span><span class="p">&gt;</span>
+</span>
+<span class="hll">    <span class="c">&lt;!-- surname Column --&gt;</span>
+</span><span class="hll">    <span class="p">&lt;</span><span class="nt">ng-container</span> <span class="na">matColumnDef</span><span class="o">=</span><span class="s">&quot;surname&quot;</span><span class="p">&gt;</span>
+</span><span class="hll">      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">mat-header-cell</span> <span class="err">*</span><span class="na">matHeaderCellDef</span> <span class="na">mat-sort-header</span><span class="p">&gt;</span>Nachname<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span class="hll">      <span class="p">&lt;</span><span class="nt">td</span> <span class="na">mat-cell</span> <span class="err">*</span><span class="na">matCellDef</span><span class="o">=</span><span class="s">&quot;let row&quot;</span><span class="p">&gt;</span>{{row.surname}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span class="hll">    <span class="p">&lt;/</span><span class="nt">ng-container</span><span class="p">&gt;</span>
+</span>
+<span class="hll">    <span class="c">&lt;!-- email Column --&gt;</span>
+</span><span class="hll">    <span class="p">&lt;</span><span class="nt">ng-container</span> <span class="na">matColumnDef</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>
+</span><span class="hll">      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">mat-header-cell</span> <span class="err">*</span><span class="na">matHeaderCellDef</span> <span class="na">mat-sort-header</span><span class="p">&gt;</span>E-Mail-Adresse<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span><span class="hll">      <span class="p">&lt;</span><span class="nt">td</span> <span class="na">mat-cell</span> <span class="err">*</span><span class="na">matCellDef</span><span class="o">=</span><span class="s">&quot;let row&quot;</span><span class="p">&gt;</span>{{row.email}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span><span class="hll">    <span class="p">&lt;/</span><span class="nt">ng-container</span><span class="p">&gt;</span>
+</span>
+    <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">mat-header-row</span> <span class="err">*</span><span class="na">matHeaderRowDef</span><span class="o">=</span><span class="s">&quot;displayedColumns&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">mat-row</span> <span class="err">*</span><span class="na">matRowDef</span><span class="o">=</span><span class="s">&quot;let row; columns: displayedColumns;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">mat-paginator</span> <span class="err">#</span><span class="na">paginator</span>
+      <span class="err">[</span><span class="na">length</span><span class="err">]=&quot;</span><span class="na">dataSource</span><span class="err">?.</span><span class="na">data</span><span class="err">.</span><span class="na">length</span><span class="err">&quot;</span>
+      <span class="err">[</span><span class="na">pageIndex</span><span class="err">]=&quot;</span><span class="na">0</span><span class="err">&quot;</span>
+      <span class="err">[</span><span class="na">pageSize</span><span class="err">]=&quot;</span><span class="na">50</span><span class="err">&quot;</span>
+      <span class="err">[</span><span class="na">pageSizeOptions</span><span class="err">]=&quot;[</span><span class="na">25</span><span class="err">,</span> <span class="na">50</span><span class="err">,</span> <span class="na">100</span><span class="err">,</span> <span class="na">250</span><span class="err">]&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">mat-paginator</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Nun passen wir nur noch die <code>table.componen.ts</code> an. Dort müssen wir mitteilen, welche Eigenschaften unseres Datensatzes für die einzelnen Spalten der Tabelle verwendet und entsprechend dargestellt werden. </p>
+<div class="highlight"><pre><span></span><code>  <span class="cm">/** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */</span>
+  <span class="nx">displayedColumns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;forename&#39;</span><span class="p">,</span> <span class="s1">&#39;surname&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">];</span>
+</code></pre></div>
+
+<p>Auch in der <code>table.component.ts</code> sollten wir die Methoden noch typisieren. Beide Methoden sind <code>void</code>-Methoden. Es handelt sich dabei um sogenannte <em>Lifecycle-Hooks</em>. Die <code>ngOnInit()</code>-Funktion wird aufgerufen, wenn die Komponente initialisiert wird. Die <code>ngAfterViewInit()</code>-Funktion wird aufgerufen, nachdem unsere <code>View</code>, also die Tabellenansicht, initialisisert wurde. Die <code>table.component.ts</code> sollte nun so aussehen:</p>
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">src/app/table/table.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">AfterViewInit</span><span class="p">,</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatPaginator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/paginator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatSort</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/sort&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatTable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/table&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">TableDataSource</span><span class="p">,</span> <span class="nx">TableItem</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./table-datasource&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;jf-table&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./table.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./table.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TableComponent</span> <span class="kr">implements</span> <span class="nx">AfterViewInit</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">ViewChild</span><span class="p">(</span><span class="nx">MatPaginator</span><span class="p">)</span> <span class="nx">paginator</span><span class="o">:</span> <span class="nx">MatPaginator</span><span class="p">;</span>
+  <span class="err">@</span><span class="nx">ViewChild</span><span class="p">(</span><span class="nx">MatSort</span><span class="p">)</span> <span class="nx">sort</span><span class="o">:</span> <span class="nx">MatSort</span><span class="p">;</span>
+  <span class="err">@</span><span class="nx">ViewChild</span><span class="p">(</span><span class="nx">MatTable</span><span class="p">)</span> <span class="nx">table</span><span class="o">:</span> <span class="nx">MatTable</span><span class="o">&lt;</span><span class="nx">TableItem</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nx">dataSource</span><span class="o">:</span> <span class="nx">TableDataSource</span><span class="p">;</span>
+
+  <span class="cm">/** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */</span>
+<span class="hll">  <span class="nx">displayedColumns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;forename&#39;</span><span class="p">,</span> <span class="s1">&#39;surname&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">];</span>
+</span>
+<span class="hll">  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+</span>    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TableDataSource</span><span class="p">();</span>
+  <span class="p">}</span>
+
+<span class="hll">  <span class="nx">ngAfterViewInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+</span>    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">sort</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">paginator</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Unsere Seite sieht jetzt so aus:</p>
+<p><img alt="Frontend" src="../files/89_frontend.png" /></p>
+<p>Beachten Sie, dass Sie die Tabellenzeilen sortieren können. Neben den Spaltenüberschriften erscheinen bei Mouseover jeweils kleine Pfeile. Wenn Sie darauf klicken, werden die Tabellenzeilen entsprechend der Spaltensortierung angezeigt. Beachten Sie auch das Paginieren. Rechts unterhalb der Tabelle können Sie die Anzahl der Tabellenseite auf einer Seite ändern (siehe in <code>table.component.html</code> die <code>[pageSizeOptions]="[25, 50, 100, 250]</code> für den <code>paginator</code>) und Sie können durch die Seiten blättern.</p>
+<p><strong>Ausblick:</strong> Wir haben die Daten hier clientseitig geladen, also nicht vom Server. Das werden wir später ändern. Zunächst schauen wir uns aber mal das <em>Routing</em> an. </p>
+<h2 id="routing">Routing<a class="headerlink" href="#routing" title="Permanent link">&para;</a></h2>
+<p>Sie haben sich vielleicht schon gefragt, wozu der <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>-Selektor da ist, der bei uns in der <code>nav.component.html</code> enthalten ist. Wir wollen jetzt Komponenten über die URL ansprechen, also z.B. im Browser <code>localhost:4200/table</code> angeben und nur unter dieser URL soll unsere Tabelle erscheinen. In Vorbereitung darauf, entfernen wir zunächst den Komponentenselektor für die Tabellen-Komponente aus der <code>nav.component.html</code>:</p>
+<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Ausschnitt aus nav.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c">&lt;!-- Add Content Here --&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Tis is nav-Content<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">mat-slider</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">step</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">mat-slider</span><span class="p">&gt;</span>
+<span class="hll"><span class="c">&lt;!-- &lt;jf-table&gt;&lt;/jf-table&gt; geloescht --&gt;</span>
+</span><span class="p">&lt;</span><span class="nt">router-outlet</span><span class="p">&gt;&lt;/</span><span class="nt">router-outlet</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- end of nav-Content --&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Jetzt sieht man die Tabelle nicht mehr. Wir binden Sie aber gleich über den <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>-Selektor wieder ein, wenn wir nämlich die URL <code>localhost:4200/table</code> aufrufen. Dies wird <em>Routing</em>  genannt. Um eine solche Route anzulegen, öffnen wir die Datei <code>src/app/app-routing.module.ts</code>. </p>
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">src/app/app-routing.module.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">RouterModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="hll"><span class="kr">import</span> <span class="p">{</span><span class="nx">TableComponent</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./table/table.component&#39;</span><span class="p">;</span>
+</span>
+<span class="kr">const</span> <span class="nx">routes</span><span class="o">:</span> <span class="nx">Routes</span> <span class="o">=</span> <span class="p">[</span>
+<span class="hll">  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">TableComponent</span> <span class="p">}</span>
+</span><span class="p">];</span>
+
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Geben Sie Zeile <code>6</code> ein und lassen Sie den Import (Zeile <code>3</code>) durch Ihre IDE erledigen. Wir haben uns eine neue Route angelegt. Wenn wir nun im Browser an die URL <code>localhost:4200</code> noch <code>/table</code> anhängen, wird die Tabellen-Komponente über den <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>-Selektor eingebunden und angezeigt. </p>
+<p>Öffnen Sie die <code>nav.component.html</code>. Darin passen wir die Liste der Links (<code>&lt;mat-nav-list&gt;</code>) an. Für Routen verwenden wir nicht <code>href</code>, sondern <code>routerLinks</code>. Die Liste soll so aussehen:</p>
+<div class="tabbed-set" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">Ausschnitt aus nav.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="o">&lt;</span><span class="nx">mat</span><span class="o">-</span><span class="nx">nav</span><span class="o">-</span><span class="nx">list</span><span class="o">&gt;</span>
+<span class="hll">  <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">mat</span><span class="o">-</span><span class="nx">list</span><span class="o">-</span><span class="nx">item</span> <span class="nx">routerLink</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="o">&gt;</span><span class="nx">Home</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
+</span><span class="hll">  <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">mat</span><span class="o">-</span><span class="nx">list</span><span class="o">-</span><span class="nx">item</span> <span class="nx">routerLink</span><span class="o">=</span><span class="s2">&quot;/table&quot;</span><span class="o">&gt;</span><span class="nx">Tabelle</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
+</span>  <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">mat</span><span class="o">-</span><span class="nx">list</span><span class="o">-</span><span class="nx">item</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span><span class="o">&gt;</span><span class="nx">Link</span> <span class="mi">3</span><span class="o">&lt;</span><span class="err">/a&gt;</span>
+<span class="o">&lt;</span><span class="err">/mat-nav-list&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Nun können wir die Navigations-komponente verwenden, um zwischen den Routen <code>/</code> und <code>/table</code> zu wechseln. </p>
+<h2 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h2>
+<p>Derzeit sind unsere MockUp-Daten statisch in der <code>table-datasource.ts</code> gespeichert. Wir wollen aber die Datenverwaltung (Speicherung und Bereitstellung) unabhängig von einer Komponente gestalten und allen Komponenten einen entsprechenden <em>Service</em> anbieten. Dazu erstellen wir uns einen solchen und legen diesen unter <code>shared</code> ab, da sich alle Komponenten diesen Service teilen (können).</p>
+<div class="highlight"><pre><span></span><code>ng g service shared/data
+</code></pre></div>
+
+<p>Es entsteht der <code>shared</code>-Ordner, der zwei Dateien enthält, die <code>data.service.ts</code> und die <code>data.service.spec.ts</code>. Letztere ist zum Testen und interessiert uns erstmal nicht. Schauen wir uns die <code>data.service.ts</code> einmal an:</p>
+<div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">src/shared/data.service.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">DataService</span> <span class="p">{</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Für Services gibt es keine Lifecycle-Hooks. Wir finden hier deshalb auch keine <code>ngOnInit()</code>-Methode. Während Komponenten den Decorator <code>@Component()</code> aufweisen, wird für Services der Decorator <code>@Injectable()</code> verwendet. Mit diesem Decorator geben wir an, dass der Service weitere Abhängigkeiten einbinden kann. Dies geschieht typischerweise über einen Parameter im Konstruktor - eine soganannte <em>dependency injection</em> (wenn über den Konstruktor, dann <em>constructor injection</em>). Auch wenn wir eine solche Abhängigkeit nicht einbinden, sollte der Decorator <code>@Injectable()</code> stets für einen Service angegeben werden. Dies liegt daran, dass wir diesen Decorator um die <code>providedIn</code>-Eigenschaft erweitern. Mit <code>providedIn: 'root'</code> geben wir an, dass der Service allen Komponenten (im gesamten Root-Modul) zur Verfügung steht, er also von allen Komponenten genutzt werden kann. Bevor wir uns weiter um diesen Service kümmern, erstellen wir uns erst noch ein Datenmodell, auf das alle Komponenten zugreifen können. </p>
+<h2 id="datenmodell">Datenmodell<a class="headerlink" href="#datenmodell" title="Permanent link">&para;</a></h2>
+<p>Derzeit haben wir unser Datenmodell ebenfalls statisch in der <code>table-datasource.ts</code> als <code>interface TableItem</code> definiert. Wir wollen das Interface auslagern und ebenfalls allen Komponenten zur Verfügung stellen. Wir erstellen das Interface <code>Data</code> (der Name ist sehr generisch gehalten - für Ihr eigenes Datenmodell sollten Sie einen besseren Namen wählen):</p>
+<div class="highlight"><pre><span></span><code>ng g interface shared/data 
+</code></pre></div>
+
+<p>Wir ändern nun zunächst die <code>table-source.ts</code>. Kommentieren Sie dort am besten das gesamte <code>interface TableItem</code> aus, dann sehen Sie besser, an welchen Stellen Sie <code>TableItem</code> durch <code>Data</code> ersetzen müssen. Ersetzen Sie dann überall <code>TableItem</code> durch <code>Data</code>. Passen Sie beim Importieren des Interfaces auf, dass Sie das richtige importieren, Ihre IDE bietet Ihnen auch andere Importmöglichkeiten an (das liegt an dem generisch gewählten Namen). Die richtige <code>import</code>-Anweisung ist: <code>import { Data } from '../shared/data';</code></p>
+<p>In der <code>table.component.ts</code> muss an der Stelle <code>@ViewChild(MatTable) table: MatTable&lt;TableItem&gt;;</code> ebenfalls <code>TableItem</code> durch <code>Data</code> ersetzt werden. In der Anweisung <code>import { TableDataSource, TableItem } from './table-datasource';</code> entfernen Sie <code>, TableItem</code> und fügen die Anweisung <code>import { Data } from '../shared/data';</code> hinzu. </p>
+<p>Unsere aktualisierten <code>table-datasource.ts</code> und <code>table.component.ts</code> sehen nun so aus:</p>
+<details><summary>aktualisierte Dateien</summary><div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">src/table/table.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">AfterViewInit</span><span class="p">,</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatPaginator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/paginator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatSort</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/sort&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatTable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/table&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">TableDataSource</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./table-datasource&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Data</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/data&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;jf-table&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./table.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./table.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TableComponent</span> <span class="kr">implements</span> <span class="nx">AfterViewInit</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">ViewChild</span><span class="p">(</span><span class="nx">MatPaginator</span><span class="p">)</span> <span class="nx">paginator</span><span class="o">:</span> <span class="nx">MatPaginator</span><span class="p">;</span>
+  <span class="err">@</span><span class="nx">ViewChild</span><span class="p">(</span><span class="nx">MatSort</span><span class="p">)</span> <span class="nx">sort</span><span class="o">:</span> <span class="nx">MatSort</span><span class="p">;</span>
+  <span class="err">@</span><span class="nx">ViewChild</span><span class="p">(</span><span class="nx">MatTable</span><span class="p">)</span> <span class="nx">table</span><span class="o">:</span> <span class="nx">MatTable</span><span class="o">&lt;</span><span class="nx">Data</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nx">dataSource</span><span class="o">:</span> <span class="nx">TableDataSource</span><span class="p">;</span>
+
+  <span class="cm">/** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */</span>
+  <span class="nx">displayedColumns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;forename&#39;</span><span class="p">,</span> <span class="s1">&#39;surname&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">];</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TableDataSource</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="nx">ngAfterViewInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">sort</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sort</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">paginator</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">paginator</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">onRowClicked</span><span class="p">(</span><span class="nx">row</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Row clicked: &#39;</span><span class="p">,</span> <span class="nx">row</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">highlight</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+</details>
+<p>Jetzt funktioniert unsere Seite wieder. Unter <code>localhost:4200/table</code> wird die Tabelle wieder korrekt angezeigt. Das Datenmodell wurde als eigenständiges <code>interface</code> ausgelagert und kann von allen Komponenten verwendet werden. Wir werden nun unseren <code>data.service</code> erweitern. Dazu öffnen wir die Datei <code>data.service.ts</code>. Wir fügen eine Eigenschaft <code>data</code> vom Typ <code>Data[]</code> hinzu, also den <code>interface</code>-Typ als Array. Bei der Erstellung des Services (im Konstruktor) werden die Daten eingelesen und <code>data</code> initialisiert. Außerdem erstellen wir eine Funktion <code>getAll()</code>, die das <code>Data[]</code> zurückgibt. </p>
+<div class="tabbed-set" data-tabs="12:1"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">data.service.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Data</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./data&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">DataService</span> <span class="p">{</span>
+<span class="hll">  <span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">[];</span>
+</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class="hll">      <span class="p">{</span>
+</span><span class="hll">        <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span class="hll">        <span class="nx">forename</span><span class="o">:</span> <span class="s1">&#39;Catherine&#39;</span><span class="p">,</span>
+</span><span class="hll">        <span class="nx">surname</span><span class="o">:</span> <span class="s1">&#39;Williams&#39;</span><span class="p">,</span>
+</span><span class="hll">        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;cwilliamsl@360.cn&#39;</span>
+</span><span class="hll">      <span class="p">},</span>
+</span><span class="hll">      <span class="cm">/* hier das gesamte Array einfügen! - an dieser Stelle gekürzt */</span>
+</span><span class="hll">      <span class="p">{</span>
+</span><span class="hll">        <span class="nx">id</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+</span><span class="hll">        <span class="nx">forename</span><span class="o">:</span> <span class="s1">&#39;Eugene&#39;</span><span class="p">,</span>
+</span><span class="hll">        <span class="nx">surname</span><span class="o">:</span> <span class="s1">&#39;Williams&#39;</span><span class="p">,</span>
+</span><span class="hll">        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;ewilliamsi@deliciousdays.com&#39;</span>
+</span><span class="hll">      <span class="p">}</span>
+</span><span class="hll">    <span class="p">];</span>
+</span>  <span class="p">}</span>
+
+<span class="hll">  <span class="nx">getAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Data</span><span class="p">[]</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+</span><span class="hll">  <span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Nun lassen wir die <code>table</code>-Komponente den Service nutzen. Dazu öffnen wir zunächst die <code>table-datasource.ts</code>. Darin löschen wir die komplette Deklaration und Initialsisierung der <code>const EXAMPLE_DATA: Data[]</code>, da wir die Daten ja jetzt über die <code>getAll()</code>-Funktion des Services holen wollen. Dazu binden wir den Service per * dependency injection* in den Konstruktor von <code>TableDatasource</code> ein und rufen in dem Konstruktor die <code>getAll()</code>-Funktion des <code>DataService</code> auf:</p>
+<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">table-datasource.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">DataSource</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/cdk/collections&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatPaginator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/paginator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">MatSort</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/material/sort&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">map</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/operators&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Observable</span><span class="p">,</span> <span class="k">of</span> <span class="nx">as</span> <span class="nx">observableOf</span><span class="p">,</span> <span class="nx">merge</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Data</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/data&#39;</span><span class="p">;</span>
+<span class="hll"><span class="kr">import</span> <span class="p">{</span> <span class="nx">DataService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/data.service&#39;</span><span class="p">;</span>
+</span>
+<span class="cm">/**</span>
+<span class="cm"> * Data source for the Table view. This class should</span>
+<span class="cm"> * encapsulate all logic for fetching and manipulating the displayed data</span>
+<span class="cm"> * (including sorting, pagination, and filtering).</span>
+<span class="cm"> */</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TableDataSource</span> <span class="kr">extends</span> <span class="nx">DataSource</span><span class="o">&lt;</span><span class="nx">Data</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">[];</span>
+  <span class="nx">paginator</span><span class="o">:</span> <span class="nx">MatPaginator</span><span class="p">;</span>
+  <span class="nx">sort</span><span class="o">:</span> <span class="nx">MatSort</span><span class="p">;</span>
+
+<span class="hll">  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">ds</span><span class="o">:</span> <span class="nx">DataService</span><span class="p">)</span> <span class="p">{</span>
+</span>    <span class="kr">super</span><span class="p">();</span>
+<span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ds</span><span class="p">.</span><span class="nx">getAll</span><span class="p">();</span>
+</span>  <span class="p">}</span>
+
+  <span class="cm">/*</span>
+<span class="cm">   * hier noch der Rest der Klasse </span>
+<span class="cm">   * connect(), disconnect(), sort(), usw.</span>
+<span class="cm">   */</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Jetzt muss in der <code>table.component.ts</code> nur noch der Aufruf des Konstruktors vom <code>DataService</code> als Parmeter der <code>TableDataSource()</code>-Konstruktors erfolgen:</p>
+<div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">table.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+<span class="hll">   <span class="k">this</span><span class="p">.</span><span class="nx">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TableDataSource</span><span class="p">(</span><span class="k">new</span> <span class="nx">DataService</span><span class="p">());</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Der <code>DataService</code> muss dazu in <code>table.component.ts</code> importiert werden. Lassen Sie das durch Ihre IDE erledigen. Nun werden die Daten über den Service bereitgestellt. </p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir haben ein Datenmodell für unsere Daten erstellt und einen Service, der diese Daten über die <code>getAll()</code>-Funktion zur Verfügung stellt. Wir werden den Service um weitere Funktionen erweitern und weitere Routen zu unserer Anwendung hinzufügen. </p>
+</div>
+<h3 id="parametrisierte-routen">Parametrisierte Routen<a class="headerlink" href="#parametrisierte-routen" title="Permanent link">&para;</a></h3>
+<p>Bis jetzt zeigen wir alle Daten zugleich in einer Tabelle an. Nun wollen wir auf einzelne Datensätze zugreifen. Dies soll über die <code>id</code> aus unserem Datensatz geschehen. Wir wollen die einzelnen Datensätze über die URL <code>localhost:4200/table/id</code> erreichen, wobei <code>id</code> für eine Zahl steht. </p>
+<p>Dazu erzeugen wir uns zunächst eine neue Komponente <code>single</code>:</p>
+<div class="highlight"><pre><span></span><code>ng g c single
+</code></pre></div>
+
+<p>Diese Komponente soll ein Formular mit den Daten eines einzelnen Datensatzes aus unseren Mock-Up-Daten enthalten. Zunächst kümmern wir uns um die Route, über die die Single-Komponente erreichbar sein soll. Dazu öffnen wir die <code>app-routing.module.ts</code> und erweitern das <code>routes</code>-Array:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">routes</span><span class="o">:</span> <span class="nx">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">TableComponent</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;table/:id&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">SingleComponent</span> <span class="p">}</span>
+<span class="p">];</span>
+</code></pre></div>
+
+<p>Die <code>id</code> wird als Parameter für die Route vorgesehen, deshalb wird die Syntax <code>:id</code> verwendet. Damit der entsprechende Wert für <code>:id</code> aus der URL ausgelesen werden kann, benötigen wir in der Single-Komponente ein Objekt der Klasse <code>ActivatedRoute</code>. Dieses Objekt binden wir per <em>dependency injection</em> in den Konstruktor der Single-Komponente ein und fragen die URL in der <code>ngOnInit()</code>-Methode ab:</p>
+<div class="tabbed-set" data-tabs="15:1"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">single.component.ts (Ausschnitt)</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">ActivatedRoute</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">DataService</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/data.service&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Data</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/data&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">SingleComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">id</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">route</span><span class="o">:</span> <span class="nx">ActivatedRoute</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">ds</span><span class="o">:</span> <span class="nx">DataService</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">route</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">paramMap</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ds</span><span class="p">.</span><span class="nx">getSingleId</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Wir lesen aus der URL den Parameter <code>id</code> aus und speichern den Wert in <code>this.id</code>. Mit dem Wert rufen wir die <code>getSingleId()</code>-Funktion aus dem <code>DataService</code> auf. Diese Funktion gibt den Datensatz mit der entsprechenden <code>id</code> zurück:</p>
+<div class="tabbed-set" data-tabs="16:1"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">data.service.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Data</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./data&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">DataService</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">[];</span>
+
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>   <span class="cm">/* hier das gesamte Array */</span>        <span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="nx">getAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Data</span><span class="p">[]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="hll">  <span class="nx">getSingleId</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Data</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">===</span> <span class="nx">id</span><span class="p">));</span>
+</span><span class="hll">  <span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Für <em>Arrow-Funktionen</em> siehe <a href="../javascript/#arrow-funktionen">hier</a>. Die <code>Single-Komponente</code> gestalten wir als Formular:</p>
+<div class="tabbed-set" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">single.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="err">[</span><span class="na">formGroup</span><span class="err">]=&quot;</span><span class="na">singleFormGroup</span><span class="err">&quot;</span> <span class="err">(</span><span class="na">ngSubmit</span><span class="err">)=&quot;</span><span class="na">onSubmit</span><span class="err">(</span><span class="na">singleFormGroup</span><span class="err">.</span><span class="na">value</span><span class="err">)&quot;</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">mat-form-field</span> <span class="na">appearance</span><span class="o">=</span><span class="s">&quot;fill&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-label</span><span class="p">&gt;</span>Vorname<span class="p">&lt;/</span><span class="nt">mat-label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">matInput</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Vorname&quot;</span> <span class="na">formControlName</span><span class="o">=</span><span class="s">&quot;forenameControl&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">mat-form-field</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">mat-form-field</span> <span class="na">appearance</span><span class="o">=</span><span class="s">&quot;fill&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-label</span><span class="p">&gt;</span>Nachname<span class="p">&lt;/</span><span class="nt">mat-label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">matInput</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Nachname&quot;</span> <span class="na">formControlName</span><span class="o">=</span><span class="s">&quot;surnameControl&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">mat-form-field</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">mat-form-field</span> <span class="na">appearance</span><span class="o">=</span><span class="s">&quot;fill&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">mat-label</span><span class="p">&gt;</span>E-Mail<span class="p">&lt;/</span><span class="nt">mat-label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">matInput</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;E-Mail&quot;</span> <span class="na">formControlName</span><span class="o">=</span><span class="s">&quot;emailControl&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">mat-form-field</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">mat-raised-button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Change<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><label for="__tabbed_17_2">single.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">FormBuilder</span><span class="p">,</span> <span class="nx">FormGroup</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/forms&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">ActivatedRoute</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">DataService</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/data.service&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Data</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/data&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;jf-single&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./single.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./single.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">SingleComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">singleFormGroup</span><span class="o">:</span> <span class="nx">FormGroup</span><span class="p">;</span>
+  <span class="nx">id</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">fb</span><span class="o">:</span> <span class="nx">FormBuilder</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">route</span><span class="o">:</span> <span class="nx">ActivatedRoute</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">ds</span><span class="o">:</span> <span class="nx">DataService</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">route</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">paramMap</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ds</span><span class="p">.</span><span class="nx">getSingleId</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">singleFormGroup</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">createFormGroup</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">singleFormGroup</span><span class="p">.</span><span class="nx">setValue</span><span class="p">({</span>
+      <span class="nx">forenameControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">forename</span><span class="p">,</span>
+      <span class="nx">surnameControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">surname</span><span class="p">,</span>
+      <span class="nx">emailControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">email</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">createFormGroup</span><span class="p">()</span><span class="o">:</span> <span class="nx">FormGroup</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
+      <span class="nx">forenameControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+      <span class="nx">surnameControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+      <span class="nx">emailControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">]</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">onSubmit</span><span class="p">(</span><span class="nx">formData</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">singleFormGroup</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">&#39;Submitted: &#39;</span><span class="p">,</span> <span class="nx">formData</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Das Formular ist als <em>reaktives</em> Formular definiert (im Gegensatz zu <em>Template-Formularen</em>). Wir verwenden den <code>FormBuilder</code> und dessen <code>group</code>-Funktion, um ein Formular zu erstellen. Das Formular selbst ist eine <code>FormGroup</code>. Es enthält drei <code>FormControl</code>-Elemente: <code>forenameControl</code>, <code>surnameControl</code> und <code>emailControl</code>. Mithilfe der <code>setValue()</code>-Funktion wird für diese Elemente ein <code>value</code> gesetzt. </p>
+<p>Unter dem Aufruf <code>http://localhost:4200/table/11</code> sieht das Frontend jetzt z.B. so aus (Sie können natürlich auch den Slider und die Überschrift entfernen):</p>
+<p><img alt="frontend" src="../files/90_frontend.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir haben das Metrial-Schema für eine Tabelle ausprobiert, in der alle unsere Mockup-Daten angezeigt werden. In der Tablle kann nach allen Spalten sortiert werden. Außerdem ist die Tabelle paginiert. Wir haben Routing eingeführt, um über "sprechende" URLs auf unsere Komponenten zuzugreifen. Die Routen wurden auch mithife der IDs aus dem Datensatz parametrisiert. Wir haben ein Formular verwendet, um einen einzelnen Datensatz anzuzeigen. Die Verwaltung der Daten erfolgt über einen Service, der allen Komponenten zur Verfügung steht. Noch sind unsere Daten client-seitig gespeichert. Das soll in der nächsten Lektion geändert werden. </p>
+</div>
                 
               
               
@@ -904,13 +2119,13 @@ auf, um eine <code>nav</code>-Komponente zu erstellen. Nun rufen wir die <code>d
           </a>
         
         
-          <a href="../node/" title="Node.js" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../backend/" title="REST-API" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Weiter
                 </span>
-                Node.js
+                REST-API
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
