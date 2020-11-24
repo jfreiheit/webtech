@@ -2428,8 +2428,8 @@
 		
 
 ??? question "Übungsaufgabe 7"
-    - Arbeiten Sie den Abschnitt [Material](./material/#material-fur-angular) vollständig durch und erweitern Sie Ihr Frontend entsprechend. 
+    - Arbeiten Sie den Abschnitt [Material](../material/#material-fur-angular) vollständig durch und erweitern Sie Ihr Frontend entsprechend. 
 
 
 ??? question "Übungsaufgabe 8"
-    - Arbeiten Sie den Abschnitt [REST-API](./backend/#rest-api) vollständig durch und erstellen Sie ein Backend (REST-Server) für die Bereitstellung der CRUD-Funktionalitäten über unsere Mockup-Daten. Speichern Sie diese Daten in einer MySQL-Datenbank.  
+    - Arbeiten Sie den Abschnitt [REST-API](../backend/#rest-api) vollständig durch und erstellen Sie ein Backend (REST-Server) für die Bereitstellung der CRUD-Funktionalitäten über unsere Mockup-Daten. Speichern Sie diese Daten in einer MySQL-Datenbank.  
