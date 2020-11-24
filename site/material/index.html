@@ -417,18 +417,12 @@
     Datenmodell
   </a>
   
-    <nav class="md-nav" aria-label="Datenmodell">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parametrisierte-routen" class="md-nav__link">
     Parametrisierte Routen
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -551,18 +545,12 @@
     Datenmodell
   </a>
   
-    <nav class="md-nav" aria-label="Datenmodell">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parametrisierte-routen" class="md-nav__link">
     Parametrisierte Routen
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1832,7 +1820,7 @@
 <p class="admonition-title">Success</p>
 <p>Wir haben ein Datenmodell für unsere Daten erstellt und einen Service, der diese Daten über die <code>getAll()</code>-Funktion zur Verfügung stellt. Wir werden den Service um weitere Funktionen erweitern und weitere Routen zu unserer Anwendung hinzufügen. </p>
 </div>
-<h3 id="parametrisierte-routen">Parametrisierte Routen<a class="headerlink" href="#parametrisierte-routen" title="Permanent link">&para;</a></h3>
+<h2 id="parametrisierte-routen">Parametrisierte Routen<a class="headerlink" href="#parametrisierte-routen" title="Permanent link">&para;</a></h2>
 <p>Bis jetzt zeigen wir alle Daten zugleich in einer Tabelle an. Nun wollen wir auf einzelne Datensätze zugreifen. Dies soll über die <code>id</code> aus unserem Datensatz geschehen. Wir wollen die einzelnen Datensätze über die URL <code>localhost:4200/table/id</code> erreichen, wobei <code>id</code> für eine Zahl steht. </p>
 <p>Dazu erzeugen wir uns zunächst eine neue Komponente <code>single</code>:</p>
 <div class="highlight"><pre><span></span><code>ng g c single
@@ -1845,7 +1833,7 @@
 <span class="p">];</span>
 </code></pre></div>
 
-<p>Die <code>id</code> wird als Parameter für die Route vorgesehen, deshalb wird die Syntax <code>:id</code> verwendet. Damit der entsprechende Wert für <code>:id</code> aus der URL ausgelesen werden kann, benötigen wir in der Single-Komponente ein Objekt der Klasse <code>ActivatedRoute</code>. Dieses Objekt binden wir per <em>dependency injection</em> in den Konstruktor der Single-Komponente ein und fragen die URL in der <code>ngOnInit()</code>-Methode ab:</p>
+<p>Die <code>id</code> wird als Parameter für die Route vorgesehen, deshalb wird die Syntax <code>:id</code> verwendet. Damit der entsprechende Wert für <code>:id</code> aus der URL ausgelesen werden kann, benötigen wir in der Single-Komponente ein Objekt der Klasse <code>ActivatedRoute</code>. Dieses Objekt binden wir per <em>dependency injection</em> in den Konstruktor der Single-Komponente ein und fragen die URL in der <code>ngOnInit()</code>-Methode ab. Beachten Sie, wenn wir Objekte als <code>private</code> in den Konstruktor injizieren, dann wird daraus eine Eigenschaft der Klasse, d.h. wir können <code>route</code> und <code>ds</code> mithilfe von <code>this</code> in jeder Funktion der Klasse verwenden.:</p>
 <div class="tabbed-set" data-tabs="15:1"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">single.component.ts (Ausschnitt)</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>14
 15
@@ -1861,8 +1849,7 @@
 25
 26
 27
-28
-29</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">ActivatedRoute</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">ActivatedRoute</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span><span class="nx">DataService</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/data.service&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span><span class="nx">Data</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../shared/data&#39;</span><span class="p">;</span>
 
@@ -1871,7 +1858,6 @@
   <span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">;</span>
 
   <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">route</span><span class="o">:</span> <span class="nx">ActivatedRoute</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">ds</span><span class="o">:</span> <span class="nx">DataService</span><span class="p">)</span> <span class="p">{</span>
-
   <span class="p">}</span>
 
   <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
@@ -1883,7 +1869,7 @@
 
 </div>
 </div>
-<p>Wir lesen aus der URL den Parameter <code>id</code> aus und speichern den Wert in <code>this.id</code>. Mit dem Wert rufen wir die <code>getSingleId()</code>-Funktion aus dem <code>DataService</code> auf. Diese Funktion gibt den Datensatz mit der entsprechenden <code>id</code> zurück:</p>
+<p>Wir lesen aus der URL den Parameter <code>id</code> aus und speichern den Wert in <code>this.id</code> (siehe Zeile <code>26</code>). Mit dem Wert rufen wir die <code>getSingleId()</code>-Funktion aus dem <code>DataService</code> auf. Diese Funktion gibt den Datensatz mit der entsprechenden <code>id</code> zurück:</p>
 <div class="tabbed-set" data-tabs="16:1"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">data.service.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2

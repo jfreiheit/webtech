@@ -1303,7 +1303,7 @@ Der `DataService` muss dazu in `table.component.ts` importiert werden. Lassen Si
 !!! success
 	Wir haben ein Datenmodell für unsere Daten erstellt und einen Service, der diese Daten über die `getAll()`-Funktion zur Verfügung stellt. Wir werden den Service um weitere Funktionen erweitern und weitere Routen zu unserer Anwendung hinzufügen. 
 
-### Parametrisierte Routen
+## Parametrisierte Routen
 
 Bis jetzt zeigen wir alle Daten zugleich in einer Tabelle an. Nun wollen wir auf einzelne Datensätze zugreifen. Dies soll über die `id` aus unserem Datensatz geschehen. Wir wollen die einzelnen Datensätze über die URL `localhost:4200/table/id` erreichen, wobei `id` für eine Zahl steht. 
 
@@ -1322,7 +1322,7 @@ const routes: Routes = [
 ];
 ``` 
 
-Die `id` wird als Parameter für die Route vorgesehen, deshalb wird die Syntax `:id` verwendet. Damit der entsprechende Wert für `:id` aus der URL ausgelesen werden kann, benötigen wir in der Single-Komponente ein Objekt der Klasse `ActivatedRoute`. Dieses Objekt binden wir per *dependency injection* in den Konstruktor der Single-Komponente ein und fragen die URL in der `ngOnInit()`-Methode ab:
+Die `id` wird als Parameter für die Route vorgesehen, deshalb wird die Syntax `:id` verwendet. Damit der entsprechende Wert für `:id` aus der URL ausgelesen werden kann, benötigen wir in der Single-Komponente ein Objekt der Klasse `ActivatedRoute`. Dieses Objekt binden wir per *dependency injection* in den Konstruktor der Single-Komponente ein und fragen die URL in der `ngOnInit()`-Methode ab. Beachten Sie, wenn wir Objekte als `private` in den Konstruktor injizieren, dann wird daraus eine Eigenschaft der Klasse, d.h. wir können `route` und `ds` mithilfe von `this` in jeder Funktion der Klasse verwenden.:
 
 === "single.component.ts (Ausschnitt)"
 	```javascript linenums="14"
@@ -1335,7 +1335,6 @@ Die `id` wird als Parameter für die Route vorgesehen, deshalb wird die Syntax `
 	  data: Data;
 
 	  constructor(private route: ActivatedRoute, private ds: DataService) {
-
 	  }
 
 	  ngOnInit(): void {
@@ -1344,7 +1343,7 @@ Die `id` wird als Parameter für die Route vorgesehen, deshalb wird die Syntax `
 	  }
 	```
 
-Wir lesen aus der URL den Parameter `id` aus und speichern den Wert in `this.id`. Mit dem Wert rufen wir die `getSingleId()`-Funktion aus dem `DataService` auf. Diese Funktion gibt den Datensatz mit der entsprechenden `id` zurück:
+Wir lesen aus der URL den Parameter `id` aus und speichern den Wert in `this.id` (siehe Zeile `26`). Mit dem Wert rufen wir die `getSingleId()`-Funktion aus dem `DataService` auf. Diese Funktion gibt den Datensatz mit der entsprechenden `id` zurück:
 
 === "data.service.ts"
 	```javascript linenums="1" hl_lines="18-20"
