@@ -2433,3 +2433,7 @@
 
 ??? question "Übungsaufgabe 8"
     - Arbeiten Sie den Abschnitt [REST-API](../backend/#rest-api) vollständig durch und erstellen Sie ein Backend (REST-Server) für die Bereitstellung der CRUD-Funktionalitäten über unsere Mockup-Daten. Speichern Sie diese Daten in einer MySQL-Datenbank.  
+
+
+??? question "Übungsaufgabe 9"
+    - Arbeiten Sie den Abschnitt [Anbindung an das Backend](../backendanbindung/#anbindung-an-das-backend) vollständig durch und erstellen Sie ein Frontend, das an das im Abschnitt [REST-API](../backend/#rest-api) erstellte Backend insofern angebunden ist, dass Sie bereits die Endpunkte `GET localhost:3000/members` und `GET localhost:3000/members/id` angebunden haben und alle Datensätze geeignet (z.B. in einer Tablle) darstellen und einzelne Datensätze ebenso (z.B. in einem Formular).  Sie müssen das Frontend nicht zwingend neu erstellen - sie können auch Ihr bisheriges Frontend entsprechend anpassen. Sie müssen auch nicht zwingend Bootstrap verwenden - Sie können gerne auch alles mit [Material](../material/#material-fur-angular) stylen, wenn Sie möchten (oder einem anderen CSS-Framework). 

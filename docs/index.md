@@ -19,8 +19,8 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst). Die Vorlesung
 | 7. | 16.-20.11.2020 | Angular (Einführung und Komponenten) | Übung 6 | Schnittstelle | 29.11.2020 | 
 | 8. | 23.-27.11.2020 | Angular (Material und Routen) | Übung 7 | Frontend (c+r)| 13.12.2020 | 
 | 9. | 30.-04.12.2020 | Node.js + Express (REST-Server + MySQL) | Übung 8 | Frontend (u+d)| 20.12.2020 | 
-| 10. | 07.-11.12.2020 | Angular (Anbindung ans Backend) | Übung 9 | Frontend fertig | 10.01.2020 | 
-| 11. | 14.-18.12.2020 | Node.js (Einführung, Webserver) | Übung 10 | Backend ( c ) | 17.01.2020 | 
+| 10. | 07.-11.12.2020 | Angular (Anbindung ans Backend I) | Übung 9 | Frontend fertig | 10.01.2020 | 
+| 11. | 14.-18.12.2020 | Angular (Anbindung ans Backend II) | Übung 10 | Backend ( c ) | 17.01.2020 | 
 | 12. | 21.-25.12.2020 | Node.js (Express, Request, Response, URL)  | - | Backend ( r ) | - |
 | | | | | | | |
 | 13. | 04.-08.01.2021 | Node.js (Model View Controller) | - | Backend (u) | - |
@@ -529,6 +529,11 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	- Wir erstellen ein Backend. Wir nutzen Node.js und Express, um einen REST-Server zu implementieren, der uns alle CRUD-Funktionalitäten für die Verwaltung unseres Mockup-Datensatzes zur Verfügung stellt. Wir verwenden MySQL zur Speicherung unserer Mockup-Daten. Der REST-Server enthält ein Model und einen Controller.  
 	- Es gibt kein Video, da der Abschnitt [REST-API](./backend/#rest-api) vollständig als Schritt-für-Schritt-Anleitung geschrieben wurde. 
 	- die **Übungsaufgabe 8** besteht darin, diesen Abschnitt Schritt für Schritt nachzuvollziehen. 
+
+??? question "Woche 10 - Angular - Anbindung ans Backend I"
+	- Wir erstellen ein Frontend, mit dem wir an das im Abschnitt [REST-API](./backend/#rest-api) Backend anbinden. Wir beginnen mit dem Auslesen aller Datensätze und lesen dann auch noch einen einzelnen Datensatz aus. Es werden also die Backend-Endpunkte `GET localhost:3000/members` und `GET localhost:3000/members/id` angebunden. Dazu machen wir uns mit dem `HttpClient` vertraut und lernen `Observable`s kennen. Wir erstellen unter Verwendung von Bootstrap eine Tabelle und ein Formular und nutzen Bootstrap-Icons. Wir untersuchen, wie man den Datenfluss von Eltern- auf Kindkomponenten realisiert und verwenden Interpolation sowie Strukturdirektiven.   
+	- Es gibt kein Video, da der Abschnitt [Anbindung an das Backend](./backendanbindung/#anbindung-an-das-backend) vollständig als Schritt-für-Schritt-Anleitung mit zusätzlichen Erläuterungen und Links geschrieben wurde. 
+	- die **Übungsaufgabe 9** besteht darin, diesen Abschnitt Schritt für Schritt nachzuvollziehen. 
 
 ## Semesteraufgabe
 

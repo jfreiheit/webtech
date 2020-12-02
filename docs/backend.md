@@ -798,4 +798,57 @@ Beachten Sie, dass danach die `id`-Werte andere sind, da es sich um einen `AUTO 
 !!! success
 	Wir haben unser Backend erfolgreich als REST-Server implementiert, der alle CRUD-Funktionalitäten umsetzt. Wir werden im nächsten Schritt das Frontend nun so gestalten, dass es auf die REST-API zugreift und das Backend für die Datenverwaltung verwendet. 
 
+### Cross-Origin Resource Sharing (CORS)
+
+Die *Same Origin Policy (SOP)* ist ein Sicherheitskonzept, das clientseitig Skriptsprachen (also z.B. JavaScript oder CSS) untersagt, Ressourcen aus verschiedenen Herkunften zu verwenden, also von verschiedenen Servern. Dadurch soll verhindert werden, dass fremde Skripte in die bestehende Client-Server-Kommunikation eingeschleust werden. Gleiche *Herkunft (origin)* bedeutet, dass das gleiche Protokoll (z.B. `http` oder `https`), von der gleichen Domain (z.B. `localhost` oder `htw-berlin`) sowie dem gleichen Port (z.B. `80` oder `4200`) verwendet werden. Es müssen alle drei Eigenschaften übereinstimmen. 
+
+Mit dem Aufkommen von Single Page Applications und dem darin benötigten AJAX kam jedoch der Bedarf auf, die SOP aufzuweichen. Es sollte möglich sein, dass z.B. JavaScript sowohl client-seitig das DOM ändert als auch einen Request an den Server (das Backend) sendet. Der Kompromiss, der dafür gefunden wurde, nennt sich *Cross-Origin Resource Sharing (CORS)*. Damit ist es möglich, für einige oder alle Anfragen zu definieren, dass sie im Sinne der SOP trotzdem erlaub sein sollen. 
+
+Um CORS für Ihr Backend zu aktivieren, wechseln Sie im Terminal in Ihren `backend`-Ordner und geben dort
+
+```bash
+npm install cors
+```
+
+ein. Öffnen Sie dann die `server.js` und fügen Sie die hervorgehobenen Zeilen ein:
+
+=== "server.js"
+	```javascript linenums="1" hl_lines="2 10-11"
+	const express = require("express");
+	const cors = require('cors');
+	const bodyParser = require("body-parser");
+
+	const app = express();
+
+	// parse requests of content-type: application/json
+	app.use(bodyParser.json());
+
+	// enable cors for all requests
+	app.use(cors());
+
+	// parse requests of content-type: application/x-www-form-urlencoded
+	app.use(bodyParser.urlencoded({ extended: true }));
+
+	// simple route
+	app.get("/", (req, res) => {
+	    res.json({ message: "Hello FIW!" });
+	});
+
+	require("./app/routes/members.routes.js")(app);
+
+	// set port, listen for requests
+	app.listen(3000, () => {
+	    console.log("Server is running on port 3000.");
+	});
+	```
+
+Wenn Sie z.B. nur die `get`-Anfrage teilen wollen, dann wählen Sie nicht `app.use(cors());`, sondern 
+
+```javascript
+app.get("/", cors(), (req, res) => {
+	    res.json({ message: "Hello FIW!" });
+	});
+```
+
+Mehr zum CORS-Paket von node.js bzw. express finden Sie [hier](https://expressjs.com/en/resources/middleware/cors.html).
 

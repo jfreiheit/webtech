@@ -772,20 +772,21 @@ Für Services gibt es keine Lifecycle-Hooks. Wir finden hier deshalb auch keine 
 
 ## Datenmodell
 
-Derzeit haben wir unser Datenmodell ebenfalls statisch in der `table-datasource.ts` als `interface TableItem` definiert. Wir wollen das Interface auslagern und ebenfalls allen Komponenten zur Verfügung stellen. Wir erstellen das Interface `Data` (der Name ist sehr generisch gehalten - für Ihr eigenes Datenmodell sollten Sie einen besseren Namen wählen):
+Derzeit haben wir unser Datenmodell ebenfalls statisch in der `table-datasource.ts` als `interface TableItem` definiert. Wir wollen das Interface auslagern (d.h. das Interface wird aus `table-datasource.ts` **gelöscht** und in das neue `data.ts` eingefügt) und ebenfalls allen Komponenten zur Verfügung stellen. Wir erstellen das Interface `Data` (der Name ist sehr generisch gehalten - für Ihr eigenes Datenmodell sollten Sie einen besseren Namen wählen):
 
 ```bash
 ng g interface shared/data 
 ```
 
-Wir ändern nun zunächst die `table-source.ts`. Kommentieren Sie dort am besten das gesamte `interface TableItem` aus, dann sehen Sie besser, an welchen Stellen Sie `TableItem` durch `Data` ersetzen müssen. Ersetzen Sie dann überall `TableItem` durch `Data`. Passen Sie beim Importieren des Interfaces auf, dass Sie das richtige importieren, Ihre IDE bietet Ihnen auch andere Importmöglichkeiten an (das liegt an dem generisch gewählten Namen). Die richtige `import`-Anweisung ist: `import { Data } from '../shared/data';`
+Wir ändern nun zunächst die `table-source.ts`. Kommentieren Sie dort am besten das gesamte `interface TableItem` aus (Sie können es auch gleich löschen), dann sehen Sie besser, an welchen Stellen Sie `TableItem` durch `Data` ersetzen müssen. Ersetzen Sie dann überall `TableItem` durch `Data`. Passen Sie beim Importieren des Interfaces auf, dass Sie das richtige importieren, Ihre IDE bietet Ihnen auch andere Importmöglichkeiten an (das liegt an dem generisch gewählten Namen). Die richtige `import`-Anweisung ist: `import { Data } from '../shared/data';`
 
-In der `table.component.ts` muss an der Stelle `  @ViewChild(MatTable) table: MatTable<TableItem>;` ebenfalls `TableItem` durch `Data` ersetzt werden. In der Anweisung `import { TableDataSource, TableItem } from './table-datasource';` entfernen Sie `, TableItem` und fügen die Anweisung `import { Data } from '../shared/data';` hinzu. 
+In der `table.component.ts` muss an der Stelle ` @ViewChild(MatTable) table: MatTable<TableItem>;` ebenfalls `TableItem` durch `Data` ersetzt werden. In der Anweisung `import { TableDataSource, TableItem } from './table-datasource';` entfernen Sie `, TableItem` und fügen die Anweisung `import { Data } from '../shared/data';` hinzu. 
 
 Unsere aktualisierten `table-datasource.ts` und `table.component.ts` sehen nun so aus:
 
 ??? "aktualisierte Dateien"
-	 === "src/table/table-datasource.ts"
+
+	=== "src/table/table-datasource.ts"
 		```javascript linenums="1"
 		import { DataSource } from '@angular/cdk/collections';
 		import { MatPaginator } from '@angular/material/paginator';
@@ -1172,8 +1173,9 @@ Unsere aktualisierten `table-datasource.ts` und `table.component.ts` sehen nun s
 		function compare(a: string | number, b: string | number, isAsc: boolean): number {
 		  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 		}
-
 	    ```
+
+
 	=== "src/table/table.component.ts"
 		```javascript linenums="1"
 		import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
@@ -1256,7 +1258,7 @@ Jetzt funktioniert unsere Seite wieder. Unter `localhost:4200/table` wird die Ta
 
 	``` 
 
-Nun lassen wir die `table`-Komponente den Service nutzen. Dazu öffnen wir zunächst die `table-datasource.ts`. Darin löschen wir die komplette Deklaration und Initialsisierung der `const EXAMPLE_DATA: Data[]`, da wir die Daten ja jetzt über die `getAll()`-Funktion des Services holen wollen. Dazu binden wir den Service per * dependency injection* in den Konstruktor von `TableDatasource` ein und rufen in dem Konstruktor die `getAll()`-Funktion des `DataService` auf:
+Nun lassen wir die `table`-Komponente den Service nutzen. Dazu öffnen wir zunächst die `table-datasource.ts`. Darin löschen wir die komplette Deklaration und Initialsisierung der `const EXAMPLE_DATA: Data[]`, da wir die Daten ja jetzt über die `getAll()`-Funktion des Services holen wollen. Dazu binden wir den Service per *dependency injection* in den Konstruktor von `TableDatasource` ein und rufen in dem Konstruktor die `getAll()`-Funktion des `DataService` auf:
 
 === "table-datasource.ts"
 	```javascript linenums="1" hl_lines="7 19 21"
