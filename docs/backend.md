@@ -705,21 +705,16 @@ Wir implementieren der Vollständigkeit halber noch die `deleteAll()`-Methode. S
 #### D - delete all
 
 === "app/controller/members.controller.js"
-	```javascript linenums="87"
-	// Delete a Member with the specified memberId in the request
-	exports.delete = (req, res) => {
-	    Member.remove(req.params.memberId, (err, data) => {
-	        if (err) {
-	            if (err.kind === "not_found") {
-	                res.status(404).send({
-	                    message: `Not found Member with id ${req.params.memberId}.`
-	                });
-	            } else {
-	                res.status(500).send({
-	                    message: "Could not delete Member with id " + req.params.memberId
-	                });
-	            }
-	        } else res.send({ message: `Member was deleted successfully!` });
+	```javascript linenums="104"
+	// Delete all Members from the database.
+	exports.deleteAll = (req, res) => {
+	    Member.removeAll((err, data) => {
+	        if (err)
+	            res.status(500).send({
+	                message:
+	                    err.message || "Some error occurred while removing all members."
+	            });
+	        else res.send({ message: `All Members were deleted successfully!` });
 	    });
 	};
 	``` 

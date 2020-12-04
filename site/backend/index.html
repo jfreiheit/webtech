@@ -1496,35 +1496,25 @@ found <span class="m">0</span> vulnerabilities
 <p>Wir implementieren der Vollständigkeit halber noch die <code>deleteAll()</code>-Methode. Sie können ja entscheiden, ob Sie sie ausprobieren wollen oder nicht ;-)</p>
 <h4 id="d-delete-all">D - delete all<a class="headerlink" href="#d-delete-all" title="Permanent link">&para;</a></h4>
 <div class="tabbed-set" data-tabs="12:1"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">app/controller/members.controller.js</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 87
- 88
- 89
- 90
- 91
- 92
- 93
- 94
- 95
- 96
- 97
- 98
- 99
-100
-101
-102</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// Delete a Member with the specified memberId in the request</span>
-<span class="nx">exports</span><span class="p">.</span><span class="k">delete</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">Member</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">kind</span> <span class="o">===</span> <span class="s2">&quot;not_found&quot;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">404</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
-                    <span class="nx">message</span><span class="o">:</span> <span class="sb">`Not found Member with id </span><span class="si">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span><span class="si">}</span><span class="sb">.`</span>
-                <span class="p">});</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
-                    <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Could not delete Member with id &quot;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span>
-                <span class="p">});</span>
-            <span class="p">}</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="sb">`Member was deleted successfully!`</span> <span class="p">});</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// Delete all Members from the database.</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">deleteAll</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">Member</span><span class="p">.</span><span class="nx">removeAll</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+                <span class="nx">message</span><span class="o">:</span>
+                    <span class="nx">err</span><span class="p">.</span><span class="nx">message</span> <span class="o">||</span> <span class="s2">&quot;Some error occurred while removing all members.&quot;</span>
+            <span class="p">});</span>
+        <span class="k">else</span> <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="sb">`All Members were deleted successfully!`</span> <span class="p">});</span>
     <span class="p">});</span>
 <span class="p">};</span>
 </code></pre></div>
