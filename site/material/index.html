@@ -1602,10 +1602,28 @@
 <div class="highlight"><pre><span></span><code>ng g interface shared/data 
 </code></pre></div>
 
-<p>Wir ändern nun zunächst die <code>table-source.ts</code>. Kommentieren Sie dort am besten das gesamte <code>interface TableItem</code> aus (Sie können es auch gleich löschen), dann sehen Sie besser, an welchen Stellen Sie <code>TableItem</code> durch <code>Data</code> ersetzen müssen. Ersetzen Sie dann überall <code>TableItem</code> durch <code>Data</code>. Passen Sie beim Importieren des Interfaces auf, dass Sie das richtige importieren, Ihre IDE bietet Ihnen auch andere Importmöglichkeiten an (das liegt an dem generisch gewählten Namen). Die richtige <code>import</code>-Anweisung ist: <code>import { Data } from '../shared/data';</code></p>
+<p>In die <code>data.ts</code> tragen wir nun unser Datenmodell ein:</p>
+<div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">src/app/shared/data.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Data</span> <span class="p">{</span>
+  <span class="nx">id</span><span class="o">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nx">forename</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">surname</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">email</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Wir wollen nun dieses Datenmodell verwenden und nicht mehr <code>TableItem</code>. Dazu ändern wir nun zunächst die <code>table-source.ts</code>. Löschen Sie dort am besten das gesamte <code>interface TableItem</code>. Jetzt sehen Sie, an welchen Stellen Sie <code>TableItem</code> durch <code>Data</code> ersetzen müssen. Ersetzen Sie dann überall <code>TableItem</code> durch <code>Data</code>. Passen Sie beim Importieren des Interfaces auf, dass Sie das richtige importieren, Ihre IDE bietet Ihnen auch andere Importmöglichkeiten an (das liegt an dem generisch gewählten Namen). Die richtige <code>import</code>-Anweisung ist: <code>import { Data } from '../shared/data';</code></p>
 <p>In der <code>table.component.ts</code> muss an der Stelle <code>@ViewChild(MatTable) table: MatTable&lt;TableItem&gt;;</code> ebenfalls <code>TableItem</code> durch <code>Data</code> ersetzt werden. In der Anweisung <code>import { TableDataSource, TableItem } from './table-datasource';</code> entfernen Sie <code>, TableItem</code> und fügen die Anweisung <code>import { Data } from '../shared/data';</code> hinzu. </p>
 <p>Unsere aktualisierten <code>table-datasource.ts</code> und <code>table.component.ts</code> sehen nun so aus:</p>
-<details><summary>aktualisierte Dateien</summary><div class="tabbed-set" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">src/table/table-datasource.ts</label><div class="tabbed-content">
+<details><summary>aktualisierte Dateien</summary><div class="tabbed-set" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">src/table/table-datasource.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
   2
   3
@@ -2379,7 +2397,7 @@
 </td></tr></table>
 
 </div>
-<input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><label for="__tabbed_11_2">src/table/table.component.ts</label><div class="tabbed-content">
+<input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><label for="__tabbed_12_2">src/table/table.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2464,7 +2482,7 @@
 </div>
 </details>
 <p>Jetzt funktioniert unsere Seite wieder. Unter <code>localhost:4200/table</code> wird die Tabelle wieder korrekt angezeigt. Das Datenmodell wurde als eigenständiges <code>interface</code> ausgelagert und kann von allen Komponenten verwendet werden. Wir werden nun unseren <code>data.service</code> erweitern. Dazu öffnen wir die Datei <code>data.service.ts</code>. Wir fügen eine Eigenschaft <code>data</code> vom Typ <code>Data[]</code> hinzu, also den <code>interface</code>-Typ als Array. Bei der Erstellung des Services (im Konstruktor) werden die Daten eingelesen und <code>data</code> initialisiert. Außerdem erstellen wir eine Funktion <code>getAll()</code>, die das <code>Data[]</code> zurückgibt. </p>
-<div class="tabbed-set" data-tabs="12:1"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">data.service.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">data.service.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2532,7 +2550,7 @@
 </div>
 </div>
 <p>Nun lassen wir die <code>table</code>-Komponente den Service nutzen. Dazu öffnen wir zunächst die <code>table-datasource.ts</code>. Darin löschen wir die komplette Deklaration und Initialsisierung der <code>const EXAMPLE_DATA: Data[]</code>, da wir die Daten ja jetzt über die <code>getAll()</code>-Funktion des Services holen wollen. Dazu binden wir den Service per <em>dependency injection</em> in den Konstruktor von <code>TableDatasource</code> ein und rufen in dem Konstruktor die <code>getAll()</code>-Funktion des <code>DataService</code> auf:</p>
-<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">table-datasource.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">table-datasource.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2592,7 +2610,7 @@
 </div>
 </div>
 <p>Jetzt muss in der <code>table.component.ts</code> nur noch der Aufruf des Konstruktors vom <code>DataService</code> als Parmeter der <code>TableDataSource()</code>-Konstruktors erfolgen:</p>
-<div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">table.component.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="15:1"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">table.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>23
 24
 25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
@@ -2622,7 +2640,7 @@
 </code></pre></div>
 
 <p>Die <code>id</code> wird als Parameter für die Route vorgesehen, deshalb wird die Syntax <code>:id</code> verwendet. Damit der entsprechende Wert für <code>:id</code> aus der URL ausgelesen werden kann, benötigen wir in der Single-Komponente ein Objekt der Klasse <code>ActivatedRoute</code>. Dieses Objekt binden wir per <em>dependency injection</em> in den Konstruktor der Single-Komponente ein und fragen die URL in der <code>ngOnInit()</code>-Methode ab. Beachten Sie, wenn wir Objekte als <code>private</code> in den Konstruktor injizieren, dann wird daraus eine Eigenschaft der Klasse, d.h. wir können <code>route</code> und <code>ds</code> mithilfe von <code>this</code> in jeder Funktion der Klasse verwenden.:</p>
-<div class="tabbed-set" data-tabs="15:1"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><label for="__tabbed_15_1">single.component.ts (Ausschnitt)</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="16:1"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">single.component.ts (Ausschnitt)</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>14
 15
 16
@@ -2658,7 +2676,7 @@
 </div>
 </div>
 <p>Wir lesen aus der URL den Parameter <code>id</code> aus und speichern den Wert in <code>this.id</code> (siehe Zeile <code>26</code>). Mit dem Wert rufen wir die <code>getSingleId()</code>-Funktion aus dem <code>DataService</code> auf. Diese Funktion gibt den Datensatz mit der entsprechenden <code>id</code> zurück:</p>
-<div class="tabbed-set" data-tabs="16:1"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><label for="__tabbed_16_1">data.service.ts</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="17:1"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">data.service.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2706,7 +2724,7 @@
 </div>
 </div>
 <p>Für <em>Arrow-Funktionen</em> siehe <a href="../javascript/#arrow-funktionen">hier</a>. Die <code>Single-Komponente</code> gestalten wir als Formular:</p>
-<div class="tabbed-set" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><label for="__tabbed_17_1">single.component.html</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><label for="__tabbed_18_1">single.component.html</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2754,7 +2772,7 @@
 </td></tr></table>
 
 </div>
-<input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><label for="__tabbed_17_2">single.component.ts</label><div class="tabbed-content">
+<input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><label for="__tabbed_18_2">single.component.ts</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3

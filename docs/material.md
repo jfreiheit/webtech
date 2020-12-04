@@ -778,7 +778,19 @@ Derzeit haben wir unser Datenmodell ebenfalls statisch in der `table-datasource.
 ng g interface shared/data 
 ```
 
-Wir ändern nun zunächst die `table-source.ts`. Kommentieren Sie dort am besten das gesamte `interface TableItem` aus (Sie können es auch gleich löschen), dann sehen Sie besser, an welchen Stellen Sie `TableItem` durch `Data` ersetzen müssen. Ersetzen Sie dann überall `TableItem` durch `Data`. Passen Sie beim Importieren des Interfaces auf, dass Sie das richtige importieren, Ihre IDE bietet Ihnen auch andere Importmöglichkeiten an (das liegt an dem generisch gewählten Namen). Die richtige `import`-Anweisung ist: `import { Data } from '../shared/data';`
+In die `data.ts` tragen wir nun unser Datenmodell ein:
+
+=== "src/app/shared/data.ts"
+	```javascript linenums="1"
+	export interface Data {
+	  id: number;
+	  forename: string;
+	  surname: string;
+	  email: string;
+	}
+	```
+
+Wir wollen nun dieses Datenmodell verwenden und nicht mehr `TableItem`. Dazu ändern wir nun zunächst die `table-source.ts`. Löschen Sie dort am besten das gesamte `interface TableItem`. Jetzt sehen Sie, an welchen Stellen Sie `TableItem` durch `Data` ersetzen müssen. Ersetzen Sie dann überall `TableItem` durch `Data`. Passen Sie beim Importieren des Interfaces auf, dass Sie das richtige importieren, Ihre IDE bietet Ihnen auch andere Importmöglichkeiten an (das liegt an dem generisch gewählten Namen). Die richtige `import`-Anweisung ist: `import { Data } from '../shared/data';`
 
 In der `table.component.ts` muss an der Stelle ` @ViewChild(MatTable) table: MatTable<TableItem>;` ebenfalls `TableItem` durch `Data` ersetzt werden. In der Anweisung `import { TableDataSource, TableItem } from './table-datasource';` entfernen Sie `, TableItem` und fügen die Anweisung `import { Data } from '../shared/data';` hinzu. 
 
