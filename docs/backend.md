@@ -239,7 +239,19 @@ Bevor wir mit der Implementierung des Backends fortfahren, erstellen wir unsere 
 	/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 	```
 
-Sie können sich diese Datei auch [hier](./files/members.sql) herunterladen. Prüfen Sie, ob alle 50 Datensätze korrekt eingelsen wurden. Unter `Anzeigen` in `phpmyadmin` sollte folgende Tabelle erscheinen:
+Falls Sie MySQL vom Studi-Server verwenden, dann müssen Sie 
+
+```sql
+COLLATE=utf8mb4_0900_ai_ci
+```
+
+durch 
+
+```sql
+COLLATE=utf8mb4_general_ci
+```
+
+ersetzen! Sie können sich diese Datei auch [hier](./files/members.sql) herunterladen. Prüfen Sie, ob alle 50 Datensätze korrekt eingelsen wurden. Unter `Anzeigen` in `phpmyadmin` sollte folgende Tabelle erscheinen:
 
 ![phpmyadmin](./files/93_phpmyadmin.png)
 
@@ -250,12 +262,25 @@ Wir binden nun die Datenbank an unser Backend an. Erstellen Sie sich am besten i
 === "config/db.config.js"
 	```javascript
 	module.exports = {
-    HOST: "localhost",
-    USER: "root",
-    PASSWORD: "IhrPasswort",
-    DB: "mockupdb"
+	    HOST: "localhost",
+	    USER: "root",
+	    PASSWORD: "IhrPasswort",
+	    DB: "mockupdb"
 	};
 	```
+
+Falls Sie MySQL des Studi-Servers verwenden, sieht die `db.config.js` so aus:
+
+=== "config/db.config.js"
+	```javascript
+	module.exports = {
+	    HOST: "db.f4.htw-berlin.de",
+	    USER: "s05xxx",
+	    PASSWORD: "IhrPassword",
+	    DB: "_s05xxx__mockupdb"
+	};
+	```
+
 
 Sie müssen Ihr Passwort eintragen und, falls Sie Ihre Datenbank anders genannt haben, auch den Datenbanknamen anpassen. 
 
@@ -566,6 +591,10 @@ Nach einem Neustart von `node server.js` geben wir in Postman nun `POST http://l
         "email": "test3@email.de"
 }
 ``` 
+
+Achten Sie darauf, dass in der zweiten Menüzeile rechts `JSON` ausgewählt ist (im Bild orange) - nicht `Text`:
+
+![postman](./files/110_json.png)
 
 Wir klicken auf `Send` und es erscheint:
 

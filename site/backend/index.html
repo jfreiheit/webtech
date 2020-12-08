@@ -943,16 +943,36 @@ found <span class="m">0</span> vulnerabilities
 </code></pre></div>
 
 </details>
-<p>Sie können sich diese Datei auch <a href="../files/members.sql">hier</a> herunterladen. Prüfen Sie, ob alle 50 Datensätze korrekt eingelsen wurden. Unter <code>Anzeigen</code> in <code>phpmyadmin</code> sollte folgende Tabelle erscheinen:</p>
+<p>Falls Sie MySQL vom Studi-Server verwenden, dann müssen Sie </p>
+<div class="highlight"><pre><span></span><code><span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_0900_ai_ci</span>
+</code></pre></div>
+
+<p>durch </p>
+<div class="highlight"><pre><span></span><code><span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_general_ci</span>
+</code></pre></div>
+
+<p>ersetzen! Sie können sich diese Datei auch <a href="../files/members.sql">hier</a> herunterladen. Prüfen Sie, ob alle 50 Datensätze korrekt eingelsen wurden. Unter <code>Anzeigen</code> in <code>phpmyadmin</code> sollte folgende Tabelle erscheinen:</p>
 <p><img alt="phpmyadmin" src="../files/93_phpmyadmin.png" /></p>
 <h3 id="datenbank-im-backend-anbinden">Datenbank im Backend anbinden<a class="headerlink" href="#datenbank-im-backend-anbinden" title="Permanent link">&para;</a></h3>
 <p>Wir binden nun die Datenbank an unser Backend an. Erstellen Sie sich am besten in Ihrem <code>backend</code>-Ordner einen Ordner <code>config</code> und darin eine <code>db.config.js</code>-Datei mit folgendem Inhalt:</p>
 <div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">config/db.config.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">HOST</span><span class="o">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-<span class="nx">USER</span><span class="o">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
-<span class="nx">PASSWORD</span><span class="o">:</span> <span class="s2">&quot;IhrPasswort&quot;</span><span class="p">,</span>
-<span class="nx">DB</span><span class="o">:</span> <span class="s2">&quot;mockupdb&quot;</span>
+    <span class="nx">HOST</span><span class="o">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+    <span class="nx">USER</span><span class="o">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
+    <span class="nx">PASSWORD</span><span class="o">:</span> <span class="s2">&quot;IhrPasswort&quot;</span><span class="p">,</span>
+    <span class="nx">DB</span><span class="o">:</span> <span class="s2">&quot;mockupdb&quot;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+</div>
+</div>
+<p>Falls Sie MySQL des Studi-Servers verwenden, sieht die <code>db.config.js</code> so aus:</p>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">config/db.config.js</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">HOST</span><span class="o">:</span> <span class="s2">&quot;db.f4.htw-berlin.de&quot;</span><span class="p">,</span>
+    <span class="nx">USER</span><span class="o">:</span> <span class="s2">&quot;s05xxx&quot;</span><span class="p">,</span>
+    <span class="nx">PASSWORD</span><span class="o">:</span> <span class="s2">&quot;IhrPassword&quot;</span><span class="p">,</span>
+    <span class="nx">DB</span><span class="o">:</span> <span class="s2">&quot;_s05xxx__mockupdb&quot;</span>
 <span class="p">};</span>
 </code></pre></div>
 
@@ -960,7 +980,7 @@ found <span class="m">0</span> vulnerabilities
 </div>
 <p>Sie müssen Ihr Passwort eintragen und, falls Sie Ihre Datenbank anders genannt haben, auch den Datenbanknamen anpassen. </p>
 <p>Erstellen Sie sich in Ihrem <code>backend</code>-Ordner einen Ordner <code>app</code> und darin einen Ordner <code>model</code>. In diesem Ordner erstellen Sie sich ein <code>db.js</code>, um die Verbindung zur Datenbank zu implementieren: </p>
-<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">app/model/db.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">app/model/db.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mysql&quot;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">dbConfig</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../../config/db.config.js&quot;</span><span class="p">);</span>
 
@@ -985,7 +1005,7 @@ found <span class="m">0</span> vulnerabilities
 </div>
 <h3 id="ein-model-erstellen">Ein Model erstellen<a class="headerlink" href="#ein-model-erstellen" title="Permanent link">&para;</a></h3>
 <p>In dem <code>app/model</code>-Ordner erstellen wir eine Datei <code>members.model.js</code> mit folgendem Inhalt:</p>
-<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">app/model/members.model.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">app/model/members.model.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">sql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./db.js&quot;</span><span class="p">);</span>
 
 <span class="c1">// constructor</span>
@@ -1102,7 +1122,7 @@ found <span class="m">0</span> vulnerabilities
 </div>
 <h3 id="die-routen-definieren">Die Routen definieren<a class="headerlink" href="#die-routen-definieren" title="Permanent link">&para;</a></h3>
 <p>Erstellen Sie sich im <code>app</code>-Ordner einen Ordner <code>routes</code> und erstellen darin eine Datei <code>members.routes.js</code> mit folgendem Inhalt:</p>
-<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">app/routes/members.routes.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">app/routes/members.routes.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">app</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="kr">const</span> <span class="nx">members</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../controller/members.controller.js&quot;</span><span class="p">);</span>
 
@@ -1177,7 +1197,7 @@ found <span class="m">0</span> vulnerabilities
 
 <h3 id="einen-controller-erstellen">Einen Controller erstellen<a class="headerlink" href="#einen-controller-erstellen" title="Permanent link">&para;</a></h3>
 <p>Nun erstellen wir uns im Ordner <code>app/controller</code> eine <code>members.controller.js</code> mit den entsprechenden CRUD-Funktionen, die wir dann noch implementieren müssen:</p>
-<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">Member</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../model/members.model.js&quot;</span><span class="p">);</span>
 
 <span class="c1">// Create and Save a new Member</span>
@@ -1216,7 +1236,7 @@ found <span class="m">0</span> vulnerabilities
 <p>Überprüfen Sie Ihre Implementierung so weit, indem Sie <code>node server.js</code> erneut starten. Es sollte alles ohne Fehler compilieren. </p>
 <h4 id="r-read-all">R - read all<a class="headerlink" href="#r-read-all" title="Permanent link">&para;</a></h4>
 <p>Wir implementieren nun nach und nach die einzelnen Funktionen in <code>members.controller.js</code>. Wir beginnen mit der <code>findAll()</code>-Funktion: </p>
-<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 8
  9
 10
@@ -1247,7 +1267,7 @@ found <span class="m">0</span> vulnerabilities
 <p><img alt="postman" src="../files/94_postman.png" /></p>
 <h4 id="c-create">C - create<a class="headerlink" href="#c-create" title="Permanent link">&para;</a></h4>
 <p>Als nächstes implementieren wir die <code>create()</code>-Funktion, um einen neuen Eintrag in der Datenbank anzulegen. </p>
-<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 3
  4
  5
@@ -1317,13 +1337,15 @@ found <span class="m">0</span> vulnerabilities
 </code></pre></div>
 </td></tr></table>
 
+<p>Achten Sie darauf, dass in der zweiten Menüzeile rechts <code>JSON</code> ausgewählt ist (im Bild orange) - nicht <code>Text</code>:</p>
+<p><img alt="postman" src="../files/110_json.png" /></p>
 <p>Wir klicken auf <code>Send</code> und es erscheint:</p>
 <p><img alt="postman" src="../files/95_postman.png" /></p>
 <p>Schauen Sie auch in Ihre Datenbank unter <code>http://localhost/phpmyadmin</code>. Dort erscheint der Datensatz mit der neuen <code>id=51</code>:</p>
 <p><img alt="phpmyadmin" src="../files/96_phpmyadmin.png" /></p>
 <h4 id="r-read-one">R - read one<a class="headerlink" href="#r-read-one" title="Permanent link">&para;</a></h4>
 <p>Wir erweitern die <code>members.controller.js</code> um die Funktion <code>findOne()</code>, die uns für eine gegebene <code>id</code> den entsprechenden Datensatz zurückliefert:</p>
-<div class="tabbed-set" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>42
 43
 44
@@ -1365,7 +1387,7 @@ found <span class="m">0</span> vulnerabilities
 <p>Probieren Sie auch einmal <code>GET http://localhost:3000/members/52</code> aus, um die Fehlermeldung als JSON zu sehen. </p>
 <h4 id="u-update">U - update<a class="headerlink" href="#u-update" title="Permanent link">&para;</a></h4>
 <p>Nun noch die <code>update()</code>-Funktion, um einen bereits existierenden Datensatz zu ändern:</p>
-<div class="tabbed-set" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>68
 69
 70
@@ -1444,7 +1466,7 @@ found <span class="m">0</span> vulnerabilities
 <p>Schauen Sie auch in der Datenbank nach und wählen auch ruhig nochmal <code>GET http://localhost:3000/members</code>.</p>
 <h4 id="d-delete-one">D - delete one<a class="headerlink" href="#d-delete-one" title="Permanent link">&para;</a></h4>
 <p>Jetzt implementieren wir noch die <code>delete()</code>-Funktion, um einen Datensatz zu löschen:</p>
-<div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="12:1"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 87
  88
  89
@@ -1495,7 +1517,7 @@ found <span class="m">0</span> vulnerabilities
 
 <p>Wir implementieren der Vollständigkeit halber noch die <code>deleteAll()</code>-Methode. Sie können ja entscheiden, ob Sie sie ausprobieren wollen oder nicht ;-)</p>
 <h4 id="d-delete-all">D - delete all<a class="headerlink" href="#d-delete-all" title="Permanent link">&para;</a></h4>
-<div class="tabbed-set" data-tabs="12:1"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><label for="__tabbed_12_1">app/controller/members.controller.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">app/controller/members.controller.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>104
 105
 106
@@ -1597,7 +1619,7 @@ found <span class="m">0</span> vulnerabilities
 </code></pre></div>
 
 <p>ein. Öffnen Sie dann die <code>server.js</code> und fügen Sie die hervorgehobenen Zeilen ein:</p>
-<div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">server.js</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">server.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3

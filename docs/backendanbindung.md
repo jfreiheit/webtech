@@ -968,9 +968,9 @@ In der Elternkomponente `ReadComponent` sind die Daten des Datensatzes, der im F
 1. In der Kindkomponente ( der `*.ts` der Kindkomponente) wird mithilfe des `@Input()`-*decorators* eine Eigenschaft der Kindkomponente festgelegt, in die die Daten der Elternkomponente aufgenommen werden sollen. Wir werden dazu die Anweisung `@Input() data: Data;` unserer Kindkomponente (der `FormComponent`) hinzufügen. 
 2.  In der Elternkomponente (der `*.html` der Elternkomponente) werden mithilfe von *property binding* dem Komponentenselktor der Kindkomponente die Daten übergeben. Wir werden deshalb den Aufruf des Komponentenselektors in der `readComponent` erweitern um `<app-form [data]="member"></app-form>`, d.h. die Eigenschaft `data` der Kindkomponente bekommt den Wert der Eigenschaft `member` der Elternkomponente übergeben.
 
-Die generelle Syntax der *property binding* an den Kindselktoren sieht so aus:
+Die generelle Syntax der *property binding* an den Kindselektoren sieht so aus:
 
-> `<app-child> [childProperty]="parentProperty" </form>app-child>`
+> `<app-child> [childProperty]="parentProperty" </app-child>`
 
 wobei in der `child.component.ts` definiert sein muss:
 
@@ -1108,12 +1108,305 @@ Wenn Sie nun auf den Button `Update` klicken, dann erscheinen alle Werte aus dem
 !!! success
 	Wir haben uns ein reaktives Formular in einer Kindkomponente erstellt und haben Daten von der Eletern- auf die Kindkomponente fließen lassen. Außerdem haben wir dem Formular zwei Ereignisse hinzugefügt. Jetzt wäre es Zeit, die Anwendung ein wenig aufzuräumen und die Darstellung zu verbessern. Beispielsweise könnten Sie jetzt eine Navigations-Komponente hinzufügen (wie in Übung 6) und alle unnötigen Ausgaben aus den HTML-Templates herausnehmen. 
 
-Die Anwendung könnte jetzt z.B. so aussehen (je nachdem, ob udn wie Sie sie noch gestaltet haben):
+Die Anwendung könnte jetzt z.B. so aussehen (je nachdem, ob und wie Sie sie noch gestaltet haben):
 
 ![alles](./files/108_alles.png)
 
 Den vollständigen Code für diesen Abschnitt (bis hier her) finden Sie [hier](https://github.com/jfreiheit/frontend3).
 
-## Bis hier Übung 9
+## U - update
+
+Wenn wir das Formular für einen einzelnen Datensatz angezeigt bekommen (z.B. `http://localhost:4200/read/54`):
+
+![update](./files/109_update.png)
+
+, dann mit dem Ziel, Daten in diesem Datensatz zu ändern und die Änderungen zu speichern. Das heißt, wir wollen ein `update` durchführen. Siehe im Backend dazu [U - update](../webtech/backend/#u-update). Zuvor schauen wir uns aber noch das allgemeine Prinzip dafür an, Daten von der Kindkomponente an die Elternkoponente zurückzugeben, denn wir haben die Daten des Formulars ja in der `FormComponent`, die innerhalb der `ReadComponent` eingebunden wurde. Der Datenfluss von Eltern- auf Kindkomponente wurde bereits [hier](./#datenfluss-von-eltern-nach-kindkomponente) erläutert. Nun sollen die Daten andersherum fließen, also von der Kind- zur Elternkoponente. 
+
+### Datenfluss von Kind- nach Elternkomponente
+
+Die `form.component.ts` (also die TypeScript-Klasse der Kindkomponente) sieht bis jetzt so aus:
+
+??? "src/app/members/read/form.component.ts"
+	```javascript
+	import {Component, Input, OnInit } from '@angular/core';
+	import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+	import { Data } from '../../../shared/data';
+	import { Location } from '@angular/common';
+
+	@Component({
+	  selector: 'app-form',
+	  templateUrl: './form.component.html',
+	  styleUrls: ['./form.component.css']
+	})
+	export class FormComponent implements OnInit {
+	  @Input() data: Data;
+	  form: FormGroup;
+
+	  constructor(private fb: FormBuilder, private location: Location) {
+	    this.form = this.fb.group(
+	      {
+	        idControl: ['', Validators.required],
+	        firstNameControl: ['', Validators.required],
+	        lastNameControl: ['', Validators.required],
+	        emailControl: ['', Validators.required],
+	      }
+	    );
+	  }
+
+	  ngOnInit(): void {
+	    this.form.patchValue({
+	      idControl: this.data?.id,
+	      firstNameControl: this.data?.firstname,
+	      lastNameControl: this.data?.lastname,
+	      emailControl: this.data?.email
+	    });
+	  }
+
+	  onSubmit(): void {
+	    // TODO: Use EventEmitter with form value
+	    console.warn(this.form.value);
+	  }
+
+	  cancel(): void {
+	    this.location.back();
+	  }
+	}
+	```
+
+Die `onSubmit()`-Funktion wird aufgerufen, wenn wir den `Update`-Button in unserem Formular klicken. Wir erweitern diese Klasse nun derart, dass die Daten aus dem Formular (`this.form.value`) an die Elternkomponente (`ReadComponent`) geleitet werden, damit sie von dort aus an das Backend für das `update` übertragen werden können. 
+
+Dazu erweitern wir zunächst `form.component.ts`:
+
+=== "src/app/members/read/form.component.ts"
+	```javascript linenums="1" hl_lines="1 13 37-42"
+	import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+	import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+	import { Data } from '../../../shared/data';
+	import { Location } from '@angular/common';
+
+	@Component({
+	  selector: 'app-form',
+	  templateUrl: './form.component.html',
+	  styleUrls: ['./form.component.css']
+	})
+	export class FormComponent implements OnInit {
+	  @Input() data: Data;
+	  @Output() updateEvent = new EventEmitter<Data>();
+	  form: FormGroup;
+
+	  constructor(private fb: FormBuilder, private location: Location) {
+	    this.form = this.fb.group(
+	      {
+	        idControl: ['', Validators.required],
+	        firstNameControl: ['', Validators.required],
+	        lastNameControl: ['', Validators.required],
+	        emailControl: ['', Validators.required],
+	      }
+	    );
+	  }
+
+	  ngOnInit(): void {
+	    this.form.patchValue({
+	      idControl: this.data?.id,
+	      firstNameControl: this.data?.firstname,
+	      lastNameControl: this.data?.lastname,
+	      emailControl: this.data?.email
+	    });
+	  }
+
+	  onSubmit(): void {
+	  	const values = this.form.value;
+	    this.data.id = values.idControl;
+	    this.data.firstname = values.firstNameControl;
+	    this.data.lastname = values.lastNameControl;
+	    this.data.email = values.emailControl;
+	    this.updateEvent.emit(this.data);
+	  }
+
+	  cancel(): void {
+	    this.location.back();
+	  }
+	}
+	```
+
+In Zeile `1` importieren wir nun auch noch `Output` und `EventEmitter`. Außerdem fügen wir in Zeile `13` eine weitere Eigenschaft `updateEvent` vom Typ `EventEmitter` hinzu. Diese dekorieren wir mit `@Output` und geben damit an, dass der Wert dieser Eigenschaft von der Kind- an die Elternkomponente übertragen wird. In Zeile `42` verwenden wir den `EventEmitter` `updateEvent` und rufen dafür die `emit()`-Funktion auf. Damit wird das Ereignis `updateEvent` ausgelöst. Wir übergeben diesem Ereignis `data` vom Typ `Data`. Die einzelnen Werte von `data` werden in den Zeilen `38-41` aus den Werten aus dem Formular (`values = form.value`) gesetzt. Weitere Informationen zu `EventEmitter` finden Sie [hier](https://angular.io/api/core/EventEmitter).  
+
+In der Elternkomponente, der `ReadComponent` fügen wir zwei Sachen hinzu:
+
+- in der `read.component.ts` wird die Ereignisbehandlung des `updateEvents` hinzugefügt und
+- in der `read.component.html` fügen wir ein *property bindung* zum Komponentenselektor der Kindkomponente hinzu
+
+=== "src/app/members/read.component.ts"
+	```javascript linenums="1" hl_lines="47-51"
+	import { Component, OnInit } from '@angular/core';
+	import {BackendService} from '../../shared/backend.service';
+	import {Data} from '../../shared/data';
+	import {ActivatedRoute} from '@angular/router';
+	import {HttpErrorResponse} from '@angular/common/http';
+
+	@Component({
+	  selector: 'app-read',
+	  templateUrl: './read.component.html',
+	  styleUrls: ['./read.component.css'],
+	})
+	export class ReadComponent implements OnInit {
+	  members: Data[];
+	  member: Data;
+	  selectedId: number;
+	  error: HttpErrorResponse;
+
+	  constructor(private cs: BackendService, private route: ActivatedRoute) { }
+
+	  ngOnInit(): void {
+	    this.selectedId = Number(this.route.snapshot.paramMap.get('id'));
+	    if (this.selectedId === 0) {
+	      this.readAll();
+	    }
+	    else {
+	      console.log('id = ' + this.selectedId);   // nur fuer debug
+	      this.readOne(this.selectedId);
+	    }
+	  }
+
+	  trackByData(index: number, data: Data): number { return data.id; }
+
+	  readAll(): void {
+	    this.cs.getAll().subscribe(
+	      (response: Data[]) => this.members = response,
+	      error => console.log(error)
+	      );
+	  }
+
+	  readOne(id: number): void {
+	    this.cs.getDataById(id).subscribe(
+	      (response: Data) => this.member = response,
+	      error => this.error = error,
+	    );
+	  }
+
+	  update(data: Data): void {
+	    this.member = data;
+	    this.cs.update(this.member.id, this.member);
+	    this.router.navigateByUrl('/read');
+	  }
+	}
+	```
+=== "src/app/members/read.component.html"
+	```html linenums="1" hl_lines="38"
+	<div *ngIf="selectedId == 0" class="container">
+	  <h2>All members</h2>
+	  <table class="table table-striped table-hover">
+	    <caption>List of Members</caption>
+	    <thead>
+	      <tr>
+	        <th>Nr.</th>
+	        <th>Vorname</th>
+	        <th>Nachname</th>
+	        <th>E-Mail</th>
+	        <th>Edit</th>
+	      </tr>
+	    </thead>
+	  <tbody>
+	    <tr *ngFor="let member of members; let i=index; trackBy: trackByData">
+	      <td>{{ i+1 }}</td>
+	      <td>{{member.firstname}}</td>
+	      <td>{{member.lastname}}</td>
+	      <td>{{member.email}}</td>
+	      <td><a [routerLink]="['/read/', member.id]"><i-bs
+	        name="pencil-square"
+	        class="text-secondary"
+	        width="1rem"
+	        height="1rem">
+	      </i-bs></a></td>
+	    </tr>
+	  </tbody>
+	  </table>
+	</div>
+	<div *ngIf="selectedId > 0" class="container">
+	  <div *ngIf="error">
+	    <h1>{{ selectedId }}</h1>
+	    <p>{{ error?.message }}</p>
+	    <p>{{ error?.status }}</p>
+	    <p><a [routerLink]="['/read']">Zurück zur Tabelle</a></p>
+	  </div>
+	  <div *ngIf="member">
+	    <app-form [data]="member" (updateEvent)="update($event)"></app-form>
+	  </div>
+	</div>
+	```
+
+In der `read.component.ts` wurde in den Zeilen `47-51` also einfach eine `update`-Funktion hinzugefügt, welche somit eine weitere Eigenschaft der TypeScript-Klasse der `ReadComponent` ist. In dieser Funktion wird zunächst die `update`-Funktion des `BackendService` aufgerufen (erstellen wir gleich) und danach die Route `/read` - also das Anzeigen aller Datensätze in der Tabelle. In der `read.component.html` wurde der Komponentenselektor `<app-form></app-form>` um ein weiteres Attribut erweitert. Nachdem wir dort bereits mithilfe der *property binding* `[data]="member"` den Datenfluss von der Eltern- auf die Kindkomponente spezifiziert hatten, kommt nun ein Ereignis-Attribut hinzu. Wir binden das `updateEvent` der Kindklasse an das `update`-Event der Elternklasse. Die generelle Syntax sieht so aus: 
+Die generelle Syntax der *property binding* an den Kindselektoren sieht so aus:
+
+> `<app-child> (childEvent)="parentMethod($event)" </app-child>`
+
+wobei in der `child.component.ts` definiert sein muss:
+
+> `@Output() childEvent: EventEmitter;`
+
+sowie die `parentMethod()` in der `parent.component.ts`. 
+
+Mithilfe der *Banana-Syntax* `[()]` können `@Input` und `@Output` übrigens kombiniert werden. Siehe dazu [*two way binding*](https://angular.io/guide/two-way-binding#two-way-binding).
+
+In der (Eltern-)Komponente `read.component.ts` kommen jetzt bei Klicken des Buttons `Update` die Werte aus dem Formular an. Diese werden nun verwendet, um die `update`-Funktion im Backend aufzurufen und den Datensatz zu aktualisieren. Dazu erweitern wir den `BackendService` um eine `update`-Funktion:
+
+=== "src/app/shared/backend.service.ts"
+	```javascript linenums="1" hl_lines="24-35"
+	import { Injectable } from '@angular/core';
+	import { HttpClient } from '@angular/common/http';
+	import { Observable } from 'rxjs';
+	import { Data } from './data';
+
+	@Injectable({
+	  providedIn: 'root'
+	})
+	export class BackendService {
+	  baseUrl = 'http://localhost:3000/members';
+
+	  constructor(private http: HttpClient) { }
+
+	  getAll(): Observable<Data[]>{
+	    return this.http
+	      .get<Data[]>(this.baseUrl);
+	  }
+
+	  getDataById(dataId: number): Observable<Data> {
+	    return this.http
+	      .get<Data>(this.baseUrl + '/' + dataId);
+	  }
+
+	  update(dataId: number, data: Data): void {
+	    this.http.put<Data>(this.baseUrl + '/' + dataId, data)
+	      .subscribe(
+	        response => {
+	          console.log(response);
+	          console.log(response.id);
+	        },
+	        error => {
+	          console.log(error);
+	        }
+	      );
+	  }
+
+	}
+	```
+
+Die `put`-Funktion des `HttpClient` (siehe z.B. [hier](https://angular.io/api/common/http/HttpClient#put)) erzeugt ein `Observable`, das mithilfe der `subscribe()`-Funktion ausgeführt werden kann. `Subscribe()` hat zwei Parameter `next` und `error` und für beide kann eine [Callback](../javascript/#callback-funktionen)-Funktion definert werden. Die hier definierten Funktionen geben nur entweder die `response` oder den `error` auf die Konsole aus. 
+
+Damit kann nun auch ein Datensatz geändert werden (`update`) - siehe [U - update](../backend/#u-update) im Backend. Beachten Sie, dass wir hier weder eine Meldung des erfolgreichen Updates implementiert haben, noch eine eventuelle Fehlermeldung. Für beides wäre die `UpdateComponent` geeignet. Wir leiten aber direkt nach dem Update an die Tabelle aller Datensätze weiter. 
+
+## D - delete one
+
+Um einen Datensatz zu löschen, könnten wir in der Übersicht aller Datensätze, also in der Tabelle unter der Route `/read` eine weitere Spalte mit einem entsprechenden Icon hinzufügen. 
+
+
+
+```bash
+ng add @ng-bootstrap/ng-bootstrap
+```
+
+
+
+
 
 

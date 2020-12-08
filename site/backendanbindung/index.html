@@ -583,8 +583,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bis-hier-ubung-9" class="md-nav__link">
-    Bis hier Übung 9
+  <a href="#u-update" class="md-nav__link">
+    U - update
+  </a>
+  
+    <nav class="md-nav" aria-label="U - update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datenfluss-von-kind-nach-elternkomponente" class="md-nav__link">
+    Datenfluss von Kind- nach Elternkomponente
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-delete-one" class="md-nav__link">
+    D - delete one
   </a>
   
 </li>
@@ -836,8 +856,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bis-hier-ubung-9" class="md-nav__link">
-    Bis hier Übung 9
+  <a href="#u-update" class="md-nav__link">
+    U - update
+  </a>
+  
+    <nav class="md-nav" aria-label="U - update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datenfluss-von-kind-nach-elternkomponente" class="md-nav__link">
+    Datenfluss von Kind- nach Elternkomponente
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-delete-one" class="md-nav__link">
+    D - delete one
   </a>
   
 </li>
@@ -2177,9 +2217,9 @@ Successfully connected to the database.
 <li>In der Kindkomponente ( der <code>*.ts</code> der Kindkomponente) wird mithilfe des <code>@Input()</code>-<em>decorators</em> eine Eigenschaft der Kindkomponente festgelegt, in die die Daten der Elternkomponente aufgenommen werden sollen. Wir werden dazu die Anweisung <code>@Input() data: Data;</code> unserer Kindkomponente (der <code>FormComponent</code>) hinzufügen. </li>
 <li>In der Elternkomponente (der <code>*.html</code> der Elternkomponente) werden mithilfe von <em>property binding</em> dem Komponentenselktor der Kindkomponente die Daten übergeben. Wir werden deshalb den Aufruf des Komponentenselektors in der <code>readComponent</code> erweitern um <code>&lt;app-form [data]="member"&gt;&lt;/app-form&gt;</code>, d.h. die Eigenschaft <code>data</code> der Kindkomponente bekommt den Wert der Eigenschaft <code>member</code> der Elternkomponente übergeben.</li>
 </ol>
-<p>Die generelle Syntax der <em>property binding</em> an den Kindselktoren sieht so aus:</p>
+<p>Die generelle Syntax der <em>property binding</em> an den Kindselektoren sieht so aus:</p>
 <blockquote>
-<p><code>&lt;app-child&gt; [childProperty]="parentProperty" &lt;/form&gt;app-child&gt;</code></p>
+<p><code>&lt;app-child&gt; [childProperty]="parentProperty" &lt;/app-child&gt;</code></p>
 </blockquote>
 <p>wobei in der <code>child.component.ts</code> definiert sein muss:</p>
 <blockquote>
@@ -2386,10 +2426,460 @@ Successfully connected to the database.
 <p class="admonition-title">Success</p>
 <p>Wir haben uns ein reaktives Formular in einer Kindkomponente erstellt und haben Daten von der Eletern- auf die Kindkomponente fließen lassen. Außerdem haben wir dem Formular zwei Ereignisse hinzugefügt. Jetzt wäre es Zeit, die Anwendung ein wenig aufzuräumen und die Darstellung zu verbessern. Beispielsweise könnten Sie jetzt eine Navigations-Komponente hinzufügen (wie in Übung 6) und alle unnötigen Ausgaben aus den HTML-Templates herausnehmen. </p>
 </div>
-<p>Die Anwendung könnte jetzt z.B. so aussehen (je nachdem, ob udn wie Sie sie noch gestaltet haben):</p>
+<p>Die Anwendung könnte jetzt z.B. so aussehen (je nachdem, ob und wie Sie sie noch gestaltet haben):</p>
 <p><img alt="alles" src="../files/108_alles.png" /></p>
 <p>Den vollständigen Code für diesen Abschnitt (bis hier her) finden Sie <a href="https://github.com/jfreiheit/frontend3">hier</a>.</p>
-<h2 id="bis-hier-ubung-9">Bis hier Übung 9<a class="headerlink" href="#bis-hier-ubung-9" title="Permanent link">&para;</a></h2>
+<h2 id="u-update">U - update<a class="headerlink" href="#u-update" title="Permanent link">&para;</a></h2>
+<p>Wenn wir das Formular für einen einzelnen Datensatz angezeigt bekommen (z.B. <code>http://localhost:4200/read/54</code>):</p>
+<p><img alt="update" src="../files/109_update.png" /></p>
+<p>, dann mit dem Ziel, Daten in diesem Datensatz zu ändern und die Änderungen zu speichern. Das heißt, wir wollen ein <code>update</code> durchführen. Siehe im Backend dazu <a href="../webtech/backend/#u-update">U - update</a>. Zuvor schauen wir uns aber noch das allgemeine Prinzip dafür an, Daten von der Kindkomponente an die Elternkoponente zurückzugeben, denn wir haben die Daten des Formulars ja in der <code>FormComponent</code>, die innerhalb der <code>ReadComponent</code> eingebunden wurde. Der Datenfluss von Eltern- auf Kindkomponente wurde bereits <a href="./#datenfluss-von-eltern-nach-kindkomponente">hier</a> erläutert. Nun sollen die Daten andersherum fließen, also von der Kind- zur Elternkoponente. </p>
+<h3 id="datenfluss-von-kind-nach-elternkomponente">Datenfluss von Kind- nach Elternkomponente<a class="headerlink" href="#datenfluss-von-kind-nach-elternkomponente" title="Permanent link">&para;</a></h3>
+<p>Die <code>form.component.ts</code> (also die TypeScript-Klasse der Kindkomponente) sieht bis jetzt so aus:</p>
+<details><summary>src/app/members/read/form.component.ts</summary><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">FormBuilder</span><span class="p">,</span> <span class="nx">FormGroup</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/forms&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Data</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../../shared/data&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Location</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-form&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./form.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./form.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">FormComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">Input</span><span class="p">()</span> <span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">;</span>
+  <span class="nx">form</span><span class="o">:</span> <span class="nx">FormGroup</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">fb</span><span class="o">:</span> <span class="nx">FormBuilder</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">location</span><span class="o">:</span> <span class="nx">Location</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">form</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span>
+      <span class="p">{</span>
+        <span class="nx">idControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+        <span class="nx">firstNameControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+        <span class="nx">lastNameControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+        <span class="nx">emailControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+      <span class="p">}</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">patchValue</span><span class="p">({</span>
+      <span class="nx">idControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="nx">firstNameControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">firstname</span><span class="p">,</span>
+      <span class="nx">lastNameControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">lastname</span><span class="p">,</span>
+      <span class="nx">emailControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">email</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">onSubmit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="c1">// TODO: Use EventEmitter with form value</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">cancel</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">back</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</details>
+<p>Die <code>onSubmit()</code>-Funktion wird aufgerufen, wenn wir den <code>Update</code>-Button in unserem Formular klicken. Wir erweitern diese Klasse nun derart, dass die Daten aus dem Formular (<code>this.form.value</code>) an die Elternkomponente (<code>ReadComponent</code>) geleitet werden, damit sie von dort aus an das Backend für das <code>update</code> übertragen werden können. </p>
+<p>Dazu erweitern wir zunächst <code>form.component.ts</code>:</p>
+<div class="tabbed-set" data-tabs="32:1"><input checked="checked" id="__tabbed_32_1" name="__tabbed_32" type="radio" /><label for="__tabbed_32_1">src/app/members/read/form.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="kr">import</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Output</span><span class="p">,</span> <span class="nx">EventEmitter</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+</span><span class="kr">import</span> <span class="p">{</span><span class="nx">FormBuilder</span><span class="p">,</span> <span class="nx">FormGroup</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/forms&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Data</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../../shared/data&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Location</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-form&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./form.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./form.component.css&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">FormComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">Input</span><span class="p">()</span> <span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">;</span>
+<span class="hll">  <span class="err">@</span><span class="nx">Output</span><span class="p">()</span> <span class="nx">updateEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">Data</span><span class="o">&gt;</span><span class="p">();</span>
+</span>  <span class="nx">form</span><span class="o">:</span> <span class="nx">FormGroup</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">fb</span><span class="o">:</span> <span class="nx">FormBuilder</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">location</span><span class="o">:</span> <span class="nx">Location</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">form</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span>
+      <span class="p">{</span>
+        <span class="nx">idControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+        <span class="nx">firstNameControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+        <span class="nx">lastNameControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+        <span class="nx">emailControl</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+      <span class="p">}</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">patchValue</span><span class="p">({</span>
+      <span class="nx">idControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="nx">firstNameControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">firstname</span><span class="p">,</span>
+      <span class="nx">lastNameControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">lastname</span><span class="p">,</span>
+      <span class="nx">emailControl</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">email</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">onSubmit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+<span class="hll">    <span class="kr">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+</span><span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">idControl</span><span class="p">;</span>
+</span><span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">firstname</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">firstNameControl</span><span class="p">;</span>
+</span><span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">lastname</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">lastNameControl</span><span class="p">;</span>
+</span><span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">email</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">emailControl</span><span class="p">;</span>
+</span><span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">updateEvent</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span>  <span class="p">}</span>
+
+  <span class="nx">cancel</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">back</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>In Zeile <code>1</code> importieren wir nun auch noch <code>Output</code> und <code>EventEmitter</code>. Außerdem fügen wir in Zeile <code>13</code> eine weitere Eigenschaft <code>updateEvent</code> vom Typ <code>EventEmitter</code> hinzu. Diese dekorieren wir mit <code>@Output</code> und geben damit an, dass der Wert dieser Eigenschaft von der Kind- an die Elternkomponente übertragen wird. In Zeile <code>42</code> verwenden wir den <code>EventEmitter</code> <code>updateEvent</code> und rufen dafür die <code>emit()</code>-Funktion auf. Damit wird das Ereignis <code>updateEvent</code> ausgelöst. Wir übergeben diesem Ereignis <code>data</code> vom Typ <code>Data</code>. Die einzelnen Werte von <code>data</code> werden in den Zeilen <code>38-41</code> aus den Werten aus dem Formular (<code>values = form.value</code>) gesetzt. Weitere Informationen zu <code>EventEmitter</code> finden Sie <a href="https://angular.io/api/core/EventEmitter">hier</a>.  </p>
+<p>In der Elternkomponente, der <code>ReadComponent</code> fügen wir zwei Sachen hinzu:</p>
+<ul>
+<li>in der <code>read.component.ts</code> wird die Ereignisbehandlung des <code>updateEvents</code> hinzugefügt und</li>
+<li>in der <code>read.component.html</code> fügen wir ein <em>property bindung</em> zum Komponentenselektor der Kindkomponente hinzu</li>
+</ul>
+<div class="tabbed-set" data-tabs="33:2"><input checked="checked" id="__tabbed_33_1" name="__tabbed_33" type="radio" /><label for="__tabbed_33_1">src/app/members/read.component.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">BackendService</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../shared/backend.service&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Data</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../../shared/data&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">ActivatedRoute</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/router&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">HttpErrorResponse</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-read&#39;</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./read.component.html&#39;</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./read.component.css&#39;</span><span class="p">],</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ReadComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">members</span><span class="o">:</span> <span class="nx">Data</span><span class="p">[];</span>
+  <span class="nx">member</span><span class="o">:</span> <span class="nx">Data</span><span class="p">;</span>
+  <span class="nx">selectedId</span><span class="o">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nx">error</span><span class="o">:</span> <span class="nx">HttpErrorResponse</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">cs</span><span class="o">:</span> <span class="nx">BackendService</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">route</span><span class="o">:</span> <span class="nx">ActivatedRoute</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">selectedId</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">route</span><span class="p">.</span><span class="nx">snapshot</span><span class="p">.</span><span class="nx">paramMap</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">selectedId</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">readAll</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;id = &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectedId</span><span class="p">);</span>   <span class="c1">// nur fuer debug</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">readOne</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">selectedId</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">trackByData</span><span class="p">(</span><span class="nx">index</span><span class="o">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">)</span><span class="o">:</span> <span class="nx">number</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="nx">readAll</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cs</span><span class="p">.</span><span class="nx">getAll</span><span class="p">().</span><span class="nx">subscribe</span><span class="p">(</span>
+      <span class="p">(</span><span class="nx">response</span><span class="o">:</span> <span class="nx">Data</span><span class="p">[])</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">members</span> <span class="o">=</span> <span class="nx">response</span><span class="p">,</span>
+      <span class="nx">error</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+      <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">readOne</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cs</span><span class="p">.</span><span class="nx">getDataById</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span>
+      <span class="p">(</span><span class="nx">response</span><span class="o">:</span> <span class="nx">Data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">member</span> <span class="o">=</span> <span class="nx">response</span><span class="p">,</span>
+      <span class="nx">error</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="nx">error</span><span class="p">,</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="hll">  <span class="nx">update</span><span class="p">(</span><span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">member</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+</span><span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">cs</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">member</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">member</span><span class="p">);</span>
+</span><span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigateByUrl</span><span class="p">(</span><span class="s1">&#39;/read&#39;</span><span class="p">);</span>
+</span><span class="hll">  <span class="p">}</span>
+</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+<input id="__tabbed_33_2" name="__tabbed_33" type="radio" /><label for="__tabbed_33_2">src/app/members/read.component.html</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;selectedId == 0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>All members<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-striped table-hover&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>List of Members<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nr.<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Vorname<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nachname<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>E-Mail<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Edit<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&quot;let member of members; let i=index; trackBy: trackByData&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ i+1 }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{member.firstname}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{member.lastname}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{member.email}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="err">[</span><span class="na">routerLink</span><span class="err">]=&quot;[&#39;/</span><span class="na">read</span><span class="err">/&#39;,</span> <span class="na">member</span><span class="err">.</span><span class="na">id</span><span class="err">]&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i-bs</span>
+        <span class="na">name</span><span class="o">=</span><span class="s">&quot;pencil-square&quot;</span>
+        <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-secondary&quot;</span>
+        <span class="na">width</span><span class="o">=</span><span class="s">&quot;1rem&quot;</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">&quot;1rem&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">i-bs</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;selectedId &gt; 0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ selectedId }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ error?.message }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ error?.status }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="err">[</span><span class="na">routerLink</span><span class="err">]=&quot;[&#39;/</span><span class="na">read</span><span class="err">&#39;]&quot;</span><span class="p">&gt;</span>Zurück zur Tabelle<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&quot;member&quot;</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">app-form</span> <span class="err">[</span><span class="na">data</span><span class="err">]=&quot;</span><span class="na">member</span><span class="err">&quot;</span> <span class="err">(</span><span class="na">updateEvent</span><span class="err">)=&quot;</span><span class="na">update</span><span class="err">($</span><span class="na">event</span><span class="err">)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">app-form</span><span class="p">&gt;</span>
+</span>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>In der <code>read.component.ts</code> wurde in den Zeilen <code>47-51</code> also einfach eine <code>update</code>-Funktion hinzugefügt, welche somit eine weitere Eigenschaft der TypeScript-Klasse der <code>ReadComponent</code> ist. In dieser Funktion wird zunächst die <code>update</code>-Funktion des <code>BackendService</code> aufgerufen (erstellen wir gleich) und danach die Route <code>/read</code> - also das Anzeigen aller Datensätze in der Tabelle. In der <code>read.component.html</code> wurde der Komponentenselektor <code>&lt;app-form&gt;&lt;/app-form&gt;</code> um ein weiteres Attribut erweitert. Nachdem wir dort bereits mithilfe der <em>property binding</em> <code>[data]="member"</code> den Datenfluss von der Eltern- auf die Kindkomponente spezifiziert hatten, kommt nun ein Ereignis-Attribut hinzu. Wir binden das <code>updateEvent</code> der Kindklasse an das <code>update</code>-Event der Elternklasse. Die generelle Syntax sieht so aus: 
+Die generelle Syntax der <em>property binding</em> an den Kindselektoren sieht so aus:</p>
+<blockquote>
+<p><code>&lt;app-child&gt; (childEvent)="parentMethod($event)" &lt;/app-child&gt;</code></p>
+</blockquote>
+<p>wobei in der <code>child.component.ts</code> definiert sein muss:</p>
+<blockquote>
+<p><code>@Output() childEvent: EventEmitter;</code></p>
+</blockquote>
+<p>sowie die <code>parentMethod()</code> in der <code>parent.component.ts</code>. </p>
+<p>Mithilfe der <em>Banana-Syntax</em> <code>[()]</code> können <code>@Input</code> und <code>@Output</code> übrigens kombiniert werden. Siehe dazu <a href="https://angular.io/guide/two-way-binding#two-way-binding"><em>two way binding</em></a>.</p>
+<p>In der (Eltern-)Komponente <code>read.component.ts</code> kommen jetzt bei Klicken des Buttons <code>Update</code> die Werte aus dem Formular an. Diese werden nun verwendet, um die <code>update</code>-Funktion im Backend aufzurufen und den Datensatz zu aktualisieren. Dazu erweitern wir den <code>BackendService</code> um eine <code>update</code>-Funktion:</p>
+<div class="tabbed-set" data-tabs="34:1"><input checked="checked" id="__tabbed_34_1" name="__tabbed_34" type="radio" /><label for="__tabbed_34_1">src/app/shared/backend.service.ts</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/common/http&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Data</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./data&#39;</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Injectable</span><span class="p">({</span>
+  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">BackendService</span> <span class="p">{</span>
+  <span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:3000/members&#39;</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">http</span><span class="o">:</span> <span class="nx">HttpClient</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">getAll</span><span class="p">()</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">Data</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">http</span>
+      <span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="nx">Data</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">getDataById</span><span class="p">(</span><span class="nx">dataId</span><span class="o">:</span> <span class="nx">number</span><span class="p">)</span><span class="o">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">Data</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">http</span>
+      <span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="nx">Data</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">dataId</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="hll">  <span class="nx">update</span><span class="p">(</span><span class="nx">dataId</span><span class="o">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="nx">Data</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">put</span><span class="o">&lt;</span><span class="nx">Data</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">dataId</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+</span><span class="hll">      <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
+</span><span class="hll">        <span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span><span class="hll">          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+</span><span class="hll">          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+</span><span class="hll">        <span class="p">},</span>
+</span><span class="hll">        <span class="nx">error</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span><span class="hll">          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</span><span class="hll">        <span class="p">}</span>
+</span><span class="hll">      <span class="p">);</span>
+</span><span class="hll">  <span class="p">}</span>
+</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+</div>
+</div>
+<p>Die <code>put</code>-Funktion des <code>HttpClient</code> (siehe z.B. <a href="https://angular.io/api/common/http/HttpClient#put">hier</a>) erzeugt ein <code>Observable</code>, das mithilfe der <code>subscribe()</code>-Funktion ausgeführt werden kann. <code>Subscribe()</code> hat zwei Parameter <code>next</code> und <code>error</code> und für beide kann eine <a href="../javascript/#callback-funktionen">Callback</a>-Funktion definert werden. Die hier definierten Funktionen geben nur entweder die <code>response</code> oder den <code>error</code> auf die Konsole aus. </p>
+<p>Damit kann nun auch ein Datensatz geändert werden (<code>update</code>) - siehe <a href="../backend/#u-update">U - update</a> im Backend. Beachten Sie, dass wir hier weder eine Meldung des erfolgreichen Updates implementiert haben, noch eine eventuelle Fehlermeldung. Für beides wäre die <code>UpdateComponent</code> geeignet. Wir leiten aber direkt nach dem Update an die Tabelle aller Datensätze weiter. </p>
+<h2 id="d-delete-one">D - delete one<a class="headerlink" href="#d-delete-one" title="Permanent link">&para;</a></h2>
+<p>Um einen Datensatz zu löschen, könnten wir in der Übersicht aller Datensätze, also in der Tabelle unter der Route <code>/read</code> eine weitere Spalte mit einem entsprechenden Icon hinzufügen. </p>
+<div class="highlight"><pre><span></span><code>ng add @ng-bootstrap/ng-bootstrap
+</code></pre></div>
                 
               
               
