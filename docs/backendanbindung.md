@@ -385,7 +385,6 @@ In dem `node_modules`-Ordner in unserem Projekt entstehen die Ordner `bootstrap`
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
-          },
     ```
 
 Beachten Sie, dass Sie die Eintragungen gleich zwei Mal in der `angular.json` vornehmen. Einmal unter `architect --> build --> options` und auch noch unter `architect --> test --> options`. 
@@ -460,8 +459,8 @@ Aus der [Liste](https://avmaisak.github.io/ngx-bootstrap-icons/) aller verfügba
 <i-bs
   name="pencil-square"
   class="text-primary"
-  width="2rem"
-  height="2rem">
+  width="1em"
+  height="1em">
 </i-bs>
 ```
 
@@ -496,8 +495,8 @@ Wir ersetzen die Liste in der `read.component.html` durch eine Tabelle:
 	      	<i-bs
 	        name="pencil-square"
 	        class="text-secondary"
-	        width="1rem"
-	        height="1rem">
+	        width="1em"
+	        height="1em">
 	      </i-bs></a></td>
 	    </tr>
 	  </tbody>
