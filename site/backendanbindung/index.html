@@ -1339,17 +1339,28 @@ Successfully connected to the database.
 <p>ein. Würden wir nur <code>npm install bootstrap</code> eingeben, würden wir aufgefordert, <code>jquery</code> (siehe <a href="https://jquery.com/">jQuery</a>) und <code>popper.js</code> (siehe <a href="https://popper.js.org/">Popper</a>) nachzuinstallieren. </p>
 <p>In dem <code>node_modules</code>-Ordner in unserem Projekt entstehen die Ordner <code>bootstrap</code>, <code>jquery</code> und <code>popper.js</code> - können Sie sich in Ihrer IDE ja mal anschauen. Damit ist Bootstrap aber noch nicht ganz eingebunden. Wir müssen es noch in unsere <code>angular.json</code> eintragen:</p>
 <div class="tabbed-set" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><label for="__tabbed_11_1">angular.json (Ausschnitt)</label><div class="tabbed-content">
-<p><code>json linenums="25" hl_lines="4 7-8"
-        ],
-        "styles": [
-          "src/styles.css",
-          "./node_modules/bootstrap/dist/css/bootstrap.min.css"
-        ],
-        "scripts": [
-          "./node_modules/jquery/dist/jquery.min.js",
-          "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-        ]
-      },</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>        <span class="err">],</span>
+        <span class="s2">&quot;styles&quot;</span><span class="err">:</span> <span class="p">[</span>
+          <span class="s2">&quot;src/styles.css&quot;</span><span class="p">,</span>
+<span class="hll">          <span class="s2">&quot;./node_modules/bootstrap/dist/css/bootstrap.min.css&quot;</span>
+</span>        <span class="p">]</span><span class="err">,</span>
+        <span class="s2">&quot;scripts&quot;</span><span class="err">:</span> <span class="p">[</span>
+<span class="hll">          <span class="s2">&quot;./node_modules/jquery/dist/jquery.min.js&quot;</span><span class="p">,</span>
+</span><span class="hll">          <span class="s2">&quot;./node_modules/bootstrap/dist/js/bootstrap.min.js&quot;</span>
+</span>        <span class="p">]</span>
+      <span class="err">},</span>
+</code></pre></div>
+</td></tr></table>
+
 </div>
 </div>
 <p>Beachten Sie, dass Sie die Eintragungen gleich zwei Mal in der <code>angular.json</code> vornehmen. Einmal unter <code>architect --&gt; build --&gt; options</code> und auch noch unter <code>architect --&gt; test --&gt; options</code>. </p>

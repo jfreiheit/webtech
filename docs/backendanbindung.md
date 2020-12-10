@@ -386,7 +386,7 @@ In dem `node_modules`-Ordner in unserem Projekt entstehen die Ordner `bootstrap`
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
-     ```
+    ```
 
 Beachten Sie, dass Sie die Eintragungen gleich zwei Mal in der `angular.json` vornehmen. Einmal unter `architect --> build --> options` und auch noch unter `architect --> test --> options`. 
 
