@@ -1240,7 +1240,7 @@ In der Elternkomponente, der `ReadComponent` fügen wir zwei Sachen hinzu:
 	import { Component, OnInit } from '@angular/core';
 	import {BackendService} from '../../shared/backend.service';
 	import {Data} from '../../shared/data';
-	import {ActivatedRoute} from '@angular/router';
+	import {ActivatedRoute, Router} from '@angular/router';
 	import {HttpErrorResponse} from '@angular/common/http';
 
 	@Component({
@@ -1254,7 +1254,7 @@ In der Elternkomponente, der `ReadComponent` fügen wir zwei Sachen hinzu:
 	  selectedId: number;
 	  error: HttpErrorResponse;
 
-	  constructor(private cs: BackendService, private route: ActivatedRoute) { }
+	  constructor(private cs: BackendService, private route: ActivatedRoute, private router: Router) { }
 
 	  ngOnInit(): void {
 	    this.selectedId = Number(this.route.snapshot.paramMap.get('id'));
