@@ -535,6 +535,11 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	- Es gibt kein Video, da der Abschnitt [Anbindung an das Backend](./backendanbindung/#anbindung-an-das-backend) vollständig als Schritt-für-Schritt-Anleitung mit zusätzlichen Erläuterungen und Links geschrieben wurde. 
 	- die **Übungsaufgabe 9** besteht darin, diesen Abschnitt Schritt für Schritt nachzuvollziehen. 
 
+??? question "Woche 11 - Angular - Anbindung ans Backend II"
+	- Wir schließen die Anbindung an das im Abschnitt [REST-API](./backend/#rest-api) erstellte Backend ab und erstellen die fehlenden Funktionalitäten `delete` und `create`. Dazu erstellen wir für `delete` einen modalen Dialog. 
+	- Es gibt kein Video, da der Abschnitt [Anbindung an das Backend](./backendanbindung/#anbindung-an-das-backend) vollständig als Schritt-für-Schritt-Anleitung mit zusätzlichen Erläuterungen und Links geschrieben wurde. 
+	- die **Übungsaufgabe 10** besteht darin, diesen Abschnitt Schritt für Schritt nachzuvollziehen. 
+
 ## Semesteraufgabe
 
 Am Ende des Kurses geben Sie eine Webanwendung ab. Diese wird bewertet und bildet die Modulnote für "WebTech" (es gibt also keine Klausur o.ä.). Überlegen Sie sich früh, was Sie implementieren wollen. Ihrer Kreativität sind keine Grenzen gesetzt. Es können 2 Studentinnen gemeinsam ein Projekt durchführen und abgeben. Sie erhalten dann (höchstwahrscheinlich) die gleiche Note. Es muss an den Commits erkennbar sein, welchen Anteil am Ergebnis jede der beiden Studentinnen hatte.

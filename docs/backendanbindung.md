@@ -1396,16 +1396,530 @@ Damit kann nun auch ein Datensatz geändert werden (`update`) - siehe [U - updat
 
 ## D - delete one
 
-Um einen Datensatz zu löschen, könnten wir in der Übersicht aller Datensätze, also in der Tabelle unter der Route `/read` eine weitere Spalte mit einem entsprechenden Icon hinzufügen. 
+Um einen Datensatz zu löschen, bauen wir in unseren `BackendService` die Funktion `deleteOne(dataId: number)` ein, in der wir die `delete()`-Funktion des Backends aufrufen:
 
 
+=== "src/app/shared/backend.service.ts"
+	```javascript linenums="1" hl_lines="37-48"
+	import { Injectable } from '@angular/core';
+	import { HttpClient } from '@angular/common/http';
+	import { Observable } from 'rxjs';
+	import { Data } from './data';
+
+	@Injectable({
+	  providedIn: 'root'
+	})
+	export class BackendService {
+	  baseUrl = 'http://localhost:3000/members';
+
+	  constructor(private http: HttpClient) { }
+
+	  getAll(): Observable<Data[]>{
+	    return this.http
+	      .get<Data[]>(this.baseUrl);
+	  }
+
+	  getDataById(dataId: number): Observable<Data> {
+	    return this.http
+	      .get<Data>(this.baseUrl + '/' + dataId);
+	  }
+
+	  update(dataId: number, data: Data): void {
+	    this.http.put<Data>(this.baseUrl + '/' + dataId, data)
+	      .subscribe(
+	        response => {
+	          console.log(response);
+	          console.log(response.id);
+	        },
+	        error => {
+	          console.log(error);
+	        }
+	      );
+	  }
+
+	  deleteOne(dataId: number): void {
+	    this.http.delete<Data>(this.baseUrl + '/' + dataId)
+	      .subscribe(
+	        response => {
+	          console.log(response);
+	          console.log(response.id);
+	        },
+	        error => {
+	          console.log(error);
+	        }
+	      );
+	  }
+	}
+	```
+
+Diese Funktion muss nun an geeigneter Stelle aufgerufen werden. Es bleibt Ihnen überlassen, wo und wie Sie diese Funktion aufrufen, um einen Datensatz zu löschen. Sie könnten z.B. die `DeleteComponent` verwenden, die Sie über die Route `/delte/:id` erreichen und dort den Datensatz mit der entsprechenden `id` löschen. Das wäre dann das gleiche Verfahren, wie wir das für das Aktualisiern/Ändern eines Datensatzes gemacht haben.
+
+Wir machen das hier etwas anders, aber der Beginn ist sicherlich der gleiche. Wir fügen in der Übersicht aller Datensätze, also in der Tabelle unter der Route `/read` eine weitere Spalte mit einem entsprechenden Icon hinzufügen. Wir wählen aus den [Bootstrap-Icons](https://avmaisak.github.io/ngx-bootstrap-icons/) das `Trash`-Icon aus und fügen es der `app.module.ts` hinzu:
+
+=== "Ausschnitt aus src/app/app.module.ts"
+	```javascript linenums="25" hl_lines="4"
+	/* siehe https://avmaisak.github.io/ngx-bootstrap-icons/ */
+	const icons = {
+	  PencilSquare,
+	  Trash,
+	};
+	```
+
+Unter Verwendung des Icons fügen wir in der Tablle der `ReadComponent` eine weitere Spalte hinzu:
+
+=== "Ausschnitt aus src/app/members/read/read.component.html"
+	```html linenums="3" hl_lines="10 25-31"
+	  <table class="table table-striped table-hover">
+	    <caption>List of Members</caption>
+	    <thead>
+	      <tr>
+	        <th>Nr.</th>
+	        <th>Vorname</th>
+	        <th>Nachname</th>
+	        <th>E-Mail</th>
+	        <th>Edit</th>
+	        <th>Delete</th>
+	      </tr>
+	    </thead>
+	  <tbody>
+	    <tr *ngFor="let member of members; let i=index; trackBy: trackByData">
+	      <td>{{ i+1 }}</td>
+	      <td>{{member.firstname}}</td>
+	      <td>{{member.lastname}}</td>
+	      <td>{{member.email}}</td>
+	      <td><a [routerLink]="['/read/', member.id]"><i-bs
+	        name="pencil-square"
+	        class="text-secondary"
+	        width="1em"
+	        height="1em">
+	      </i-bs></a></td>
+	      <td><i-bs
+	        name="trash"
+	        class="text-secondary"
+	        width="1em"
+	        height="1em"
+	        (click)="open(content, member.id)">
+	      </i-bs></td>
+	    </tr>
+	  </tbody>
+	  </table>
+	```
+
+Wie gesagt, Sie könnten hier auch wie für beim Update verfahren und anstelle des `click`-Ereignisses einen `<a [routerLink]="['/delete/', member.id]">` einfügen. Dann machen Sie Ihre `DeleteComponent` zu einer Kindkomponente der `ReadComponent` und gehen genau so vor, wie bei der `UpdateComponent`.  
+
+Wir behandeln hier stattdessen das `click`-Ereignis, um einen [modalen Dialog](https://ng-bootstrap.github.io/#/components/modal/examples) zu öffnen. Dazu geben wir in unserem Projektordner zunächst 
 
 ```bash
 ng add @ng-bootstrap/ng-bootstrap
 ```
 
+ein. Gute modale Dialoge gibt es auch von [Material](https://material.angular.io/components/dialog/overview), wir wählen hier Bootstrap. Wir binden das neue Bootstrap-Modul in die `app.module.ts`, falls das nicht automatisch durch die `add`-Anweisung erfolgt ist:
+
+=== "src/app/app.module.ts"
+	```javascript linenums="1" hl_lines="23 55"
+	import { BrowserModule } from '@angular/platform-browser';
+	import { NgModule } from '@angular/core';
+
+	import { AppRoutingModule } from './app-routing.module';
+	import { AppComponent } from './app.component';
+	import { ReadComponent } from './members/read/read.component';
+	import { CreateComponent } from './members/create/create.component';
+	import { UpdateComponent } from './members/update/update.component';
+	import { DeleteComponent } from './members/delete/delete.component';
+	import { HttpClientModule } from '@angular/common/http';
+	import {NgxBootstrapIconsModule, PencilSquare, Trash} from 'ngx-bootstrap-icons';
+	import { FormComponent } from './members/read/form/form.component';
+	import {ReactiveFormsModule} from '@angular/forms';
+	import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+	import { NavComponent } from './nav/nav.component';
+	import { LayoutModule } from '@angular/cdk/layout';
+	import { MatToolbarModule } from '@angular/material/toolbar';
+	import { MatButtonModule } from '@angular/material/button';
+	import { MatSidenavModule } from '@angular/material/sidenav';
+	import { MatIconModule } from '@angular/material/icon';
+	import { MatListModule } from '@angular/material/list';
+	import {CommonModule} from '@angular/common';
+	import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+	/* siehe https://avmaisak.github.io/ngx-bootstrap-icons/ */
+	const icons = {
+	  PencilSquare,
+	  Trash,
+	};
+
+	@NgModule({
+	  declarations: [
+	    AppComponent,
+	    ReadComponent,
+	    CreateComponent,
+	    UpdateComponent,
+	    DeleteComponent,
+	    FormComponent,
+	    NavComponent
+	  ],
+	  imports: [
+	    BrowserModule,
+	    AppRoutingModule,
+	    HttpClientModule,
+	    NgxBootstrapIconsModule.pick(icons),
+	    ReactiveFormsModule,
+	    BrowserAnimationsModule,
+	    LayoutModule,
+	    MatToolbarModule,
+	    MatButtonModule,
+	    MatSidenavModule,
+	    MatIconModule,
+	    MatListModule,
+	    CommonModule,
+	    NgbModule
+	  ],
+	  providers: [],
+	  bootstrap: [AppComponent]
+	})
+	export class AppModule { }
+	```
 
 
+Sowohl in der `read.component.ts` als auch in der `read.component.html` kommt jetzt eine ganze Menge hinzu. Hier wäre es eigentlich für die Übersichtlichkeit besser, eine eigene Komponente für den modalen Dialog zu erstellen. Dieser wäre eine Kindkomponente der `ReadComponent`. Die Daten von `member` würden wir an diese Kindkomponente "fließen" lassen und wir würden das Ereignis, das bestätigt, dass der Datensatz gelöscht werden soll, an die Elternkomponente über den `EventEmitter` zurücksenden. Das können Sie ja nochmal durchspielen. Wir packen hier alles (wie gesagt, fälschlicherweise) in die `ReadComponent`:
+
+=== "src/app/members/read/read.component.ts"
+	```javascript linenums="1" hl_lines="8 21 28-29 32-43 78-81 83-93"
+	import {Component, OnInit} from '@angular/core';
+	import {BackendService} from '../../shared/backend.service';
+	import {Data} from '../../shared/data';
+	import {ActivatedRoute, Router} from '@angular/router';
+	import {HttpErrorResponse} from '@angular/common/http';
+	import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+	import {Observable} from 'rxjs';
+	import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+
+	@Component({
+	  selector: 'app-read',
+	  templateUrl: './read.component.html',
+	  styleUrls: ['./read.component.css'],
+	})
+	export class ReadComponent implements OnInit {
+	  members: Data[];
+	  member: Data;
+	  selectedId: number;
+	  path: Observable<string>;
+	  error: HttpErrorResponse;
+	  closeResult = '';
+	  form: FormGroup;
+
+	  constructor(
+	    private cs: BackendService,
+	    private route: ActivatedRoute,
+	    private router: Router,
+	    config: NgbModalConfig,
+	    private modalService: NgbModal,
+	    private fb: FormBuilder,
+	  ) {
+	    // Konfiguration des modalen Dialogs
+	    config.backdrop = 'static';   // schliesst nicht, wenn man in das Fenster dahinter klickt
+	    config.keyboard = false;      // Modaler Dialog kann nicht durch ESC beendet werden
+	    // Formular fuer delete
+	    this.form = this.fb.group(
+	      {
+	        idControl: ['', Validators.required],
+	        firstNameControl: ['', Validators.required],
+	        lastNameControl: ['', Validators.required],
+	        emailControl: ['', Validators.required],
+	      }
+	    );
+	  }
+
+	  ngOnInit(): void {
+	    this.selectedId = Number(this.route.snapshot.paramMap.get('id'));
+	    if (this.selectedId === 0) {
+	        this.readAll();
+	      } else {
+	        console.log('id = ' + this.selectedId);   // nur fuer debug
+	        this.readOne(this.selectedId);
+	      }
+	  }
+
+	  trackByData(index: number, data: Data): number { return data.id; }
+
+	  readAll(): void {
+	    this.cs.getAll().subscribe(
+	      (response: Data[]) => this.members = response,
+	      error => console.log(error)
+	      );
+	  }
+
+	  readOne(id: number): void {
+	    this.cs.getDataById(id).subscribe(
+	      (response: Data) => this.member = response,
+	      error => this.error = error,
+	    );
+	  }
+
+	  update(data: Data): void {
+	    this.member = data;
+	    this.cs.update(this.member.id, this.member);
+	    this.router.navigateByUrl('/read');
+	  }
+
+	  deleteOne(id: number): void {
+	    this.cs.deleteOne(id);
+	    window.location.reload();
+	  }
+
+	  open(content, id: number): void {
+	    this.readOne(id);
+	    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+	      this.closeResult = `Closed with: ${result}`;
+	      console.log(this.closeResult);
+	      if (result === 'delete')
+	      {
+	        this.deleteOne(this.member?.id);
+	      }
+	    });
+	  }
+	}
+	```
+
+- In Zeile `8` importieren wir zunächst die für den [modalen Dialog](https://ng-bootstrap.github.io/#/components/modal/examples) benötigten Module (Sie können auch Zeilen `28` und `29` eingeben und den Import durch die IDE erledigen lassen) 
+- In Zeile `21` definieren wir uns eine Eigenschaft, in die ausgelesen wird, wie wir den modalen Dialog verlassen haben (durch `Cancel`-Button oder durch `Delete`-Button oder durch Klicken des Schließen-Kreuzes rechts oben im Dialog)
+- In den Zeilen `28-29` binden wir die für den modalen Dialog notwendigen Module ein. [`NgModalConfig`](https://ng-bootstrap.github.io/#/components/modal/api#NgbModalConfig) dient der Konfiguration, siehe Zeilen `33` und `34`
+- In Zeile `33` konfigurieren wir, dass der modale Dialog nur durch ein Klick-Ereignis auf dem Dialog (Buttons oder Kreuz) verlassen werden kann, nicht jedoch, indem man einfach in das dahinterliegende Fenster klickt.
+- In Zeile `34` konfigurieren wir, dass der modale Dialog auch nicht durch Drücken der `ESC`-Taste verlassen werden kann. 
+- In den Zeilen `36-43` definieren wir das Menü, das in dem modalen Dialog erscheinen soll. Das Vorgehen kennen wir bereits aus `UpdateComponent`.
+- In den Zeilen `78-81` definieren wir die Funktion, die die `deleteOne()`-Funktion des `BackendService` aufruft. Zeile `80` führt zu einem Reload der aktuellen Seite (die `ReadComponent` - die Tabelle- wird neu geladen, nachdem wir den modalen Dialog verlassen  und einen Datensatz gelöscht haben).
+- In den Zeilen `83-93` ist die `open()`-Funktion zum Öffnen des modalen Dialogs definiert. Dieser Funktion wird die `id` des Datensatzes übergeben, den wir löschen wollen. Mithilfe dieser `id` lesen wir den Datensatz in unsere `member`-Eigenschaft ein (`this.readOne(id)`). Danach öffnen wir den Dialog mithilfe der `open()`-Funktion von [`NgbModal`](https://ng-bootstrap.github.io/#/components/modal/api#NgbModal). Die Zeilen `86` und `87` sind nur zum Debuggen. Sie können gelöscht werden - und dann auch Zeile `21`, wenn Sie möchten. In `result` steht nach dem Schließen des Dialogs, mit welchem Button wir den Dialog beendet haben. Wenn es der `Delete`-Button war, dann rufen wir die `deleteOne()`-Funktion auf, die dann den Datensatz tatsächlich löscht. 
+
+In der `read.component.html` fügen wir das Template des modalen Dialogs hinzu:
 
 
+=== "src/app/members/read/read.component.html"
+	```html linenums="1" hl_lines="50-92"
+	<div *ngIf="selectedId == 0" class="container">
+	  <h2>All members</h2>
+	  <table class="table table-striped table-hover">
+	    <caption>List of Members</caption>
+	    <thead>
+	      <tr>
+	        <th>Nr.</th>
+	        <th>Vorname</th>
+	        <th>Nachname</th>
+	        <th>E-Mail</th>
+	        <th>Edit</th>
+	        <th>Delete</th>
+	      </tr>
+	    </thead>
+	  <tbody>
+	    <tr *ngFor="let member of members; let i=index; trackBy: trackByData">
+	      <td>{{ i+1 }}</td>
+	      <td>{{member.firstname}}</td>
+	      <td>{{member.lastname}}</td>
+	      <td>{{member.email}}</td>
+	      <td><a [routerLink]="['/read/', member.id]"><i-bs
+	        name="pencil-square"
+	        class="text-secondary"
+	        width="1em"
+	        height="1em">
+	      </i-bs></a></td>
+	      <td><i-bs
+	        name="trash"
+	        class="text-secondary"
+	        width="1em"
+	        height="1em"
+	        (click)="open(content, member.id)">
+	      </i-bs></td>
+	    </tr>
+	  </tbody>
+	  </table>
+	</div>
+	<div *ngIf="selectedId > 0" class="container">
+	  <div *ngIf="error">
+	    <h1>{{ selectedId }}</h1>
+	    <p>{{ error?.message }}</p>
+	    <p>{{ error?.status }}</p>
+	    <p><a [routerLink]="['/read']">Zurück zur Tabelle</a></p>
+	  </div>
+	  <div *ngIf="member">
+	    <app-form [data]="member" (updateEvent)="update($event)"></app-form>
+	  </div>
+	</div>
+
+	<!-- modaler Dialog fuer das Loeschen -->
+
+	<ng-template #content let-modal>
+	  <div class="modal-header">
+	    <h4 class="modal-title" id="modal-basic-title">Confirm delete</h4>
+	    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cancel')">
+	      <span aria-hidden="true">&times;</span>
+	    </button>
+	  </div>
+	  <div class="modal-body">
+	    <h4 style="color: red">Do you really want to delete this data set?</h4>
+	    <form [formGroup]="form">
+	      <div class="form-group">
+	        <label for="inpId">id</label>
+	        <div class="input-group">
+	          <input id="inpId" class="form-control" formControlName="idControl" value="{{ member?.id }}" readonly>
+	        </div>
+	      </div>
+	      <div class="form-group">
+	        <label for="inpFN">firstname</label>
+	        <div class="input-group">
+	          <input id="inpFN" class="form-control" formControlName="firstNameControl" value="{{ member?.firstname }}" readonly>
+	        </div>
+	      </div>
+	      <div class="form-group">
+	        <label for="inpLN">lastname</label>
+	        <div class="input-group">
+	          <input id="inpLN" class="form-control" formControlName="lastNameControl" value="{{ member?.lastname }}" readonly>
+	        </div>
+	      </div>
+	      <div class="form-group">
+	        <label for="inpEmail">email</label>
+	        <div class="input-group">
+	          <input id="inpEmail" class="form-control" formControlName="emailControl" value="{{ member?.email }}" readonly>
+	        </div>
+	      </div>
+	    </form>
+	  </div>
+	  <div class="modal-footer">
+	    <button type="button" class="btn btn-secondary" (click)="modal.close('cancel')">Cancel</button>
+	    <button type="button" class="btn btn-primary" (click)="modal.close('delete')">Delete</button>
+	  </div>
+	</ng-template>
+	```
+
+Zu modalen Dialogen unter Verwendung von Bootstrap gibt es [hier](https://ng-bootstrap.github.io/#/components/modal/examples) ausführliche Beispiele. Wir haben hier in den modalen Dialog noch ein Formular integriert. Weitere Informationen über solche *Bootstrap-Widgets* dazu finden Sie auch [hier](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) und [hier](https://ng-bootstrap.github.io/#/home).
+
+Der modale Dialog erscheint, sobald Sie in der Tabelle in der rechten Spalte auf ein `Trash`-icon klicken. Es sollte dann so aussehen:
+
+![modal](./files/111_modal.png)
+
+Wenn Sie auf den `Delete`-Button klicken, wird der Datensatz tatsächlich gelöscht, wenn Sie `Cancel` klicken oder auf das Kreuz rechts oben, bleibt der Datensatz in der Datenbank. Nach dem Löschen des Datensatzes erfolgt ein Reload der Tabelle. 
+
+### Refinement
+
+Wie gesagt, es wäre besser gewesen, für den modalen Dialog eine eigene Komponente als Kindkomponente der `ReadComponent` zu erstellen. Die `member`-Daten würden [von der Eltern- an die Kindkomponente](./#datenfluss-von-eltern-nach-kindkomponente) weitergeleitet werden und das Klicken des `Delete`-Buttons als Ereignis [von der Kind- an die Elternkomponente](./#datenfluss-von-kind-nach-elternkomponente). 
+
+Da wir die `DeleteComponent` nicht nutzen, kann sie gelöscht werden, dann auch aus der `app.module.ts` und auch die Routen dorthin (aus der `app-routing.module.ts`). 
+
+Jetzt bleiben noch das Anlegen eines Datensatzes und, wenn Sie das überhaupt wollen, das Löschen aller Datensätze. 
+
+## C - create
+
+Für das Anlegen eines Datensatzes könnten wir einfach in unsere `CreateComponent` ein Formular erstellen, so wie beim Update oder dem Löschen eines Datensatzes. In der `backend.service.ts` fügen wir die `create()`-Funktion hinzu:
+
+=== "Ausschnitt aus src/app/shared/backend.service.ts"
+	```javascript linenums="50"
+	  create(data: Data): void {
+	    this.http.post<Data>(this.baseUrl, data)
+	      .subscribe(
+	        response => {
+	          console.log(response);
+	        },
+	        error => {
+	          console.log(error);
+	        }
+	      );
+	  }
+	```
+
+Es wird die Methode `post` zum Senden des Datensatzes an das Backend gewählt. Die `data` enthalten `firstname`, `lastname` und `email`, aber keine `id`, da diese automatisch beim Einfügen des Datensatzes in die Datenbank erzeugt wird. Wir können trotzdem den Typ `Data` wählen und lassen `id` einfach weg. Das [`Backend`](../backend/#c-create) liest eh nur die drei genannten Eigenschaften aus. 
+
+Die beiden Dateien der `CreateComponent` sehen dann so aus:
+
+=== "src/app/members/create/create.component.ts"
+	```javascript linenums="1"
+	import { Component, OnInit } from '@angular/core';
+	import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+	import {ActivatedRoute, Router} from '@angular/router';
+	import {Data} from '../../shared/data';
+	import {BackendService} from '../../shared/backend.service';
+
+	@Component({
+	  selector: 'app-create',
+	  templateUrl: './create.component.html',
+	  styleUrls: ['./create.component.css']
+	})
+	export class CreateComponent implements OnInit {
+	  form: FormGroup;
+	  data: Data;
+
+	  constructor(
+	    private cs: BackendService,
+	    private fb: FormBuilder,
+	    private route: ActivatedRoute,
+	    private router: Router
+	  ) {
+	    this.form = this.fb.group(
+	      {
+	        firstNameControl: ['', Validators.required],
+	        lastNameControl: ['', Validators.required],
+	        emailControl: ['', Validators.required],
+	      }
+	    );
+	    this.data = { id: 0, firstname: '', lastname: '', email: ''};
+	  }
+
+	  ngOnInit(): void {
+	  }
+
+	  onSubmit(): void {
+	    console.warn(this.form.value);
+	    const values = this.form.value;
+	    this.data.firstname = values.firstNameControl;
+	    this.data.lastname = values.lastNameControl;
+	    this.data.email = values.emailControl;
+	    console.log(this.data);
+	    this.cs.create(this.data);
+	    this.router.navigate(['/read']);
+	  }
+
+	  cancel(): void {
+	    this.router.navigate(['/read']);
+	  }
+	}
+	```
+
+=== "src/app/members/create/create.component.html"
+	```html linenums="1"
+	<div class="container">
+	  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+	    <div class="form-group row">
+	      <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+	      <div class="col-sm-10">
+	        <input type="text" class="form-control" formControlName="firstNameControl" id="inputFirstName">
+	      </div>
+	    </div>
+
+	    <div class="form-group row">
+	      <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+	      <div class="col-sm-10">
+	        <input type="text" class="form-control" formControlName="lastNameControl" id="inputLastName">
+	      </div>
+	    </div>
+
+	    <div class="form-group row">
+	      <label for="inputEmail" class="col-sm-2 col-form-label">E-Mail</label>
+	      <div class="col-sm-10">
+	        <input type="text" class="form-control" formControlName="emailControl" id="inputEmail">
+	      </div>
+	    </div>
+
+	    <div class="form-group row">
+	      <div class="col-sm-6">
+	        <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.valid">Create</button>
+	      </div>
+	      <div class="col-sm-6">
+	        <button type="cancel" class="btn btn-secondary btn-block" (click)="cancel()">Cancel</button>
+	      </div>
+	    </div>
+	  </form>
+	</div>
+	```	
+
+Sie enthalten nichts, was wir nicht schon kennen würden. Wenn wir jetzt in unserer Navigation auf `Create` klicken, also die Route `/create` auswählen, dann öffnet sich das Formular und wenn wir es befüllen und mit dem `Create`-Button absenden, dann öffnet sich die Tabelle mit allen Datensätzen und hinten in der Tabelle wurde der Datensatz angehängt.
+
+![create](./files/112_create.png)
+
+![create](./files/113_create.png)
 
