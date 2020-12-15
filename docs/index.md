@@ -21,10 +21,10 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst). Die Vorlesung
 | 9. | 30.-04.12.2020 | Node.js + Express (REST-Server + MySQL) | Übung 8 | Frontend (u+d)| 20.12.2020 | 
 | 10. | 07.-11.12.2020 | Angular (Anbindung ans Backend I) | Übung 9 | Frontend fertig | 10.01.2020 | 
 | 11. | 14.-18.12.2020 | Angular (Anbindung ans Backend II) | Übung 10 | Backend ( c ) | 17.01.2020 | 
-| 12. | 21.-25.12.2020 | Node.js (Express, Request, Response, URL)  | - | Backend ( r ) | - |
+| 12. | 21.-25.12.2020 | -  | - | Backend ( r ) | - |
 | | | | | | | |
-| 13. | 04.-08.01.2021 | Node.js (Model View Controller) | - | Backend (u) | - |
-| 14. | 11.-15.01.2021 | Node.js (Datenbankanbindung, REST-Server)  | - | Backend (d + fertig)| - |
+| 13. | 04.-08.01.2021 | JWT | - | Backend (u) | - |
+| 14. | 11.-15.01.2021 | Drittanbieter-APIs  | - | Backend (d + fertig)| - |
 | 15. | 18.-22.01.2021 | Wiederholung | - | fertig stellen | - |
 | 16. | 25.-29.01.2021 | - | Fragen | Abgabe 1.PZ 13.02.2021 | - |
 |  |  |  |  | Abgabe 2.PZ 01.04.2021 | - |

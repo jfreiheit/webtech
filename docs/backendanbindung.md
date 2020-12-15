@@ -1923,3 +1923,5 @@ Sie enthalten nichts, was wir nicht schon kennen würden. Wenn wir jetzt in unse
 
 ![create](./files/113_create.png)
 
+!!! success
+	Wir haben nun die vier CRUD-Funktionen im Frontend implementiert und dafür das Frontend an das Backend vollständig angebunden. Auf die letzte durch das Backend zur Verfügung gestellte Funktion `deleteAll()` verzichten wir. Der Entwicklungsstack MySQl <-> Backend <-> Frontend ist damit fertig und abgeschlossen. Wir haben nun alle Voraussetzungen besprochen, um die Semesteraufgabe zu erledigen. Im Januar werden wir uns noch mit [JSON Web Tokens (JWT)](https://jwt.io/) befassen, um das Rechtemanagment in einer Anwnedung zu implementieren. Eventuell werden wir dann auch noch Drittanbieter-APIs (wie z.B. Google-Maps-API oder Twitter-API) verwenden - mal sehen. Ansonsten wünsche ich allen ein frohes und gesundes Weihnachtsfest und einen guten Rutsch ins neue Jahr! Bleiben Sie gesund und viel Spaß und Erfolg mit der Semesteraufgabe und dem restlichen Studium!
