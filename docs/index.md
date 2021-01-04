@@ -540,6 +540,11 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	- Es gibt kein Video, da der Abschnitt [Anbindung an das Backend](./backendanbindung/#anbindung-an-das-backend) vollständig als Schritt-für-Schritt-Anleitung mit zusätzlichen Erläuterungen und Links geschrieben wurde. 
 	- die **Übungsaufgabe 10** besteht darin, diesen Abschnitt Schritt für Schritt nachzuvollziehen. 
 
+??? question "Woche 12 - JSON Web Token (JWT)"
+	- wir erstellen uns ein Frontend und ein Backend für die Registrierung und das Login mithilfe von JWT
+	- das dazugehörige Skript finden Sie unter [JSON Web Tokens (JWT)](./jwt/#json-web-tokens-jwt)
+	- die **Übungsaufgabe 11** besteht darin, diesen Abschnitt Schritt für Schritt nachzuvollziehen. Sie können auch zusätzlich gerne die dort im [Ausblick](./jwt/#ausblick) diskutierten fehlenden Fehlerreaktionen implementieren - müssen Sie aber auch nicht.
+
 ## Semesteraufgabe
 
 Am Ende des Kurses geben Sie eine Webanwendung ab. Diese wird bewertet und bildet die Modulnote für "WebTech" (es gibt also keine Klausur o.ä.). Überlegen Sie sich früh, was Sie implementieren wollen. Ihrer Kreativität sind keine Grenzen gesetzt. Es können 2 Studentinnen gemeinsam ein Projekt durchführen und abgeben. Sie erhalten dann (höchstwahrscheinlich) die gleiche Note. Es muss an den Commits erkennbar sein, welchen Anteil am Ergebnis jede der beiden Studentinnen hatte.
