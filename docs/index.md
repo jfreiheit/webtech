@@ -540,6 +540,12 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 	- Es gibt kein Video, da der Abschnitt [Anbindung an das Backend](./backendanbindung/#anbindung-an-das-backend) vollständig als Schritt-für-Schritt-Anleitung mit zusätzlichen Erläuterungen und Links geschrieben wurde. 
 	- die **Übungsaufgabe 10** besteht darin, diesen Abschnitt Schritt für Schritt nachzuvollziehen. 
 
+---
+
+*Bis hier haben Sie alles, was Sie für Ihre Semesteraufgabe benötigen, wenn Sie sie alleine erstellen. Ab hier ist alles Zusatz, müssen Sie also nicht mehr machen.*
+
+---
+
 ??? question "Woche 12 - JSON Web Token (JWT)"
 	- wir erstellen uns ein Frontend und ein Backend für die Registrierung und das Login mithilfe von JWT
 	- das dazugehörige Skript finden Sie unter [JSON Web Tokens (JWT)](./jwt/#json-web-tokens-jwt)
@@ -560,6 +566,11 @@ Am Ende des Kurses geben Sie eine Webanwendung ab. Diese wird bewertet und bilde
 	    * eine Komponente zur Änderung eines Datenbankeintrages (<b>U</b>pdate),
 	    * eine Komponente zur Anzeige *aller* Datenbankeinträge (<b>R</b>ead),
 	    * eine Komponente zum Löschen eines Datenbankeintrages (<b>D</b>elete).
+    * wenn Sie die Anwendung alleine umsetzen, dann genügen 3 der 4 CRUD-Funktionalitäten
+    * wenn Sie die Anwendung zu zweit entwickeln, dann
+    	* sollen alle 4 CRUD-Funktionalitäten umgesetzt werden und
+    	* Login (Username + Passwort) und
+    	* ich schaue mir die Commit-Hiostorie im Git genauer an, um sicherzugehen, dass beide Studentinnen gleich viel an der Anwendung mitentwickelt haben
 
 	Datenbankeinträge können Bücher, CDs, ToDos, Einkaufslisten, Vorlesungen, Kühlschrankinhalte usw. sein - wie gesagt, Ihrer Kreativität sind keine Grenzen gesetzt. 
 
