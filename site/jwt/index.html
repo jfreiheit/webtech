@@ -491,6 +491,26 @@
     Ausblick
   </a>
   
+    <nav class="md-nav" aria-label="Ausblick">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dowmloads-der-aktuellen-versionen" class="md-nav__link">
+    Dowmloads der aktuellen Versionen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zugriff-nur-bei-login" class="md-nav__link">
+    Zugriff nur bei Login
+  </a>
+  
 </li>
       
     </ul>
@@ -632,6 +652,26 @@
         <li class="md-nav__item">
   <a href="#ausblick" class="md-nav__link">
     Ausblick
+  </a>
+  
+    <nav class="md-nav" aria-label="Ausblick">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dowmloads-der-aktuellen-versionen" class="md-nav__link">
+    Dowmloads der aktuellen Versionen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zugriff-nur-bei-login" class="md-nav__link">
+    Zugriff nur bei Login
   </a>
   
 </li>
@@ -1794,6 +1834,23 @@ ng g service services/api
 <li>wir haben keine Zugriffssteuerung definiert, d.h. es fehlt noch eine Seite (Komponente), auf die nur dann zugegriffen werden kann, wenn der Nutzer eingeloggt ist</li>
 </ul>
 <p>Die Fehlerpunkte wären sicherlich eine gute Übung für Sie. Den letzten Punkt betrachten wir beim nächsten Mal. Allerdings kann man JWT auch noch so erweitern, dass bestimmte Rollen hinterlegt und abgefraget werden können. Das werden wir uns nicht anschauen. Aber vielleicht haben Sie ja bereits selbst Ideen, wie das geschehen kann. Die Nutzerdaten müssten ja nur im ein Attribut <code>role</code> erweitert und abgefragt werden. Umfassende Informationen darüber finden Sie im <a href="../files/jwt-handbook-v0_14_1.pdf">JWT-Handbuch</a>.</p>
+<h3 id="dowmloads-der-aktuellen-versionen">Dowmloads der aktuellen Versionen<a class="headerlink" href="#dowmloads-der-aktuellen-versionen" title="Permanent link">&para;</a></h3>
+<p>Clonen von Github:</p>
+<ul>
+<li><a href="https://github.com/jfreiheit/loginfrontend">loginfrontend</a></li>
+<li><a href="https://github.com/jfreiheit/loginbackend">loginbackend</a></li>
+</ul>
+<p>im Folgenden wird auf diesen Versionen aufgebaut. </p>
+<h2 id="zugriff-nur-bei-login">Zugriff nur bei Login<a class="headerlink" href="#zugriff-nur-bei-login" title="Permanent link">&para;</a></h2>
+<p>UserService</p>
+<div class="highlight"><pre><span></span><code>ng g s services/user
+</code></pre></div>
+
+<p>UserComponent</p>
+<div class="highlight"><pre><span></span><code>ng g c user
+</code></pre></div>
+
+<p><a href="https://swagger.io/docs/specification/authentication/bearer-authentication/">Bearer Authentication</a></p>
                 
               
               

@@ -555,6 +555,8 @@ Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com
 
 Am Ende des Kurses geben Sie eine Webanwendung ab. Diese wird bewertet und bildet die Modulnote für "WebTech" (es gibt also keine Klausur o.ä.). Überlegen Sie sich früh, was Sie implementieren wollen. Ihrer Kreativität sind keine Grenzen gesetzt. Es können 2 Studentinnen gemeinsam ein Projekt durchführen und abgeben. Sie erhalten dann (höchstwahrscheinlich) die gleiche Note. Es muss an den Commits erkennbar sein, welchen Anteil am Ergebnis jede der beiden Studentinnen hatte.
 
+*Sobald Sie mit Ihrem Semesterprojekt fertig sind, geben Sie mir bitte Bescheid! Wir vereinbaren dann einen Online-Gesprächstermin. Sie müssen auch im 2.PZ nicht bis zum 1.4. warten - im Gegenteil, wenn wir die Gespräche in den März legen können, um so besser.*
+
 ??? question "Mindestanforderungen"
 	Folgende Anforderungen werden an Ihr Projekt gestellt:
 

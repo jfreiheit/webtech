@@ -1361,8 +1361,9 @@ Successfully connected to the database.
 </code></pre></div>
 
 <h3 id="frontend-starten">Frontend starten<a class="headerlink" href="#frontend-starten" title="Permanent link">&para;</a></h3>
-<p>Wir müssen unser Frontend compilieren <code>ng serve</code> und wenn wir dann im Browser <code>http://localhost:4200/read</code> eingeben, also die Route zu unserer <code>ReadComponent</code>, dann sollten wir in der Konsole die Ausgabe der Response sehen (die <code>id</code>s und auch die Anzahl der Einträge können bei Ihnen anders sein):</p>
+<p>Wir müssen unser Frontend compilieren <code>ng serve</code> und wenn wir dann im Browser <code>http://localhost:4200/read</code> eingeben, also die Route zu unserer <code>ReadComponent</code>, dann sollten wir in der <strong>Konsole in den Entwicklertools</strong> die Ausgabe der Response sehen (die <code>id</code>s und auch die Anzahl der Einträge können bei Ihnen anders sein):</p>
 <p><img alt="konsole" src="../files/101_konsole.png" /></p>
+<p>Achtung! Man sieht nichts auf der Webseite, sondern wir geben die Datensätze derzeit nur in der Konsole der Entwicklertools aus!</p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
 <p>Wir haben das Backend an das Frontend angebunden. Wir haben die erste Anfrage an das Backend im Frontend umgesetzt, nämlich <code>GET /members</code>, indem wir im Frontend die <code>get()</code>-Funktion des <code>HttpClient</code> implementiert und diese in der <code>ReadComponent</code>mittels <code>subscribe()</code> ausgeführt haben. Wir werden nun zunächst die Daten noch im HTML-Template darstellen und dann weitere Endpunkte unserer REST-API anbinden. </p>

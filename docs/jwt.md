@@ -794,3 +794,28 @@ Beachten Sie, dass das Beispiel bewusst einfach gehalten wurde. Es fehlen mehrer
 - wir haben keine Zugriffssteuerung definiert, d.h. es fehlt noch eine Seite (Komponente), auf die nur dann zugegriffen werden kann, wenn der Nutzer eingeloggt ist
 
 Die Fehlerpunkte wären sicherlich eine gute Übung für Sie. Den letzten Punkt betrachten wir beim nächsten Mal. Allerdings kann man JWT auch noch so erweitern, dass bestimmte Rollen hinterlegt und abgefraget werden können. Das werden wir uns nicht anschauen. Aber vielleicht haben Sie ja bereits selbst Ideen, wie das geschehen kann. Die Nutzerdaten müssten ja nur im ein Attribut `role` erweitert und abgefragt werden. Umfassende Informationen darüber finden Sie im [JWT-Handbuch](./files/jwt-handbook-v0_14_1.pdf).
+
+### Dowmloads der aktuellen Versionen
+
+Clonen von Github:
+
+- [loginfrontend](https://github.com/jfreiheit/loginfrontend)
+- [loginbackend](https://github.com/jfreiheit/loginbackend)
+
+im Folgenden wird auf diesen Versionen aufgebaut. 
+
+## Zugriff nur bei Login
+
+UserService
+
+```bash
+ng g s services/user
+```
+
+UserComponent
+
+```bash
+ng g c user
+```
+
+[Bearer Authentication](https://swagger.io/docs/specification/authentication/bearer-authentication/)
