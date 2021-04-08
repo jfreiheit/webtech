@@ -48,7 +48,7 @@ Man könnte die Komponenten nun mithilfe ihrer Selektoren (z.B. `<app-create></a
 
 ## Routing
 
-In der `app-routing.module.ts` können wir *Routen* definieren, so dass wir unsere Komponenten über die URLs direkt erreichen können, z.B. `localhost:4200/read`, um z.B. alle Datensätze auszulesen oder `localhost:4200/read/11`, um den Datensatz mit der `id=11` auszulesen. Werden für die Komponenten Routen definiert, so wird je nach Route die jeweilige Komponente in den Selktor `<router-outlet></router-outlet>` eingesetzt. 
+In der `app-routing.module.ts` können wir *Routen* definieren, so dass wir unsere Komponenten über die URLs direkt erreichen können, z.B. `localhost:4200/read`, um z.B. alle Datensätze auszulesen oder `localhost:4200/read/11`, um den Datensatz mit der `id=11` auszulesen. Werden für die Komponenten Routen definiert, so wird je nach Route die jeweilige Komponente in den Selektor `<router-outlet></router-outlet>` eingesetzt. 
 
 Wir definieren unserer Routen wie folgt:
 

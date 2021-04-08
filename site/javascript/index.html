@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="de" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für WebTech">
       
       
-        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/webtech/javascript/">
-      
       
         <meta name="author" content="Jörn Freiheit">
       
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/webtech/javascript/">
+      
       <link rel="shortcut icon" href="../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#757575">
+          
+          
+          <meta name="theme-color" content="#757575">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -56,8 +57,13 @@
   
     
     
-    <body dir="" data-md-color-primary="grey" data-md-color-accent="indigo">
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="indigo">
+      
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -73,53 +79,57 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="">
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-header-nav__button md-logo" aria-label="WebTech">
       
   <img src="../img/fiw.jpg" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             WebTech
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               JavaScript
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Suchbegriff eingeben
+            Suche wird initialisiert
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -134,7 +144,7 @@
 <a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     webtech
@@ -147,69 +157,23 @@
     
     <div class="md-container" data-md-component="container">
       
-        
       
-      
-        
-          
-
-<nav class="md-tabs" aria-label="" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href=".." class="md-tabs__link md-tabs__link--active">
-        Home
-      </a>
-    
-  </li>
-
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </ul>
-  </div>
-</nav>
         
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-nav__button md-logo" aria-label="WebTech">
       
@@ -224,7 +188,7 @@
 <a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     webtech
@@ -238,72 +202,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../uebungen/" title="Übungen" class="md-nav__link">
-      Übungen
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../tools/" title="Werkzeuge" class="md-nav__link">
-      Werkzeuge
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../html/" title="HTML" class="md-nav__link">
-      HTML
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../css/" title="CSS" class="md-nav__link">
-      CSS
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../rwd/" title="RWD" class="md-nav__link">
-      RWD
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
 
     
       
@@ -311,27 +218,102 @@
       
 
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Werkzeuge
+      </a>
+    </li>
+  
+
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/" class="md-nav__link">
+        HTML
+      </a>
+    </li>
+  
+
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../css/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rwd/" class="md-nav__link">
+        RWD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         JavaScript
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="JavaScript" class="md-nav__link md-nav__link--active">
-      JavaScript
-    </a>
-    
+      </a>
       
+        
 <nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
   
   
@@ -339,9 +321,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Inhaltsverzeichnis
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -500,116 +480,144 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../json/" title="JSON" class="md-nav__link">
-      JSON
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../angular/" title="Angular" class="md-nav__link">
-      Angular
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json/" class="md-nav__link">
+        JSON
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../material/" title="Material" class="md-nav__link">
-      Material
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../backend/" title="REST-API" class="md-nav__link">
-      REST-API
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../angular/" class="md-nav__link">
+        Angular
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../backendanbindung/" title="Frontend-Backend-Anbindung" class="md-nav__link">
-      Frontend-Backend-Anbindung
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../jwt/" title="JWT" class="md-nav__link">
-      JWT
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material/" class="md-nav__link">
+        Material
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../node/" title="Node.js" class="md-nav__link">
-      Node.js
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../books/" title="Bücher-App" class="md-nav__link">
-      Bücher-App
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        REST-API
+      </a>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backendanbindung/" class="md-nav__link">
+        Frontend-Backend-Anbindung
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../books-backend/" title="Bücher-Backend" class="md-nav__link">
-      Bücher-Backend
-    </a>
-  </li>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jwt/" class="md-nav__link">
+        JWT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node/" class="md-nav__link">
+        Node.js
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../books/" class="md-nav__link">
+        Bücher-App
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../books-backend/" class="md-nav__link">
+        Bücher-Backend
+      </a>
+    </li>
+  
 
     
   </ul>
@@ -619,7 +627,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -630,9 +639,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Inhaltsverzeichnis
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -801,11 +808,8 @@
               
                 
                   <a href="https://github.com/jfreiheit/webtech/edit/master/docs/javascript.md" title="Seite editieren" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
-                
-                
-                  
                 
                 
                 <h1 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h1>
@@ -847,7 +851,6 @@
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-
 <p>Ein gutes Vorgehen ist es, JavaScript am Ende des <code>&lt;body&gt;</code>-Elementes einzubinden, damit die Seite zunächst dargestellt wird und erst dann der JavaScript-Code geladen wird. Das laden des JavaScript-Codes würde ansonsten die Darstellung der Webseite verzögern. </p>
 <h2 id="document-object-model-dom">Document Object Model (DOM)<a class="headerlink" href="#document-object-model-dom" title="Permanent link">&para;</a></h2>
 <p>Wir betrachten JavaScript zunächst nur aus client-seitiger Sicht, d.h. für die Verwendung im Browser. Der Browser stellt HTML dar, welches durch CSS in ein ansprechendes Layout gestzt wurde. Es stellt sich die Frage, inwieweit JavaScript überhaupt noch eine Erweiterung dieses Konzeptes darstellen kann. Die Antwort liegt darin, dass ohne JavaScript eine Webseite im Browser völlig statisch ist, d.h. es gibt nur eine Möglichkeit, neue Inhalte zu laden oder überhaupt etwas an der Webseite zu ändern und das ist, diese neuen Inhalte oder Änderungen von einem Webserver zu laden. Jede Nutzerinteraktion führt so immer zu einem Request-Response-Prozess mit einem Webserver. Das wird durch JavaScript geändert. Auf Nutzerinteraktionen kann durch JavaScript lokal, d.h. auf dem Client bleibend, reagiert werden. Die Schnittstelle zwischen JavaScript und HTML/CSS ist das sogenannte <em>Document Objekct Model (DOM)</em>. Das DOM stellt ein Interface (eine Schnittstelle) dar, um HTML-Dokumente "manipulieren" zu können. Damit ist hauptsächlich gemeint, dass HTML-Elemente eines HTML-Dokumentes </p>
@@ -882,7 +885,6 @@
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-
 <p>Ein HTML-Dokument besteht aus HTML-Elementen, welche Attribute haben können und Inhalte. Im obigen Beispiel hat z.B. das <code>&lt;meta&gt;</code>-Element im <code>&lt;head&gt;</code> ein Attribut, nämlich <code>charset</code>. Der Wert dieses Attributes ist ein Text, nämlich <code>UTF-8</code>. Der Inhalt eines <code>&lt;a&gt;</code>-Elementes ist auch ein Text. Im obigen Beispiel haben wir zwei <code>&lt;a&gt;</code>-Elemente. Das eine hat den Inhalt (Text) <code>HTW Berlin</code> und das andere <code>FIW</code>. Wir können somit zwischen drei Arten von "Objekten" in einem HTML-Dokument unterscheiden:</p>
 <ul>
 <li>Elemente</li>
@@ -896,12 +898,10 @@
 <p>Ausgangspunkt (die Wurzel) eines jeden HTML-DOM ist <code>document</code> (siehe obige Abbildung). Von <code>document</code> aus können wir uns beliebig durch den Baum bewegen. Die wohl meist verwendete Funktion zur Lokalisation eines Elementes im DOM ist <code>getElementById()</code>. In unserem obigen Beispiel haben wir nur ein Element mit einer <code>id</code> (einem <code>id</code>-Attribut) und das ist <code>&lt;ul&gt;</code>. Wir könnten gezielt nach diesem Element fragen:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;ul1&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>und erhalten als Rückgabe das Element mit der <code>id="ul1"</code>, also das <code>&lt;ul&gt;</code>-Element (welches wir z.B. in einer Variable speichern könnten). Weitere Funktionen zur Lokalisation von Elementen sind </p>
 <div class="highlight"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
 </code></pre></div>
-
 <p>Beide Funktionen liefern uns jeweils ein Array von Elementen zurück. Die Funktion <code>document.getElementsByTagName(name)</code> gibt ein Array von Elementen aus dem <code>document</code> zurück, die den Tag <em>name</em> haben, also z.B. alle <code>&lt;p&gt;</code>-Elemente, wenn <code>document.getElementsByTagName('p')</code> aufgerufen wird. Die Funktion <code>document.getElementsByClassName(name)</code> gibt ein Array von Elementen aus dem <code>document</code> zurück, die der Klasse <em>name</em> zugeordnet sind, also z.B. alle Elemente mit der Klasse <code>form-group</code>, wenn <code>document.getElementsByClassName('form-group')</code> aufgerufen wird. Mit diesen Funktionen kann man Elemente mitten im DOM lokalisieren. Daneben gibt es noch weitere Funktionen, die jeweils von einem solchen Element ausgehend "benachbarte" Knoten lokalisieren. Betrachten wir z.B. diesen Ausschnitt aus einem HTML-Code:</p>
 <div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">main</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;headline&quot;</span><span class="p">&gt;</span>DOM<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
@@ -911,7 +911,6 @@
         <span class="p">&lt;</span><span class="nt">img</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ball4&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ball.png&quot;</span> <span class="p">/&gt;</span>
     <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
 </code></pre></div>
-
 <p>Der dazugehörige DOM (vereinfacht) ist in der folgenden Abbildung dargestellt sowie die Funktionen, mit denen die umgebenden Elemente lokalisiert werden können:</p>
 <p><img alt="lokalisation" src="../files/71_dom.png" /></p>
 <p>Für die Funktionen <code>getElementById()</code> und <code>getElementsByTagName()</code> betrachten wir ein erstes einfaches Beispiel:</p>
@@ -980,14 +979,13 @@
 
         <span class="kd">function</span> <span class="nx">changeColor</span><span class="p">()</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">h1arr</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">);</span>
-            <span class="nx">h1arr</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">;</span>
+            <span class="nx">h1arr</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>Den <code>&lt;head&gt;</code> können wir ignorieren, auch das <code>&lt;style&gt;</code>-Element darin. Wichtig sind:</p>
 <ul>
 <li>wir haben 2 leere <code>&lt;div&gt;</code>-Elemente mit den Ids <code>id="demo1"</code> und <code>id="demo2"</code> (Zeilen <code>16</code> und <code>18</code>)</li>
@@ -1009,7 +1007,6 @@
 <p>HTML-Ereignisse "passieren" für HTML-Elemente in den allermeisten Fällen durch Nutzerinteraktionen (Maustaste drücken, Fenster vergrößern, Tatstatureingabe etc.). Mit JavaScript können wir auf diese Ereignisse reagieren. Eine einfache Form, ein HTML-Element an ein solches Ereignis anzumelden (so dass darauf reagiert werden kann), ist über Attribute. Angenommen ein solches Ereignis heißt <em>Event</em>, dann heißt das Attribut <em>onEvent</em> (es kann auch alles klein geschrieben werden). Die generelle Syntax ist wie folgt:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">element</span> <span class="na">onEvent</span><span class="o">=</span><span class="s">&quot;JavaScript-Code&quot;</span> <span class="p">/&gt;</span>
 </code></pre></div>
-
 <p>Der JavaScript-Code muss nicht zwingend der Aufruf einer JavaScript-Funktion, sondern kann auch eine direkte JavaScript-Anweisung sein. </p>
 <p>Hier eine Liste der üblichsten HTML-Ereignisse. Die Bedeutung ist aus den Namen selbsterklärend, deshalb werden die meisten Ereignisse hier nicht weiter beschrieben:</p>
 <ul>
@@ -1020,19 +1017,14 @@
 </ul>
 <p>Wir zeigen einige Beispiele:</p>
 <iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/vxea5dph/10/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-
 <p>In diesem Beispiel werden die Ereignisse <code>focus</code>, <code>blur</code> und <code>input</code> behandelt. Um das <code>blur</code>-Ereignis auszulösen, muss das <code>&lt;input&gt;</code>-Element den Focus verlieren. </p>
 <iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/vxea5dph/16/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-
 <p>In diesem Beispiel wird das <code>change</code>-Ereignis behandelt. Der Inhalt des Absatzes <code>&lt;p&gt;</code> mit der <code>id="radio"</code> wird bei jedem <code>change</code>-Event erweitert. Es wird also nicht <code>innerHTML</code> völlig neu gesetzt, sondern mithilfe von <code>+=</code> wird der entsprechende String angehängt. Das soll insbesondere zeigen, dass das <code>change</code>-Ereignisses wirklich nur ausgelöst wird, wenn der Wert wechselt. Beachten Sie auch, dass <code>getElementsByName()</code> verwendet wird. Den Radiobuttons wurde jeweils <code>name="colors"</code> zugewiesen. Sie bilden damit auch eine Radiobutton-Group (es kann immer nur ein Radiobutton daraus ausgewählt werden).</p>
 <iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/vxea5dph/26/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-
 <p>In diesem Beispiel werden das <code>mouseover</code>- und das <code>mouseout</code>-Event behandelt. Beachten Sie auch die Übergabe von <code>this</code> an die JavaScript-Funktionen. Damit wird das <code>&lt;div&gt;</code>-Element übergeben. Wir müssen es innerhalb der Funktionen deshalb nicht mehr explizit mit <code>getElementById()</code> oder ähnliches holen. </p>
 <iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/vxea5dph/29/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-
 <p>In diesem Beispiel wird JavaScript nicht als Funktion, sondern direkt in den Ereignis-Attributen aufgerufen. </p>
 <iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/vxea5dph/31/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-
 <p>Noch ein einfaches Beispiel mit den Ereignissen <code>mousedown</code>, <code>mouseup</code>, <code>mouseenter</code> und <code>mouseleave</code>. </p>
 <p>Noch ein letztes Beispiel, das wir nicht in JSFiddle zeigen, da es daraum geht, die Größe des Browsers zu ändern (Ereignis <code>resize</code> - die JavaScript-Funktion heißt auch <code>resize()</code>, aber dieser Name ist frei gewählt):</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -1055,7 +1047,6 @@
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-
 <p>Wir haben uns nun einige Beispiele angesehen, wie wir HTML-Elemente ändern können. Prinzipiell geht es mit den Eigenschaften:</p>
 <ul>
 <li><code>node.innerHTML =</code>            - Inhalt eines Elements ändern</li>
@@ -1077,11 +1068,10 @@
 <h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h4>
 <p>Wir betrachten wieder ein einfaches Beispiel:</p>
 <iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/vxea5dph/34/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-
 <p>Im HTML-Code sehen wir ein <code>&lt;input&gt;</code>-Element und eine Liste <code>&lt;ul&gt;</code>, die bereits 2 Listitems <code>&lt;li&gt;</code> enthält. Dem <code>&lt;input&gt;</code>-Element wurde ein <code>change</code>-Listener hinzugefügt. Sobald sich der Wert in dem <code>&lt;input&gt;</code>-Element geändert hat, wird dieses Ereignis ausgelöst und die Funktion <code>addItem()</code> aufgerufen. Dieser Funktion wird das <code>&lt;input&gt;</code>-Element als Parameter übergeben. In dieser Funktion wird zuerst ein Textknoten erzeugt (<code>let textNode = document.createTextNode(text);</code>) Der <code>text</code> ist der Wert <code>value</code> des <code>&lt;input&gt;</code>-Elementes. Außerdem wird ein <code>&lt;li&gt;</code>-Knoten (Objekt) erzeugt (<code>let liNode = document.createElement('li');</code>). An diesen <code>&lt;li&gt;</code>-Knoten wird der Textknoten angehängt (<code>liNode.appendChild(textNode);</code>). Danach wird an die <code>&lt;ul&gt;</code>-Liste der <code>&lt;li&gt;</code>-Knoten (mit dem Textknoten) angehängt (<code>ulNode.appendChild(liNode);</code>). Das neue List-item erscheint sofort als letztes Kind in der Liste. </p>
-<p>Im folgenden Beispiel passiert das gleiche, nur wird das neu erzeugte List-Item nicht hinten an die Liste angehängt, sondern vorne eingefügt:
+<p>Im folgenden Beispiel passiert das gleiche, nur wird das neu erzeugte List-Item nicht hinten an die Liste angehängt, sondern vorne eingefügt:</p>
 <iframe width="100%" height="300" src="//jsfiddle.net/jfreiheit/vxea5dph/35/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <code>ulNode.appendChild(liNode);</code> wird <code>ulNode.insertBefore(liNode, ulNode.childNodes[0]);</code>. Mit <code>ulNode.childNodes[0]</code> greifen wir auf das erste Kind des <code>ulNode</code> zu. Das hätten wir auch durch <code>ulNode.firstChild</code> haben können. </p>
+<p>Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <code>ulNode.appendChild(liNode);</code> wird <code>ulNode.insertBefore(liNode, ulNode.childNodes[0]);</code>. Mit <code>ulNode.childNodes[0]</code> greifen wir auf das erste Kind des <code>ulNode</code> zu. Das hätten wir auch durch <code>ulNode.firstChild</code> haben können. </p>
 <h4 id="clone">Clone<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h4>
 <p>Eine weitere Möglichkeit, ein Element zu erzeugen, ist durch <em>clonen</em> eines anderen Knotens (Elementes). Der Vorteil des Clonens besteht darin, dass ein gesamter Unterbaum eines Elementes mitkopiert werden kann. Die Syntax für das Clonen eines Knotens <em>node</em> ist <code>nod.cloneNode(deep)</code>. Wenn <code>deep</code> <code>true</code> ist, werden auch alle Kindelemente geklont, wenn <code>false</code>, dann nur das Element selbst. </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
@@ -1129,7 +1119,6 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>Im obigen Beispiel verwenden wir Bootstrap und für das <code>&lt;img&gt;</code>-Element einige Bootstrap-Klassen (hauptsächlich, damit es in der Mitte ist). Wenn wir auf das Bild Doppelklicken (<code>dblclick</code>), wird die Funktion <code>cloneFunc()</code> aufgerufen, der wir das <code>img</code>-Objekt übergeben. In der Funktion clonen wir das Bild (hier ist es egal, ob <code>deep</code> clone oder nicht, da das <code>img</code>-Element keine Kindknoten hat). Der Clone wird dem <code>div</code>-Element als Kind hinzugefügt. Durch jeden Doppelklick auf das Bild wird ein weiterer Clone dem <code>&lt;div&gt;</code>-Element hinzugefügt. </p>
 <h3 id="addeventlistener">addEventListener<a class="headerlink" href="#addeventlistener" title="Permanent link">&para;</a></h3>
 <p>Eigentlich ist die Verwendung der Attribute <code>onEvent</code> nicht optimal, da die Trennung zwischen HTML und JavaScript nicht groß genug ist. Wir erinnern uns, wir wollen eine Trennung in die Zuständigkeiten: </p>
@@ -1204,7 +1193,6 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>In Zeile <code>17</code> melden wir unseren geklonten Knoten an den Event-Listener für das <code>click</code>-Ereignis an. Wird auf das Bild geklickt, dann wird die Funktion <code>removeFunc()</code> aufgerufen. Beachten Sie, dass der erste Parameter der <code>addEventListener()</code>-Funktion das Ereignis <code>click</code> ist (und nicht das HTML-Attribut <code>onClick</code>) und dass der zweite Parameter die Referenz auf die Funktion <code>removeFunc</code> ist, nicht der Aufruf der Funktion. Würden wir dort anstelle von <code>removeFunc</code> <code>removeFunc()</code> schreiben, entspräche das dem Aufruf der Funktion und diese würde bei Aufruf der Funktion <code>addEventListener()</code> sofort ausgeführt. </p>
 <p>Beachten Sie außerdem, dass bei der Funktionsdefinition von <code>removeFunc()</code> das ausgelöste Event <code>event</code> als Parameter übergeben wird. Dies passiert automatisch (also immer). Wenn wir den Parameter benennen, dann können wir auf dieses Ereignis zugreifen. Das machen wir auch, nämlich in Zeile <code>24</code>, wo wir das <code>target</code> des Events abfragen, also das das Ereignis auslösende Element (unser jeweiliges <code>&lt;img&gt;</code>). </p>
 <p>Die <code>console.log()</code>-Aufrufe sind jeweils nur zum Debuggen bzw. Inspizieren. Es gibt zwei JavaScript-Funktionen zum Löschen eines Elementes:</p>
@@ -1305,7 +1293,7 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
 </span><span class="hll">        <span class="kd">let</span> <span class="nx">divNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
 </span><span class="hll">        <span class="nx">divNode</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">&quot;div1&quot;</span><span class="p">;</span>
 </span><span class="hll">
-</span><span class="hll">        <span class="kd">let</span> <span class="nx">scriptNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class="hll">        <span class="kd">let</span> <span class="nx">scriptNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
 </span><span class="hll">        <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">imgNode</span><span class="p">,</span> <span class="nx">scriptNode</span><span class="p">);</span>
 </span><span class="hll">        <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">divNode</span><span class="p">,</span> <span class="nx">scriptNode</span><span class="p">);</span>
 </span><span class="hll">    <span class="p">}</span>
@@ -1314,7 +1302,6 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>Hervorgehoben sind wieder die Zeilen, in dennen sich etwas geändert hat.</p>
 <ul>
 <li>Zeile <code>10</code>: Der <code>&lt;body&gt;</code> enthält nun nur noch ein <code>&lt;script&gt;</code>-Element. Ansonsten keine weiteren HTML-Elemente. </li>
@@ -1330,7 +1317,6 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
 <p>Objekte in JavaScript werden in <em>JavaScript Object Notation</em> beschrieben. Wir werden darauf noch <a href="../json/#javascript-object-notation-json"><strong>genauer eingehen</strong></a>, zeigen hier aber schonmal ein einfaches Beispiel zur Einführung:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">person</span><span class="o">=</span><span class="p">{</span><span class="nx">vorname</span><span class="o">:</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="nx">nachname</span><span class="o">:</span> <span class="s2">&quot;Musterfrau&quot;</span><span class="p">};</span>
 </code></pre></div>
-
 <p>Es wurde eine <code>person</code> definiert mit 2 Feldern <code>vorname</code> und <code>nachname</code> und diesen Feldern wurden Werte zugewiesen. Der Zugriff auf die Felder erfolgt mittels Punkt-Notation, also <code>person.vorname</code> und <code>person.nachname</code>. </p>
 <ul>
 <li>Sie können die Werte auch einfach überschreiben, z.B. <code>person.nachname = "Schmidt"</code>. </li>
@@ -1341,12 +1327,10 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
 <span class="nx">person</span><span class="p">[</span><span class="s2">&quot;nachname&quot;</span><span class="p">]</span>      <span class="c1">// Schmidt</span>
 <span class="nx">person</span><span class="p">[</span><span class="s2">&quot;alter&quot;</span><span class="p">]</span>         <span class="c1">// 42</span>
 </code></pre></div>
-
 <p>Mithilfe von <code>delete</code> können Eigenschaften gelöscht werden, z.B. <code>delete person.alter;</code>. Ab dann ist <code>person.alter</code> <code>undefined</code>. </p>
 <p>Objekteigenschaften können auch Funktionen sein, z.B. </p>
 <div class="highlight"><pre><span></span><code><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">vorname</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">nachname</span> <span class="p">};</span>
 </code></pre></div>
-
 <p>Der Aufruf erfolgt dann über <code>person.name();</code></p>
 <h3 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h3>
 <p>Arrays in JavaScript werden fast genauso behandelt wie in Java. Hier ein Beispiel:</p>
@@ -1388,7 +1372,7 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
     <span class="kd">let</span> <span class="nx">lange</span> <span class="o">=</span> <span class="nx">sgs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 
     <span class="nx">text</span> <span class="o">=</span> <span class="s2">&quot;&lt;ul&gt;&quot;</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">sgs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">sgs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">text</span> <span class="o">+=</span> <span class="s2">&quot;&lt;li&gt;&quot;</span> <span class="o">+</span> <span class="nx">sgs</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&lt;/li&gt;&quot;</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="nx">text</span> <span class="o">+=</span> <span class="s2">&quot;&lt;/ul&gt;&quot;</span><span class="p">;</span>
@@ -1399,39 +1383,36 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>In Zeile <code>12</code> wird das Array <code>sgs</code> (soll Studiengänge heißen - immer sprechende Namen verwenden ;-) definiert. Es enthält lauter Strings. In JavaScript können die Elemente eines Arrays von verschiedenen Typen sein. In Zeile <code>16</code> definieren wir die <code>for</code>-Schleife, mit der wir durch das Array laufen (ist genau so numerisch indiziert, wie wir das von Java kennen). Wir greifen über die Index-Schreibweise <code>sgs[i]</code> auf alle Elemente des Arrays zu (Zeile <code>17</code>). </p>
 <p>Das Array kann auch aus Objekten bestehen. Angenommen, das Array sieht so aus:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">staedte</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">1237</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/berlin.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">1624</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/New_York_City&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/newyork.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">1252</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Stockholm&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Stockholm&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/stockholm.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">852</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Madrid&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Madrid&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/madrid.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">1827</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bremerhaven&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremerhaven&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/bremerhaven.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">150</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bremen&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremen&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/bremen.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">1202</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bernau&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bernau_bei_Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/bernau.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">929</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Brandenburg&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Brandenburg_an_der_Havel&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/brandenburg.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">805</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Magdeburg&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Magdeburg&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/magdeburg.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">1222</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Marburg&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Marburg&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/marburg.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">766</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Mannheim&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mannheim&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/mannheim.png&quot;</span><span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mi">782</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Mainz&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mainz&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/mainz.png&quot;</span><span class="p">}</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">1237</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/berlin.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">1624</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/New_York_City&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/newyork.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">1252</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Stockholm&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Stockholm&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/stockholm.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">852</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Madrid&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Madrid&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/madrid.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">1827</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bremerhaven&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremerhaven&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/bremerhaven.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">150</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bremen&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bremen&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/bremen.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">1202</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bernau&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Bernau_bei_Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/bernau.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">929</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Brandenburg&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Brandenburg_an_der_Havel&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/brandenburg.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">805</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Magdeburg&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Magdeburg&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/magdeburg.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">1222</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Marburg&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Marburg&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/marburg.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">766</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Mannheim&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mannheim&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/mannheim.png&quot;</span><span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;jahr&quot;</span> <span class="o">:</span> <span class="mf">782</span><span class="p">,</span> <span class="s2">&quot;stadt&quot;</span> <span class="o">:</span> <span class="s2">&quot;Mainz&quot;</span><span class="p">,</span> <span class="s2">&quot;link&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://de.wikipedia.org/wiki/Mainz&quot;</span><span class="p">,</span> <span class="s2">&quot;bild&quot;</span> <span class="o">:</span> <span class="s2">&quot;images/mainz.png&quot;</span><span class="p">}</span>
 <span class="p">];</span>
 </code></pre></div>
-
 <p>Dann sind die Elemente des Arrays numerisch indiziert. </p>
 <h3 id="javascript-ist-dynamisch-typisiert">JavaScript ist dynamisch typisiert<a class="headerlink" href="#javascript-ist-dynamisch-typisiert" title="Permanent link">&para;</a></h3>
 <p>Im Gegensatz zu z.B. Java ist JavaScript nicht statisch, sondern dynamisch typisiert. Der Wert einer Variablen bestimmt deren Typ. Beispiel:</p>
-<div class="highlight"><pre><span></span><code>    <span class="kd">var</span> <span class="nx">number</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>                                <span class="c1">// number  </span>
+<div class="highlight"><pre><span></span><code>    <span class="kd">var</span> <span class="nx">number</span> <span class="o">=</span> <span class="mf">16</span><span class="p">;</span>                                <span class="c1">// number  </span>
     <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Johnson&quot;</span><span class="p">;</span>                           <span class="c1">// string</span>
     <span class="kd">var</span> <span class="nx">cars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Saab&quot;</span><span class="p">,</span> <span class="s2">&quot;Volvo&quot;</span><span class="p">,</span> <span class="s2">&quot;BMW&quot;</span><span class="p">];</span>            <span class="c1">// object (Array)</span>
     <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">firstName</span><span class="o">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span><span class="s2">&quot;Doe&quot;</span><span class="p">};</span>   <span class="c1">// object</span>
     <span class="kd">var</span> <span class="nx">func</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">();</span>                      <span class="c1">// function</span>
     <span class="kd">var</span> <span class="nx">correct</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>                             <span class="c1">// boolean</span>
     <span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>                                          <span class="c1">// now x is undefined</span>
-    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>                                      <span class="c1">// now x is a Number</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">5</span><span class="p">;</span>                                      <span class="c1">// now x is a Number</span>
     <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span><span class="p">;</span>                                 <span class="c1">// now x is a String</span>
 </code></pre></div>
-
 <p><code>typeof</code> kann verwendet werden, ob zu überprüfen, ob eine Variable überhaupt definiert ist und/oder von welchem Typ sie ist. Es liefert folgende Resultate:</p>
 <ul>
 <li><code>undefined</code></li>
@@ -1449,7 +1430,7 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;myDiv&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">+=</span><span class="k">typeof</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>  <span class="c1">// undefined</span>
     <span class="nx">x</span><span class="o">=</span><span class="s2">&quot;12&quot;</span><span class="p">;</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;myDiv&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">+=</span><span class="k">typeof</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>  <span class="c1">// string</span>
-    <span class="nx">x</span><span class="o">=</span><span class="mi">12</span><span class="p">;</span>
+    <span class="nx">x</span><span class="o">=</span><span class="mf">12</span><span class="p">;</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;myDiv&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">+=</span><span class="k">typeof</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>  <span class="c1">// number</span>
     <span class="nx">x</span><span class="o">=</span><span class="mf">12.12</span><span class="p">;</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;myDiv&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">+=</span><span class="k">typeof</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&lt;br/&gt;&quot;</span><span class="p">;</span>  <span class="c1">// number</span>
@@ -1470,10 +1451,9 @@ Tatsächlich ändert sich dafür nur die letzte Anweisung in der Funktion. Aus <
 <span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">myFunction</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">myFunction</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span> <span class="mf">3</span><span class="p">);</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-
 <p>Es wird eine Funktion <code>myFunction()</code> definiert, der 2 Parameter <code>a</code> und <code>b</code> übergeben werden. Die Funktion berechnet das Produkt aus <code>a</code> und <code>b</code> und gibt dieses mithilfe von <code>return</code> zurück. Der zurückgegebene Wert wird als Inhalt des Absatzes <code>&lt;p&gt;</code> mit der <code>id="demo"</code> verwendet. <code>myFunction(4, 3);</code> ist der Aufruf der Funktion. </p>
 <p>Außerdem können Funktionen als <em>anonyme</em> Funktionen deklariert werden. Es ist möglich, dass eine Variable auf eine (anonyme) Funktion zeigt. Diese Variable kann dann wie die Funktion selbst verwendet werden. Beispiel:</p>
 <p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">};</span>
@@ -1489,27 +1469,24 @@ mit dem Aufruf <code>myFunction(4,3);</code>. Die Verwendung des <code>Function(
 <h3 id="variable-anzahl-von-parametern">Variable Anzahl von Parametern<a class="headerlink" href="#variable-anzahl-von-parametern" title="Permanent link">&para;</a></h3>
 <p>Die Anzahl der Parameter kann, muss aber nicht in der Funktionsdefinition angegeben werden. Es geht immer (auch wenn eine feste Anzahl von Parametern angegeben wurde):</p>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">summe</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Diese Funktion kann jetzt mit beliebig vielen Parametern aufgerufen werden:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">summe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-<span class="nx">summe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nx">summe</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">4</span><span class="p">,</span> <span class="mf">5</span><span class="p">,</span> <span class="mf">6</span><span class="p">);</span>
+<span class="nx">summe</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">);</span>
 </code></pre></div>
-
 <h3 id="arrow-funktionen">Arrow-Funktionen<a class="headerlink" href="#arrow-funktionen" title="Permanent link">&para;</a></h3>
 <p><em>Arrow-Funktionen</em> werden auch als <em>Lambda-Ausdrücke</em> bezeichnet. Eine Arrow-Funktion ist eine Kurzschreibweise für eine anonyme Funktion. Anstelle von <code>function()</code> schreibt man nur noch einen  Pfeil. Enthält die anonyme Funktion sogar nur ein Argument (Parameter), kann man links vom Pfeil sogar die runden Klammern weglassen. Auch die geschweiften Klammern des Funktionskörpers können entfallen. Wenn die geschweiften Klammwern weggelassen werden, dann entspricht die rechte Seite des Pfeils dem Rückgabewert der Funktion, d.h. es kann sogar <code>return</code> weggelassen werden. Folgende Funktionsdefinitionen sind äquivalent:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span><span class="k">return</span> <span class="nx">foo</span><span class="o">+</span><span class="mi">1</span><span class="p">;}</span>
-<span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">foo</span><span class="o">+</span><span class="mi">1</span><span class="p">;}</span>
-<span class="nx">foo</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">foo</span><span class="o">+</span><span class="mi">1</span><span class="p">;}</span>
-<span class="nx">foo</span> <span class="p">=&gt;</span> <span class="nx">foo</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span><span class="k">return</span> <span class="nx">foo</span><span class="o">+</span><span class="mf">1</span><span class="p">;}</span>
+<span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">foo</span><span class="o">+</span><span class="mf">1</span><span class="p">;}</span>
+<span class="nx">foo</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">foo</span><span class="o">+</span><span class="mf">1</span><span class="p">;}</span>
+<span class="nx">foo</span> <span class="p">=&gt;</span> <span class="nx">foo</span><span class="o">+</span><span class="mf">1</span><span class="p">;</span>
 </code></pre></div>
-
 <h3 id="callback-funktionen">Callback-Funktionen<a class="headerlink" href="#callback-funktionen" title="Permanent link">&para;</a></h3>
 <p>Eine <em>Callback</em>-Funktion ist eine Funktion, die einer anderen Funktion als Parameter übergeben wird. Callback-Funktionen sind z.B. <a href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function">hier</a> erläutert. Darin finden Sie auch das folgende einfache Beispiel einer Callback-Funktion:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
@@ -1533,7 +1510,6 @@ mit dem Aufruf <code>myFunction(4,3);</code>. Die Verwendung des <code>Function(
 <span class="nx">processUserInput</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>In den Zeilen 1-3 wird eine Funktion <code>greeting()</code> definiert, welche einen <code>name</code> erwartet. Diese Funktion gibt <code>Hello</code> zusammen mit dem Namen in einem Alarmfenster aus. Die Funktion <code>greeting()</code> wird als <em>Callback</em>-Funktion in der Funktion <code>processUserInput()</code> (Zeilen 5-8) verwendet. Das heißt, die Funktion <code>greeting()</code> wird der Funktion <code>processUserInput()</code> als Parameter übergeben. Innerhalb der Funktion <code>processUserInput()</code> heißt die Referenz auf die Funktion <code>greeting()</code> <code>callback</code>. Der Parametername kann beliebig gewählt werden. Wir die Funktion <code>processUserInput()</code> aufgerufen (Zeile 10) und die Funktion <code>greeting()</code> als Parameter übergeben, dann erscheint zunächst ein Eingabefenster, in dem der Name eingeben wird und dieser Name wird der <code>greeting()</code>-Funktion als Parameter übergeben. Es erscheint das Alarmfenster mit der Ausgabe <code>Hello</code> plus dem Namen. Der Funktion <code>processUserInput()</code> könnte auch jede andere Funktion als Callback-Funktion übergeben werden. </p>
 <h2 id="promises">Promises<a class="headerlink" href="#promises" title="Permanent link">&para;</a></h2>
 <p>Eine <em>Promise</em> ist das Ergebnis einer asynchronen Operation. Es gibt vier Status einer Promis (uns interessiert in der Regel nur <code>resolved</code> oder <code>rejected</code>):</p>
@@ -1566,7 +1542,7 @@ mit dem Aufruf <code>myFunction(4,3);</code>. Die Verwendung des <code>Function(
 <p>Um das Prinzip einer Promise zu erläutern, schauen wir uns ein Beispiel aus <a href="./node/#eine-movie-datenbank"><strong>Node.js &rarr; Eine Movie-Datenbank</strong></a> an:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">getAll</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="s1">&#39;SELECT * FROM Movies&#39;</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="s1">&#39;SELECT * FROM Movies&#39;</span><span class="p">;</span>
         <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
             <span class="k">if</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
             <span class="k">else</span>      <span class="nx">resolve</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
@@ -1574,7 +1550,6 @@ mit dem Aufruf <code>myFunction(4,3);</code>. Die Verwendung des <code>Function(
     <span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Die Funktion <code>getAll()</code> gibt eine Promise zurück. Diese wird mit dem Konstruktor erzeugt. Dem Konstruktor wird eine Callback-Funktion übergeben. Hier ist diese Funktion die Anfrage an die Datenbank <code>connection.query()</code>. Diese Funktion ist asynchron, d.h. sie wird ausgeführt, ohne dass andere Funktionsaufrufe stoppen müssen. Man kann auch sagen, dass die Promise die asynchrone Funktion <em>kapselt</em>. </p>
 <p>Die asynchrone Funktion enthält ebenfalls eine Callback-Funktion. Hier wurden als Parameternamen der Callback-Funktion <code>error</code> und <code>results</code> gewählt. Der erste Parameter wirft einen Fehler, wenn die asynchrone Funktion fehlschlägt, der zweite Parameter enthält die Daten bei Erfolg. Mit <code>reject</code> gibt man den Fehler zurück (im Fehlerfall) und mit <code>resolve</code> die Daten (im Erfolgsfall). </p>
 <div class="admonition note">
@@ -1589,7 +1564,6 @@ mit dem Aufruf <code>myFunction(4,3);</code>. Die Verwendung des <code>Function(
     <span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>Der entscheidende Punkt ist, dass ein Promise-Objekt eine <code>then</code>-Methode besitzt. Dieser <code>then</code>-Methode können wiederum zwei Callback-Funktionen übergeben werden. Die erste Funktion wird durch die <code>resolve</code>-Funktion der Promise aufgerufen, die zweite Funktion, falls die Promise die <code>reject</code>-Funktion aufruft. Werden der <code>resolve</code>- und der <code>reject</code>-Funktion Argumente übergeben (so wie oben <code>resolve(results)</code> und <code>reject(error)</code>), dann können diese Argumente in der jeweiligen Callback-Funktion ausgewertet werden (<code>results</code>&rarr;<code>movies</code> bzw. <code>error</code>&rarr;<code>error</code>). </p>
 <p>Die <code>then</code>-Funktion selbst gibt übrigens wieder ein <code>Promise</code>-Objekt zurück. Somit können mehrere Promises verkettet werden.</p>
                 
@@ -1608,11 +1582,11 @@ mit dem Aufruf <code>myFunction(4,3);</code>. Die Verwendung des <code>Function(
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../rwd/" title="RWD" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../rwd/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
@@ -1625,7 +1599,7 @@ mit dem Aufruf <code>myFunction(4,3);</code>. Die Verwendung des <code>Function(
           </a>
         
         
-          <a href="../json/" title="JSON" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../json/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -1635,7 +1609,7 @@ mit dem Aufruf <code>myFunction(4,3);</code>. Die Verwendung des <code>Function(
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -1662,15 +1636,15 @@ mit dem Aufruf <code>myFunction(4,3);</code>. Die Verwendung des <code>Function(
       
     </div>
     
-      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt"}</script>
       
       <script>
         app = initialize({
           base: "..",
-          features: ["instant", "tabs"],
+          features: ['instant', 'tabs'],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="de" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für WebTech">
       
       
-        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/webtech/backend/">
-      
       
         <meta name="author" content="Jörn Freiheit">
       
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/webtech/backend/">
+      
       <link rel="shortcut icon" href="../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#757575">
+          
+          
+          <meta name="theme-color" content="#757575">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -56,8 +57,13 @@
   
     
     
-    <body dir="" data-md-color-primary="grey" data-md-color-accent="indigo">
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="indigo">
+      
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -73,53 +79,57 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="">
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-header-nav__button md-logo" aria-label="WebTech">
       
   <img src="../img/fiw.jpg" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             WebTech
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               REST-API
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Suchbegriff eingeben
+            Suche wird initialisiert
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -134,7 +144,7 @@
 <a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     webtech
@@ -147,69 +157,23 @@
     
     <div class="md-container" data-md-component="container">
       
-        
       
-      
-        
-          
-
-<nav class="md-tabs" aria-label="" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href=".." class="md-tabs__link md-tabs__link--active">
-        Home
-      </a>
-    
-  </li>
-
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </ul>
-  </div>
-</nav>
         
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-nav__button md-logo" aria-label="WebTech">
       
@@ -224,7 +188,7 @@
 <a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     webtech
@@ -238,120 +202,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../uebungen/" title="Übungen" class="md-nav__link">
-      Übungen
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../tools/" title="Werkzeuge" class="md-nav__link">
-      Werkzeuge
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../html/" title="HTML" class="md-nav__link">
-      HTML
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../css/" title="CSS" class="md-nav__link">
-      CSS
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../rwd/" title="RWD" class="md-nav__link">
-      RWD
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../javascript/" title="JavaScript" class="md-nav__link">
-      JavaScript
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../json/" title="JSON" class="md-nav__link">
-      JSON
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../angular/" title="Angular" class="md-nav__link">
-      Angular
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../material/" title="Material" class="md-nav__link">
-      Material
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
 
     
       
@@ -359,27 +218,162 @@
       
 
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Werkzeuge
+      </a>
+    </li>
+  
+
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/" class="md-nav__link">
+        HTML
+      </a>
+    </li>
+  
+
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../css/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rwd/" class="md-nav__link">
+        RWD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javascript/" class="md-nav__link">
+        JavaScript
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json/" class="md-nav__link">
+        JSON
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../angular/" class="md-nav__link">
+        Angular
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material/" class="md-nav__link">
+        Material
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          REST-API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         REST-API
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="REST-API" class="md-nav__link md-nav__link--active">
-      REST-API
-    </a>
-    
+      </a>
       
+        
 <nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
   
   
@@ -387,9 +381,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Inhaltsverzeichnis
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -487,68 +479,84 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../backendanbindung/" title="Frontend-Backend-Anbindung" class="md-nav__link">
-      Frontend-Backend-Anbindung
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../jwt/" title="JWT" class="md-nav__link">
-      JWT
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backendanbindung/" class="md-nav__link">
+        Frontend-Backend-Anbindung
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../node/" title="Node.js" class="md-nav__link">
-      Node.js
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../books/" title="Bücher-App" class="md-nav__link">
-      Bücher-App
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jwt/" class="md-nav__link">
+        JWT
+      </a>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node/" class="md-nav__link">
+        Node.js
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../books-backend/" title="Bücher-Backend" class="md-nav__link">
-      Bücher-Backend
-    </a>
-  </li>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../books/" class="md-nav__link">
+        Bücher-App
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../books-backend/" class="md-nav__link">
+        Bücher-Backend
+      </a>
+    </li>
+  
 
     
   </ul>
@@ -558,7 +566,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -569,9 +578,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Inhaltsverzeichnis
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -679,11 +686,8 @@
               
                 
                   <a href="https://github.com/jfreiheit/webtech/edit/master/docs/backend.md" title="Seite editieren" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
-                
-                
-                  
                 
                 
                 <h1 id="rest-api">REST-API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h1>
@@ -736,7 +740,6 @@
 <span class="nb">cd</span> backend
 npm init
 </code></pre></div>
-
 <p>Sie werden ein paar Sachen gefragt. Im Prinzip können Sie immer <code>Enter</code> drücken:</p>
 <div class="highlight"><pre><span></span><code>package name: <span class="o">(</span>backend<span class="o">)</span> 
 version: <span class="o">(</span><span class="m">1</span>.0.0<span class="o">)</span> 
@@ -769,19 +772,16 @@ About to write to /Users/jornfreiheit/Sites/WT20/backend/package.json:
 
 Is this OK? <span class="o">(</span>yes<span class="o">)</span> 
 </code></pre></div>
-
 <p>Die <code>package.json</code> wurde erstellt. Nun benötigen wir noch ein paar nützliche Module, nämlich <code>express</code>, <code>mysql</code> und den <code>body-parser</code>:</p>
 <div class="highlight"><pre><span></span><code>npm install express mysql body-parser --save
 </code></pre></div>
-
 <p>Sie erhalten eine Meldung in der Form:</p>
 <div class="highlight"><pre><span></span><code>+ express@4.17.1
 + body-parser@1.19.0
 + mysql@2.18.1
-added <span class="m">59</span> packages from <span class="m">48</span> contributors and audited <span class="m">60</span> packages in <span class="m">2</span>.016s
+added <span class="m">59</span> packages from <span class="m">48</span> contributors and audited <span class="m">60</span> packages <span class="k">in</span> <span class="m">2</span>.016s
 found <span class="m">0</span> vulnerabilities
 </code></pre></div>
-
 <p>Öffnen Sie nun das <code>backend</code>-Projekt in Ihrer IDEserver und erstellen Sie sich dort eine Datei <code>server.js</code> mit folgendem Inhalt:</p>
 <div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">server.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
@@ -803,10 +803,10 @@ found <span class="m">0</span> vulnerabilities
 17
 18
 19
-20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;body-parser&quot;</span><span class="p">);</span>
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;body-parser&quot;</span><span class="p">);</span>
 
-<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 
 <span class="c1">// parse requests of content-type: application/json</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
@@ -820,18 +820,16 @@ found <span class="m">0</span> vulnerabilities
 <span class="p">});</span>
 
 <span class="c1">// set port, listen for requests</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Server is running on port 3000.&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
 </td></tr></table>
-
 </div>
 </div>
 <p>Geben Sie im Terminal in Ihrem <code>backend</code>-Ordner nun </p>
 <div class="highlight"><pre><span></span><code>node server.js
 </code></pre></div>
-
 <p>ein. Das müssen Sie nun leider immer wieder zum Compilieren und Ausführen machen. Sie beenden den Prozess mit <code>Ctrl+C</code> und starten ihn dann erneut. Öffnen Sie im Browser <code>http://localhost:3000/</code> und Sie erhalten:</p>
 <p><img alt="backend" src="../files/91_backend.png" /></p>
 <p>Sie können auch Postman öffnen und <code>http://localhost:3000</code> eintragen (<code>GET</code>-Methode):</p>
@@ -848,7 +846,7 @@ found <span class="m">0</span> vulnerabilities
 <span class="c1">-- PHP-Version: 7.3.22-(to be removed in future macOS)</span>
 
 <span class="k">SET</span> <span class="n">SQL_MODE</span> <span class="o">=</span> <span class="ss">&quot;NO_AUTO_VALUE_ON_ZERO&quot;</span><span class="p">;</span>
-<span class="k">START</span> <span class="n">TRANSACTION</span><span class="p">;</span>
+<span class="k">START</span> <span class="k">TRANSACTION</span><span class="p">;</span>
 <span class="k">SET</span> <span class="n">time_zone</span> <span class="o">=</span> <span class="ss">&quot;+00:00&quot;</span><span class="p">;</span>
 
 
@@ -955,16 +953,13 @@ found <span class="m">0</span> vulnerabilities
 <span class="cm">/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */</span><span class="p">;</span>
 <span class="cm">/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */</span><span class="p">;</span>
 </code></pre></div>
-
 </details>
 <p>Falls Sie MySQL vom Studi-Server verwenden, dann müssen Sie </p>
 <div class="highlight"><pre><span></span><code><span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_0900_ai_ci</span>
 </code></pre></div>
-
 <p>durch </p>
 <div class="highlight"><pre><span></span><code><span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_general_ci</span>
 </code></pre></div>
-
 <p>ersetzen! Sie können sich diese Datei auch <a href="../files/members.sql">hier</a> herunterladen. Prüfen Sie, ob alle 50 Datensätze korrekt eingelsen wurden. Unter <code>Anzeigen</code> in <code>phpmyadmin</code> sollte folgende Tabelle erscheinen:</p>
 <p><img alt="phpmyadmin" src="../files/93_phpmyadmin.png" /></p>
 <h3 id="datenbank-im-backend-anbinden">Datenbank im Backend anbinden<a class="headerlink" href="#datenbank-im-backend-anbinden" title="Permanent link">&para;</a></h3>
@@ -977,7 +972,6 @@ found <span class="m">0</span> vulnerabilities
     <span class="nx">DB</span><span class="o">:</span> <span class="s2">&quot;mockupdb&quot;</span>
 <span class="p">};</span>
 </code></pre></div>
-
 </div>
 </div>
 <p>Falls Sie MySQL des Studi-Servers verwenden, sieht die <code>db.config.js</code> so aus:</p>
@@ -989,17 +983,16 @@ found <span class="m">0</span> vulnerabilities
     <span class="nx">DB</span><span class="o">:</span> <span class="s2">&quot;_s05xxx__mockupdb&quot;</span>
 <span class="p">};</span>
 </code></pre></div>
-
 </div>
 </div>
 <p>Sie müssen Ihr Passwort eintragen und, falls Sie Ihre Datenbank anders genannt haben, auch den Datenbanknamen anpassen. </p>
 <p>Erstellen Sie sich in Ihrem <code>backend</code>-Ordner einen Ordner <code>app</code> und darin einen Ordner <code>model</code>. In diesem Ordner erstellen Sie sich ein <code>db.js</code>, um die Verbindung zur Datenbank zu implementieren: </p>
 <div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">app/model/db.js</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mysql&quot;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">dbConfig</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../../config/db.config.js&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;mysql&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">dbConfig</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../../config/db.config.js&quot;</span><span class="p">);</span>
 
 <span class="c1">// Create a connection to the database</span>
-<span class="kr">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
     <span class="nx">host</span><span class="o">:</span> <span class="nx">dbConfig</span><span class="p">.</span><span class="nx">HOST</span><span class="p">,</span>
     <span class="nx">user</span><span class="o">:</span> <span class="nx">dbConfig</span><span class="p">.</span><span class="nx">USER</span><span class="p">,</span>
     <span class="nx">password</span><span class="o">:</span> <span class="nx">dbConfig</span><span class="p">.</span><span class="nx">PASSWORD</span><span class="p">,</span>
@@ -1014,16 +1007,15 @@ found <span class="m">0</span> vulnerabilities
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">connection</span><span class="p">;</span>
 </code></pre></div>
-
 </div>
 </div>
 <h3 id="ein-model-erstellen">Ein Model erstellen<a class="headerlink" href="#ein-model-erstellen" title="Permanent link">&para;</a></h3>
 <p>In dem <code>app/model</code>-Ordner erstellen wir eine Datei <code>members.model.js</code> mit folgendem Inhalt:</p>
 <div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">app/model/members.model.js</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">sql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./db.js&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">sql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./db.js&quot;</span><span class="p">);</span>
 
 <span class="c1">// constructor</span>
-<span class="kr">const</span> <span class="nx">Member</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">member</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">Member</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">member</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">firstname</span> <span class="o">=</span> <span class="nx">member</span><span class="p">.</span><span class="nx">firstname</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">lastname</span> <span class="o">=</span> <span class="nx">member</span><span class="p">.</span><span class="nx">lastname</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">email</span> <span class="o">=</span> <span class="nx">member</span><span class="p">.</span><span class="nx">email</span><span class="p">;</span>
@@ -1051,8 +1043,8 @@ found <span class="m">0</span> vulnerabilities
         <span class="p">}</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;found member: &quot;</span><span class="p">,</span> <span class="nx">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-            <span class="nx">result</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;found member: &quot;</span><span class="p">,</span> <span class="nx">res</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+            <span class="nx">result</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">res</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
             <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
 
@@ -1085,7 +1077,7 @@ found <span class="m">0</span> vulnerabilities
                 <span class="k">return</span><span class="p">;</span>
             <span class="p">}</span>
 
-            <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">affectedRows</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">affectedRows</span> <span class="o">==</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
                 <span class="c1">// not found Customer with the id</span>
                 <span class="nx">result</span><span class="p">({</span> <span class="nx">kind</span><span class="o">:</span> <span class="s2">&quot;not_found&quot;</span> <span class="p">},</span> <span class="kc">null</span><span class="p">);</span>
                 <span class="k">return</span><span class="p">;</span>
@@ -1105,7 +1097,7 @@ found <span class="m">0</span> vulnerabilities
             <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">affectedRows</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">affectedRows</span> <span class="o">==</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// not found Member with the id</span>
             <span class="nx">result</span><span class="p">({</span> <span class="nx">kind</span><span class="o">:</span> <span class="s2">&quot;not_found&quot;</span> <span class="p">},</span> <span class="kc">null</span><span class="p">);</span>
             <span class="k">return</span><span class="p">;</span>
@@ -1131,14 +1123,13 @@ found <span class="m">0</span> vulnerabilities
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Member</span><span class="p">;</span>
 </code></pre></div>
-
 </div>
 </div>
 <h3 id="die-routen-definieren">Die Routen definieren<a class="headerlink" href="#die-routen-definieren" title="Permanent link">&para;</a></h3>
 <p>Erstellen Sie sich im <code>app</code>-Ordner einen Ordner <code>routes</code> und erstellen darin eine Datei <code>members.routes.js</code> mit folgendem Inhalt:</p>
 <div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">app/routes/members.routes.js</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">app</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">members</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../controller/members.controller.js&quot;</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">members</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../controller/members.controller.js&quot;</span><span class="p">);</span>
 
     <span class="c1">// Create a new Member</span>
     <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/members&quot;</span><span class="p">,</span> <span class="nx">members</span><span class="p">.</span><span class="nx">create</span><span class="p">);</span>
@@ -1159,7 +1150,6 @@ found <span class="m">0</span> vulnerabilities
     <span class="nx">app</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s2">&quot;/members&quot;</span><span class="p">,</span> <span class="nx">members</span><span class="p">.</span><span class="nx">deleteAll</span><span class="p">);</span>
 <span class="p">};</span>
 </code></pre></div>
-
 </div>
 </div>
 <p>Diese Datei lesen wir in unsere <code>server.js</code> ein:</p>
@@ -1184,10 +1174,10 @@ found <span class="m">0</span> vulnerabilities
 19
 20
 21
-22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;body-parser&quot;</span><span class="p">);</span>
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;body-parser&quot;</span><span class="p">);</span>
 
-<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 
 <span class="c1">// parse requests of content-type: application/json</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
@@ -1203,16 +1193,15 @@ found <span class="m">0</span> vulnerabilities
 <span class="hll"><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./app/routes/members.routes.js&quot;</span><span class="p">)(</span><span class="nx">app</span><span class="p">);</span>
 </span>
 <span class="c1">// set port, listen for requests</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Server is running on port 3000.&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
 </td></tr></table>
-
 <h3 id="einen-controller-erstellen">Einen Controller erstellen<a class="headerlink" href="#einen-controller-erstellen" title="Permanent link">&para;</a></h3>
 <p>Nun erstellen wir uns im Ordner <code>app/controller</code> eine <code>members.controller.js</code> mit den entsprechenden CRUD-Funktionen, die wir dann noch implementieren müssen:</p>
 <div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">app/controller/members.controller.js</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">Member</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../model/members.model.js&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">Member</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../model/members.model.js&quot;</span><span class="p">);</span>
 
 <span class="c1">// Create and Save a new Member</span>
 <span class="nx">exports</span><span class="p">.</span><span class="nx">create</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -1244,7 +1233,6 @@ found <span class="m">0</span> vulnerabilities
 
 <span class="p">};</span>
 </code></pre></div>
-
 </div>
 </div>
 <p>Überprüfen Sie Ihre Implementierung so weit, indem Sie <code>node server.js</code> erneut starten. Es sollte alles ohne Fehler compilieren. </p>
@@ -1265,7 +1253,7 @@ found <span class="m">0</span> vulnerabilities
 <span class="nx">exports</span><span class="p">.</span><span class="nx">findAll</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">Member</span><span class="p">.</span><span class="nx">getAll</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-            <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
                 <span class="nx">message</span><span class="o">:</span>
                     <span class="nx">err</span><span class="p">.</span><span class="nx">message</span> <span class="o">||</span> <span class="s2">&quot;Some error occurred while retrieving members.&quot;</span>
             <span class="p">});</span>
@@ -1274,7 +1262,6 @@ found <span class="m">0</span> vulnerabilities
 <span class="p">};</span>
 </code></pre></div>
 </td></tr></table>
-
 </div>
 </div>
 <p>Wenn Sie nun erneut <code>node server.js</code> starten und in Postman <code>GET http://localhost:3000/members</code> aufrufen, erscheinen alle Einträge aus der Datenbank:</p>
@@ -1311,13 +1298,13 @@ found <span class="m">0</span> vulnerabilities
 <span class="nx">exports</span><span class="p">.</span><span class="nx">create</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="c1">// Validate request</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">400</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
             <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Content can not be empty!&quot;</span>
         <span class="p">});</span>
     <span class="p">}</span>
 
     <span class="c1">// Create a Member</span>
-    <span class="kr">const</span> <span class="nx">member</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Member</span><span class="p">({</span>
+    <span class="kd">const</span> <span class="nx">member</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Member</span><span class="p">({</span>
         <span class="nx">firstname</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">firstname</span><span class="p">,</span>
         <span class="nx">lastname</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">lastname</span><span class="p">,</span>
         <span class="nx">email</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">email</span>
@@ -1326,7 +1313,7 @@ found <span class="m">0</span> vulnerabilities
     <span class="c1">// Save Customer in the database</span>
     <span class="nx">Member</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">member</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-            <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
                 <span class="nx">message</span><span class="o">:</span>
                     <span class="nx">err</span><span class="p">.</span><span class="nx">message</span> <span class="o">||</span> <span class="s2">&quot;Some error occurred while creating the Member.&quot;</span>
             <span class="p">});</span>
@@ -1335,7 +1322,6 @@ found <span class="m">0</span> vulnerabilities
 <span class="p">};</span>
 </code></pre></div>
 </td></tr></table>
-
 </div>
 </div>
 <p>Nach einem Neustart von <code>node server.js</code> geben wir in Postman nun <code>POST http://localhost:3000/members</code> ein und befüllen den <code>Body</code> mit z.B.:</p>
@@ -1350,7 +1336,6 @@ found <span class="m">0</span> vulnerabilities
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>Achten Sie darauf, dass in der zweiten Menüzeile rechts <code>JSON</code> ausgewählt ist (im Bild orange) - nicht <code>Text</code>:</p>
 <p><img alt="postman" src="../files/110_json.png" /></p>
 <p>Wir klicken auf <code>Send</code> und es erscheint:</p>
@@ -1380,11 +1365,11 @@ found <span class="m">0</span> vulnerabilities
     <span class="nx">Member</span><span class="p">.</span><span class="nx">findById</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">kind</span> <span class="o">===</span> <span class="s2">&quot;not_found&quot;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">404</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+                <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">404</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
                     <span class="nx">message</span><span class="o">:</span> <span class="sb">`Not found Member with id </span><span class="si">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span><span class="si">}</span><span class="sb">.`</span>
                 <span class="p">});</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+                <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
                     <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Error retrieving Member with id &quot;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span>
                 <span class="p">});</span>
             <span class="p">}</span>
@@ -1393,7 +1378,6 @@ found <span class="m">0</span> vulnerabilities
 <span class="p">};</span>
 </code></pre></div>
 </td></tr></table>
-
 </div>
 </div>
 <p>Nach Neustart des Servers geben wir in Postman z.B. <code>GET http://localhost:3000/members/11</code> ein und erhalten:</p>
@@ -1432,7 +1416,7 @@ found <span class="m">0</span> vulnerabilities
 <span class="nx">exports</span><span class="p">.</span><span class="nx">update</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="c1">// Validate Request</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">400</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
             <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Content can not be empty!&quot;</span>
         <span class="p">});</span>
     <span class="p">}</span>
@@ -1443,11 +1427,11 @@ found <span class="m">0</span> vulnerabilities
         <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
                 <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">kind</span> <span class="o">===</span> <span class="s2">&quot;not_found&quot;</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">404</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+                    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">404</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
                         <span class="nx">message</span><span class="o">:</span> <span class="sb">`Not found Member with id </span><span class="si">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span><span class="si">}</span><span class="sb">.`</span>
                     <span class="p">});</span>
                 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+                    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
                         <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Error updating Member with id &quot;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span>
                     <span class="p">});</span>
                 <span class="p">}</span>
@@ -1457,7 +1441,6 @@ found <span class="m">0</span> vulnerabilities
 <span class="p">};</span>
 </code></pre></div>
 </td></tr></table>
-
 </div>
 </div>
 <p>Nach dem Neustart des Servers können wir diese Funktion in Postman ausprobieren, indem wir im <code>Body</code> z.B. das JSON </p>
@@ -1474,7 +1457,6 @@ found <span class="m">0</span> vulnerabilities
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>mit unserem Request übergeben und <code>PUT http://localhost:3000/members/51</code> wählen. Der Datensatz mit der <code>id=51</code> wird dann aktualisiert:</p>
 <p><img alt="postman" src="../files/98_postman.png" /></p>
 <p>Schauen Sie auch in der Datenbank nach und wählen auch ruhig nochmal <code>GET http://localhost:3000/members</code>.</p>
@@ -1501,11 +1483,11 @@ found <span class="m">0</span> vulnerabilities
     <span class="nx">Member</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">kind</span> <span class="o">===</span> <span class="s2">&quot;not_found&quot;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">404</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+                <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">404</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
                     <span class="nx">message</span><span class="o">:</span> <span class="sb">`Not found Member with id </span><span class="si">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span><span class="si">}</span><span class="sb">.`</span>
                 <span class="p">});</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+                <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
                     <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Could not delete Member with id &quot;</span> <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">memberId</span>
                 <span class="p">});</span>
             <span class="p">}</span>
@@ -1514,7 +1496,6 @@ found <span class="m">0</span> vulnerabilities
 <span class="p">};</span>
 </code></pre></div>
 </td></tr></table>
-
 </div>
 </div>
 <p>Wenn wir nach dem Neustart des Servers in Postman z.B. <code>DELETE http://localhost:3000/members/51</code> eingeben, erscheint:</p>
@@ -1522,13 +1503,11 @@ found <span class="m">0</span> vulnerabilities
     &quot;message&quot;: &quot;Member was deleted successfully!&quot;
 }
 </code></pre></div>
-
 <p>und der Datensatz mit der <code>id=51</code> ist aus der Datenbank gelöscht. Wenn wir erneut <code>DELETE http://localhost:3000/members/51</code> eingeben, erscheint:</p>
 <div class="highlight"><pre><span></span><code>{
     &quot;message&quot;: &quot;Not found Member with id 51.&quot;
 }
 </code></pre></div>
-
 <p>Wir implementieren der Vollständigkeit halber noch die <code>deleteAll()</code>-Methode. Sie können ja entscheiden, ob Sie sie ausprobieren wollen oder nicht ;-)</p>
 <h4 id="d-delete-all">D - delete all<a class="headerlink" href="#d-delete-all" title="Permanent link">&para;</a></h4>
 <div class="tabbed-set" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><label for="__tabbed_13_1">app/controller/members.controller.js</label><div class="tabbed-content">
@@ -1546,7 +1525,7 @@ found <span class="m">0</span> vulnerabilities
 <span class="nx">exports</span><span class="p">.</span><span class="nx">deleteAll</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">Member</span><span class="p">.</span><span class="nx">removeAll</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-            <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span>
                 <span class="nx">message</span><span class="o">:</span>
                     <span class="nx">err</span><span class="p">.</span><span class="nx">message</span> <span class="o">||</span> <span class="s2">&quot;Some error occurred while removing all members.&quot;</span>
             <span class="p">});</span>
@@ -1555,7 +1534,6 @@ found <span class="m">0</span> vulnerabilities
 <span class="p">};</span>
 </code></pre></div>
 </td></tr></table>
-
 </div>
 </div>
 <p>In Postman kann diese Methode mit <code>DELETE http://localhost:3000/members/</code> getestet werden. Es erscheint </p>
@@ -1563,7 +1541,6 @@ found <span class="m">0</span> vulnerabilities
     <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;All Members were deleted successfully!&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>und auch die Datenbank ist leer:</p>
 <p><img alt="phpmyadmin" src="../files/99_phpmyadmin.png" /></p>
 <p>Sollten Sie die Methode erfolgreich ausprobiert haben, können Sie die Datenbank über diese Insert-Anweisungen wieder auffüllen (in <code>phpmyadmin</code> unter dem Reiter <code>SQL</code> reinkopieren):</p>
@@ -1618,7 +1595,6 @@ found <span class="m">0</span> vulnerabilities
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">`</span><span class="n">members</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">firstname</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">lastname</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">email</span><span class="o">`</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;Mildred&quot;</span><span class="p">,</span> <span class="ss">&quot;Watkins&quot;</span><span class="p">,</span> <span class="ss">&quot;mwatkins0@miibeian.gov.cn&quot;</span><span class="p">);</span>
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">`</span><span class="n">members</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">firstname</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">lastname</span><span class="o">`</span><span class="p">,</span> <span class="o">`</span><span class="n">email</span><span class="o">`</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="ss">&quot;Eugene&quot;</span><span class="p">,</span> <span class="ss">&quot;Williams&quot;</span><span class="p">,</span> <span class="ss">&quot;ewilliamsi@deliciousdays.com&quot;</span><span class="p">);</span>
 </code></pre></div>
-
 </details>
 <p>Beachten Sie, dass danach die <code>id</code>-Werte andere sind, da es sich um einen <code>AUTO INCREMENT</code>-Wert handelt. </p>
 <div class="admonition success">
@@ -1631,7 +1607,6 @@ found <span class="m">0</span> vulnerabilities
 <p>Um CORS für Ihr Backend zu aktivieren, wechseln Sie im Terminal in Ihren <code>backend</code>-Ordner und geben dort</p>
 <div class="highlight"><pre><span></span><code>npm install cors
 </code></pre></div>
-
 <p>ein. Öffnen Sie dann die <code>server.js</code> und fügen Sie die hervorgehobenen Zeilen ein:</p>
 <div class="tabbed-set" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><label for="__tabbed_14_1">server.js</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
@@ -1659,11 +1634,11 @@ found <span class="m">0</span> vulnerabilities
 23
 24
 25
-26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
-<span class="hll"><span class="kr">const</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">);</span>
-</span><span class="kr">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;body-parser&quot;</span><span class="p">);</span>
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
+<span class="hll"><span class="kd">const</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">);</span>
+</span><span class="kd">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;body-parser&quot;</span><span class="p">);</span>
 
-<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 
 <span class="c1">// parse requests of content-type: application/json</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
@@ -1682,12 +1657,11 @@ found <span class="m">0</span> vulnerabilities
 <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./app/routes/members.routes.js&quot;</span><span class="p">)(</span><span class="nx">app</span><span class="p">);</span>
 
 <span class="c1">// set port, listen for requests</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Server is running on port 3000.&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
 </td></tr></table>
-
 </div>
 </div>
 <p>Wenn Sie z.B. nur die <code>get</code>-Anfrage teilen wollen, dann wählen Sie nicht <code>app.use(cors());</code>, sondern </p>
@@ -1695,7 +1669,6 @@ found <span class="m">0</span> vulnerabilities
         <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Hello FIW!&quot;</span> <span class="p">});</span>
     <span class="p">});</span>
 </code></pre></div>
-
 <p>Mehr zum CORS-Paket von node.js bzw. express finden Sie <a href="https://expressjs.com/en/resources/middleware/cors.html">hier</a>.</p>
                 
               
@@ -1713,11 +1686,11 @@ found <span class="m">0</span> vulnerabilities
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../material/" title="Material" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../material/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
@@ -1730,7 +1703,7 @@ found <span class="m">0</span> vulnerabilities
           </a>
         
         
-          <a href="../backendanbindung/" title="Frontend-Backend-Anbindung" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../backendanbindung/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -1740,7 +1713,7 @@ found <span class="m">0</span> vulnerabilities
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -1767,15 +1740,15 @@ found <span class="m">0</span> vulnerabilities
       
     </div>
     
-      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt"}</script>
       
       <script>
         app = initialize({
           base: "..",
-          features: ["instant", "tabs"],
+          features: ['instant', 'tabs'],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

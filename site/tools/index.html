@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="de" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für WebTech">
       
       
-        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/webtech/tools/">
-      
       
         <meta name="author" content="Jörn Freiheit">
       
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/webtech/tools/">
+      
       <link rel="shortcut icon" href="../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#757575">
+          
+          
+          <meta name="theme-color" content="#757575">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -56,8 +57,13 @@
   
     
     
-    <body dir="" data-md-color-primary="grey" data-md-color-accent="indigo">
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="indigo">
+      
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -73,53 +79,57 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="">
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-header-nav__button md-logo" aria-label="WebTech">
       
   <img src="../img/fiw.jpg" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             WebTech
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Werkzeuge
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Suchbegriff eingeben
+            Suche wird initialisiert
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -134,7 +144,7 @@
 <a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     webtech
@@ -147,69 +157,23 @@
     
     <div class="md-container" data-md-component="container">
       
-        
       
-      
-        
-          
-
-<nav class="md-tabs" aria-label="" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href=".." class="md-tabs__link md-tabs__link--active">
-        Home
-      </a>
-    
-  </li>
-
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </ul>
-  </div>
-</nav>
         
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://freiheit.f4.htw-berlin.de/webtech" title="WebTech" class="md-nav__button md-logo" aria-label="WebTech">
       
@@ -224,7 +188,7 @@
 <a href="https://github.com/jfreiheit/webtech/" title="Quellcode" class="md-source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     webtech
@@ -238,24 +202,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../uebungen/" title="Übungen" class="md-nav__link">
-      Übungen
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
 
     
       
@@ -263,27 +218,42 @@
       
 
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
+      
+      
+
+  
+  
     
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Werkzeuge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Werkzeuge
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Werkzeuge" class="md-nav__link md-nav__link--active">
-      Werkzeuge
-    </a>
-    
+      </a>
       
+        
 <nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
   
   
@@ -291,9 +261,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Inhaltsverzeichnis
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -471,164 +439,204 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../html/" title="HTML" class="md-nav__link">
-      HTML
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../css/" title="CSS" class="md-nav__link">
-      CSS
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/" class="md-nav__link">
+        HTML
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../rwd/" title="RWD" class="md-nav__link">
-      RWD
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../javascript/" title="JavaScript" class="md-nav__link">
-      JavaScript
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../css/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../json/" title="JSON" class="md-nav__link">
-      JSON
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../angular/" title="Angular" class="md-nav__link">
-      Angular
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rwd/" class="md-nav__link">
+        RWD
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../material/" title="Material" class="md-nav__link">
-      Material
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../backend/" title="REST-API" class="md-nav__link">
-      REST-API
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javascript/" class="md-nav__link">
+        JavaScript
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../backendanbindung/" title="Frontend-Backend-Anbindung" class="md-nav__link">
-      Frontend-Backend-Anbindung
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../jwt/" title="JWT" class="md-nav__link">
-      JWT
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json/" class="md-nav__link">
+        JSON
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../node/" title="Node.js" class="md-nav__link">
-      Node.js
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../books/" title="Bücher-App" class="md-nav__link">
-      Bücher-App
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../angular/" class="md-nav__link">
+        Angular
+      </a>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material/" class="md-nav__link">
+        Material
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../books-backend/" title="Bücher-Backend" class="md-nav__link">
-      Bücher-Backend
-    </a>
-  </li>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        REST-API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backendanbindung/" class="md-nav__link">
+        Frontend-Backend-Anbindung
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jwt/" class="md-nav__link">
+        JWT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node/" class="md-nav__link">
+        Node.js
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../books/" class="md-nav__link">
+        Bücher-App
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../books-backend/" class="md-nav__link">
+        Bücher-Backend
+      </a>
+    </li>
+  
 
     
   </ul>
@@ -638,7 +646,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -649,9 +658,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Inhaltsverzeichnis
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -839,11 +846,8 @@
               
                 
                   <a href="https://github.com/jfreiheit/webtech/edit/master/docs/tools.md" title="Seite editieren" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
-                
-                
-                  
                 
                 
                 <h1 id="werkzeuge">Werkzeuge<a class="headerlink" href="#werkzeuge" title="Permanent link">&para;</a></h1>
@@ -878,13 +882,11 @@
 <div class="highlight"><pre><span></span><code>jornfreiheit@Jorns-MacBook-Pro Sites % <span class="nb">pwd</span>
 /Users/jornfreiheit/Sites
 </code></pre></div>
-
 <p>Geben Sie dort nun ein: </p>
 <div class="highlight"><pre><span></span><code>jornfreiheit@Jorns-MacBook-Pro Sites % git clone https://github.com/jfreiheit/Webtech20.git
 Cloning into <span class="s1">&#39;Webtech20&#39;</span>...
 warning: You appear to have cloned an empty repository.
 </code></pre></div>
-
 <p>also <code>git clone</code> gefolgt von dem Remote-Pfad aus Ihrer Zwischenablage. Wenn Sie in Github weder <code>README.md</code> noch <code>.gitignore</code> ausgewählt hatten, dann erhalten Sie eine Warnung, dass Sie ein leeres Repository clonen. Das ist aber kein Problem. Sie können aber auch beide Datein in Ihr Repository integrieren, die <code>.gitignore</code>verwenden wir auf jeden Fall. In dem Ordner, in den Sie geclont haben, wird nun ein Ordner <code>Webtech20</code> angelegt. Diesen Ordner können Sie nun als Workspace Ihrer IDE verwenden. Also z.B. mit <code>IntelliJ IDEA</code>:</p>
 <p><img alt="GitHub" src="../files/46_git3.png" /></p>
 <p>öffnen Sie das Projekt (<code>Open or import</code>) <code>Webtech20</code>. Es erscheint:</p>
@@ -908,7 +910,6 @@ warning: You appear to have cloned an empty repository.
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-
 </div>
 </div>
 <p>Da der Ordner <code>Sites</code> bei mir DocumentRoot ist und sich der <code>Webtech20</code>-Ordner (in dem die neue <code>index.html</code> ist) direkt darunter befindet, kann ich mir die Datei im Browser unter <code>localhost/Webtech20/index.html</code> anzeigen lassen. Das nat nichts mit Git zu tun, sondern mit dem DocumentRoot des lokalen Webservers.</p>
@@ -930,13 +931,11 @@ Changes to be committed:
 
 jornfreiheit@Jorns-MacBook-Pro Webtech20 % 
 </code></pre></div>
-
 <p>Außerdem sollten wir den <code>.idea</code>-Ordner von der Git-Verwaltung ausschließen. Dazu erstellen wir im <code>Webtech20</code>-Ordner eine Datei <code>.gitignore</code>, falls diese noch nicht existiert und tragen dort <code>.idea</code> ein. Fügen Sie die Datei <code>.gitignore</code> Ihrem repository hinzu, führen Sie Ihr erstes Commit aus und pushen Ihr Repository nach Github:</p>
 <div class="highlight"><pre><span></span><code>git add .ignore
 git commit -m <span class="s2">&quot;erstes commit&quot;</span>
 git push
 </code></pre></div>
-
 <p>In Github erkenn Sie, dass commit und push geklappt haben:</p>
 <p><img alt="GitHub" src="../files/48_git5.png" /></p>
 <p>In Zukunft fügen Sie Ihre neu erstellten Dateien und Ordner immer mit <code>git add .</code> hinzu, erstellen neue Commits mit <code>git commit -m "Commit-Nachricht"</code> und pushen dann nach Github mit <code>git push</code>. </p>
@@ -973,7 +972,6 @@ git push
 <p>Um zu testen, ob Ihr Webser läuft, erstellen Sie im <em>DocumentRoot</em> eine Datei <code>index.php</code> mit folgendem Inhalt:</p>
 <div class="highlight"><pre><span></span><code>&lt;?php phpinfo(); ?&gt;
 </code></pre></div>
-
 <p>und rufen in Ihrem Browser <code>http://localhost/index.php</code> auf. Es sollte eine ähnliche Ausgabe wie folgt erscheinen (nur Ausschnitt:</p>
 <p><img alt="localhost" src="../files/41_localhost.png" /></p>
 <h2 id="developer-tools">Developer Tools<a class="headerlink" href="#developer-tools" title="Permanent link">&para;</a></h2>
@@ -1010,7 +1008,6 @@ git push
 <p>Zum Testen, ob Curl korrekt funktioniert, können Sie im Terminal z.B.</p>
 <div class="highlight"><pre><span></span><code>curl freiheit.f4.htw-berlin.de/curl.html
 </code></pre></div>
-
 <p>eingeben. Es sollte folgende Ausgabe erscheinen:</p>
 <div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1022,19 +1019,15 @@ git push
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre></div>
-
 <p>Mit dem <code>-o</code>-Flag können Sie die Datei speichern (Sie können einen Dateinamen angeben - hier <code>curl.html</code>):</p>
 <div class="highlight"><pre><span></span><code>curl -o curl.html freiheit.f4.htw-berlin.de/curl.html
 </code></pre></div>
-
 <p>Da oben die lokale Datei genau so heißt wie die remote-Datei, hätte man auch </p>
 <div class="highlight"><pre><span></span><code>curl -O freiheit.f4.htw-berlin.de/curl.html
 </code></pre></div>
-
 <p>angeben können, also großes <code>-O</code>. Mit dem <code>-d</code>-Flag können Parameter übergeben und die entsprechende Seite mit einer POST-Anfrage aufgerufen werden. Mit dem zusätzlichen <code>-G</code>-Flag erfolgt die Anfrage nicht als POST sondern als GET. Mit dem <code>-I</code>-Flag fragen Sie den Header der Anfrage ab, z.B.:</p>
 <div class="highlight"><pre><span></span><code>curl -I freiheit.f4.htw-berlin.de/curl.html
 </code></pre></div>
-
 <p>gibt etwas aus in der Art:</p>
 <div class="highlight"><pre><span></span><code>HTTP/1.1 <span class="m">200</span> OK
 Date: Thu, <span class="m">04</span> Jun <span class="m">2020</span> <span class="m">13</span>:59:43 GMT
@@ -1046,7 +1039,6 @@ Content-Length: <span class="m">120</span>
 Vary: Accept-Encoding
 Content-Type: text/html
 </code></pre></div>
-
 <p>Für eine vollständige Übersicht aller Flags von Curl siehe <a href="https://curl.haxx.se/docs/manpage.html">Curl manpage</a>.</p>
 <h2 id="postman">Postman<a class="headerlink" href="#postman" title="Permanent link">&para;</a></h2>
 <p>Postman ist eine Anwendung, um Schnittstellen (<em>Application Programming Interface - API</em>), die das Backend bereitstellt, zu entwickeln und zu testen. Sie finden Postman unter <a href="https://www.postman.com/">postman.com</a>. Wir beschränken uns zunächst auf den <a href="https://www.postman.com/product/api-client/">Postman API Client</a>. Laden Sie das Tool herunter und installieren es. Rufen Sie Postman auf und geben in das Eingabefeld <code>https://postman-echo.com/get</code> ein. Lassen Sie die Auswahl links daneben auf <code>GET</code> und klicken auf den <code>Send</code>-Button. Es erscheint folgendes Bild:</p>
@@ -1069,20 +1061,16 @@ ein. Den Paketmanager <code>npm</code> können Sie sich mit <code>node.js</code>
 <p>Um den Paketmanager <code>npm</code> zu installieren, laden sie sich <code>node.js</code> <a href="https://nodejs.org/en/download/"><strong>hier</strong></a> herunter und installieren Sie es. Nach erfolgreicher Installation sollte sowohl </p>
 <div class="highlight"><pre><span></span><code>node -v
 </code></pre></div>
-
 <p>funktionieren und eine Versionsnummer ausgeben (z.B. <code>v14.15.0</code>) als auch </p>
 <div class="highlight"><pre><span></span><code>npm -v
 </code></pre></div>
-
 <p>(z.B. <code>6.14.8</code>). </p>
 <p>Außerdem benötigen Sie das <em>Angular-Command-Line-Interface (CLI)</em>, das Sie mithilfe des Befehls </p>
 <div class="highlight"><pre><span></span><code>npm install -g @angular/cli 
 </code></pre></div>
-
 <p>installieren. Danach sollte </p>
 <div class="highlight"><pre><span></span><code>ng --version 
 </code></pre></div>
-
 <p>funktionieren und Ihnen etwas in dieser Art ausgeben:</p>
 <div class="highlight"><pre><span></span><code>     _                      _                 ____ _     ___
     / <span class="se">\ </span>  _ __   __ _ _   _<span class="p">|</span> <span class="p">|</span> __ _ _ __     / ___<span class="p">|</span> <span class="p">|</span>   <span class="p">|</span>_ _<span class="p">|</span>
@@ -1110,7 +1098,6 @@ Package                      Version
 rxjs                         <span class="m">6</span>.6.3
 typescript                   <span class="m">4</span>.0.5
 </code></pre></div>
-
 <p>Jetzt können wir unser <a href="./angular/#erstes-projekt-erstellen">erstes Angular-Projekt</a> erstellen. </p>
 <h3 id="update-angularcli">Update @angular/cli<a class="headerlink" href="#update-angularcli" title="Permanent link">&para;</a></h3>
 <p>Manchmal gibt es vielleicht Warnungen beim Erstellen eines Projektes - etwas in der Art, wie:
@@ -1137,7 +1124,6 @@ npm WARN postcss-modules-values@4.0.0 requires a peer of postcss@^8.1.0 but none
 <p>Wenn Sie herausbekommen wollen, welche Ports bereits belegt sind und durch welchen Prozess, dann geben Sie im Terminal ein:</p>
 <div class="highlight"><pre><span></span><code>lsof -i -P | grep -i LISTEN
 </code></pre></div>
-
 <p>Eventuell müssen Sie ein <code>sudo</code> voranstellen. Sie erhalten eine Ausgabe in der Form (variiert natürlich stark):</p>
 <div class="highlight"><pre><span></span><code>rapportd   372 jornfreiheit    4u  IPv4 0x5cee55fd054bd73      0t0  TCP *:57124 (LISTEN)
 rapportd   372 jornfreiheit    5u  IPv6 0x5cee55fab8990c3      0t0  TCP *:57124 (LISTEN)
@@ -1150,11 +1136,9 @@ Dropbox   2638 jornfreiheit  194u  IPv4 0x5cee55fb9e31753      0t0  TCP localhos
 node      9070 jornfreiheit   21u  IPv6 0x5cee55fb5913843      0t0  TCP *:8080 (LISTEN)
 Python    9138 jornfreiheit    5u  IPv4 0x5cee55fcfdf7753      0t0  TCP localhost:8000 (LISTEN)
 </code></pre></div>
-
 <p>Wenn Sie nun z.B. einen bestimmten Prozess killen wollen, z.B. den Python-Prozess, der in <code>localhost</code> auf Port <code>8000</code> läuft, dann geben Sie </p>
 <div class="highlight"><pre><span></span><code>kill -9 9138
 </code></pre></div>
-
 <p>im Terminal ein. <code>9138</code> ist die <code>PID</code> des entsprechenden Prozesses.</p>
                 
               
@@ -1172,11 +1156,11 @@ Python    9138 jornfreiheit    5u  IPv4 0x5cee55fcfdf7753      0t0  TCP localhos
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../uebungen/" title="Übungen" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../uebungen/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
@@ -1189,7 +1173,7 @@ Python    9138 jornfreiheit    5u  IPv4 0x5cee55fcfdf7753      0t0  TCP localhos
           </a>
         
         
-          <a href="../html/" title="HTML" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../html/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -1199,7 +1183,7 @@ Python    9138 jornfreiheit    5u  IPv4 0x5cee55fcfdf7753      0t0  TCP localhos
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -1226,15 +1210,15 @@ Python    9138 jornfreiheit    5u  IPv4 0x5cee55fcfdf7753      0t0  TCP localhos
       
     </div>
     
-      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt"}</script>
       
       <script>
         app = initialize({
           base: "..",
-          features: ["instant", "tabs"],
+          features: ['instant', 'tabs'],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
