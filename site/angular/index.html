@@ -645,6 +645,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../mongodb/" class="md-nav__link">
+        MongoDB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../books/" class="md-nav__link">
         Bücher-App
       </a>
@@ -947,8 +962,41 @@ Danach geben Sie</p>
 </code></pre></div>
 <p>ein. Es werden die entsprechenden TypeScript-Dateien compiliert und es
 erscheint am Ende eine Ausgabe, wie z.B.</p>
-<div class="highlight"><pre><span></span><code>** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
-:Compiled successfully.
+<div class="highlight"><pre><span></span><code>⠋ Generating browser application bundles...
+****************************************************************************************
+This is a simple server <span class="k">for</span> use <span class="k">in</span> testing or debugging Angular applications locally.
+It hasn<span class="s1">&#39;t been reviewed for security issues.</span>
+
+<span class="s1">DON&#39;</span>T USE IT FOR PRODUCTION!
+****************************************************************************************
+Compiling @angular/core : es2015 as esm2015
+Compiling @angular/common : es2015 as esm2015
+Compiling @angular/platform-browser : es2015 as esm2015
+Compiling @angular/router : es2015 as esm2015
+Compiling @angular/platform-browser-dynamic : es2015 as esm2015
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files <span class="p">|</span> Names         <span class="p">|</span>      Size
+main.js             <span class="p">|</span> main          <span class="p">|</span> <span class="m">362</span>.07 kB
+polyfills.js        <span class="p">|</span> polyfills     <span class="p">|</span>  <span class="m">44</span>.15 kB
+runtime.js          <span class="p">|</span> runtime       <span class="p">|</span>   <span class="m">1</span>.09 kB
+styles.css          <span class="p">|</span> styles        <span class="p">|</span>   <span class="m">0</span> bytes
+
+                    <span class="p">|</span> Initial Total <span class="p">|</span> <span class="m">407</span>.31 kB
+
+Build at: <span class="m">2021</span>-05-28T12:19:12.354Z - Hash: b1611690e9f20b1506e4 - Time: 28973ms
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+
+✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+<span class="m">4</span> unchanged chunks
+
+Build at: <span class="m">2021</span>-05-28T12:19:13.393Z - Hash: 52a9999d2b3b3c4923f4 - Time: 643ms
+
+✔ Compiled successfully.
 </code></pre></div>
 <p>Sie <strong>müssen</strong> jetzt immer compileren! Wenn Sie aber einmal <code>ng serve</code> ausgeführt haben, wird im Browser automatisch auf die Änderungen reagiert. Sie müssen also nicht jedes Mal neu <code>ng serve</code> eingeben, bzw. nicht jedes Mal neu auf das grüne Dreieck in Ihrer IDE klicken: <img alt="ngserve" src="../files/86_ngserve.png" /></p>
 <p>Öffnen Sie Ihren Browser und geben Sie als URL</p>
@@ -1017,7 +1065,7 @@ Inhalt der dargestellten Seite anzupassen und die
 (dem Stil) des Inhalts durchzuführen.</p>
 </div>
 <h3 id="single-page-application">Single Page Application<a class="headerlink" href="#single-page-application" title="Permanent link">&para;</a></h3>
-<p>Wenn wir eine Anwendung mit Angular erstellen, dann handelt es sich dabei um eine sogenannte <em>Single Page Application (SPA)</em>, d.h. es wird genau eine Seite vom Webserver geladen und alle Inhalte werden in diese Seite (nach-)geladen, je nach Nutzerinteraktion. Die hier geladene Seite ist die <code>index.html</code>, die in unserem Projekte-Ordner <code>frontend</code>liegt. Sie sieht so aus:</p>
+<p>Wenn wir eine Anwendung mit Angular erstellen, dann handelt es sich dabei um eine sogenannte <em>Single Page Application (SPA)</em>, d.h. es wird genau eine Seite vom Webserver geladen und alle Inhalte werden in diese Seite (nach-)geladen, je nach Nutzerinteraktion. Die hier geladene Seite ist die <code>index.html</code>, die in unserem Projekte-Ordner <code>frontend</code> liegt. Sie sieht so aus:</p>
 <div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">index.html</label><div class="tabbed-content"></div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!doctype html&gt;</span>

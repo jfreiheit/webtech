@@ -417,6 +417,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    MongoDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weitere-hilfen" class="md-nav__link">
     Weitere Hilfen
   </a>
@@ -604,6 +611,21 @@
     <li class="md-nav__item">
       <a href="../node/" class="md-nav__link">
         Node.js
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mongodb/" class="md-nav__link">
+        MongoDB
       </a>
     </li>
   
@@ -809,6 +831,13 @@
         <li class="md-nav__item">
   <a href="#phpmyadmin" class="md-nav__link">
     phpMyadmin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    MongoDB
   </a>
   
 </li>
@@ -1119,6 +1148,38 @@ npm WARN postcss-modules-values@4.0.0 requires a peer of postcss@^8.1.0 but none
 <h2 id="phpmyadmin">phpMyadmin<a class="headerlink" href="#phpmyadmin" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.phpmyadmin.net/"><code>phpMyadmin</code></a> ist eine graphische Oberfläche zur Verwaltung Ihrer <code>MySQL</code>-Datenbanken. Nach erfolgreicher Installation rufen Sie im Browser <code>localhost/phpmyadmin</code> auf und haben Zugriff auf Ihre Datenbanken bzw. können diese erstellen, ändern und befüllen. </p>
 <p><img alt="phpmyadmin" src="../files/32_phpmyadmin.png" /></p>
+<h2 id="mongodb">MongoDB<a class="headerlink" href="#mongodb" title="Permanent link">&para;</a></h2>
+<p>[MongoDB] ist eine <em>NoSQL</em> (<em>not only SQL</em>) Datenbank. In einer MongoDB werden nicht Relationen, sondern (JavaScript-)Objekte gespeichert. Die <em>CRUD</em>-Operationen auf einer MongoDB sind z.B. <a href="https://docs.mongodb.com/manual/crud/">hier</a> erklärt. Die MongoDB kann lokal als <em>MongoDB (Community Edition)</em> installiert werden. Zur Installationsseite geht es <a href="https://docs.mongodb.com/manual/installation/">hier</a>. Nach der Installation muss MongoDB gestartet werden. Unter Mac (für MongoDB-Version 4.4) geht es z.B. so:</p>
+<div class="highlight"><pre><span></span><code>brew services start mongodb-community@4.4
+</code></pre></div>
+<p>Um MongoDB zu stoppen, muss beim Mac <code>brew services stop mongodb-community@4.4</code> eingegeben werden. Wenn Sie dann <code>mongo</code> ins Terminal eingeben, sollte etwas in dieser Art erscheinen:</p>
+<div class="highlight"><pre><span></span><code>MongoDB shell version v4.4.5
+connecting to: mongodb://127.0.0.1:27017/?compressors<span class="o">=</span>disabled<span class="p">&amp;</span><span class="nv">gssapiServiceName</span><span class="o">=</span>mongodb
+Implicit session: session <span class="o">{</span> <span class="s2">&quot;id&quot;</span> : UUID<span class="o">(</span><span class="s2">&quot;0b972fa5-fad9-48bb-8a7f-c81cc0778620&quot;</span><span class="o">)</span> <span class="o">}</span>
+MongoDB server version: <span class="m">4</span>.4.5
+Welcome to the MongoDB shell.
+For interactive help, <span class="nb">type</span> <span class="s2">&quot;help&quot;</span>.
+For more comprehensive documentation, see
+    https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+    https://community.mongodb.com
+---
+The server generated these startup warnings when booting: 
+        <span class="m">2021</span>-07-01T11:40:21.328+02:00: Access control is not enabled <span class="k">for</span> the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB<span class="err">&#39;</span>s free cloud-based monitoring service, which will <span class="k">then</span> receive and display
+        metrics about your deployment <span class="o">(</span>disk utilization, CPU, operation statistics, etc<span class="o">)</span>.
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To <span class="nb">enable</span> free monitoring, run the following command: db.enableFreeMonitoring<span class="o">()</span>
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring<span class="o">()</span>
+---
+&gt;
+</code></pre></div>
 <h2 id="weitere-hilfen">Weitere Hilfen<a class="headerlink" href="#weitere-hilfen" title="Permanent link">&para;</a></h2>
 <h3 id="prozesse-und-ports">Prozesse und Ports<a class="headerlink" href="#prozesse-und-ports" title="Permanent link">&para;</a></h3>
 <p>Wenn Sie herausbekommen wollen, welche Ports bereits belegt sind und durch welchen Prozess, dann geben Sie im Terminal ein:</p>

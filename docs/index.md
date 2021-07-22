@@ -1,6 +1,6 @@
 # Web-Technologien
 
-Herzlich willkommen zur WebTech-Veranstaltung! 
+Herzlich willkommen zur WebTech-Veranstaltung! Webhook-Test.
 
 ### Grober Inhalt
 

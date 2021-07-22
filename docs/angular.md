@@ -60,9 +60,43 @@ ng serve
 ein. Es werden die entsprechenden TypeScript-Dateien compiliert und es
 erscheint am Ende eine Ausgabe, wie z.B.
 
-```
+```bash
+⠋ Generating browser application bundles...
+****************************************************************************************
+This is a simple server for use in testing or debugging Angular applications locally.
+It hasn't been reviewed for security issues.
+
+DON'T USE IT FOR PRODUCTION!
+****************************************************************************************
+Compiling @angular/core : es2015 as esm2015
+Compiling @angular/common : es2015 as esm2015
+Compiling @angular/platform-browser : es2015 as esm2015
+Compiling @angular/router : es2015 as esm2015
+Compiling @angular/platform-browser-dynamic : es2015 as esm2015
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names         |      Size
+main.js             | main          | 362.07 kB
+polyfills.js        | polyfills     |  44.15 kB
+runtime.js          | runtime       |   1.09 kB
+styles.css          | styles        |   0 bytes
+
+                    | Initial Total | 407.31 kB
+
+Build at: 2021-05-28T12:19:12.354Z - Hash: b1611690e9f20b1506e4 - Time: 28973ms
+
 ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
-:Compiled successfully.
+
+
+✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+4 unchanged chunks
+
+Build at: 2021-05-28T12:19:13.393Z - Hash: 52a9999d2b3b3c4923f4 - Time: 643ms
+
+✔ Compiled successfully.
+
 ```
 
 Sie **müssen** jetzt immer compileren! Wenn Sie aber einmal `ng serve` ausgeführt haben, wird im Browser automatisch auf die Änderungen reagiert. Sie müssen also nicht jedes Mal neu `ng serve` eingeben, bzw. nicht jedes Mal neu auf das grüne Dreieck in Ihrer IDE klicken: ![ngserve](./files/86_ngserve.png)
@@ -148,7 +182,7 @@ Nach den Änderungen in `app.component.css` erscheint der Text der Überschrift 
 
 ### Single Page Application
 
-Wenn wir eine Anwendung mit Angular erstellen, dann handelt es sich dabei um eine sogenannte *Single Page Application (SPA)*, d.h. es wird genau eine Seite vom Webserver geladen und alle Inhalte werden in diese Seite (nach-)geladen, je nach Nutzerinteraktion. Die hier geladene Seite ist die `index.html`, die in unserem Projekte-Ordner `frontend`liegt. Sie sieht so aus:
+Wenn wir eine Anwendung mit Angular erstellen, dann handelt es sich dabei um eine sogenannte *Single Page Application (SPA)*, d.h. es wird genau eine Seite vom Webserver geladen und alle Inhalte werden in diese Seite (nach-)geladen, je nach Nutzerinteraktion. Die hier geladene Seite ist die `index.html`, die in unserem Projekte-Ordner `frontend` liegt. Sie sieht so aus:
 
 === "index.html"
   ```html
